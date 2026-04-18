@@ -2,7 +2,7 @@ import { Outlet, Link, useLocation } from "react-router";
 import { Menu, X, Phone, MessageCircle, ArrowRight, Globe } from "lucide-react";
 import { useState, useEffect } from "react";
 import clsx from "clsx";
-import { useLanguage } from "./context/LanguageContext";
+import { useLanguage } from "../context/LanguageContext";
 
 export function Layout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
