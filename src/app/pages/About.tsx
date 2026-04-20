@@ -27,27 +27,27 @@ export function About() {
       expDesc: "오동현 변호사의 중국 관련 경험은 단순한 어학 연수 수준을 넘어, 실제 중국 현지 기업·기관에서의 실무 경험을 포함합니다.",
       expList: [
         {
-          title: "🏢 ㈜한화/무역 석유화학팀 사원",
+          title: "㈜한화/무역 석유화학팀 사원",
           date: "(2016. 12 ~ 2018. 03)",
           desc: "한국 대기업 ㈜한화의 무역 부문에서 대중(對中) 석유화학 제품 수출입 업무를 담당하였습니다. 영문·중문 계약서 작성 및 검토, 해외 지사 외국 사원과의 연락·응대 업무를 직접 수행하였으며, 이 경험은 현재 중국 기업과의 계약 자문 업무에 직접적으로 활용됩니다."
         },
         {
-          title: "🌐 중국 북경 기금회중심망 (China Foundation Center) 인턴",
+          title: "중국 북경 기금회중심망 (China Foundation Center) 인턴",
           date: "(2015. 01 ~ 2015. 06)",
           desc: "중국 최대 NGO 정보 플랫폼인 基金會中心網에서 인턴으로 근무하며 한중 NGO 자료 비교조사 및 영중한 통번역 업무를 수행하였습니다. 중국의 비영리 법인 운영 구조와 사회적 맥락을 깊이 이해하게 된 계기가 되었습니다."
         },
         {
-          title: "🥋 중국 광서성 세계태권도평화봉사재단",
+          title: "중국 광서성 세계태권도평화봉사재단",
           date: "(2014. 01)",
           desc: "중국 광서성 현지에서 태권도 교육 및 중국어 통역 업무를 수행하며, 중국 지방 사회와의 직접적인 교류 경험을 쌓았습니다."
         },
         {
-          title: "🏭 중국 소주(苏州) 소재 건자재 기업 인턴",
+          title: "중국 소주(苏州) 소재 건자재 기업 인턴",
           date: "(2012. 07)",
           desc: "Suzhou Chun-Bo New Construction Material Co., Ltd. (苏州天辅新型建材有限公司)에서 인턴으로 근무하며 시장 동향 파악, 자료 조사, 영중한 통번역 및 현장 실무를 수행하였습니다. 중국 제조업 현장의 비즈니스 관행을 몸으로 익혔습니다."
         },
         {
-          title: "🎓 중국 북경사범대학교 연수",
+          title: "중국 북경사범대학교 연수",
           date: "(2012. 02)",
           desc: "북경 현지 어학·법제 수업을 통해 학계 중국어 환경에 직접 노출되어 단순 어학연수를 넘어 중국 현지 생활 기반을 다진 출발점입니다."
         }
@@ -104,27 +104,27 @@ export function About() {
       expDesc: "吴东宪律师的涉华经验远非简单的语言进修，更包含了深入中国当地企业及机构的大量实务经验。",
       expList: [
         {
-          title: "🏢 韩国韩华(Hanwha)贸易集团 石化部门",
+          title: "韩国韩华(Hanwha)贸易集团 石化部门",
           date: "(2016. 12 ~ 2018. 03)",
           desc: "曾在韩国大企业韩华集团贸易部门处理对华石化产品的进出口业务。亲自起草和审核中英文合同，并直接联络应答海外分公司外籍员工，这些丰富的涉外业务经验，如今在其直接为涉华企业提供法律顾问服务中发挥着重要作用。"
         },
         {
-          title: "🌐 中国北京 基金会中心网 (China Foundation Center) 实习",
+          title: "中国北京 基金会中心网 (China Foundation Center) 实习",
           date: "(2015. 01 ~ 2015. 06)",
           desc: "于中国最大的非政府组织(NGO)信息平台基金会中心网(CFC)进行实习，开展中韩NGO资料的比较调查及中、韩、英互译业务，从而深入理解了中国非营利法人的运作结构及社会背景。"
         },
         {
-          title: "🥋 中国广西省 世界跆拳道和平服务财团",
+          title: "中国广西省 世界跆拳道和平服务财团",
           date: "(2014. 01)",
           desc: "在中国广西省当地承担跆拳道培训及中文口译工作，并积累了与中国地方社会展开直接交流的经验。"
         },
         {
-          title: "🏭 中国苏州市 某建筑材料企业 实习",
+          title: "中国苏州市 某建筑材料企业 实习",
           date: "(2012. 07)",
           desc: "在苏州天辅新型建材有限公司进行实习，负责市场动向摸底、资料搜集、中英韩翻译及现场实务操作。他用身体力行的方式深入了解了中国制造一线的商业惯例。"
         },
         {
-          title: "🎓 中国北京师范大学 研修",
+          title: "中国北京师范大学 研修",
           date: "(2012. 02)",
           desc: "通过在北京当地的语言和法制课程，直接接触学术界中文环境，这不仅是简单的语言进修，更是扎根中国当地生活的重要起点。"
         }
@@ -181,27 +181,27 @@ export function About() {
       expDesc: "Attorney Oh's China-related background goes far beyond mere language studies—it stems from hands-on professional experiences at Chinese enterprises and organizations.",
       expList: [
         {
-          title: "🏢 Hanwha Corporation Trade Div. - Petrochemical Team",
+          title: "Hanwha Corporation Trade Div. - Petrochemical Team",
           date: "(2016. 12 ~ 2018. 03)",
           desc: "Managed exports/imports of petrochemical products to/from China at Hanwha Corp, a top-tier Korean conglomerate. Responsibilities included independently drafting and auditing contracts in Chinese and English, as well as handling overseas branch correspondences. This practical experience forms the absolute foundation for his current Sino-Korean corporate litigation advisory."
         },
         {
-          title: "🌐 Beijing China Foundation Center (CFC) Internship",
+          title: "Beijing China Foundation Center (CFC) Internship",
           date: "(2015. 01 ~ 2015. 06)",
           desc: "Interned at China's largest NGO information hub (CFC), conducting comparative data analyses on Sino-Korean NGOs. This period laid out a profound insight into the mechanics and societal backgrounds of Chinese non-profit organizations."
         },
         {
-          title: "🥋 World Taekwondo Peace Corps in Guangxi, China",
+          title: "World Taekwondo Peace Corps in Guangxi, China",
           date: "(2014. 01)",
           desc: "Served as a martial arts instructor and official translator on-site in Guangxi. Experienced significant direct exposure to diverse regional dynamics in China."
         },
         {
-          title: "🏭 Construction Materiel Firm Internship in Suzhou, China",
+          title: "Construction Materiel Firm Internship in Suzhou, China",
           date: "(2012. 07)",
           desc: "Worked internally at Suzhou Chun-Bo New Construction Material Co., Ltd., dealing with market trends, site inspections, and trilingual translations (KR/CN/EN). Familiarized with the gritty, practical customs of Chinese manufacturing fields."
         },
         {
-          title: "🎓 Beijing Normal University Intensive Program",
+          title: "Beijing Normal University Intensive Program",
           date: "(2012. 02)",
           desc: "Participated in an intensive language and governance course in Beijing, establishing his initial strong academic and practical base within mainland China."
         }
