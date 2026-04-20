@@ -95,14 +95,14 @@ export function Layout() {
         )}
       >
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-24">
+          <div className="flex justify-between h-32">
             <div className="flex items-center">
               <Link to="/" className="flex-shrink-0 flex items-center">
                 <img
                   src={hangyoLogo}
                   alt="HANGYO"
                   className={clsx(
-                    "h-14 lg:h-16 w-auto transition-all duration-300",
+                    "h-24 lg:h-28 w-auto transition-all duration-300",
                     overlay ? "brightness-0 invert opacity-90 mix-blend-screen" : "mix-blend-multiply"
                   )}
                 />
@@ -174,7 +174,7 @@ export function Layout() {
       </nav>
 
       {/* Main Content — on home, pull up so hero photo extends behind header */}
-      <main className={clsx("flex-grow", isHome ? "-mt-[128px]" : "bg-white")}>
+      <main className={clsx("flex-grow", isHome ? "-mt-[168px]" : "bg-white")}>
         <Outlet />
       </main>
 
@@ -187,7 +187,7 @@ export function Layout() {
                 <img
                   src={hangyoLogo}
                   alt="HANGYO"
-                  className="h-10 lg:h-12 w-auto brightness-0 invert mix-blend-screen"
+                  className="h-12 lg:h-16 w-auto brightness-0 invert mix-blend-screen"
                 />
               </div>
               <p className="text-sm text-slate-500 max-w-sm mb-6 leading-relaxed font-medium">
