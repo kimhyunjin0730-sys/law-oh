@@ -3,6 +3,7 @@ import { Menu, X, ArrowRight, Globe, Phone } from "lucide-react";
 import { useState, useEffect } from "react";
 import clsx from "clsx";
 import { useLanguage } from "../context/LanguageContext";
+import { WeChatDialog } from "./WeChatDialog";
 import hangyoLogo from "../../assets/hangyo-logo.png";
 
 export function Layout() {
