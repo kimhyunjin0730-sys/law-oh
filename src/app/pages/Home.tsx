@@ -8,8 +8,8 @@ import { WeChatDialog } from "../components/WeChatDialog";
 export function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section — Cinematic */}
-      <section className="relative bg-[#050B14] text-white min-h-[760px] lg:min-h-[860px] flex items-end overflow-hidden">
+      {/* Hero Section — Cinematic (extends behind transparent header) */}
+      <section className="relative bg-[#050B14] text-white min-h-[900px] lg:min-h-[980px] flex items-end overflow-hidden pt-[128px]">
         {/* Background image */}
         <div className="absolute inset-0">
           <ImageWithFallback
@@ -17,14 +17,13 @@ export function Home() {
             alt="변호사 상담 이미지"
             className="w-full h-full object-cover object-center scale-[1.02]"
           />
-          {/* Layered cinematic overlays */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#050B14] via-[#050B14]/85 to-[#050B14]/30" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050B14] via-transparent to-[#050B14]/60" />
-          <div className="absolute inset-0 bg-[#050B14]/20" />
+          {/* Layered overlays — lightened so photo reads through more */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#050B14]/95 via-[#050B14]/55 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050B14] via-[#050B14]/20 to-[#050B14]/40" />
         </div>
 
         {/* Ghosted outline intro line — sits above main headline */}
-        <div className="absolute top-[14%] sm:top-[16%] lg:top-[18%] left-0 right-0 pointer-events-none z-10">
+        <div className="absolute top-[22%] sm:top-[24%] lg:top-[26%] left-0 right-0 pointer-events-none z-10">
           <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}

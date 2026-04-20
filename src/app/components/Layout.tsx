@@ -7,6 +7,7 @@ import { WeChatDialog } from "./WeChatDialog";
 
 export function Layout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const { language, setLanguage, t } = useLanguage();
 
@@ -15,6 +16,13 @@ export function Layout() {
     setIsMenuOpen(false);
   }, [location.pathname]);
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const navLinks = [
     { name: t("nav.home"), path: "/" },
     { name: t("nav.about"), path: "/about" },
@@ -22,43 +30,58 @@ export function Layout() {
     { name: t("nav.cases"), path: "/cases" },
   ];
 
+  const isHome = location.pathname === "/";
+  const overlay = isHome && !scrolled; // transparent header floating over hero photo
+
   return (
     <div className="min-h-screen flex flex-col font-sans bg-white text-slate-900 tracking-tight">
       {/* Top Utility Banner */}
-      <div className="bg-[#0f172a] text-slate-300 text-xs py-2 px-4 flex justify-between items-center sm:px-6 lg:px-8">
+      <div
+        className={clsx(
+          "text-xs py-2 px-4 flex justify-between items-center sm:px-6 lg:px-8 relative z-40 transition-colors duration-300",
+          overlay ? "bg-transparent text-slate-200" : "bg-[#0f172a] text-slate-300"
+        )}
+      >
         <div className="flex gap-6">
           <span className="flex items-center gap-2 tracking-wide font-medium"><Phone size={14} className="text-[#b59a5d]"/> {t("top.consult")} : 82-10-2999-6910</span>
           <span className="hidden sm:flex items-center gap-2 tracking-wide font-medium"><MessageCircle size={14} className="text-[#b59a5d]"/> {t("top.wechat")} : wudongxuan002</span>
         </div>
         <div className="flex items-center gap-6">
-          <div className="hidden lg:block text-slate-400 tracking-wider">
+          <div className={clsx("hidden lg:block tracking-wider transition-colors duration-300", overlay ? "text-slate-300/90" : "text-slate-400")}>
             {t("top.slogan")}
           </div>
           {/* Language Switcher */}
-          <div className="flex items-center gap-2 border-l border-slate-700 pl-6">
-            <Globe size={14} className="text-slate-400" />
-            <button onClick={() => setLanguage('ko')} className={clsx("hover:text-white font-bold transition-colors", language === 'ko' ? "text-white" : "text-slate-500")}>KO</button>
-            <span className="text-slate-600">|</span>
-            <button onClick={() => setLanguage('zh')} className={clsx("hover:text-white font-bold transition-colors", language === 'zh' ? "text-white" : "text-slate-500")}>ZH</button>
-            <span className="text-slate-600">|</span>
-            <button onClick={() => setLanguage('en')} className={clsx("hover:text-white font-bold transition-colors", language === 'en' ? "text-white" : "text-slate-500")}>EN</button>
+          <div className={clsx("flex items-center gap-2 border-l pl-6 transition-colors duration-300", overlay ? "border-white/20" : "border-slate-700")}>
+            <Globe size={14} className={clsx("transition-colors duration-300", overlay ? "text-slate-300/80" : "text-slate-400")} />
+            <button onClick={() => setLanguage('ko')} className={clsx("hover:text-white font-bold transition-colors", language === 'ko' ? "text-white" : overlay ? "text-slate-400" : "text-slate-500")}>KO</button>
+            <span className={clsx("transition-colors", overlay ? "text-white/20" : "text-slate-600")}>|</span>
+            <button onClick={() => setLanguage('zh')} className={clsx("hover:text-white font-bold transition-colors", language === 'zh' ? "text-white" : overlay ? "text-slate-400" : "text-slate-500")}>ZH</button>
+            <span className={clsx("transition-colors", overlay ? "text-white/20" : "text-slate-600")}>|</span>
+            <button onClick={() => setLanguage('en')} className={clsx("hover:text-white font-bold transition-colors", language === 'en' ? "text-white" : overlay ? "text-slate-400" : "text-slate-500")}>EN</button>
           </div>
         </div>
       </div>
 
       {/* Main Navbar */}
-      <nav className="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+      <nav
+        className={clsx(
+          "sticky top-0 z-50 transition-colors duration-300",
+          overlay
+            ? "bg-transparent"
+            : "bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm"
+        )}
+      >
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-24">
             <div className="flex items-center">
               <Link to="/" className="flex-shrink-0 flex items-center gap-3">
-                <div className="flex flex-col items-center justify-center border-2 border-slate-900 px-2 py-1">
-                  <span className="text-xl font-bold text-slate-900 leading-none tracking-tighter">BECOME</span>
-                  <span className="text-[10px] text-slate-900 font-bold tracking-widest uppercase">LAW FIRM</span>
+                <div className={clsx("flex flex-col items-center justify-center border-2 px-2 py-1 transition-colors duration-300", overlay ? "border-white" : "border-slate-900")}>
+                  <span className={clsx("text-xl font-bold leading-none tracking-tighter transition-colors duration-300", overlay ? "text-white" : "text-slate-900")}>BECOME</span>
+                  <span className={clsx("text-[10px] font-bold tracking-widest uppercase transition-colors duration-300", overlay ? "text-white" : "text-slate-900")}>LAW FIRM</span>
                 </div>
-                <div className="flex flex-col ml-1 border-l border-slate-300 pl-3">
-                  <span className="text-xl font-bold text-slate-900 leading-tight">법률사무소 비컴</span>
-                  <span className="text-xs text-slate-500 font-medium">중국어 특화 법률 서비스</span>
+                <div className={clsx("flex flex-col ml-1 border-l pl-3 transition-colors duration-300", overlay ? "border-white/30" : "border-slate-300")}>
+                  <span className={clsx("text-xl font-bold leading-tight transition-colors duration-300", overlay ? "text-white" : "text-slate-900")}>법률사무소 비컴</span>
+                  <span className={clsx("text-xs font-medium transition-colors duration-300", overlay ? "text-slate-300" : "text-slate-500")}>중국어 특화 법률 서비스</span>
                 </div>
               </Link>
             </div>
@@ -66,20 +89,27 @@ export function Layout() {
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center">
               <div className="flex space-x-12 mr-10">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.path}
-                    to={link.path}
-                    className={clsx(
-                      "inline-flex items-center text-lg font-bold transition-colors py-8 border-b-2",
-                      location.pathname === link.path
-                        ? "text-[#0f172a] border-[#0f172a]"
-                        : "text-slate-600 border-transparent hover:text-[#0f172a]"
-                    )}
-                  >
-                    {link.name}
-                  </Link>
-                ))}
+                {navLinks.map((link) => {
+                  const active = location.pathname === link.path;
+                  return (
+                    <Link
+                      key={link.path}
+                      to={link.path}
+                      className={clsx(
+                        "inline-flex items-center text-lg font-bold transition-colors duration-300 py-8 border-b-2",
+                        active
+                          ? overlay
+                            ? "text-white border-[#b59a5d]"
+                            : "text-[#0f172a] border-[#0f172a]"
+                          : overlay
+                            ? "text-slate-200 border-transparent hover:text-white"
+                            : "text-slate-600 border-transparent hover:text-[#0f172a]"
+                      )}
+                    >
+                      {link.name}
+                    </Link>
+                  );
+                })}
               </div>
               <WeChatDialog>
                 <button
@@ -96,7 +126,7 @@ export function Layout() {
             <div className="flex items-center md:hidden">
               <button
                 type="button"
-                className="inline-flex items-center justify-center p-2 text-slate-600 hover:text-slate-900 focus:outline-none"
+                className={clsx("inline-flex items-center justify-center p-2 focus:outline-none transition-colors duration-300", overlay ? "text-white hover:text-slate-200" : "text-slate-600 hover:text-slate-900")}
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
               >
                 {isMenuOpen ? <X className="block h-8 w-8" aria-hidden="true" /> : <Menu className="block h-8 w-8" aria-hidden="true" />}
@@ -146,8 +176,8 @@ export function Layout() {
         )}
       </nav>
 
-      {/* Main Content */}
-      <main className="flex-grow bg-white">
+      {/* Main Content — on home, pull up so hero photo extends behind header */}
+      <main className={clsx("flex-grow", isHome ? "-mt-[128px]" : "bg-white")}>
         <Outlet />
       </main>
 
