@@ -2,6 +2,7 @@ import { useLanguage } from "../../context/LanguageContext";
 import { getLegalContent, pick } from "../../../lib/legal/content";
 import { VisaMapDiagram } from "../../components/legal/VisaMapDiagram";
 import { DecisionTreeDiagram } from "../../components/legal/DecisionTreeDiagram";
+import { ProcedureFlowDiagram } from "../../components/legal/ProcedureFlowDiagram";
 
 export function Immigration() {
   const { language } = useLanguage();
@@ -20,6 +21,12 @@ export function Immigration() {
         lang={language}
         title="내 상황에 맞는 절차"
         ariaSummary="질문에 Yes/No로 답하며 필요한 절차를 찾는 의사결정 트리"
+      />
+      <ProcedureFlowDiagram
+        steps={c.procedure}
+        lang={language}
+        title="절차 플로우"
+        ariaSummary="체류자격 절차의 4~6단계와 각 단계별 담당기관·소요일·관련 조문"
       />
     </div>
   );
