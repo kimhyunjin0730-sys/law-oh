@@ -4,7 +4,7 @@ import { getServices, getServiceById } from "../../lib/services/data";
 import { PageSubnav } from "../components/legal/PageSubnav";
 import { LegalSidebar } from "../components/legal/LegalSidebar";
 import { LegalQuickMenu } from "../components/legal/LegalQuickMenu";
-import { ConsultPill } from "../components/pill/ConsultPill";
+import { ConsultPill } from "../components/legal/ConsultPill";
 import { SectionHeader } from "../components/legal/SectionHeader";
 import { useLanguage } from "../context/LanguageContext";
 
