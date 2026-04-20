@@ -12,7 +12,7 @@ export function Home() {
 
   const content = {
     ko: {
-      heroTitle: <>당신의 언어로 생각하고,<br className="hidden sm:block" /> 한국의 법률로 <span className="text-[#2563EB]">보호합니다.</span></>,
+      heroTitle: <>Think in Your Language,<br className="hidden sm:block" /> Defend in <span className="text-[#2563EB]">Korean Law.</span></>,
       heroSub: <>한국어와 중국어, 두 언어로 당신의 권리를 직접 지킵니다.<br /><span className="text-slate-400/80">韩国与中国，用两种语言守护您的权利。</span></>,
       quickMenu: {
         title: <>Quick<br />Menu</>,
@@ -215,7 +215,7 @@ export function Home() {
       }
     },
     zh: {
-      heroTitle: <>用中文为您思考,<br className="hidden sm:block" /> 用韓法为您 <span className="text-[#2563EB]">辩护。</span></>,
+      heroTitle: <>Think in Your Language,<br className="hidden sm:block" /> Defend in <span className="text-[#2563EB]">Korean Law.</span></>,
       heroSub: <>韩国和中国, 用两种语言守护您的权利。<br /><span className="text-slate-400/80">韩国与中国，用两种语言守护您的权利。</span></>,
       quickMenu: {
         title: <>快捷<br />菜单</>,
