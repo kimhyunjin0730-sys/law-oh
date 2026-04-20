@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { useLanguage } from "../../context/LanguageContext";
 import { getLegalContent, pick } from "../../../lib/legal/content";
-import { LegalHero } from "../../components/legal/LegalHero";
+import { SectionHeading } from "../../components/SectionHeading";
 import { OverviewProse } from "../../components/legal/OverviewProse";
 import { VisaTable } from "../../components/legal/VisaTable";
 import { ProcedureList } from "../../components/legal/ProcedureList";
@@ -61,22 +61,28 @@ export function Immigration() {
 
   // Major cases (placeholder — real data to be wired later)
   const cases = [
-    { label: "F-6 결혼이민 거부 처분, 이의신청을 통한 허가 전환", to: "/cases" },
-    { label: "D-2 유학 비자 사기 혐의 무혐의 처분", to: "/cases" },
-    { label: "강제퇴거명령 집행정지 후 본안 취소 판결 확보", to: "/cases" },
-    { label: "H-2 방문취업 자격 취소 처분 행정소송 승소", to: "/cases" },
+    { label: language === "ko" ? "F-6 결혼이민 거부 처분, 이의신청을 통한 허가 전환" : language === "zh" ? "F-6 结婚移民拒签处分，通过异议申请转为许可" : "F-6 marriage visa denial overturned through appeal", to: "/cases" },
+    { label: language === "ko" ? "D-2 유학 비자 사기 혐의 무혐의 처분" : language === "zh" ? "D-2 留学签证诈骗嫌疑无罪处分" : "D-2 study visa fraud charges dismissed", to: "/cases" },
+    { label: language === "ko" ? "강제퇴거명령 집행정지 후 본안 취소 판결 확보" : language === "zh" ? "强制遣返命令中止执行后获得撤销判决" : "Secured cancellation of deportation order after suspension of execution", to: "/cases" },
+    { label: language === "ko" ? "H-2 방문취업 자격 취소 처분 행정소송 승소" : language === "zh" ? "H-2 访问就业资格取消处分行政诉讼胜诉" : "Won administrative lawsuit against H-2 visa cancellation", to: "/cases" },
   ];
 
   // Related practices
   const practices = [
-    { label: "국적 · 귀화", to: "/legal/nationality" },
-    { label: "국제 결혼", to: "/legal/family" },
-    { label: "난민 · 인도", to: "/legal/refugee" },
-    { label: "강제퇴거", to: "/legal/deport" },
-    { label: "외국인 형사", to: "/legal/criminal" },
-    { label: "투자 비자", to: "/services" },
-    { label: "고용허가제", to: "/services" },
+    { label: language === "ko" ? "국적 · 귀화" : language === "zh" ? "国籍 · 归化" : "Nationality", to: "/legal/nationality" },
+    { label: language === "ko" ? "국제 결혼" : language === "zh" ? "国际婚姻" : "Int'l Marriage", to: "/legal/family" },
+    { label: language === "ko" ? "난민 · 인도" : language === "zh" ? "难民 · 人道" : "Refugee", to: "/legal/refugee" },
+    { label: language === "ko" ? "강제퇴거" : language === "zh" ? "强制遣返" : "Deportation", to: "/legal/deport" },
+    { label: language === "ko" ? "외국인 형사" : language === "zh" ? "外国人刑事" : "Criminal", to: "/legal/criminal" },
+    { label: language === "ko" ? "투자 비자" : language === "zh" ? "投资签证" : "Investment Visa", to: "/services" },
+    { label: language === "ko" ? "고용허가제" : language === "zh" ? "雇佣许可制" : "EPS", to: "/services" },
   ];
+
+  const metaLabels = {
+    ko: { update: "최종 업데이트", revision: "최신 시행 반영", version: "버전" },
+    zh: { update: "最终更新", revision: "反映最新施行", version: "版本" },
+    en: { update: "Last Updated", revision: "Current Revision", version: "Version" }
+  }[language];
 
   const ctaCopy = {
     ko: {
@@ -106,20 +112,17 @@ export function Immigration() {
   }[language];
 
   return (
-    <div className="bg-[#f4f6fa] min-h-screen legal-body">
-      {/* Page sub-nav across legal topics */}
-      <PageSubnav items={subnavItems} />
-
-      {/* Hero */}
-      <LegalHero
-        content={c}
-        lang={language}
-        highlight={titleHighlight}
-        eyebrow="VISA · IMMIGRATION"
-      />
+    <div className="bg-white min-h-screen pt-24 pb-32 legal-body">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionHeading 
+          title={pick(c.title, language)} 
+          subtitle={pick(c.summary, language)} 
+          centered={true}
+        />
+      </div>
 
       {/* 2-column main layout */}
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pt-14 lg:pt-16 pb-20 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_360px] gap-10 lg:gap-16">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 mt-12 lg:mt-16 pb-20 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_360px] gap-10 lg:gap-16">
         <main>
           <OverviewProse text={pick(c.overview, language)} lang={language} highlights={overviewHighlights} count={1} total={6} />
           <VisaTable visas={c.visas} lang={language} count={2} total={6} />
@@ -188,9 +191,9 @@ export function Immigration() {
           <SourceBlock content={c} lang={language} />
           <DisclaimerBlock content={c} lang={language} />
           <div className="md:col-span-2 mt-6 pt-4 border-t border-[#dbe1ea] flex flex-wrap gap-x-6 gap-y-2 font-mono text-[10px] tracking-wide text-[#94a3b8]">
-            <span>최종 업데이트 · {c.meta.generatedAt.slice(0, 10)}</span>
-            <span>최신 시행 반영 · {c.meta.lastRevisionAt}</span>
-            <span>버전 · IMM-v1.0</span>
+            <span>{metaLabels.update} · {c.meta.generatedAt.slice(0, 10)}</span>
+            <span>{metaLabels.revision} · {c.meta.lastRevisionAt}</span>
+            <span>{metaLabels.version} · IMM-v1.0</span>
           </div>
         </div>
       </section>

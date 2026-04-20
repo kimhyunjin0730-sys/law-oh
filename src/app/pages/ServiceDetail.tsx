@@ -1,11 +1,12 @@
 import { useParams, Navigate, Link } from "react-router";
 import { Check } from "lucide-react";
-import { SERVICES, getServiceById } from "../../lib/services/data";
+import { getServices, getServiceById } from "../../lib/services/data";
 import { PageSubnav } from "../components/legal/PageSubnav";
 import { LegalSidebar } from "../components/legal/LegalSidebar";
 import { LegalQuickMenu } from "../components/legal/LegalQuickMenu";
-import { ConsultPill } from "../components/legal/ConsultPill";
+import { ConsultPill } from "../components/pill/ConsultPill";
 import { SectionHeader } from "../components/legal/SectionHeader";
+import { useLanguage } from "../context/LanguageContext";
 
 /** Renders a service title with the configured highlight word wrapped in a buttercream mark. */
 function TitleWithMark({ title, mark }: { title: string; mark: string }) {
@@ -30,29 +31,95 @@ function TitleWithMark({ title, mark }: { title: string; mark: string }) {
 }
 
 export function ServiceDetail() {
+  const { language } = useLanguage();
   const { slug } = useParams<{ slug: string }>();
-  const svc = slug ? getServiceById(slug) : undefined;
+  const svc = slug ? getServiceById(slug, language) : undefined;
+  
   if (!svc) return <Navigate to="/services" replace />;
 
-  const subnavItems = SERVICES.map((s) => ({
+  const currentServices = getServices(language);
+
+  const subnavItems = currentServices.map((s) => ({
     label: s.title.replace(/\s*[(·].*$/, "").replace(/^.*?·\s*/, ""), // short label
     to: `/services/${s.id}`,
   }));
-  // Fallback: use the second word if cleanup produced an empty string
-  subnavItems.forEach((it, i) => { if (!it.label) it.label = SERVICES[i].title; });
+  // Fallback: use the original title if cleanup produced an empty string
+  subnavItems.forEach((it, i) => { if (!it.label) it.label = currentServices[i].title; });
+
+  const tocLabels = {
+    ko: "개관",
+    zh: "概述",
+    en: "Overview"
+  };
 
   const toc = svc.sections.map((s, i) => ({ id: `section-${i}`, label: s.title }));
-  // Prepend overview entry
-  toc.unshift({ id: "overview", label: "개관" });
+  toc.unshift({ id: "overview", label: tocLabels[language as keyof typeof tocLabels] || tocLabels.ko });
 
   const cases = (svc.cases ?? []).map((label) => ({ label, to: "/cases" }));
-  const practices = SERVICES.filter((s) => s.id !== svc.id).map((s) => ({
+  const practices = currentServices.filter((s) => s.id !== svc.id).map((s) => ({
     label: s.title.replace(/\s*[(·].*$/, ""),
     to: `/services/${s.id}`,
   }));
 
+  const ui = {
+    ko: {
+      home: "홈",
+      practice: "주요업무",
+      leadLawyer: "대표 변호사",
+      lawyerName: "오동현",
+      langLabel: "상담 언어",
+      languages: "한국어 · 中文",
+      wechatLabel: "긴급 위챗",
+      wechatValue: "24시간 대응",
+      sidebarCtaTitle: "개별 사안은 다릅니다.\n변호사와 상담하세요.",
+      sidebarCtaBody: "중국어 직접 상담 가능. 의뢰인의 사실관계와 사건 단계에 따라 결과가 달라집니다.",
+      sidebarCtaBtn: "온라인 상담 접수 →",
+      bottomCtaEyebrow: "한교 — 法律事務所 · 韩桥",
+      bottomCtaH: "지금 상황을\n변호사와 공유하세요.",
+      bottomCtaP: "사건 단계가 진행될수록 회복이 어려워집니다. 한국어가 어렵다면 중국어로 직접 설명해 드립니다.",
+      bottomCtaPrimary: "온라인 상담 접수",
+      bottomCtaSecondary: "전화 상담 82-10-2999-6910"
+    },
+    zh: {
+      home: "首页",
+      practice: "主要业务",
+      leadLawyer: "代表律师",
+      lawyerName: "吴东宪",
+      langLabel: "咨询语言",
+      languages: "韩语 · 中文",
+      wechatLabel: "紧急微信",
+      wechatValue: "24 小时应对",
+      sidebarCtaTitle: "个案情况各异。\n请咨询律师。",
+      sidebarCtaBody: "可中文直接咨询。结果会根据委托人的事实关系和案件阶段而有所不同。",
+      sidebarCtaBtn: "在线咨询申请 →",
+      bottomCtaEyebrow: "韩桥 — 法律事务所 · Hangyo",
+      bottomCtaH: "请将目前的情况\n告知律师。",
+      bottomCtaP: "案件进展越深，越难以挽回。如果韩语沟通有困难，我们将直接用中文为您讲解。",
+      bottomCtaPrimary: "在线咨询申请",
+      bottomCtaSecondary: "电话咨询 82-10-2999-6910"
+    },
+    en: {
+      home: "Home",
+      practice: "Practice Areas",
+      leadLawyer: "Lead Attorney",
+      lawyerName: "Donghyun Oh",
+      langLabel: "Languages",
+      languages: "Korean · Chinese",
+      wechatLabel: "Urgent WeChat",
+      wechatValue: "24/7 Response",
+      sidebarCtaTitle: "Every case is unique.\nConsult with a lawyer.",
+      sidebarCtaBody: "Direct Chinese consultation available. Outcome varies by facts and case stage.",
+      sidebarCtaBtn: "Online Inquiry →",
+      bottomCtaEyebrow: "Hangyo — Law Firm · 韩桥",
+      bottomCtaH: "Share your situation\nwith a lawyer now.",
+      bottomCtaP: "The further a case proceeds, the harder it is to recover. If Korean is difficult, we consult directly in Chinese.",
+      bottomCtaPrimary: "Online Inquiry",
+      bottomCtaSecondary: "Call 82-10-2999-6910"
+    }
+  }[language as keyof typeof ui] || ui.ko;
+
   return (
-    <div className="bg-[#f4f6fa] min-h-screen legal-body">
+    <div className="bg-white min-h-screen legal-body">
       {/* Sub-nav across all service practice areas */}
       <PageSubnav items={subnavItems.map((it) => ({ ...it, soon: false }))} />
 
@@ -61,9 +128,9 @@ export function ServiceDetail() {
         <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_1fr] gap-10 lg:gap-14 items-end">
           <div>
             <div className="flex items-center gap-2 mb-6 font-mono text-[11px] font-bold tracking-[0.12em] uppercase text-[#94a3b8]">
-              <Link to="/" className="hover:text-[#0f172a] transition-colors">홈</Link>
+              <Link to="/" className="hover:text-[#0f172a] transition-colors">{ui.home}</Link>
               <span className="text-[#dbe1ea]">›</span>
-              <Link to="/services" className="hover:text-[#0f172a] transition-colors">주요업무</Link>
+              <Link to="/services" className="hover:text-[#0f172a] transition-colors">{ui.practice}</Link>
               <span className="text-[#dbe1ea]">›</span>
               <span className="text-[#0f172a]">{svc.title}</span>
             </div>
@@ -82,26 +149,26 @@ export function ServiceDetail() {
             <dl className="mt-8 pt-6 border-t border-[#dbe1ea] flex flex-wrap gap-x-8 gap-y-4">
               <div>
                 <dt className="font-mono text-[10px] font-bold tracking-[0.14em] uppercase text-[#94a3b8] mb-1">
-                  대표 변호사
+                  {ui.leadLawyer}
                 </dt>
                 <dd className="font-serif-ko font-bold text-[17px] text-[#0f172a] tracking-tight">
-                  오동현
+                  {ui.lawyerName}
                 </dd>
               </div>
               <div>
                 <dt className="font-mono text-[10px] font-bold tracking-[0.14em] uppercase text-[#94a3b8] mb-1">
-                  상담 언어
+                  {ui.langLabel}
                 </dt>
                 <dd className="font-serif-ko font-bold text-[17px] text-[#0f172a] tracking-tight">
-                  한국어 · 中文
+                  {ui.languages}
                 </dd>
               </div>
               <div>
                 <dt className="font-mono text-[10px] font-bold tracking-[0.14em] uppercase text-[#94a3b8] mb-1">
-                  긴급 위챗
+                  {ui.wechatLabel}
                 </dt>
                 <dd className="font-serif-ko font-bold text-[17px] text-[#0f172a] tracking-tight">
-                  24시간 대응
+                  {ui.wechatValue}
                 </dd>
               </div>
             </dl>
@@ -152,7 +219,7 @@ export function ServiceDetail() {
         <main>
           {/* Overview */}
           <section className="mb-[72px]" id="overview">
-            <SectionHeader id="overview" title="개관" count={1} total={svc.sections.length + 1} />
+            <SectionHeader id="overview" title={tocLabels[language as keyof typeof tocLabels] || tocLabels.ko} count={1} total={svc.sections.length + 1} />
             <div className="text-[16.5px] leading-[1.85] text-[#0f172a] space-y-[18px]">
               {svc.overview.map((p, i) => (
                 <p key={i}>{p}</p>
@@ -171,7 +238,7 @@ export function ServiceDetail() {
               />
               <ul className="grid grid-cols-1 gap-2.5">
                 {sec.items.map((item, idx) => {
-                  const [main, sub] = item.split(/:\s+/);
+                  const [main, sub] = item.split(/[:：]\s*/);
                   return (
                     <li
                       key={idx}
@@ -204,9 +271,9 @@ export function ServiceDetail() {
           toc={toc}
           cases={cases}
           practices={practices}
-          ctaTitle={"개별 사안은 다릅니다.\n변호사와 상담하세요."}
-          ctaBody="중국어 직접 상담 가능. 의뢰인의 사실관계와 사건 단계에 따라 결과가 달라집니다."
-          ctaButtonLabel="온라인 상담 접수 →"
+          ctaTitle={ui.sidebarCtaTitle}
+          ctaBody={ui.sidebarCtaBody}
+          ctaButtonLabel={ui.sidebarCtaBtn}
           ctaHref="/#consult"
           needsLawyerEyebrow="Need a lawyer?"
         />
@@ -225,13 +292,13 @@ export function ServiceDetail() {
         <div className="relative max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-12 lg:gap-16 items-center">
           <div>
             <p className="font-mono text-[11px] font-bold tracking-[0.26em] uppercase text-[#2563EB] mb-5">
-              한교 — 法律事務所 · 韩桥
+              {ui.bottomCtaEyebrow}
             </p>
-            <h2 className="font-serif-ko font-bold text-[28px] sm:text-[34px] lg:text-[42px] leading-[1.25] tracking-tight mb-4">
-              지금 상황을<br />변호사와 공유하세요.
+            <h2 className="font-serif-ko font-bold text-[28px] sm:text-[34px] lg:text-[42px] leading-[1.25] tracking-tight mb-4 whitespace-pre-line">
+              {ui.bottomCtaH}
             </h2>
             <p className="text-[16px] leading-[1.65] opacity-75 max-w-[480px]">
-              사건 단계가 진행될수록 회복이 어려워집니다. 한국어가 어렵다면 중국어로 직접 설명해 드립니다.
+              {ui.bottomCtaP}
             </p>
           </div>
           <div className="flex flex-col gap-3.5">
@@ -239,14 +306,14 @@ export function ServiceDetail() {
               to="/#consult"
               className="inline-flex items-center justify-between gap-4 bg-[#2563EB] text-[#020617] py-5 px-7 font-serif-ko font-bold text-[17px] tracking-tight transition-all hover:bg-[#fff3a8] hover:-translate-y-0.5 group"
             >
-              <span>온라인 상담 접수</span>
+              <span>{ui.bottomCtaPrimary}</span>
               <span className="font-mono text-[22px] transition-transform group-hover:translate-x-1">→</span>
             </Link>
             <a
               href="tel:82-10-2999-6910"
               className="inline-flex items-center justify-between gap-4 border border-white/25 text-[#f4f6fa] py-4 px-7 font-semibold text-[14.5px] transition-colors hover:border-[#2563EB] hover:text-[#2563EB]"
             >
-              <span>전화 상담  82-10-2999-6910</span>
+              <span>{ui.bottomCtaSecondary}</span>
               <span>📞</span>
             </a>
           </div>

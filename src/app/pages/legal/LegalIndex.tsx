@@ -16,7 +16,7 @@ export function LegalIndex() {
     language === "zh" ? x.titleZh : language === "en" ? x.titleEn : x.title;
 
   return (
-    <div className="bg-[#faf6ef] min-h-screen pt-24 pb-32">
+    <div className="bg-white min-h-screen pt-24 pb-32">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading title={t("legal.index.title")} subtitle={t("legal.index.subtitle")} centered />
         <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">

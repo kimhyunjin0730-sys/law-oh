@@ -27,6 +27,11 @@ const translations = {
     'footer.links': 'Quick Links',
     'footer.rights': 'Copyright © 2026 HANGYO Law Firm. All rights reserved.',
     'footer.disclaimer': '본 웹사이트의 내용은 일반적인 정보 제공을 목적으로 하며, 구체적인 사안에 대한 법률 자문이 아닙니다.',
+    'footer.label.lawyer': '대표 변호사',
+    'footer.label.phone': '전화번호',
+    'footer.label.email': '이메일',
+    'footer.label.wechat': 'WeChat',
+    'lawyerName': '오동현',
   },
   zh: {
     'nav.home': '韩桥 律师事务所',
@@ -41,11 +46,16 @@ const translations = {
     'top.consult': '咨询热线',
     'top.wechat': '微信咨询',
     'top.slogan': '韩国与中国，用两种语言守护您的权利。',
-    'footer.desc': '在韩国遇到法律问题时，最害怕的是“我的话没有被正确传达”。韩桥 律师事务所以在中国当地的经验为基础，用您的语言直接倾听您的故事。',
+    'footer.desc': '在韩国遇到法律问题时，最害怕的是“我的话没有被正确传达”。韩桥 律师事务公司以在中国当地的经验为基础，用您的语言直接倾听您的故事。',
     'footer.contact': '联系我们',
     'footer.links': '快速链接',
     'footer.rights': 'Copyright © 2026 韩桥 律师事务所. 保留所有权利。',
     'footer.disclaimer': '本网站内容仅供参考，不构成具体案件的法律咨询。',
+    'footer.label.lawyer': '主任律师',
+    'footer.label.phone': '电话号码',
+    'footer.label.email': '电子邮箱',
+    'footer.label.wechat': '微信',
+    'lawyerName': '吴东宪',
   },
   en: {
     'nav.home': 'HANGYO Law Firm',
@@ -65,6 +75,11 @@ const translations = {
     'footer.links': 'Quick Links',
     'footer.rights': 'Copyright © 2026 HANGYO Law Firm. All rights reserved.',
     'footer.disclaimer': 'The content of this website is for general information purposes only and does not constitute legal advice for specific cases.',
+    'footer.label.lawyer': 'Managing Partner',
+    'footer.label.phone': 'Phone',
+    'footer.label.email': 'Email',
+    'footer.label.wechat': 'WeChat',
+    'lawyerName': 'Donghyun Oh',
   }
 };
 

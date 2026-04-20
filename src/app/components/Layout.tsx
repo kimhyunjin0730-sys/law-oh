@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import clsx from "clsx";
 import { useLanguage } from "../context/LanguageContext";
 import { WeChatDialog } from "./WeChatDialog";
-import hangyoLogo from "../../assets/hangyo-logo-new.png";
+import hangyoLogo from "../../assets/hangyo.png";
 
 export function Layout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -198,10 +198,10 @@ export function Layout() {
             <div className="col-span-1 md:col-span-4">
               <h3 className="text-sm font-bold text-white tracking-widest uppercase mb-6">{t("footer.contact")}</h3>
               <div className="space-y-3 text-sm font-medium text-slate-400">
-                <p className="flex items-center gap-2"><strong className="text-slate-300 w-16">대표 변호사</strong> 오동현</p>
-                <p className="flex items-center gap-2"><strong className="text-slate-300 w-16">전화번호</strong> 82-10-2999-6910</p>
-                <p className="flex items-center gap-2"><strong className="text-slate-300 w-16">이메일</strong> lawohdh@gmail.com</p>
-                <p className="flex items-center gap-2"><strong className="text-slate-300 w-16">WeChat</strong> wudongxuan002</p>
+                <p className="flex items-center gap-2"><strong className="text-slate-300 w-16">{t("footer.label.lawyer")}</strong> {t("lawyerName") || "오동현"}</p>
+                <p className="flex items-center gap-2"><strong className="text-slate-300 w-16">{t("footer.label.phone")}</strong> 82-10-2999-6910</p>
+                <p className="flex items-center gap-2"><strong className="text-slate-300 w-16">{t("footer.label.email")}</strong> lawohdh@gmail.com</p>
+                <p className="flex items-center gap-2"><strong className="text-slate-300 w-16">{t("footer.label.wechat")}</strong> wudongxuan002</p>
               </div>
             </div>
 
