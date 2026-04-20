@@ -1,307 +1,153 @@
-import { motion } from "motion/react";
-import { ShieldCheck, Scale, FileText, Briefcase, HeartHandshake, ArrowRight, MessageCircle } from "lucide-react";
+import { SectionHeading } from "../components/SectionHeading";
+import { ShieldCheck, Scale, FileText, Briefcase, HeartHandshake, CheckCircle2, ArrowRight } from "lucide-react";
 import { WeChatDialog } from "../components/WeChatDialog";
 
-type Service = {
-  id: string;
-  no: string;
-  icon: JSX.Element;
-  title: string;
-  cn: string;
-  tagline: string;
-  description: string;
-  items: { title: string; desc: string }[];
-};
-
 export function Services() {
-  const services: Service[] = [
+  const services = [
     {
       id: "immigration",
-      no: "01",
-      icon: <ShieldCheck className="w-10 h-10 text-[#b59a5d]" strokeWidth={1.4} />,
+      icon: <ShieldCheck className="w-16 h-16 text-[#b59a5d] mb-8" />,
       title: "체류 자격 · 출입국 법률 자문",
-      cn: "签证·出入境法律咨询",
-      tagline: "한국에서의 삶을 지키는 가장 중요한 법률 서비스입니다.",
-      description:
-        "형사 처벌·벌금형·음주운전 등 사소해 보이는 사건이 F-4(재외동포)·H-2(방문취업) 체류 자격 취소 또는 강제퇴거로 이어질 수 있습니다. 형사 사건 수임 즉시 체류 자격에 미치는 영향을 병행 분석하여, 처벌 수위를 낮추는 동시에 체류 자격 유지 전략을 수립합니다.",
+      cn: "(签证·出入境)",
+      description: "형사 사건 수임 즉시 체류 자격에 미치는 영향을 병행 분석하여 전략을 수립합니다.",
       items: [
-        {
-          title: "F-4 · H-2 체류 자격 유지 전략",
-          desc: "재외동포·방문취업 비자 유지 로드맵 수립",
-        },
-        {
-          title: "형사 처벌 시 체류 영향 사전 진단",
-          desc: "처벌 수위별 체류 자격 취소 가능성 스코어링",
-        },
-        {
-          title: "체류 자격 변경 · 연장 자문",
-          desc: "비자 카테고리 변경·연장 신청 전반",
-        },
-        {
-          title: "강제퇴거 명령 불복 · 이의신청",
-          desc: "행정소송 및 이의신청 절차 대응",
-        },
-        {
-          title: "출입국 단속 시 긴급 대응",
-          desc: "24시간 위챗 핫라인 상시 대응",
-        },
+        "F-4(재외동포), H-2(방문취업) 체류 자격 유지 전략",
+        "형사 처벌 확정 시 체류 자격 취소 가능성 사전 진단",
+        "강제퇴거 명령 불복 및 이의신청 대응",
+        "출입국 단속 시 긴급 대응 (위챗 24시간)"
       ],
+      color: "border-[#b59a5d]"
     },
     {
       id: "criminal",
-      no: "02",
-      icon: <Scale className="w-10 h-10 text-[#b59a5d]" strokeWidth={1.4} />,
+      icon: <Scale className="w-16 h-16 text-[#b59a5d] mb-8" />,
       title: "형사 사건",
-      cn: "刑事案件",
-      tagline: "경찰서에서 연락이 왔다면, 먼저 변호사에게.",
-      description:
-        "형사 사건은 초기 대응이 결과를 좌우합니다. 중국어권 의뢰인은 언어 장벽으로 수사 초기에 불리한 진술을 하거나 권리를 행사하지 못하는 경우가 많아, 수사 단계부터 변호인으로 참여하여 권리를 최대한 보호합니다.",
+      cn: "(刑事案件)",
+      description: "억울한 혐의는 벗고, 피해는 신속히 구제받을 수 있도록 치밀하게 조력합니다.",
       items: [
-        {
-          title: "보이스피싱 전달책 혐의 방어",
-          desc: "고의성 부존재·피해자성 주장으로 불기소·무죄 목표",
-        },
-        {
-          title: "투자 사기 피해 고소 (주식·코인·로맨스)",
-          desc: "피해 사실 입증, 피의자 특정, 수사기관 대응까지 전 과정 지원",
-        },
-        {
-          title: "업무상 횡령 혐의 방어",
-          desc: "계좌·회계 자료 분석 기반 불법영득의사 부존재 입증",
-        },
-        {
-          title: "정보통신망법 위반",
-          desc: "관리자 권한 남용·개인정보 무단 열람 — 고소·피고소 양측 경험",
-        },
-        {
-          title: "성범죄 혐의 방어 (강제추행 등)",
-          desc: "사실관계·증거 검토로 무고 가능성 및 피의자 권리 보호",
-        },
-        {
-          title: "교통사고 · 음주운전",
-          desc: "치상·음주 혐의에서 체류 자격 영향 동시 분석",
-        },
+        "보이스피싱 전달책 혐의 방어: 고의성 부존재 입증을 통한 불기소/무죄 목표",
+        "투자 사기 피해 고소: 주식, 코인, 로맨스스캠 등 사기 피해 전 과정 지원",
+        "업무상 횡령 혐의 방어: 회계 자료 분석을 통한 불법영득의사 부존재 입증",
+        "정보통신망법 위반: 관리자 권한 남용, 개인정보 무단 열람 등 대응",
+        "성범죄 및 교통사고: 강제추행 혐의 방어 및 음주운전 체류 자격 관리"
       ],
+      color: "border-[#0f172a]"
     },
     {
       id: "civil",
-      no: "03",
-      icon: <FileText className="w-10 h-10 text-[#b59a5d]" strokeWidth={1.4} />,
+      icon: <FileText className="w-16 h-16 text-[#b59a5d] mb-8" />,
       title: "민사 · 금융 사건",
-      cn: "民事·金融案件",
-      tagline: "복잡한 금전 분쟁에서 재산권을 끝까지 보호합니다.",
-      description:
-        "자금 흐름 분석과 법리 검토를 정밀하게 결합해, 억울한 피고가 되는 상황을 방어하고 채권 회수·정당한 청구 대리에서도 유리한 결과를 만들어냅니다.",
+      cn: "(民事·金融案件)",
+      description: "복잡한 금전 분쟁에서 의뢰인의 재산권을 끝까지 보호합니다.",
       items: [
-        {
-          title: "보이스피싱 피해자 채무부존재확인 소송 방어",
-          desc: "자금 흐름 분석 — 피해자성 입증 / 부당이득반환의무 부존재 / 공동불법행위 책임 부존재 주장",
-        },
-        {
-          title: "P2P 연대보증채무 청구 사건",
-          desc: "온투업법 특수성 기반 연대보증계약 유효성·대표이사 책임 범위 분석 — 원·피고 양측 대리 경험",
-        },
-        {
-          title: "중고차 3자 사기 사건",
-          desc: "선의 매수인 보호 법리 + 원고 과실 입증으로 다수 성공 수행",
-        },
-        {
-          title: "손해배상 청구 방어 (방조 책임 부존재)",
-          desc: "대표이사 편취 행위에 대한 직원 방조 청구 방어 — 실질적 의사결정 관여 부존재 입증",
-        },
+        "채무부존재확인 소송 방어: 보이스피싱 계좌 연루 피해자의 억울한 민사 책임 방어",
+        "P2P 금융 사건: 온라인투자연계금융 연대보증채무 청구 사건 대리",
+        "중고차 3자 사기: 선의의 매수인 보호 법리 및 원고 과실 입증",
+        "손해배상 청구 방어: 직원의 방조 책임 부존재 입증"
       ],
+      color: "border-[#0f172a]"
     },
     {
       id: "corporate",
-      no: "04",
-      icon: <Briefcase className="w-10 h-10 text-[#b59a5d]" strokeWidth={1.4} />,
+      icon: <Briefcase className="w-16 h-16 text-[#b59a5d] mb-8" />,
       title: "대중(對中) 계약 · 기업 자문",
-      cn: "涉华合同·企业咨询",
-      tagline: "중국어 원문을 직접 읽고 검토합니다. 번역본에 의존하지 않습니다.",
-      description:
-        "㈜한화/무역 재직 시 대중 석유화학 제품 수출입 계약을 직접 체결·검토한 실무 경험을 토대로, 중국 기업과의 계약 리스크를 원문 기준으로 분석합니다.",
+      cn: "(涉华合同·企业)",
+      description: "중국어 원문을 기준으로 리스크를 직접 분석하고 검토합니다.",
       items: [
-        {
-          title: "한중 수출입 계약서 작성 · 검토",
-          desc: "영문·중문 계약서 원문 기반 리스크 직접 분석",
-        },
-        {
-          title: "비영리 재단법인 설립 자문",
-          desc: "정관 작성 및 한·중 비영리 법인 운영 구조 이해 기반 자문",
-        },
-        {
-          title: "중국 기업 분쟁 해결",
-          desc: "대금 미지급·지식재산권 침해 — 한국 법원 소송 및 중재 절차 안내",
-        },
-        {
-          title: "한·중·영 이중언어 법률 문서",
-          desc: "계약서·내용증명·법률의견서 다중언어 작성",
-        },
+        "한중 수출입 계약: 중국어 원문 기준으로 리스크 직접 분석 및 검토",
+        "비영리 법인 자문: 재단법인 설립 정관 작성 및 양국 운영 구조 자문",
+        "분쟁 해결: 중국 기업과의 대금 미지급, 지식재산권 침해 소송 자문",
+        "이중언어 문서: 한·중·영 다중언어 법률 문서 작성"
       ],
+      color: "border-[#0f172a]"
     },
     {
       id: "family",
-      no: "05",
-      icon: <HeartHandshake className="w-10 h-10 text-[#b59a5d]" strokeWidth={1.4} />,
+      icon: <HeartHandshake className="w-16 h-16 text-[#b59a5d] mb-8" />,
       title: "가사 · 상속 사건",
-      cn: "家事·继承案件",
-      tagline: "국경을 넘나드는 가족 문제를 합리적으로 해결합니다.",
-      description:
-        "이혼, 상속, 판결 효력 — 한·중 양국의 가족법 교차 영역에서 양국 법리를 이해하는 변호사가 직접 자문합니다.",
+      cn: "(家事·继承)",
+      description: "국경을 넘나드는 가족 간의 문제를 합리적으로 해결합니다.",
       items: [
-        {
-          title: "이혼 및 위자료 청구",
-          desc: "유책성 판단·위자료 산정·재산분할 기준시점 — 별거 장기화 시 의뢰인 유리 전략",
-        },
-        {
-          title: "중국 법원 이혼 판결 효력",
-          desc: "한국 내 효력 및 재산분할 집행 가능성 검토",
-        },
-        {
-          title: "중국 소재 재산 상속 자문",
-          desc: "한국 상속법 · 중국 상속법 교차 적용 및 한국 내 상속 절차 안내",
-        },
+        "이혼 및 위자료: 유리한 재산분할을 위한 기준시점 확정 전략",
+        "판결 효력 검토: 중국 법원 이혼 판결의 한국 내 효력 및 집행 가능성 검토",
+        "상속 자문: 중국 소재 재산에 대한 한국 내 상속 절차 안내"
       ],
-    },
+      color: "border-[#0f172a]"
+    }
   ];
 
   return (
-    <div className="bg-white">
-      {/* ─────────── PAGE HERO ─────────── */}
-      <section className="relative bg-[#050B14] text-white overflow-hidden pt-[128px] pb-20 lg:pb-24">
-        <div className="absolute inset-0 pointer-events-none opacity-[0.05]">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_#b59a5d_0%,_transparent_50%)]" />
-        </div>
-        <div className="relative max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3 mb-7">
-            <span className="h-px w-10 bg-[#b59a5d]" />
-            <span className="font-display text-[11px] sm:text-xs font-black tracking-[0.36em] uppercase text-[#b59a5d]">
-              Practice Areas
-            </span>
-          </div>
-          <h1 className="text-[40px] sm:text-[56px] lg:text-[76px] font-black tracking-[-0.02em] leading-[1.05]">
-            주요 업무 분야
-          </h1>
-          <p className="mt-5 font-display text-sm sm:text-base tracking-[0.18em] text-slate-400 font-semibold uppercase">
-            Visa · Criminal · Civil · Contract · Family
-          </p>
-          <p className="mt-8 max-w-[640px] text-base lg:text-lg text-slate-300/90 font-medium leading-[1.85]">
-            비컴은 당신의 언어로 사건을 정확히 이해하고, 한국의 법리로 완벽한 방어막을 구축합니다. 중국어권 의뢰인의 현실에 맞춘 5개 핵심 업무 영역을 안내합니다.
-          </p>
-        </div>
-      </section>
+    <div className="bg-white min-h-screen pt-24 pb-32">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionHeading 
+          title="주요 업무 분야" 
+          subtitle="비컴은 당신의 언어로 사건을 정확히 이해하고, 한국의 법리로 완벽한 방어막을 구축합니다." 
+          centered={true}
+        />
 
-      {/* ─────────── SERVICES ─────────── */}
-      <section className="bg-white">
-        {services.map((s, idx) => (
-          <motion.article
-            key={s.id}
-            id={s.id}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.7, ease: [0.2, 0.65, 0.3, 0.9] }}
-            className={`py-20 lg:py-28 ${idx % 2 === 0 ? "bg-white" : "bg-[#faf6ef] border-y border-[#e9e3d2]"}`}
-          >
-            <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-x-12 gap-y-10">
-              {/* Left: header */}
-              <div className="lg:col-span-5 lg:sticky lg:top-32 lg:self-start">
-                <div className="flex items-center gap-4 mb-6">
-                  <span className="font-display text-[#b59a5d] text-5xl lg:text-6xl font-black tracking-tight leading-none">
-                    {s.no}
-                  </span>
-                  <div className="h-px flex-1 bg-[#b59a5d]/30 max-w-[120px]" />
-                </div>
-                <div className="mb-5">{s.icon}</div>
-                <h2 className="text-[28px] sm:text-[34px] lg:text-[42px] font-black text-[#0f172a] tracking-tight leading-[1.1] mb-2">
-                  {s.title}
-                </h2>
-                <p className="text-base lg:text-lg text-[#b59a5d] font-bold mb-6">{s.cn}</p>
-                <p className="text-[15px] lg:text-base text-[#0f172a] font-bold italic leading-relaxed mb-5 border-l-2 border-[#b59a5d] pl-4">
-                  {s.tagline}
-                </p>
-                <p className="text-[14px] lg:text-[15px] text-slate-600 font-medium leading-[1.85]">
-                  {s.description}
+        <div className="mt-20 space-y-16">
+          {services.map((service, index) => (
+            <div 
+              key={service.id} 
+              className={`flex flex-col lg:flex-row bg-slate-50 border border-slate-200 group hover:border-[#b59a5d] transition-colors`}
+            >
+              <div className="lg:w-1/3 bg-white p-12 lg:p-16 border-b lg:border-b-0 lg:border-r border-slate-200 group-hover:border-[#b59a5d]/30 transition-colors">
+                {service.icon}
+                <h3 className="text-3xl font-extrabold text-[#0f172a] mb-2 tracking-tight">
+                  {service.title}
+                </h3>
+                <span className="block text-xl font-bold text-[#b59a5d] mb-6">
+                  {service.cn}
+                </span>
+                <p className="text-slate-600 font-medium leading-relaxed text-lg">
+                  {service.description}
                 </p>
               </div>
-
-              {/* Right: items */}
-              <div className="lg:col-span-7">
-                <ul className="space-y-0 border-t border-slate-200">
-                  {s.items.map((item, i) => (
-                    <motion.li
-                      key={i}
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.4, delay: i * 0.04 }}
-                      className="group flex gap-5 lg:gap-7 py-6 lg:py-7 border-b border-slate-200 hover:bg-white transition-colors"
-                    >
-                      <span className="font-display text-[11px] font-black tracking-[0.2em] text-[#b59a5d] pt-1 min-w-[28px]">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                      <div className="flex-1">
-                        <h3 className="text-lg lg:text-xl font-extrabold text-[#0f172a] leading-tight mb-2">
-                          {item.title}
-                        </h3>
-                        <p className="text-[14px] lg:text-[15px] text-slate-600 font-medium leading-[1.8]">
-                          {item.desc}
-                        </p>
+              
+              <div className="lg:w-2/3 p-12 lg:p-16 flex flex-col justify-center">
+                <div className="grid sm:grid-cols-2 gap-x-12 gap-y-8">
+                  {service.items.map((item, idx) => {
+                    const [main, sub] = item.split(': ');
+                    return (
+                      <div key={idx} className="flex gap-4 items-start">
+                        <div className="w-2 h-2 bg-[#b59a5d] mt-2.5 shrink-0" />
+                        <div>
+                          <span className="block font-extrabold text-[#0f172a] text-lg mb-2">{main}</span>
+                          {sub && <span className="block text-slate-600 text-base leading-relaxed font-medium">{sub}</span>}
+                        </div>
                       </div>
-                      <ArrowRight
-                        size={18}
-                        strokeWidth={1.5}
-                        className="text-slate-300 group-hover:text-[#b59a5d] group-hover:translate-x-0.5 transition-all mt-1.5 shrink-0"
-                      />
-                    </motion.li>
-                  ))}
-                </ul>
+                    );
+                  })}
+                </div>
               </div>
             </div>
-          </motion.article>
-        ))}
-      </section>
+          ))}
+        </div>
 
-      {/* ─────────── CTA ─────────── */}
-      <section className="bg-[#0f172a] text-white py-20 lg:py-28 border-t-[6px] border-[#b59a5d]">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <span className="h-px w-10 bg-[#b59a5d]" />
-            <span className="font-display text-[11px] font-black tracking-[0.36em] uppercase text-[#b59a5d]">
-              Consultation
-            </span>
-            <span className="h-px w-10 bg-[#b59a5d]" />
-          </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-[52px] font-black leading-tight tracking-tight mb-6">
-            지금 바로 전문적인 상담이 필요하십니까?
-          </h2>
-          <p className="max-w-[660px] mx-auto text-base lg:text-lg text-slate-300/80 font-medium leading-[1.85] mb-12">
-            한국에서의 법적 문제, 시간이 지체될수록 불리해질 수 있습니다. 비컴이 당신의 언어로 직접 상담하고 가장 확실한 해답을 찾아드립니다.
+        <div className="mt-32 bg-[#0f172a] text-center text-white p-16 lg:p-24 border-t-[8px] border-[#b59a5d]">
+          <h3 className="text-3xl md:text-5xl font-extrabold mb-8 tracking-tight">지금 바로 전문적인 상담이 필요하십니까?</h3>
+          <p className="text-slate-400 mb-12 max-w-3xl mx-auto text-xl font-medium leading-relaxed">
+             한국에서의 법적 문제, 시간이 지체될수록 불리해질 수 있습니다. 
+             비컴이 당신의 언어로 직접 상담하고 가장 확실한 해답을 찾아드립니다.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <WeChatDialog>
-              <button
-                type="button"
-                className="group inline-flex items-center justify-center gap-3 bg-[#b59a5d] hover:bg-[#c9b07e] text-[#0f172a] px-8 py-4 font-extrabold text-[15px] transition-colors"
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+             <WeChatDialog>
+                <button
+                  type="button"
+                  className="bg-[#b59a5d] hover:bg-[#a38a53] text-white px-10 py-5 font-extrabold text-xl transition-colors flex justify-center items-center gap-3"
+                >
+                  위챗 직접 상담 (wudongxuan002)
+                </button>
+              </WeChatDialog>
+              <a
+                href="tel:82-10-2999-6910"
+                className="bg-white text-[#0f172a] hover:bg-slate-100 px-10 py-5 font-extrabold text-xl transition-colors flex justify-center items-center gap-3"
               >
-                <MessageCircle size={17} strokeWidth={2.25} />
-                위챗 직접 상담
-                <ArrowRight
-                  size={15}
-                  strokeWidth={2.5}
-                  className="transition-transform group-hover:translate-x-0.5"
-                />
-              </button>
-            </WeChatDialog>
-            <a
-              href="tel:82-10-2999-6910"
-              className="group inline-flex items-center justify-center gap-3 bg-white hover:bg-slate-100 text-[#0f172a] px-8 py-4 font-extrabold text-[15px] transition-colors tabular-nums"
-            >
-              전화 상담 82-10-2999-6910
-            </a>
+                전화 상담 (82-10-2999-6910)
+              </a>
           </div>
         </div>
-      </section>
+      </div>
     </div>
   );
 }
