@@ -357,7 +357,7 @@ export function Home() {
             >
               <div className="mb-6 flex items-center gap-4">
                 <div className="w-12 h-[2px] bg-[#b59a5d]"></div>
-                <span className="text-[#b59a5d] font-bold tracking-widest uppercase text-sm">오동현 대표변호사</span>
+                <span className="text-[#b59a5d] font-bold text-sm">오동현 대표변호사</span>
               </div>
               <h2 className="text-3xl md:text-5xl font-extrabold mb-10 leading-tight">
                 "저는 중국에서 살았고, 일했고, <br/>그 언어로 생각합니다. 
@@ -465,7 +465,7 @@ export function Home() {
           <div className="flex flex-col md:flex-row items-center gap-16">
             <div className="md:w-2/3 text-white">
               <div className="flex items-center gap-4 mb-6">
-                <span className="inline-flex items-center px-4 py-1 border border-[#b59a5d] text-[#b59a5d] font-bold text-sm tracking-widest uppercase">
+                <span className="inline-flex items-center px-4 py-1 border border-[#b59a5d] text-[#b59a5d] font-bold text-sm">
                   무료 가이드북 배포
                 </span>
               </div>

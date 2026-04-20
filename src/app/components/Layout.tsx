@@ -47,7 +47,7 @@ export function Layout() {
           <span className="hidden sm:flex items-center gap-2 tracking-wide font-medium"><MessageCircle size={14} className="text-[#b59a5d]"/> {t("top.wechat")} : wudongxuan002</span>
         </div>
         <div className="flex items-center gap-6">
-          <div className={clsx("hidden lg:block tracking-wider transition-colors duration-300", overlay ? "text-slate-300/90" : "text-slate-400")}>
+          <div className={clsx("hidden lg:block transition-colors duration-300", overlay ? "text-slate-300/90" : "text-slate-400")}>
             {t("top.slogan")}
           </div>
           {/* Language Switcher */}
