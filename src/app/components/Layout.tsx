@@ -181,20 +181,6 @@ export function Layout() {
         <Outlet />
       </main>
 
-      {/* Floating Action Buttons */}
-      <div className="fixed right-4 bottom-8 z-50 flex flex-col gap-2">
-        <a href="tel:821029996910" className="w-14 h-14 bg-[#0f172a] text-white flex flex-col items-center justify-center shadow-lg hover:-translate-y-1 transition-transform border border-slate-700">
-          <Phone size={20} className="mb-1" />
-          <span className="text-[10px] font-bold">전화상담</span>
-        </a>
-        <WeChatDialog>
-          <button type="button" className="w-14 h-14 bg-[#b59a5d] text-white flex flex-col items-center justify-center shadow-lg hover:-translate-y-1 transition-transform">
-            <MessageCircle size={20} className="mb-1" />
-            <span className="text-[10px] font-bold">위챗상담</span>
-          </button>
-        </WeChatDialog>
-      </div>
-
       {/* Footer */}
       <footer className="bg-[#111111] text-slate-400 py-16 border-t-[6px] border-[#b59a5d]">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">

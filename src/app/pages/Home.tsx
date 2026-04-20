@@ -165,6 +165,119 @@ export function Home() {
         </div>
       </section>
 
+      {/* Professionals — single attorney showcase */}
+      <section className="relative py-24 lg:py-32 bg-white">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section header row */}
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14 lg:mb-20">
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <span className="h-px w-10 bg-[#b59a5d]" />
+                <span className="text-[11px] sm:text-xs font-black tracking-[0.32em] uppercase text-[#b59a5d]">
+                  Professionals
+                </span>
+              </div>
+              <h2 className="text-[32px] sm:text-[44px] lg:text-[56px] font-black text-[#0f172a] tracking-tight leading-[1.1] mb-5">
+                법률사무소 비컴의 <span className="text-[#b59a5d]">변호사</span>
+              </h2>
+              <p className="text-base lg:text-lg text-slate-600 font-medium leading-relaxed max-w-[560px]">
+                한국어와 중국어 두 언어로 직접 소통하며, 통역 없이 사실관계부터 법률 분석까지 정확하게 짚어 드립니다.
+              </p>
+            </div>
+            <Link
+              to="/about"
+              className="group inline-flex items-center justify-center gap-3 self-start md:self-end border-2 border-[#0f172a] hover:bg-[#0f172a] text-[#0f172a] hover:text-white px-7 py-3.5 font-extrabold text-sm tracking-wider transition-colors whitespace-nowrap"
+            >
+              VIEW MORE
+              <ArrowRight size={16} strokeWidth={2.5} className="transition-transform group-hover:translate-x-0.5" />
+            </Link>
+          </div>
+
+          {/* Attorney card */}
+          <motion.article
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.8, ease: [0.2, 0.65, 0.3, 0.9] }}
+            className="grid lg:grid-cols-[minmax(320px,_460px)_1fr] bg-[#faf6ef] shadow-[0_24px_80px_-32px_rgba(15,23,42,0.22)] overflow-hidden"
+          >
+            {/* Photo column */}
+            <div className="relative bg-[#e9e3d2] min-h-[440px] lg:min-h-[580px] overflow-hidden">
+              <ImageWithFallback
+                src="https://images.unsplash.com/photo-1665224752123-a2ea29dddcb2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhc2lhbiUyMGxhd3llciUyMHBvcnRyYWl0JTIwcHJvZmVzc2lvbmFsfGVufDF8fHx8MTc3NjM5ODMxNXww&ixlib=rb-4.1.0&q=85&w=900"
+                alt="오동현 대표변호사"
+                className="absolute inset-0 w-full h-full object-cover object-top"
+              />
+              {/* Top-left editorial marker */}
+              <div className="absolute top-6 left-6 text-white text-[10px] sm:text-[11px] font-bold tracking-[0.3em] uppercase drop-shadow-md">
+                <span className="text-[#b59a5d]">No. 01</span>
+                <span className="mx-2 opacity-60">/</span>
+                Representative Attorney
+              </div>
+            </div>
+
+            {/* Content column */}
+            <div className="p-10 sm:p-12 lg:p-16 xl:p-20 flex flex-col justify-between bg-white">
+              <div>
+                {/* Romanized */}
+                <p className="text-[11px] sm:text-xs font-black tracking-[0.36em] uppercase text-slate-400 mb-4">
+                  Donghyun OH
+                </p>
+                {/* Korean name */}
+                <h3 className="font-black text-[#0f172a] tracking-[-0.02em] leading-none text-[48px] sm:text-[64px] lg:text-[80px] mb-6">
+                  오동현
+                </h3>
+                {/* Gold rule */}
+                <div aria-hidden className="h-[3px] w-14 bg-[#b59a5d] mb-5" />
+                {/* Role */}
+                <p className="text-base lg:text-lg text-slate-700 font-bold mb-10">
+                  대표변호사 <span className="text-slate-400 mx-1.5">·</span> 법률사무소 비컴
+                </p>
+
+                {/* Specialties */}
+                <div>
+                  <p className="text-[10px] sm:text-[11px] font-black tracking-[0.28em] uppercase text-[#b59a5d] mb-4">
+                    전문 분야
+                  </p>
+                  <ul className="space-y-3.5">
+                    {[
+                      "형사 사건 방어 · 민사 분쟁 대리",
+                      "체류자격(F-4·H-2) · 출입국 종합 자문",
+                      "중국어 직접 상담 (通译不必要)",
+                      "한중 계약 · 기업 법률 자문",
+                    ].map((item, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-3.5 text-slate-700 font-medium text-[14px] sm:text-[15px] leading-relaxed"
+                      >
+                        <span className="mt-[9px] w-1.5 h-1.5 rounded-full bg-[#b59a5d] shrink-0" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* Bottom row: credentials + CTA */}
+              <div className="mt-10 lg:mt-14 pt-7 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
+                <div className="text-[12px] sm:text-[13px] text-slate-500 font-semibold leading-relaxed">
+                  고려대 중문학·경영학
+                  <span className="text-slate-300 mx-2">/</span>
+                  경북대 로스쿨
+                </div>
+                <Link
+                  to="/about"
+                  className="group inline-flex items-center justify-between sm:justify-center gap-3 bg-[#0f172a] hover:bg-[#b59a5d] text-white px-6 lg:px-7 py-3.5 font-extrabold text-[13px] tracking-wide transition-colors"
+                >
+                  변호사 프로필
+                  <ArrowRight size={15} strokeWidth={2.5} className="transition-transform group-hover:translate-x-0.5" />
+                </Link>
+              </div>
+            </div>
+          </motion.article>
+        </div>
+      </section>
+
       {/* Core Strengths Section */}
       <section className="py-32 bg-slate-50 border-t border-slate-200">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
