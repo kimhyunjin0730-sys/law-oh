@@ -1,5 +1,6 @@
 import { SectionHeading } from "../components/SectionHeading";
 import { FolderCheck, ArrowRight, Scale, Briefcase, FileText } from "lucide-react";
+import { WeChatDialog } from "../components/WeChatDialog";
 
 export function Cases() {
   const caseCategories = [
@@ -76,14 +77,14 @@ export function Cases() {
             </h4>
             <p className="text-slate-400 font-medium text-xl">더 많은 사례와 자세한 상담을 원하시면 언제든 문의해주세요.</p>
           </div>
-          <a
-            href="https://weixin.qq.com/"
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-3 bg-[#b59a5d] hover:bg-[#a38a53] text-white px-10 py-5 font-extrabold text-xl transition-colors whitespace-nowrap"
-          >
-            성공 사례 상담하기 <ArrowRight size={24} />
-          </a>
+          <WeChatDialog>
+            <button
+              type="button"
+              className="flex items-center gap-3 bg-[#b59a5d] hover:bg-[#a38a53] text-white px-10 py-5 font-extrabold text-xl transition-colors whitespace-nowrap"
+            >
+              성공 사례 상담하기 <ArrowRight size={24} />
+            </button>
+          </WeChatDialog>
         </div>
       </div>
     </div>

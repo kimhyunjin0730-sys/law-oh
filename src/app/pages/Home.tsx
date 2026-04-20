@@ -3,6 +3,7 @@ import { ArrowRight, CheckCircle2, MessageCircle, Phone, Globe, Scale, Users, Fi
 import { motion } from "motion/react";
 import { SectionHeading } from "../components/SectionHeading";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+import { WeChatDialog } from "../components/WeChatDialog";
 
 export function Home() {
   return (
@@ -88,16 +89,16 @@ export function Home() {
                   <ArrowRight size={16} strokeWidth={2.25} className="transition-transform group-hover:translate-x-0.5" />
                 </span>
               </a>
-              <a
-                href="https://weixin.qq.com/"
-                target="_blank"
-                rel="noreferrer"
-                className="group inline-flex items-center justify-center gap-3 bg-[#b59a5d] hover:bg-[#a38a53] text-white px-8 py-4 font-extrabold text-[15px] transition-colors"
-              >
-                <MessageCircle size={18} strokeWidth={2.25} />
-                위챗 직접상담
-                <ArrowRight size={16} strokeWidth={2.25} className="transition-transform group-hover:translate-x-0.5" />
-              </a>
+              <WeChatDialog>
+                <button
+                  type="button"
+                  className="group inline-flex items-center justify-center gap-3 bg-[#b59a5d] hover:bg-[#a38a53] text-white px-8 py-4 font-extrabold text-[15px] transition-colors"
+                >
+                  <MessageCircle size={18} strokeWidth={2.25} />
+                  위챗 직접상담
+                  <ArrowRight size={16} strokeWidth={2.25} className="transition-transform group-hover:translate-x-0.5" />
+                </button>
+              </WeChatDialog>
             </div>
 
             {/* Trust line */}
@@ -139,15 +140,15 @@ export function Home() {
               <FileText size={20} strokeWidth={2} />
               <span className="text-[11px] font-extrabold mt-0.5">온라인상담</span>
             </a>
-            <a
-              href="https://weixin.qq.com/"
-              target="_blank"
-              rel="noreferrer"
-              className="group w-[78px] h-[78px] flex flex-col items-center justify-center gap-1 bg-[#09BB07] text-white rounded-2xl hover:scale-[1.04] transition-transform"
-            >
-              <MessageCircle size={20} strokeWidth={2} />
-              <span className="text-[11px] font-extrabold mt-0.5">위챗상담</span>
-            </a>
+            <WeChatDialog>
+              <button
+                type="button"
+                className="group w-[78px] h-[78px] flex flex-col items-center justify-center gap-1 bg-[#09BB07] text-white rounded-2xl hover:scale-[1.04] transition-transform"
+              >
+                <MessageCircle size={20} strokeWidth={2} />
+                <span className="text-[11px] font-extrabold mt-0.5">위챗상담</span>
+              </button>
+            </WeChatDialog>
             <a
               href="tel:82-10-2999-6910"
               className="group w-[78px] h-[78px] flex flex-col items-center justify-center gap-1 bg-[#b59a5d] text-white rounded-2xl hover:scale-[1.04] transition-transform"

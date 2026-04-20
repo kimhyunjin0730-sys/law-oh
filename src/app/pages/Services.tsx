@@ -1,5 +1,6 @@
 import { SectionHeading } from "../components/SectionHeading";
 import { ShieldCheck, Scale, FileText, Briefcase, HeartHandshake, CheckCircle2, ArrowRight } from "lucide-react";
+import { WeChatDialog } from "../components/WeChatDialog";
 
 export function Services() {
   const services = [
@@ -130,14 +131,14 @@ export function Services() {
              비컴이 당신의 언어로 직접 상담하고 가장 확실한 해답을 찾아드립니다.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-             <a
-                href="https://weixin.qq.com/"
-                target="_blank"
-                rel="noreferrer"
-                className="bg-[#b59a5d] hover:bg-[#a38a53] text-white px-10 py-5 font-extrabold text-xl transition-colors flex justify-center items-center gap-3"
-              >
-                위챗 직접 상담 (wudongxuan002)
-              </a>
+             <WeChatDialog>
+                <button
+                  type="button"
+                  className="bg-[#b59a5d] hover:bg-[#a38a53] text-white px-10 py-5 font-extrabold text-xl transition-colors flex justify-center items-center gap-3"
+                >
+                  위챗 직접 상담 (wudongxuan002)
+                </button>
+              </WeChatDialog>
               <a
                 href="tel:82-10-2999-6910"
                 className="bg-white text-[#0f172a] hover:bg-slate-100 px-10 py-5 font-extrabold text-xl transition-colors flex justify-center items-center gap-3"

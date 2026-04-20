@@ -3,6 +3,7 @@ import { Menu, X, Phone, MessageCircle, ArrowRight, Globe } from "lucide-react";
 import { useState, useEffect } from "react";
 import clsx from "clsx";
 import { useLanguage } from "../context/LanguageContext";
+import { WeChatDialog } from "./WeChatDialog";
 
 export function Layout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -80,15 +81,15 @@ export function Layout() {
                   </Link>
                 ))}
               </div>
-              <a
-                href="https://weixin.qq.com/"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center justify-center px-6 py-3 bg-[#b59a5d] text-white text-sm font-bold shadow-md hover:bg-[#a38a53] transition-colors gap-2"
-              >
-                <MessageCircle size={18} />
-                {t("nav.wechat")}
-              </a>
+              <WeChatDialog>
+                <button
+                  type="button"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-[#b59a5d] text-white text-sm font-bold shadow-md hover:bg-[#a38a53] transition-colors gap-2"
+                >
+                  <MessageCircle size={18} />
+                  {t("nav.wechat")}
+                </button>
+              </WeChatDialog>
             </div>
 
             {/* Mobile menu button */}
@@ -123,13 +124,15 @@ export function Layout() {
                 </Link>
               ))}
               <div className="py-6 flex flex-col gap-3">
-                 <a
-                  href="#"
-                  className="w-full flex items-center justify-center px-4 py-4 bg-[#b59a5d] text-base font-bold text-white shadow-sm gap-2"
-                >
-                  <MessageCircle size={18} />
-                  위챗 24시간 상담 (wudongxuan002)
-                </a>
+                 <WeChatDialog>
+                  <button
+                    type="button"
+                    className="w-full flex items-center justify-center px-4 py-4 bg-[#b59a5d] text-base font-bold text-white shadow-sm gap-2"
+                  >
+                    <MessageCircle size={18} />
+                    위챗 24시간 상담 (wudongxuan002)
+                  </button>
+                </WeChatDialog>
                 <a
                   href="tel:82-10-2999-6910"
                   className="w-full flex items-center justify-center px-4 py-4 border border-slate-300 text-base font-bold text-slate-800 gap-2"
@@ -154,10 +157,12 @@ export function Layout() {
           <Phone size={20} className="mb-1" />
           <span className="text-[10px] font-bold">전화상담</span>
         </a>
-        <a href="#" className="w-14 h-14 bg-[#b59a5d] text-white flex flex-col items-center justify-center shadow-lg hover:-translate-y-1 transition-transform">
-          <MessageCircle size={20} className="mb-1" />
-          <span className="text-[10px] font-bold">위챗상담</span>
-        </a>
+        <WeChatDialog>
+          <button type="button" className="w-14 h-14 bg-[#b59a5d] text-white flex flex-col items-center justify-center shadow-lg hover:-translate-y-1 transition-transform">
+            <MessageCircle size={20} className="mb-1" />
+            <span className="text-[10px] font-bold">위챗상담</span>
+          </button>
+        </WeChatDialog>
       </div>
 
       {/* Footer */}
