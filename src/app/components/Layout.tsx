@@ -91,7 +91,7 @@ export function Layout() {
           "sticky top-0 z-50 transition-colors duration-300",
           overlay
             ? "bg-transparent"
-            : "bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm"
+            : "bg-white/85 backdrop-blur-md border-b border-slate-200 shadow-sm"
         )}
       >
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
