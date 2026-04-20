@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import clsx from "clsx";
 import { useLanguage } from "../context/LanguageContext";
 import { WeChatDialog } from "./WeChatDialog";
-import hangyoLogo from "../../assets/hangyo-logo.png";
+import hangyoLogo from "../../assets/hangyo-logo-new.png";
 
 export function Layout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -103,7 +103,7 @@ export function Layout() {
                   alt="HANGYO"
                   className={clsx(
                     "h-14 lg:h-16 w-auto transition-all duration-300",
-                    overlay ? "brightness-0 invert opacity-90" : ""
+                    overlay ? "brightness-0 invert opacity-90 mix-blend-screen" : "mix-blend-multiply"
                   )}
                 />
               </Link>
@@ -187,7 +187,7 @@ export function Layout() {
                 <img
                   src={hangyoLogo}
                   alt="HANGYO"
-                  className="h-8 w-auto brightness-0 invert"
+                  className="h-10 lg:h-12 w-auto brightness-0 invert mix-blend-screen"
                 />
               </div>
               <p className="text-sm text-slate-500 max-w-sm mb-6 leading-relaxed font-medium">
