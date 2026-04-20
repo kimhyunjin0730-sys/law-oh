@@ -9,6 +9,7 @@ export function About() {
     { year: "2025. 07", title: "법률사무소 비컴 소속변호사" },
     { year: "2025. 01", title: "법무법인 동감 소속변호사" },
     { year: "2024. 11", title: "국제지식재산연수원 변리사 연수과정 수료" },
+    { year: "2024", title: "대한변호사협회 연수" },
     { year: "2022. 01", title: "동계 경찰대학 실무 수습" },
     { year: "2020. 03", title: "경북대학교 법학전문대학원 입학" },
     { year: "2016. 12 ~ 2018. 03", title: "㈜한화/무역 해외영업 근무" },
@@ -81,8 +82,16 @@ export function About() {
                     <p className="text-base leading-relaxed text-slate-600 font-medium">중국 최대 NGO 정보 플랫폼에서 한중 NGO 자료 비교조사 및 영중한 통번역 업무 수행.</p>
                   </div>
                   <div className="border-l-2 border-slate-200 pl-6 hover:border-[#b59a5d] transition-colors">
+                    <strong className="text-xl font-extrabold text-[#0f172a] block mb-3">중국 광서성 세계태권도평화봉사재단</strong>
+                    <p className="text-base leading-relaxed text-slate-600 font-medium">중국 광서성 현지에서 태권도 교육 및 중국어 통역 업무를 수행하며, 중국 지방 사회와의 직접적인 교류 경험 확보.</p>
+                  </div>
+                  <div className="border-l-2 border-slate-200 pl-6 hover:border-[#b59a5d] transition-colors">
                     <strong className="text-xl font-extrabold text-[#0f172a] block mb-3">중국 소주(苏州) 소재 건자재 기업 근무</strong>
                     <p className="text-base leading-relaxed text-slate-600 font-medium">Suzhou Chun-Bo New Construction Material Co., Ltd.에서 시장 동향 파악, 영중한 통번역 및 현장 실무 수행.</p>
+                  </div>
+                  <div className="border-l-2 border-slate-200 pl-6 hover:border-[#b59a5d] transition-colors">
+                    <strong className="text-xl font-extrabold text-[#0f172a] block mb-3">중국 북경사범대학교 연수</strong>
+                    <p className="text-base leading-relaxed text-slate-600 font-medium">북경 현지 어학·법제 수업을 통해 학계 중국어 환경에 직접 노출. 단순 어학연수를 넘어 중국 현지 생활 기반을 다진 출발점.</p>
                   </div>
                 </div>
               </section>
