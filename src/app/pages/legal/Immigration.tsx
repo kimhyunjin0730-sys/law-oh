@@ -4,6 +4,7 @@ import { VisaMapDiagram } from "../../components/legal/VisaMapDiagram";
 import { DecisionTreeDiagram } from "../../components/legal/DecisionTreeDiagram";
 import { ProcedureFlowDiagram } from "../../components/legal/ProcedureFlowDiagram";
 import { AgencyNetworkDiagram } from "../../components/legal/AgencyNetworkDiagram";
+import { DeadlineTimeline } from "../../components/legal/DeadlineTimeline";
 
 export function Immigration() {
   const { language } = useLanguage();
@@ -34,6 +35,12 @@ export function Immigration() {
         lang={language}
         title="기관 네트워크"
         ariaSummary="의뢰인을 중심으로 관련 기관들의 역할과 연락처를 보여주는 네트워크 다이어그램"
+      />
+      <DeadlineTimeline
+        events={c.deadlines}
+        lang={language}
+        title="시한 타임라인"
+        ariaSummary="긴급 대응 시한을 Day 0부터 시간축으로 보여주는 타임라인"
       />
     </div>
   );
