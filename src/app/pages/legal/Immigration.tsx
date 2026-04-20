@@ -1,10 +1,18 @@
+import { useLanguage } from "../../context/LanguageContext";
+import { getLegalContent, pick } from "../../../lib/legal/content";
+import { VisaMapDiagram } from "../../components/legal/VisaMapDiagram";
+
 export function Immigration() {
+  const { language } = useLanguage();
+  const c = getLegalContent("immigration");
   return (
-    <div className="bg-[#faf6ef] min-h-screen pt-24 pb-32">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-black">체류자격·출입국</h1>
-        <p className="mt-4 text-slate-600">콘텐츠 준비 중.</p>
-      </div>
+    <div className="bg-[#faf6ef] min-h-screen">
+      <VisaMapDiagram
+        visas={c.visas}
+        lang={language}
+        title={pick(c.title, language)}
+        ariaSummary="체류자격 비자 유형 5가지를 한눈에 보여주는 다이어그램"
+      />
     </div>
   );
 }
