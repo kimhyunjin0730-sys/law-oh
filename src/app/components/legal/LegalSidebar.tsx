@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
+import { useLanguage } from "../../context/LanguageContext";
 
 export interface TocItem {
   id: string;
@@ -61,7 +62,29 @@ export function LegalSidebar({
   ctaHref,
   needsLawyerEyebrow = "Need a lawyer?",
 }: Props) {
+  const { language } = useLanguage();
   const active = useScrollSpy(toc.map((t) => t.id));
+
+  const content = {
+    ko: {
+      tocHeader: "이 페이지 안내",
+      casesHeader: "주요 업무사례",
+      practiceHeader: "관련 업무분야",
+      more: "더보기"
+    },
+    zh: {
+      tocHeader: "本页导航",
+      casesHeader: "主要成功案例",
+      practiceHeader: "相关业务领域",
+      more: "查看更多"
+    },
+    en: {
+      tocHeader: "On This Page",
+      casesHeader: "Major Cases",
+      practiceHeader: "Related Practices",
+      more: "See More"
+    }
+  }[language];
 
   return (
     <aside className="sticky top-[140px] self-start flex flex-col gap-[18px] max-h-[calc(100vh-160px)] overflow-y-auto pr-1 sidebar-scroll">
@@ -74,7 +97,7 @@ export function LegalSidebar({
       {/* TOC card */}
       <div className="bg-white border border-[#dbe1ea] p-[22px]">
         <h4 className="font-serif-ko font-bold text-[17px] text-[#0f172a] tracking-tight pb-3.5 mb-4 border-b border-[#dbe1ea]">
-          이 페이지 안내
+          {content.tocHeader}
         </h4>
         <ul className="flex flex-col gap-[2px]">
           {toc.map((it, i) => {
@@ -136,13 +159,13 @@ export function LegalSidebar({
         <div className="bg-white border border-[#dbe1ea] p-[22px]">
           <div className="flex items-center justify-between pb-3.5 mb-4 border-b border-[#dbe1ea]">
             <h4 className="font-serif-ko font-bold text-[17px] text-[#0f172a] tracking-tight">
-              주요 업무사례
+              {content.casesHeader}
             </h4>
             <Link
               to="/cases"
               className="font-mono text-[10.5px] font-bold tracking-[0.1em] text-[#94a3b8] px-2.5 py-1.5 border border-[#dbe1ea] rounded-sm hover:bg-[#0f172a] hover:text-white hover:border-[#0f172a] transition-colors"
             >
-              더보기 →
+              {content.more} →
             </Link>
           </div>
           <ul className="flex flex-col gap-3.5">
@@ -163,13 +186,13 @@ export function LegalSidebar({
         <div className="bg-[#f8fafc] border border-[#e2e8f0] p-[22px]">
           <div className="flex items-center justify-between pb-3.5 mb-4 border-b border-[#dbe1ea]">
             <h4 className="font-serif-ko font-bold text-[17px] text-[#0f172a] tracking-tight">
-              관련 업무분야
+              {content.practiceHeader}
             </h4>
             <Link
               to="/services"
               className="font-mono text-[10.5px] font-bold tracking-[0.1em] text-[#94a3b8] px-2.5 py-1.5 border border-[#dbe1ea] rounded-sm hover:bg-[#0f172a] hover:text-white hover:border-[#0f172a] transition-colors"
             >
-              더보기 →
+              {content.more} →
             </Link>
           </div>
           <div className="flex flex-wrap gap-1.5">

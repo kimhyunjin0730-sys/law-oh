@@ -1,7 +1,16 @@
 import { FileText, MessageCircle, Phone } from "lucide-react";
 import { WeChatDialog } from "../WeChatDialog";
+import { useLanguage } from "../../context/LanguageContext";
 
 export function LegalQuickMenu() {
+  const { language } = useLanguage();
+
+  const content = {
+    ko: { channel: "상담 채널", online: "온라인", chat: "상담", wechat: "위챗", phone: "전화" },
+    zh: { channel: "咨询渠道", online: "在线", chat: "咨询", wechat: "微信", phone: "电话" },
+    en: { channel: "Contact", online: "Online", chat: "Form", wechat: "WeChat", phone: "Phone" }
+  }[language];
+
   return (
     <aside
       aria-label="빠른 상담"
@@ -12,7 +21,7 @@ export function LegalQuickMenu() {
           Quick<br />Menu
         </div>
         <div className="font-mono text-[8px] font-bold tracking-[0.16em] uppercase text-[#fff3a8]/60 mt-1">
-          상담 채널
+          {content.channel}
         </div>
       </div>
       <a
@@ -22,7 +31,7 @@ export function LegalQuickMenu() {
         <span className="w-7 h-7 grid place-items-center rounded-full bg-white/[0.08]">
           <FileText size={14} strokeWidth={1.8} />
         </span>
-        온라인<br />상담
+        {content.online}<br />{content.chat}
       </a>
       <WeChatDialog>
         <button
@@ -32,7 +41,7 @@ export function LegalQuickMenu() {
           <span className="w-7 h-7 grid place-items-center rounded-full bg-[#09BB07]">
             <MessageCircle size={14} strokeWidth={1.8} className="text-white" />
           </span>
-          위챗<br />상담
+          {content.wechat}<br />{content.chat}
         </button>
       </WeChatDialog>
       <a
@@ -42,7 +51,7 @@ export function LegalQuickMenu() {
         <span className="w-7 h-7 grid place-items-center rounded-full bg-[#2563EB]">
           <Phone size={14} strokeWidth={1.8} className="text-white" />
         </span>
-        전화<br />상담
+        {content.phone}<br />{content.chat}
       </a>
     </aside>
   );
