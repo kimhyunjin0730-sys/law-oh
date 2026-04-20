@@ -22,25 +22,6 @@ export function Home() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#050B14] via-[#050B14]/20 to-[#050B14]/40" />
         </div>
 
-        {/* Ghosted outline intro line — sits above main headline */}
-        <div className="absolute top-[22%] sm:top-[24%] lg:top-[26%] left-0 right-0 pointer-events-none z-10">
-          <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, ease: [0.2, 0.65, 0.3, 0.9] }}
-              className="font-black tracking-[-0.02em] leading-[1.05] text-[36px] sm:text-[56px] lg:text-[84px] xl:text-[96px]"
-              style={{
-                WebkitTextStroke: "1px rgba(255,255,255,0.28)",
-                color: "transparent",
-              }}
-            >
-              Think in Your Language,<br className="hidden sm:block" />
-              <span className="opacity-70">Defend in Korean Law.</span>
-            </motion.h2>
-          </div>
-        </div>
-
         {/* Main content bottom-left */}
         <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pb-16 lg:pb-24">
           <motion.div
@@ -57,16 +38,11 @@ export function Home() {
               </span>
             </div>
 
-            {/* Solid main headline — the punch */}
-            <h1 className="font-black leading-[1.08] tracking-[-0.02em] text-[40px] sm:text-[56px] lg:text-[76px]">
-              당신의 언어로 깊이 공감하고,<br className="hidden sm:block" />
-              <span className="text-[#b59a5d]">한국 법률</span>로 정교하게 승부합니다.
+            {/* Solid main headline — English-only, "Korean Law" in gold */}
+            <h1 className="font-black leading-[1.06] tracking-[-0.02em] text-[44px] sm:text-[64px] lg:text-[88px]">
+              Think in Your Language,<br className="hidden sm:block" />
+              Defend in <span className="text-[#b59a5d]">Korean Law.</span>
             </h1>
-
-            {/* Chinese subtitle — restrained */}
-            <p className="mt-6 text-base sm:text-lg lg:text-xl text-slate-300/90 font-medium tracking-wide">
-              用您的母语深度共情，以韩国法律精准应对。
-            </p>
 
             {/* Description */}
             <p className="mt-6 max-w-[640px] text-[15px] sm:text-base text-slate-300/80 leading-[1.85] font-medium">
