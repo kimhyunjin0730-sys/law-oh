@@ -4,6 +4,8 @@ import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 import { Services } from "./pages/Services";
 import { Cases } from "./pages/Cases";
+import { LegalIndex } from "./pages/legal/LegalIndex";
+import { Immigration } from "./pages/legal/Immigration";
 
 export const router = createBrowserRouter(
   [
@@ -15,6 +17,8 @@ export const router = createBrowserRouter(
         { path: "about", Component: About },
         { path: "services", Component: Services },
         { path: "cases", Component: Cases },
+        { path: "legal", Component: LegalIndex },
+        { path: "legal/immigration", Component: Immigration },
       ],
     },
   ],

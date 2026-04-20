@@ -37,6 +37,7 @@ export function Layout() {
     { name: t("nav.about"), path: "/about" },
     { name: t("nav.services"), path: "/services" },
     { name: t("nav.cases"), path: "/cases" },
+    { name: t("nav.legal"), path: "/legal" },
   ];
 
   const isHome = location.pathname === "/";
