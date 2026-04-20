@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { SectionHeading } from "../components/SectionHeading";
 import { ShieldCheck, Scale, FileText, Briefcase, HeartHandshake, CheckCircle2, ArrowRight } from "lucide-react";
 import { WeChatDialog } from "../components/WeChatDialog";
@@ -133,7 +134,13 @@ export function Services() {
              비컴이 당신의 언어로 직접 상담하고 가장 확실한 해답을 찾아드립니다.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-             <WeChatDialog>
+             <Link
+                to="/#consult"
+                className="bg-white text-[#0f172a] hover:bg-slate-100 px-10 py-5 font-extrabold text-xl transition-colors flex justify-center items-center gap-3"
+              >
+                온라인 상담 접수
+              </Link>
+              <WeChatDialog>
                 <button
                   type="button"
                   className="bg-[#b59a5d] hover:bg-[#a38a53] text-white px-10 py-5 font-extrabold text-xl transition-colors flex justify-center items-center gap-3"
@@ -143,7 +150,7 @@ export function Services() {
               </WeChatDialog>
               <a
                 href="tel:82-10-2999-6910"
-                className="bg-white text-[#0f172a] hover:bg-slate-100 px-10 py-5 font-extrabold text-xl transition-colors flex justify-center items-center gap-3"
+                className="border border-white/30 text-white hover:bg-white hover:text-[#0f172a] px-10 py-5 font-extrabold text-xl transition-colors flex justify-center items-center gap-3"
               >
                 전화 상담 (82-10-2999-6910)
               </a>
