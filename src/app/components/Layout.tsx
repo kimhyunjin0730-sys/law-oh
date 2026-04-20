@@ -1,5 +1,5 @@
 import { Outlet, Link, useLocation } from "react-router";
-import { Menu, X, ArrowRight, Globe, Phone } from "lucide-react";
+import { Menu, X, ArrowRight, Globe, Phone, MessageCircle } from "lucide-react";
 import { useState, useEffect } from "react";
 import clsx from "clsx";
 import { useLanguage } from "../context/LanguageContext";
