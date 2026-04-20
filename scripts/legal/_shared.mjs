@@ -1,11 +1,18 @@
 import { load } from "cheerio";
-import { fetch } from "undici";
 
-export const UA = "law-oh-content-bot (contact: lawohdh@gmail.com)";
+export const UA =
+  "Mozilla/5.0 (compatible; law-oh-content-bot/1.0; +mailto:lawohdh@gmail.com)";
 
 export async function fetchHtml(url) {
+  // Use the Node 18+ built-in `fetch` (backed by undici); the package import
+  // exhibits ECONNRESET against some .go.kr sites in this environment.
   const res = await fetch(url, {
-    headers: { "User-Agent": UA, "Accept": "text/html,application/xhtml+xml" },
+    headers: {
+      "User-Agent": UA,
+      Accept: "text/html,application/xhtml+xml",
+      "Accept-Language": "ko,en;q=0.8",
+    },
+    redirect: "follow",
   });
   if (!res.ok) throw new Error(`HTTP ${res.status} ${url}`);
   return await res.text();
