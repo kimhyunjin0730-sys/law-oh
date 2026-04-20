@@ -1,0 +1,22 @@
+{
+  "slug": "immigration",
+  "title": { "ko": "체류자격·출입국", "zh": "居留资格·出入境", "en": "Visa & Immigration" },
+  "summary": {
+    "ko": "체류자격 선택과 연장·변경·이의 절차를 한눈에.",
+    "zh": "一览居留资格选择与延期、变更、异议程序。",
+    "en": "Visa selection, renewal, change, and appeal in one view."
+  },
+  "meta": { "generatedAt": "", "sourceCount": 0, "lastRevisionAt": "" },
+  "visas": [],
+  "decisionTree": { "rootId": "", "nodes": [] },
+  "procedure": [],
+  "agencies": [],
+  "deadlines": [],
+  "laws": [],
+  "sources": [],
+  "disclaimer": {
+    "ko": "본 페이지는 공공 법령 데이터를 기반으로 작성된 정보 안내이며, 개별 사건에 대한 법률 자문이 아닙니다. 구체적인 사안은 변호사와 상담하시기 바랍니다.",
+    "zh": "本页面基于公开法律数据编写，仅为信息参考，不构成对个案的法律建议。具体事项请咨询律师。",
+    "en": "This page provides information based on public legal data and does not constitute legal advice for any specific matter. Please consult an attorney for your individual case."
+  }
+}
