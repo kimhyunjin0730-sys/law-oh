@@ -1,3 +1,10 @@
 @import './fonts.css';
 @import './tailwind.css';
 @import './theme.css';
+
+.legal-body,
+.legal-body button,
+.legal-body p,
+.legal-body li {
+  font-family: "Source Serif 4", "Noto Serif KR", "Noto Serif SC", Georgia, serif;
+}
