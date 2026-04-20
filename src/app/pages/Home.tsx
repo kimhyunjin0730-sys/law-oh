@@ -19,8 +19,8 @@ export function Home() {
             className="w-full h-full object-cover object-center scale-[1.02]"
           />
           {/* Layered overlays — even vignette so centered text reads clean */}
-          <div className="absolute inset-0 bg-[#050B14]/70" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050B14] via-[#050B14]/35 to-[#050B14]/55" />
+          <div className="absolute inset-0 bg-[#050B14]/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050B14]/80 via-[#050B14]/20 to-[#050B14]/40" />
         </div>
 
         {/* Main content — centered, nudged slightly above optical center */}
