@@ -33,17 +33,30 @@
 | 법제처 국가법령정보공동활용 API (`law.go.kr`) | 조문·개정일 (원문 그대로) | 공식 API 토큰 |
 | 생활법령정보 API (`easylaw.go.kr`) | 주제별 Q&A 원문 | 공식 API 토큰 |
 | 세계법제정보센터 (`world.moleg.go.kr`) | 중국 법령 비교 (5단계 확장 시) | 공식 API 토큰 |
-| 경찰청 / 법무부 / 대검찰청 | 기관 연락처·링크 아웃 | **본문 스크랩 금지**, URL과 연락처만 수동 기록 |
+| 경찰청 (`police.go.kr`) | 사건절차·피해자 지원 | **HTML 스크래핑** (공공누리 1유형 하) |
+| 법무부 (`moj.go.kr`) | 형사절차·출입국 안내 | **HTML 스크래핑** (공공누리 1유형 하) |
+| 대검찰청 (`spo.go.kr`) | 사건처리절차 | **HTML 스크래핑** (공공누리 1유형 하) |
+
+**공공누리 1유형 준수 조건**:
+- 각 페이지 하단 고정 문구: `본 콘텐츠에는 [기관명]에서 공공누리 제1유형으로 개방한 저작물을 활용하였습니다. 원문 출처: [URL]`
+- 원문 URL은 반드시 노출 (변호사님이 따로 확인 가능한 수준으로)
+- 스크래핑 시 `robots.txt` 존중. 5개 사이트 각 1회 요청 수준이라 rate limit 이슈 없음
+- User-Agent에 연락 이메일 포함 (`law-oh-content-bot (contact: lawohdh@gmail.com)`)
+- 스크래핑 불가(403/레이아웃 변경 등)가 발생하면 **해당 페이지는 생성하지 않고 실패 리포트만 출력** — 오래된 자동 콘텐츠 배포 방지
 
 ### 3.2 LLM 정리 단계 (Claude API)
 
 로컬에서 돌리는 Node 스크립트 (`scripts/generate-legal-content.mjs`):
 
-1. API에서 원문 조문·개정일·관련 법령 수집 → `raw.json`
-2. Claude Opus (`claude-opus-4-7`)에 structured output 프롬프트 전달 — `ANTHROPIC_API_KEY` 환경변수 사용:
-   - input: `raw.json` + 주제 정의 (`immigration` / `criminal` 등)
-   - output: 3줄 요약, 상황별 진입 카드 3~5개, 절차 타임라인, FAQ 5~7개, 기관 연락처, 메타 (KO/ZH/EN 세 언어 동시)
-3. 결과 → `src/content/legal/immigration.json` 커밋 가능한 형태로 저장
+1. **수집** (병렬):
+   - API: `law.go.kr` / `easylaw.go.kr` 에서 조문·개정일·Q&A → `raw/api-*.json`
+   - 스크래핑: Playwright(또는 cheerio+fetch)로 `police.go.kr` / `moj.go.kr` / `spo.go.kr` HTML 수집 → 주요 텍스트만 추출 (`<main>`, `.content-body` 등 선택자) → `raw/scrape-*.json`
+   - 실패 URL은 `raw/errors.json`에 기록하고 나머지로 진행
+2. **정리**: Claude Opus (`claude-opus-4-7`)에 structured output 프롬프트 — `ANTHROPIC_API_KEY` 환경변수 사용:
+   - input: 수집한 raw 데이터 + 주제 정의(`immigration`)
+   - output: 3줄 요약, 상황별 진입 카드 3~5개, 절차 타임라인, FAQ 5~7개, 기관 연락처, 출처 배열 (KO/ZH/EN 세 언어 동시)
+   - LLM은 스크랩 원문을 **재구성·재표현**하되 조문 원문은 API 값을 그대로 패스스루
+3. **저장**: `src/content/legal/immigration.json` 한 파일로 — 커밋 전 김현진 검수 대상
 
 ### 3.3 품질 관리
 
@@ -182,8 +195,11 @@ src/
       types.ts                # LegalPageContent 타입
       loader.ts               # JSON 로드 + language context 연동
 scripts/
-  generate-legal-content.mjs  # 공식 API + Claude로 JSON 생성
-  verify-legal-page.mjs       # Playwright 검증
+  legal/
+    fetch-api.mjs              # law.go.kr / easylaw.go.kr 수집
+    scrape-gov.mjs             # police / moj / spo HTML 수집
+    generate.mjs               # raw → Claude → 구조화 JSON (엔트리포인트)
+  verify-legal-page.mjs        # Playwright 검증
 docs/
   superpowers/
     specs/
@@ -196,6 +212,7 @@ docs/
 - [ ] `/legal/immigration` 페이지가 KO/ZH/EN 세 언어 모두 완성 (상단 토글 연동)
 - [ ] 8개 섹션(HERO → 상황별 진입 → 타임라인 → 법령 → FAQ → 연락처 → CTA → 면책) 모두 실데이터로 채워짐
 - [ ] 관련 법령 원문은 `law.go.kr` API에서 가져온 것 + 원문 링크 노출
+- [ ] 스크래핑 원본(경찰청/법무부/대검찰청) 각 섹션에 공공누리 1유형 출처 블록 삽입, 원문 URL 접근 가능
 - [ ] 면책 문구가 3언어로 최소 2군데 반복 노출
 - [ ] Playwright로 검증:
   - [ ] `/legal` 200, `/legal/immigration` 200
@@ -221,7 +238,9 @@ docs/
 | 리스크 | 완화 |
 |---|---|
 | LLM 생성 콘텐츠의 법률적 오류 | 조문 원문은 API에서만 / 3중 면책 / 김현진 수동 검수 |
-| 공공데이터 라이선스 오해 | 모든 페이지 하단에 공공누리 출처 명시 + 원문 URL |
+| 공공데이터 라이선스 오해 | 공공누리 1유형 출처 표기 고정 블록 / 원문 URL 반드시 노출 / 2·3·4유형 자료는 수집 대상 제외 |
+| 스크래핑 대상 사이트 DOM 변경 | 추출 실패 시 실패 리포트만 출력 (오래된 정보로 배포 방지). 월 1회 실행 시 김현진이 에러 로그 확인하고 선택자 업데이트 |
+| 정부 사이트 rate-limit / 봇 차단 | 5개 URL 각 1회 요청이라 실질 위험 낮음 / UA에 연락 이메일 명시 / `robots.txt` 준수 / 실패 시 재시도 간격 60초 |
 | 중국어 법률 용어 부정확 | Claude Opus 사용 (Sonnet보다 복잡한 법률 용어 품질 우수), 검수 시 중국 법학 용어 표준 사전 참조 권장 |
 | 사이트 번들 크기 증가 | JSON 콘텐츠 route-level split, 이미지 최소화 |
 | 디자인이 결국 AI 티 남 | §5.4 체크리스트 반복 검증, 배포 전 브라우저 직접 확인 |
