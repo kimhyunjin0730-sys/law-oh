@@ -98,11 +98,11 @@ export function Layout() {
             <div className="flex items-center">
               <Link to="/" className="flex-shrink-0 flex items-center gap-3">
                 <div className={clsx("flex flex-col items-center justify-center border-2 px-2 py-1 transition-colors duration-300", overlay ? "border-white" : "border-slate-900")}>
-                  <span className={clsx("font-display text-xl font-black leading-none tracking-[0.02em] transition-colors duration-300", overlay ? "text-white" : "text-slate-900")}>BECOME</span>
+                  <span className={clsx("font-display text-xl font-black leading-none tracking-[0.02em] transition-colors duration-300", overlay ? "text-white" : "text-slate-900")}>HANGYO</span>
                   <span className={clsx("font-display text-[10px] font-extrabold tracking-[0.24em] uppercase transition-colors duration-300", overlay ? "text-white" : "text-slate-900")}>LAW FIRM</span>
                 </div>
                 <div className={clsx("flex flex-col ml-1 border-l pl-3 transition-colors duration-300", overlay ? "border-white/30" : "border-slate-300")}>
-                  <span className={clsx("text-xl font-bold leading-tight transition-colors duration-300", overlay ? "text-white" : "text-slate-900")}>법률사무소 비컴</span>
+                  <span className={clsx("text-xl font-bold leading-tight transition-colors duration-300", overlay ? "text-white" : "text-slate-900")}>법률사무소 한교</span>
                   <span className={clsx("text-xs font-medium transition-colors duration-300", overlay ? "text-slate-300" : "text-slate-500")}>중국어 특화 법률 서비스</span>
                 </div>
               </Link>
@@ -210,7 +210,7 @@ export function Layout() {
             <div className="col-span-1 md:col-span-4">
               <div className="flex items-center gap-3 mb-6 opacity-90">
                 <div className="flex flex-col items-center justify-center border-2 border-white px-2 py-1 text-white">
-                  <span className="text-xl font-bold leading-none tracking-tighter">BECOME</span>
+                  <span className="text-xl font-bold leading-none tracking-tighter">HANGYO</span>
                 </div>
                 <div className="flex flex-col ml-1 border-l border-slate-600 pl-3">
                   <span className="text-xl font-bold text-white leading-tight">{t("nav.home")}</span>
@@ -224,7 +224,7 @@ export function Layout() {
             <div className="col-span-1 md:col-span-4">
               <h3 className="text-sm font-bold text-white tracking-widest uppercase mb-6">{t("footer.contact")}</h3>
               <div className="space-y-3 text-sm font-medium text-slate-400">
-                <p className="flex items-center gap-2"><strong className="text-slate-300 w-16">대표변호사</strong> 오동현</p>
+                <p className="flex items-center gap-2"><strong className="text-slate-300 w-16">대표 변호사</strong> 오동현</p>
                 <p className="flex items-center gap-2"><strong className="text-slate-300 w-16">전화번호</strong> 82-10-2999-6910</p>
                 <p className="flex items-center gap-2"><strong className="text-slate-300 w-16">이메일</strong> lawohdh@gmail.com</p>
                 <p className="flex items-center gap-2"><strong className="text-slate-300 w-16">WeChat</strong> wudongxuan002</p>

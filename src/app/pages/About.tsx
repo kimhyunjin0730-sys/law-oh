@@ -5,8 +5,8 @@ import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
 export function About() {
   const timeline = [
-    { year: "2026. 02", title: "법률사무소 비컴 파트너 변호사 (현재)" },
-    { year: "2025. 07", title: "법률사무소 비컴 소속변호사" },
+    { year: "2026. 02", title: "법률사무소 한교 파트너 변호사 (현재)" },
+    { year: "2025. 07", title: "법률사무소 한교 소속변호사" },
     { year: "2025. 01", title: "법무법인 동감 소속변호사" },
     { year: "2024. 11", title: "국제지식재산연수원 변리사 연수과정 수료" },
     { year: "2024", title: "대한변호사협회 연수" },
@@ -25,7 +25,7 @@ export function About() {
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         
         <SectionHeading 
-          title="대표변호사 소개" 
+          title="대표 변호사 소개" 
           subtitle="단순한 언어 능력을 넘어, 중국의 비즈니스와 문화를 완벽히 이해하는 법률 전문가입니다." 
           centered={true}
         />
@@ -34,19 +34,19 @@ export function About() {
           <div className="lg:w-2/5 relative min-h-[500px] lg:min-h-0 bg-slate-100">
             <ImageWithFallback
               src="https://images.unsplash.com/photo-1665224752123-a2ea29dddcb2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhc2lhbiUyMGxhd3llciUyMHBvcnRyYWl0JTIwcHJvZmVzc2lvbmFsfGVufDF8fHx8MTc3NjM5ODMxNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-              alt="오동현 대표변호사"
+              alt="오동현 대표 변호사"
               className="absolute inset-0 w-full h-full object-cover object-top grayscale"
             />
             <div className="absolute inset-0 bg-[#0f172a]/10 mix-blend-multiply" />
             <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-[#0f172a] to-transparent lg:hidden">
               <h3 className="text-3xl font-extrabold text-white mb-2">오동현 변호사</h3>
-              <p className="text-[#b59a5d] font-bold">법률사무소 비컴 대표변호사</p>
+              <p className="text-[#b59a5d] font-bold">법률사무소 한교 대표 변호사</p>
             </div>
           </div>
           
           <div className="lg:w-3/5 p-10 md:p-16 lg:p-24 bg-white">
             <div className="hidden lg:block mb-12">
-              <h3 className="text-4xl font-extrabold text-[#0f172a] mb-4">오동현 <span className="text-2xl text-slate-500 font-bold ml-2">대표변호사</span></h3>
+              <h3 className="text-4xl font-extrabold text-[#0f172a] mb-4">오동현 <span className="text-2xl text-slate-500 font-bold ml-2">대표 변호사</span></h3>
               <div className="w-12 h-1 bg-[#b59a5d] mb-8" />
               <blockquote className="text-2xl font-extrabold text-[#0f172a] leading-relaxed border-l-4 border-[#b59a5d] pl-8 py-2 bg-slate-50/50 italic tracking-tight">
                 "저는 중국에서 살았고, 일했고, 그 언어로 생각합니다. 

@@ -49,7 +49,7 @@ export function Cases() {
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading 
           title="업무 성공 사례" 
-          subtitle="비컴의 철저한 분석과 치밀한 전략으로 만들어낸 주요 승소 및 자문 사례입니다." 
+          subtitle="한교의 철저한 분석과 치밀한 전략으로 만들어낸 주요 승소 및 자문 사례입니다." 
           centered={true}
         />
 
@@ -76,7 +76,7 @@ export function Cases() {
         <div className="mt-32 bg-[#0f172a] border border-slate-800 p-12 md:p-20 flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="text-center md:text-left">
             <h4 className="text-3xl font-extrabold text-white mb-4 tracking-tight">
-              당신의 사건도 <span className="text-[#b59a5d]">비컴의 또 다른 성공 사례</span>가 될 수 있습니다.
+              당신의 사건도 <span className="text-[#b59a5d]">한교의 또 다른 성공 사례</span>가 될 수 있습니다.
             </h4>
             <p className="text-slate-400 font-medium text-xl">더 많은 사례와 자세한 상담을 원하시면 언제든 문의해주세요.</p>
           </div>

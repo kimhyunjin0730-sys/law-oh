@@ -53,7 +53,7 @@ export function Home() {
             <div className="flex items-center gap-3 mb-6">
               <span className="h-px w-10 bg-[#b59a5d]" />
               <span className="font-display text-[11px] sm:text-xs font-extrabold tracking-[0.32em] uppercase text-[#b59a5d]">
-                Become Law Firm · 법률사무소 비컴
+                HANGYO Law Firm · 법률사무소 한교
               </span>
             </div>
 
@@ -178,7 +178,7 @@ export function Home() {
                 </span>
               </div>
               <h2 className="text-[32px] sm:text-[44px] lg:text-[56px] font-black text-[#0f172a] tracking-tight leading-[1.1] mb-5">
-                법률사무소 비컴의 <span className="text-[#b59a5d]">변호사</span>
+                법률사무소 한교의 <span className="text-[#b59a5d]">변호사</span>
               </h2>
               <p className="text-base lg:text-lg text-slate-600 font-medium leading-relaxed max-w-[560px]">
                 한국어와 중국어 두 언어로 직접 소통하며, 통역 없이 사실관계부터 법률 분석까지 정확하게 짚어 드립니다.
@@ -205,7 +205,7 @@ export function Home() {
             <div className="relative bg-[#e9e3d2] min-h-[440px] lg:min-h-[580px] overflow-hidden">
               <ImageWithFallback
                 src="https://images.unsplash.com/photo-1665224752123-a2ea29dddcb2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhc2lhbiUyMGxhd3llciUyMHBvcnRyYWl0JTIwcHJvZmVzc2lvbmFsfGVufDF8fHx8MTc3NjM5ODMxNXww&ixlib=rb-4.1.0&q=85&w=900"
-                alt="오동현 대표변호사"
+                alt="오동현 대표 변호사"
                 className="absolute inset-0 w-full h-full object-cover object-top"
               />
               {/* Top-left editorial marker */}
@@ -231,7 +231,7 @@ export function Home() {
                 <div aria-hidden className="h-[3px] w-14 bg-[#b59a5d] mb-5" />
                 {/* Role */}
                 <p className="text-base lg:text-lg text-slate-700 font-bold mb-10">
-                  대표변호사 <span className="text-slate-400 mx-1.5">·</span> 법률사무소 비컴
+                  대표 변호사 <span className="text-slate-400 mx-1.5">·</span> 법률사무소 한교
                 </p>
 
                 {/* Specialties */}
@@ -359,7 +359,7 @@ export function Home() {
       <section className="py-32 bg-slate-50 border-t border-slate-200">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            title="왜 법률사무소 비컴인가"
+            title="왜 법률사무소 한교인가"
             subtitle="단순한 법률 지식을 넘어, 중국의 문화와 당신의 언어를 완벽하게 이해합니다."
             centered={true}
           />
@@ -382,7 +382,7 @@ export function Home() {
                 icon: <Scale className="h-12 w-12 text-[#b59a5d] mb-6" />,
                 title: "형사 처벌과 체류 자격의 연결고리를 아는 변호사",
                 num: "03",
-                desc: "한국에서 형사 처벌을 받으면 F-4, H-2 등 체류 자격이 취소되거나 강제퇴거로 이어질 수 있습니다. 비컴은 형사 사건 수임 즉시, 사건의 법적 결과뿐 아니라 체류 자격에 미치는 영향까지 종합적으로 관리합니다."
+                desc: "한국에서 형사 처벌을 받으면 F-4, H-2 등 체류 자격이 취소되거나 강제퇴거로 이어질 수 있습니다. 한교은 형사 사건 수임 즉시, 사건의 법적 결과뿐 아니라 체류 자격에 미치는 영향까지 종합적으로 관리합니다."
               }
             ].map((feature, i) => (
               <motion.div
@@ -630,7 +630,7 @@ export function Home() {
               <span className="h-px w-10 bg-[#b59a5d]" />
             </div>
             <h2 className="text-[32px] sm:text-[44px] lg:text-[56px] font-black text-[#0f172a] tracking-tight leading-[1.1] mb-5">
-              비컴과 함께한 <span className="text-[#b59a5d]">후기</span>
+              한교과 함께한 <span className="text-[#b59a5d]">후기</span>
             </h2>
             <p className="mx-auto max-w-[560px] text-base lg:text-lg text-slate-600 font-medium leading-relaxed">
               오동현 변호사의 조력으로 권리를 회복한 의뢰인의 후기입니다.
@@ -651,7 +651,7 @@ export function Home() {
               {
                 tag: "보이스피싱",
                 title: "불안했던 수사 단계를 잘 넘길 수 있었습니다",
-                quote: "전달책으로 몰렸을 때 경황이 없었는데, 비컴에서 초기부터 개입해 고의성이 없었다는 걸 입증해 주셔서 불기소를 받았습니다.",
+                quote: "전달책으로 몰렸을 때 경황이 없었는데, 한교에서 초기부터 개입해 고의성이 없었다는 걸 입증해 주셔서 불기소를 받았습니다.",
                 author: "K씨 · 조선족",
               },
               {
@@ -712,7 +712,7 @@ export function Home() {
             </span>
           </div>
           <h2 className="text-[28px] sm:text-[40px] lg:text-[48px] font-black tracking-tight leading-tight mb-10 lg:mb-12">
-            비컴에게 무엇이든 물어보세요
+            한교에게 무엇이든 물어보세요
           </h2>
           <div className="flex flex-wrap justify-center gap-3 lg:gap-4 max-w-[900px] mx-auto">
             {[
@@ -752,7 +752,7 @@ export function Home() {
             {[
               {
                 eyebrow: "Consultation",
-                title: "비컴 법률 상담",
+                title: "한교 법률 상담",
                 desc: "365일 24시간 중국어 직접 상담",
                 icon: <MessageCircle className="w-7 h-7 text-[#b59a5d]" strokeWidth={1.4} />,
                 href: "#consult",
@@ -766,8 +766,8 @@ export function Home() {
               },
               {
                 eyebrow: "Attorney",
-                title: "변호사 소개",
-                desc: "오동현 대표변호사 프로필",
+                title: "구성원 소개",
+                desc: "오동현 대표 변호사 프로필",
                 icon: <ShieldCheck className="w-7 h-7 text-[#b59a5d]" strokeWidth={1.4} />,
                 href: "/about",
               },
@@ -816,7 +816,7 @@ export function Home() {
               </span>
             </div>
             <h2 className="text-[32px] lg:text-[48px] font-black tracking-tight leading-[1.1] mb-6">
-              비컴 상담 접수
+              한교 상담 접수
             </h2>
             <p className="text-base lg:text-lg text-slate-300/85 font-medium leading-[1.85] mb-10 max-w-[440px]">
               중국어·한국어 어느 쪽이든 편한 언어로 남겨 주세요. 24시간 이내 오동현 변호사가 직접 회신드립니다.
@@ -972,7 +972,7 @@ export function Home() {
                 <li className="flex items-center gap-3"><CheckCircle2 size={24} className="text-[#b59a5d] shrink-0" /> 사장이 돈 안 줄 때 증거 남기는 법</li>
                 <li className="flex items-center gap-3"><CheckCircle2 size={24} className="text-[#b59a5d] shrink-0" /> 보이스피싱 전달책 연루 시 행동 요령</li>
                 <li className="flex items-center gap-3"><CheckCircle2 size={24} className="text-[#b59a5d] shrink-0" /> 중국 재산 상속 및 이혼 판결 효력</li>
-                <li className="flex items-center gap-3"><CheckCircle2 size={24} className="text-[#b59a5d] shrink-0" /> 한교(韩桥)/비컴 24시 위챗 QR코드 제공</li>
+                <li className="flex items-center gap-3"><CheckCircle2 size={24} className="text-[#b59a5d] shrink-0" /> 한교(韩桥) 24시 위챗 QR코드 제공</li>
               </ul>
               
               <a href="#" className="inline-flex items-center justify-center gap-3 bg-[#b59a5d] hover:bg-[#a38a53] text-white px-10 py-5 font-extrabold text-lg transition-all w-full sm:w-auto shadow-xl">
@@ -990,7 +990,7 @@ export function Home() {
                   
                   <div className="w-full h-[1px] bg-slate-200 mb-8" />
                   
-                  <p className="text-sm font-bold text-[#0f172a] mb-4">한교(韩桥) / 비컴 24시 위챗</p>
+                  <p className="text-sm font-bold text-[#0f172a] mb-4">한교(韩桥) 24시 위챗</p>
                   <div className="w-32 h-32 border-2 border-slate-300 p-2 flex items-center justify-center text-slate-400 font-bold">
                     QR 코드
                   </div>
