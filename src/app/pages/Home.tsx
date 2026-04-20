@@ -35,8 +35,8 @@ export function Home() {
                 color: "transparent",
               }}
             >
-              한국과 중국, 두 언어로<br className="hidden sm:block" />
-              <span className="opacity-70">당신의 권리를 지킵니다</span>
+              Think in Your Language,<br className="hidden sm:block" />
+              <span className="opacity-70">Defend in Korean Law.</span>
             </motion.h2>
           </div>
         </div>
@@ -59,13 +59,13 @@ export function Home() {
 
             {/* Solid main headline — the punch */}
             <h1 className="font-black leading-[1.08] tracking-[-0.02em] text-[40px] sm:text-[56px] lg:text-[76px]">
-              형사·민사·출입국에서<br className="hidden sm:block" />
-              <span className="text-[#b59a5d]">명확한 해법</span>을 제시합니다
+              당신의 언어로 깊이 공감하고,<br className="hidden sm:block" />
+              <span className="text-[#b59a5d]">한국 법률</span>로 정교하게 승부합니다.
             </h1>
 
             {/* Chinese subtitle — restrained */}
             <p className="mt-6 text-base sm:text-lg lg:text-xl text-slate-300/90 font-medium tracking-wide">
-              韩国与中国，用两种语言守护您的权利。
+              用您的母语深度共情，以韩国法律精准应对。
             </p>
 
             {/* Description */}

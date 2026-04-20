@@ -4,6 +4,10 @@ import { SectionHeader } from "./SectionHeader";
 interface Props {
   text: string;
   lang: Lang;
+  /** Substrings inside `text` to wrap with the buttercream highlighter. */
+  highlights?: string[];
+  count?: number;
+  total?: number;
 }
 
 const TITLE: Record<Lang, string> = {
@@ -12,37 +16,32 @@ const TITLE: Record<Lang, string> = {
   en: "Overview",
 };
 
-const META_LABEL: Record<Lang, { label: string; value: string }> = {
-  ko: { label: "주제", value: "체류자격·출입국" },
-  zh: { label: "主题", value: "居留资格·出入境" },
-  en: { label: "Topic", value: "Visa & Immigration" },
-};
+/** Splits `text` and wraps any substring matched in `highlights` with <mark>. */
+function renderWithMarks(text: string, highlights?: string[]) {
+  if (!highlights?.length) return text;
+  const escaped = highlights.map((h) => h.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+  const re = new RegExp(`(${escaped.join("|")})`, "g");
+  const parts = text.split(re);
+  return parts.map((p, i) =>
+    highlights.includes(p) ? (
+      <mark key={i} className="legal-mark">
+        {p}
+      </mark>
+    ) : (
+      <span key={i}>{p}</span>
+    )
+  );
+}
 
-export function OverviewProse({ text, lang }: Props) {
-  const meta = META_LABEL[lang];
+export function OverviewProse({ text, lang, highlights, count, total }: Props) {
+  const paragraphs = text.split(/\n\s*\n+/);
   return (
-    <section className="py-20 border-t border-[#e9e3d2]">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          id="overview"
-          eyebrow="Section 01 · Overview"
-          title={TITLE[lang]}
-        />
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
-          <div className="lg:col-span-8">
-            <p className="text-[17px] leading-[1.9] text-[#0f172a] max-w-[65ch]">
-              {text}
-            </p>
-          </div>
-          <aside className="lg:col-span-4 lg:border-l lg:border-[#e9e3d2] lg:pl-10">
-            <p className="font-display text-[10px] font-black tracking-[0.3em] uppercase text-[#b59a5d] mb-3">
-              {meta.label}
-            </p>
-            <p className="text-[20px] font-extrabold text-[#0f172a] leading-snug">
-              {meta.value}
-            </p>
-          </aside>
-        </div>
+    <section className="mb-[72px]">
+      <SectionHeader id="overview" title={TITLE[lang]} count={count} total={total} />
+      <div className="text-[16.5px] leading-[1.85] text-[#0f172a] space-y-[18px]">
+        {paragraphs.map((p, i) => (
+          <p key={i}>{renderWithMarks(p, highlights)}</p>
+        ))}
       </div>
     </section>
   );

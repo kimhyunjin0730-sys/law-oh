@@ -5,74 +5,65 @@ import { SectionHeader } from "./SectionHeader";
 interface Props {
   visas: VisaNode[];
   lang: Lang;
+  count?: number;
+  total?: number;
 }
 
 const TITLE: Record<Lang, string> = {
-  ko: "체류자격 목록",
-  zh: "居留资格一览",
+  ko: "주요 체류자격 유형",
+  zh: "主要居留资格类型",
   en: "Visa Types",
 };
 
-const COLS: Record<Lang, { code: string; target: string; period: string; requirements: string }> = {
-  ko: { code: "Code", target: "대상", period: "유효기간", requirements: "주요 요건" },
-  zh: { code: "Code", target: "对象", period: "有效期", requirements: "主要要求" },
-  en: { code: "Code", target: "Target", period: "Period", requirements: "Requirements" },
+const COLS: Record<Lang, { code: string; target: string; period: string; req: string }> = {
+  ko: { code: "코드", target: "대상", period: "기간", req: "요건 / 비고" },
+  zh: { code: "代码", target: "对象", period: "期限", req: "要求 / 备注" },
+  en: { code: "Code", target: "Target", period: "Period", req: "Requirements / Notes" },
 };
 
-export function VisaTable({ visas, lang }: Props) {
+export function VisaTable({ visas, lang, count, total }: Props) {
   const col = COLS[lang];
   return (
-    <section className="py-20 border-t border-[#e9e3d2] bg-[#f9f2e2]">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          id="visa-types"
-          eyebrow="Section 02 · Visa Catalogue"
-          title={TITLE[lang]}
-        />
+    <section className="mb-[72px]" id="visas">
+      <SectionHeader id="visas" title={TITLE[lang]} count={count} total={total} />
+      <div className="bg-white border border-[#dbe1ea] rounded-md overflow-hidden">
         <div className="overflow-x-auto">
-          <table className="w-full border-collapse text-left text-[14px] text-[#0f172a]">
+          <table className="w-full text-[14.5px] text-left border-collapse">
             <thead>
-              <tr className="border-t border-b border-[#0f172a]">
-                <th className="py-4 pr-6 font-display text-[11px] font-black tracking-[0.28em] uppercase text-[#6b5f48] w-[100px]">
-                  {col.code}
-                </th>
-                <th className="py-4 pr-6 font-display text-[11px] font-black tracking-[0.28em] uppercase text-[#6b5f48]">
-                  {col.target}
-                </th>
-                <th className="py-4 pr-6 font-display text-[11px] font-black tracking-[0.28em] uppercase text-[#6b5f48] w-[200px]">
-                  {col.period}
-                </th>
-                <th className="py-4 font-display text-[11px] font-black tracking-[0.28em] uppercase text-[#6b5f48]">
-                  {col.requirements}
-                </th>
+              <tr className="bg-[#0f172a] text-[#f4f6fa]">
+                <th className="py-3.5 px-4 font-semibold text-[12.5px] tracking-wide w-[110px]">{col.code}</th>
+                <th className="py-3.5 px-4 font-semibold text-[12.5px] tracking-wide w-[30%]">{col.target}</th>
+                <th className="py-3.5 px-4 font-semibold text-[12.5px] tracking-wide w-[18%]">{col.period}</th>
+                <th className="py-3.5 px-4 font-semibold text-[12.5px] tracking-wide">{col.req}</th>
               </tr>
             </thead>
             <tbody>
-              {visas.map((v, idx) => (
-                <tr
-                  key={v.code}
-                  className={`border-b border-[#e9e3d2] align-top ${
-                    idx % 2 === 1 ? "bg-[#f4ecd9]" : ""
-                  }`}
-                >
-                  <td className="py-5 pr-6 font-mono font-black text-[#b59a5d] text-[15px] tracking-wide">
-                    {v.code}
-                  </td>
-                  <td className="py-5 pr-6 leading-relaxed">
-                    <p className="font-extrabold text-[15px] mb-1">
+              {visas.map((v, i) => (
+                <tr key={v.code + i} className={i === 0 ? "" : "border-t border-[#dbe1ea]"}>
+                  <td className="py-4 px-4 align-top">
+                    <span className="font-mono font-bold text-[13px] tracking-wide text-[#0f172a] whitespace-nowrap">
+                      {v.code}
+                    </span>
+                    <div className="font-mono text-[12px] text-[#94a3b8] mt-0.5">
                       {pick(v.label, lang)}
-                    </p>
-                    <p className="text-[13px] text-[#6b5f48] leading-relaxed">
-                      {pick(v.target, lang)}
-                    </p>
+                    </div>
                   </td>
-                  <td className="py-5 pr-6 leading-relaxed">
+                  <td className="py-4 px-4 align-top leading-snug">
+                    <p className="font-bold text-[#0f172a]">{pick(v.target, lang)}</p>
+                  </td>
+                  <td className="py-4 px-4 align-top text-[#0f172a] leading-snug">
                     {pick(v.period, lang)}
                   </td>
-                  <td className="py-5 leading-relaxed">
-                    <ul className="list-disc pl-5 space-y-1 text-[13.5px]">
-                      {pick(v.requirements, lang).map((r, i) => (
-                        <li key={i}>{r}</li>
+                  <td className="py-4 px-4 align-top">
+                    <ul className="space-y-1.5 list-none">
+                      {pick(v.requirements, lang).map((r, ri) => (
+                        <li key={ri} className="relative pl-3.5 text-[13.5px] text-[#475569]">
+                          <span
+                            className="absolute left-0 top-[9px] w-[5px] h-[5px] rounded-full bg-[#b59a5d]"
+                            aria-hidden
+                          />
+                          {r}
+                        </li>
                       ))}
                     </ul>
                   </td>

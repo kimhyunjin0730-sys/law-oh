@@ -10,38 +10,194 @@ import { AgencyDirectory } from "../../components/legal/AgencyDirectory";
 import { DeadlineTable } from "../../components/legal/DeadlineTable";
 import { SourceBlock } from "../../components/legal/SourceBlock";
 import { DisclaimerBlock } from "../../components/legal/DisclaimerBlock";
+import { PageSubnav } from "../../components/legal/PageSubnav";
+import { LegalSidebar } from "../../components/legal/LegalSidebar";
+import { LegalQuickMenu } from "../../components/legal/LegalQuickMenu";
+import { ConsultPill } from "../../components/legal/ConsultPill";
+
+const SUBNAV_LABELS: Record<string, { ko: string; zh: string; en: string }> = {
+  immigration: { ko: "체류자격·출입국", zh: "居留资格·出入境", en: "Visa & Immigration" },
+  nationality: { ko: "국적·귀화", zh: "国籍·归化", en: "Nationality" },
+  family: { ko: "국제결혼·가족", zh: "国际婚姻·家庭", en: "Family" },
+  criminal: { ko: "외국인 형사", zh: "外国人刑事", en: "Criminal" },
+  deport: { ko: "강제퇴거·이의", zh: "强制遣返·异议", en: "Deportation" },
+  refugee: { ko: "난민·인도", zh: "难民·人道", en: "Refugee" },
+};
 
 export function Immigration() {
   const { language } = useLanguage();
   const c = getLegalContent("immigration");
 
-  return (
-    <div className="bg-[#faf6ef] min-h-screen legal-body">
-      <LegalHero content={c} lang={language} />
-      <OverviewProse text={pick(c.overview, language)} lang={language} />
-      <VisaTable visas={c.visas} lang={language} />
-      <ProcedureList steps={c.procedure} lang={language} />
-      <LawArticles laws={c.laws} lang={language} />
-      <AgencyDirectory agencies={c.agencies} lang={language} />
-      <DeadlineTable events={c.deadlines} lang={language} />
+  // Highlight phrases for the overview prose (buttercream marks)
+  const overviewHighlights =
+    language === "ko"
+      ? ["신청·심사·결과 통보·이의신청의 네 단계", "통보일로부터 7일 이내 이의신청", "안 날로부터 90일 이내 행정소송"]
+      : language === "zh"
+        ? ["申请·审查·结果通知·异议申请的四个阶段", "通知日起7日内异议申请", "知晓日起90日内行政诉讼"]
+        : ["four stages: application, review, decision, and appeal", "within 7 days of notice", "within 90 days of awareness"];
 
-      {/* CTA */}
-      <section className="py-20 border-t border-[#e9e3d2] bg-white">
-        <div className="max-w-[980px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+  // Highlight one phrase inside the H1 — falls back gracefully if not present
+  const titleHighlight =
+    language === "ko" ? "출입국" : language === "zh" ? "出入境" : "Immigration";
+
+  // Page sub-nav (legal topics — only immigration is live, others coming soon)
+  const subnavItems = (["immigration", "nationality", "family", "criminal", "deport", "refugee"] as const).map(
+    (k) => ({
+      label: SUBNAV_LABELS[k][language],
+      to: k === "immigration" ? "/legal/immigration" : `/legal/${k}`,
+      soon: k !== "immigration",
+    })
+  );
+
+  // Sidebar TOC (matches section IDs)
+  const toc = [
+    { id: "overview", label: language === "ko" ? "개관" : language === "zh" ? "概述" : "Overview" },
+    { id: "visas", label: language === "ko" ? "체류자격 유형" : language === "zh" ? "居留资格类型" : "Visa Types" },
+    { id: "procedure", label: language === "ko" ? "신청·심사 절차" : language === "zh" ? "申请·审查 程序" : "Procedure" },
+    { id: "laws", label: language === "ko" ? "관련 법령 조문" : language === "zh" ? "相关法令" : "Statutes" },
+    { id: "agencies", label: language === "ko" ? "관할 기관" : language === "zh" ? "管辖机关" : "Agencies" },
+    { id: "deadlines", label: language === "ko" ? "주요 시한" : language === "zh" ? "重要期限" : "Deadlines" },
+  ];
+
+  // Major cases (placeholder — real data to be wired later)
+  const cases = [
+    { label: "F-6 결혼이민 거부 처분, 이의신청을 통한 허가 전환", to: "/cases" },
+    { label: "D-2 유학 비자 사기 혐의 무혐의 처분", to: "/cases" },
+    { label: "강제퇴거명령 집행정지 후 본안 취소 판결 확보", to: "/cases" },
+    { label: "H-2 방문취업 자격 취소 처분 행정소송 승소", to: "/cases" },
+  ];
+
+  // Related practices
+  const practices = [
+    { label: "국적 · 귀화", to: "/legal/nationality" },
+    { label: "국제 결혼", to: "/legal/family" },
+    { label: "난민 · 인도", to: "/legal/refugee" },
+    { label: "강제퇴거", to: "/legal/deport" },
+    { label: "외국인 형사", to: "/legal/criminal" },
+    { label: "투자 비자", to: "/services" },
+    { label: "고용허가제", to: "/services" },
+  ];
+
+  const ctaCopy = {
+    ko: {
+      title: "개별 사안은 다릅니다.\n변호사와 상담하세요.",
+      body: "중국어·한국어 통역 가능. 의뢰인의 국적, 비자 이력, 사건 단계에 따라 결과가 달라집니다.",
+      btn: "온라인 상담 접수 →",
+      eyebrow: "Need a lawyer?",
+    },
+    zh: {
+      title: "个案情况各异。\n请咨询律师。",
+      body: "可中文·韩语沟通。结果会因当事人的国籍、签证历史、案件阶段而不同。",
+      btn: "在线咨询 →",
+      eyebrow: "Need a lawyer?",
+    },
+    en: {
+      title: "Every case is unique.\nSpeak with an attorney.",
+      body: "Chinese & Korean direct consultation. Outcome depends on nationality, visa history, and stage.",
+      btn: "Online consultation →",
+      eyebrow: "Need a lawyer?",
+    },
+  }[language];
+
+  const cta = {
+    ko: { eyebrow: "한교 — 法律事務所 · 韩桥", h: "체류 문제는\n시간이 결정합니다.", p: "이의신청 7일, 행정소송 90일 — 법정 시한을 놓치면 회복이 어렵습니다. 가능한 한 빨리 의뢰인의 상황을 변호사와 공유하세요.", primary: "온라인 상담 접수", secondary: "전화 상담  82-10-2999-6910" },
+    zh: { eyebrow: "韩桥 · Hangyo Law Firm", h: "居留问题，\n时间决定结果。", p: "异议7日、行政诉讼90日 — 错过法定期限将难以挽回。请尽早将情况告知律师。", primary: "在线咨询", secondary: "电话咨询  82-10-2999-6910" },
+    en: { eyebrow: "Hangyo Law Firm · 韩桥", h: "In immigration,\ntiming decides everything.", p: "7 days for appeal, 90 days for litigation — missing a statutory deadline is often irreversible. Share your situation with a lawyer as early as possible.", primary: "Online consultation", secondary: "Call  82-10-2999-6910" },
+  }[language];
+
+  return (
+    <div className="bg-[#f4f6fa] min-h-screen legal-body">
+      {/* Page sub-nav across legal topics */}
+      <PageSubnav items={subnavItems} />
+
+      {/* Hero */}
+      <LegalHero
+        content={c}
+        lang={language}
+        highlight={titleHighlight}
+        eyebrow="VISA · IMMIGRATION"
+      />
+
+      {/* 2-column main layout */}
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pt-14 lg:pt-16 pb-20 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_360px] gap-10 lg:gap-16">
+        <main>
+          <OverviewProse text={pick(c.overview, language)} lang={language} highlights={overviewHighlights} count={1} total={6} />
+          <VisaTable visas={c.visas} lang={language} count={2} total={6} />
+          <ProcedureList steps={c.procedure} lang={language} count={3} total={6} />
+          <LawArticles laws={c.laws} lang={language} count={4} total={6} />
+          <AgencyDirectory agencies={c.agencies} lang={language} count={5} total={6} />
+          <DeadlineTable events={c.deadlines} lang={language} count={6} total={6} />
+        </main>
+
+        <LegalSidebar
+          toc={toc}
+          cases={cases}
+          practices={practices}
+          ctaTitle={ctaCopy.title}
+          ctaBody={ctaCopy.body}
+          ctaButtonLabel={ctaCopy.btn}
+          ctaHref="/#consult"
+          needsLawyerEyebrow={ctaCopy.eyebrow}
+        />
+      </div>
+
+      {/* CTA band — full width slate */}
+      <section className="relative overflow-hidden bg-[#020617] text-[#f4f6fa] py-20">
+        <span
+          aria-hidden
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse at 15% 50%, rgba(181,154,93,.12) 0%, transparent 50%), radial-gradient(ellipse at 85% 50%, rgba(255,243,168,.06) 0%, transparent 60%)",
+          }}
+        />
+        <div className="relative max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-12 lg:gap-16 items-center">
           <div>
-            <p className="font-display text-[10px] font-black tracking-[0.3em] uppercase text-[#b59a5d] mb-3">Need a lawyer?</p>
-            <h3 className="text-3xl font-black text-[#0f172a] tracking-tight max-w-[620px] leading-snug">
-              {language === "zh" ? "个案不同，建议咨询律师。" : language === "en" ? "Your case is unique. Speak with an attorney." : "개별 사안은 다릅니다. 변호사와 상담하세요."}
-            </h3>
+            <p className="font-mono text-[11px] font-bold tracking-[0.26em] uppercase text-[#b59a5d] mb-5">
+              {cta.eyebrow}
+            </p>
+            <h2 className="font-serif-ko font-bold text-[28px] sm:text-[34px] lg:text-[42px] leading-[1.25] tracking-tight mb-4 whitespace-pre-line">
+              {cta.h}
+            </h2>
+            <p className="text-[16px] leading-[1.65] opacity-75 max-w-[480px]">{cta.p}</p>
           </div>
-          <Link to="/#consult" className="bg-[#0f172a] hover:bg-[#1e293b] text-white px-10 py-5 font-extrabold text-lg whitespace-nowrap">
-            {language === "zh" ? "在线咨询 →" : language === "en" ? "Online consult →" : "온라인 상담 접수 →"}
-          </Link>
+          <div className="flex flex-col gap-3.5">
+            <Link
+              to="/#consult"
+              className="inline-flex items-center justify-between gap-4 bg-[#b59a5d] text-[#020617] py-5 px-7 font-serif-ko font-bold text-[17px] tracking-tight transition-all hover:bg-[#fff3a8] hover:-translate-y-0.5 group"
+            >
+              <span>{cta.primary}</span>
+              <span className="font-mono text-[22px] transition-transform group-hover:translate-x-1">
+                →
+              </span>
+            </Link>
+            <a
+              href="tel:82-10-2999-6910"
+              className="inline-flex items-center justify-between gap-4 border border-white/25 text-[#f4f6fa] py-4 px-7 font-semibold text-[14.5px] transition-colors hover:border-[#b59a5d] hover:text-[#b59a5d]"
+            >
+              <span>{cta.secondary}</span>
+              <span>📞</span>
+            </a>
+          </div>
         </div>
       </section>
 
-      <SourceBlock content={c} lang={language} />
-      <DisclaimerBlock content={c} lang={language} />
+      {/* Footer-area: sources + disclaimer */}
+      <section className="bg-[#eef1f7] py-14">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12">
+          <SourceBlock content={c} lang={language} />
+          <DisclaimerBlock content={c} lang={language} />
+          <div className="md:col-span-2 mt-6 pt-4 border-t border-[#dbe1ea] flex flex-wrap gap-x-6 gap-y-2 font-mono text-[10px] tracking-wide text-[#94a3b8]">
+            <span>최종 업데이트 · {c.meta.generatedAt.slice(0, 10)}</span>
+            <span>최신 시행 반영 · {c.meta.lastRevisionAt}</span>
+            <span>버전 · IMM-v1.0</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Floating elements */}
+      <LegalQuickMenu />
+      <ConsultPill />
     </div>
   );
 }

@@ -1,101 +1,114 @@
 {
   "slug": "immigration",
   "title": {
-    "ko": "체류자격·출입국",
-    "zh": "居留资格·出入境",
-    "en": "Visa & Immigration"
+    "ko": "체류자격·출입국 (비자 및 이민)",
+    "zh": "居留资格·出入境 (签证与移民)",
+    "en": "Visa & Immigration (Status of Stay & Entry/Exit)"
   },
   "summary": {
-    "ko": "체류자격 선택과 연장·변경·이의 절차를 한눈에.",
-    "zh": "一览居留资格选择与延期、变更、异议程序。",
-    "en": "Visa selection, renewal, change, and appeal at a glance."
+    "ko": "외국인의 한국 체류자격 및 출입국 안내",
+    "zh": "外国人韩国居留资格及出入境指南",
+    "en": "Guide to status of stay and entry/exit for foreigners in Korea."
   },
   "overview": {
-    "ko": "대한민국의 출입국·체류 제도는 외국인의 체류 목적에 따라 세분화된 비자 유형을 두고 있으며, 일반 체류자격은 신청·심사·결과 통보·이의신청의 네 단계로 진행됩니다. 각 단계의 관할 기관은 출입국·외국인청과 법무부이며, 처분에 불복하는 경우 통보일로부터 7일 이내 이의신청, 안 날로부터 90일 이내 행정소송이 가능합니다. 본 페이지는 법제처 국가법령정보센터, 생활법령정보, 법무부가 공개한 자료를 정리해 중국어권 의뢰인이 자신의 상황에 맞는 비자 유형과 절차, 기관 연락처, 주요 법적 시한을 한곳에서 확인할 수 있도록 구성했습니다.",
-    "zh": "韩国的出入境·居留制度依据外国人在韩居留的目的设置了细分的签证类型，一般居留资格的办理按申请、审查、结果通知、异议申请四个阶段进行。各阶段的主管机关为出入境·外国人厅与法务部，对处分不服者可在收到通知之日起7日内提出异议申请、知道处分之日起90日内提起行政诉讼。本页面整理了法制处国家法令信息中心、生活法令信息及法务部公开发布的资料，便于中文使用者的当事人在同一页面中了解适合自身情况的签证类型、办理程序、主管机关联系方式与主要法定期限。",
-    "en": "Korea's immigration and residence framework defines distinct visa categories based on the foreign national's purpose of stay, with general status applications proceeding through four stages: intake, review, decision, and appeal. The responsible bodies are the Immigration & Foreign Affairs Offices and the Ministry of Justice; appeals must be filed within 7 days of notice, and administrative litigation within 90 days of awareness of the disposition. This page consolidates materials published by the Korea Law Information Center, the Easy-Law portal, and the Ministry of Justice so that Chinese-speaking clients can find the applicable visa type, procedural path, agency contacts, and statutory deadlines in one place."
+    "ko": "대한민국 출입국관리법은 국민 및 외국인의 출입국 관리와 안전한 국경 관리를 목적으로 합니다. 또한, 대한민국에 체류하는 외국인의 체류 관리와 사회 통합에 관한 사항을 규정합니다.",
+    "zh": "大韩民国《出入境管理法》旨在通过对所有出入大韩民国的国民及外国人进行出入境管理，实现安全的边境管理。此外，该法还规定了在韩外国人的居留管理和社会融合等事项。",
+    "en": "The Immigration Control Act of the Republic of Korea aims to manage the entry and exit of both citizens and foreigners, ensuring secure border control. It also stipulates matters concerning the management of foreigners' status of stay and their social integration within the Republic of Korea."
   },
   "meta": {
-    "generatedAt": "2026-04-20T00:00:00Z",
-    "sourceCount": 5,
+    "generatedAt": "2026-04-20T05:14:00.270Z",
+    "sourceCount": 2,
     "lastRevisionAt": "2026-01-23"
   },
   "visas": [
     {
       "code": "F-4",
-      "label": { "ko": "재외동포", "zh": "海外同胞", "en": "Overseas Korean" },
+      "label": {
+        "ko": "재외동포",
+        "zh": "在外同胞",
+        "en": "Overseas Korean"
+      },
       "target": {
-        "ko": "대한민국 국적을 가졌던 자 또는 그 직계비속 (만 19세 이상)",
-        "zh": "曾持有韩国国籍者或其直系后代（年满19岁）",
-        "en": "Former Korean nationals or lineal descendants (age 19+)"
+        "ko": "대한민국 내 활동",
+        "zh": "在韩活动",
+        "en": "Activities in Korea"
       },
       "period": {
-        "ko": "최대 3년, 연장 가능",
-        "zh": "最长3年，可延期",
-        "en": "Up to 3 years, renewable"
+        "ko": "",
+        "zh": "",
+        "en": ""
       },
       "requirements": {
         "ko": [
-          "재외동포 증명 (본인 또는 부·조부모 제적등본)",
-          "신원증명서",
-          "체류지 증빙 자료"
+          "단순노무행위 제한",
+          "선량한 풍속이나 사회질서에 반하는 행위 제한",
+          "국내 취업질서 유지 필요 시 취업 제한"
         ],
         "zh": [
-          "海外同胞证明（本人或父母、祖父母除户籍誊本）",
-          "身份证明",
-          "居住地证明材料"
+          "限制从事简单劳动行为",
+          "限制从事违反善良风俗或其他社会秩序的行为",
+          "必要时限制就业以维护国内就业秩序"
         ],
         "en": [
-          "Overseas Korean proof (own or parent/grandparent's family register)",
-          "Identity verification",
-          "Proof of residence"
+          "Restriction on simple labor activities",
+          "Restriction on acts against public morals or social order",
+          "Employment restrictions if necessary to maintain domestic employment order"
         ]
       }
     },
     {
       "code": "H-2",
-      "label": { "ko": "방문취업", "zh": "访问就业", "en": "Work & Visit" },
+      "label": {
+        "ko": "방문취업",
+        "zh": "访问就业",
+        "en": "Work and Visit"
+      },
       "target": {
-        "ko": "만 25세 이상 중국·구소련 지역 한국계 동포",
-        "zh": "年满25岁的中国及前苏联地区韩裔同胞",
-        "en": "Ethnic Koreans aged 25+ from China or former USSR"
+        "ko": "취업활동",
+        "zh": "就业活动",
+        "en": "Employment activities"
       },
       "period": {
-        "ko": "최대 5년 (복수 출입국)",
-        "zh": "最长5年（可多次出入境）",
-        "en": "Up to 5 years (multiple entry)"
+        "ko": "",
+        "zh": "",
+        "en": ""
       },
       "requirements": {
-        "ko": ["한국어 능력시험 또는 동포 증빙", "범죄경력증명서", "건강진단서"],
-        "zh": ["韩语能力考试或同胞身份证明", "无犯罪证明", "健康体检证明"],
+        "ko": [
+          "연간 허용인원 제한",
+          "사업장별 고용인원 상한"
+        ],
+        "zh": [
+          "年度允许人数限制",
+          "各工作场所雇用人数上限"
+        ],
         "en": [
-          "Korean proficiency test or ethnic Korean proof",
-          "Criminal record certificate",
-          "Health examination"
+          "Annual quota limit",
+          "Employment limit per workplace"
         ]
       }
     },
     {
       "code": "D-10",
-      "label": { "ko": "구직", "zh": "求职", "en": "Job Seeker" },
+      "label": {
+        "ko": "구직",
+        "zh": "求职",
+        "en": "Job Seeker"
+      },
       "target": {
-        "ko": "국내 대학 졸업자 또는 일정 자격 보유 구직자",
-        "zh": "韩国大学毕业生或持有相关资格的求职者",
-        "en": "Korean university graduates or qualified job seekers"
+        "ko": "",
+        "zh": "",
+        "en": ""
       },
       "period": {
-        "ko": "6개월, 연장 시 최대 2년",
-        "zh": "6个月，延期后最长2年",
-        "en": "6 months, up to 2 years with renewal"
+        "ko": "",
+        "zh": "",
+        "en": ""
       },
       "requirements": {
-        "ko": ["학위 또는 자격 증명서", "구직활동 계획서", "체류 비용 증빙"],
-        "zh": ["学位或资格证书", "求职活动计划书", "居留费用证明"],
-        "en": [
-          "Degree or qualification certificate",
-          "Job search plan",
-          "Proof of financial means"
-        ]
+        "ko": [],
+        "zh": [],
+        "en": []
       }
     },
     {
@@ -103,331 +116,383 @@
       "label": {
         "ko": "비전문취업",
         "zh": "非专业就业",
-        "en": "Non-Professional Work"
+        "en": "Non-professional Employment"
       },
       "target": {
-        "ko": "고용허가제에 따른 외국인 근로자",
-        "zh": "依雇佣许可制度的外国劳动者",
-        "en": "Foreign workers under Employment Permit System"
+        "ko": "취업활동",
+        "zh": "就业活动",
+        "en": "Employment activities"
       },
       "period": {
-        "ko": "최대 4년 10개월",
-        "zh": "最长4年10个月",
-        "en": "Up to 4 years 10 months"
+        "ko": "",
+        "zh": "",
+        "en": ""
       },
       "requirements": {
-        "ko": ["한국어능력시험 (EPS-TOPIK)", "고용허가서", "건강검진 및 자격 심사"],
-        "zh": ["韩语能力考试（EPS-TOPIK）", "雇佣许可书", "健康检查及资格审查"],
-        "en": [
-          "Korean proficiency test (EPS-TOPIK)",
-          "Employment permit",
-          "Health check and qualification review"
-        ]
+        "ko": [],
+        "zh": [],
+        "en": []
       }
     },
     {
       "code": "F-5",
-      "label": { "ko": "영주", "zh": "永驻", "en": "Permanent Residence" },
+      "label": {
+        "ko": "영주",
+        "zh": "永住",
+        "en": "Permanent Resident"
+      },
       "target": {
-        "ko": "5년 이상 국내 거주자 또는 특정 자격 요건 충족자",
-        "zh": "在韩居住5年以上或符合特定条件者",
-        "en": "Residents of 5+ years or meeting specific conditions"
+        "ko": "대한민국 영주",
+        "zh": "在韩永住",
+        "en": "Permanent residency in Korea"
       },
       "period": {
-        "ko": "무기한 (증명서 10년 갱신)",
-        "zh": "无限期（证件10年更新）",
-        "en": "Indefinite (certificate renewed every 10 years)"
+        "ko": "활동범위 및 체류기간 제한 없음",
+        "zh": "活动范围及居留期限无限制",
+        "en": "No restrictions on scope of activity and period of stay"
       },
       "requirements": {
         "ko": [
-          "국내 5년 이상 체류 기록",
-          "소득 및 자산 증빙",
-          "한국어·사회 이해 평가"
+          "품행이 단정할 것",
+          "생계를 유지할 능력이 있을 것",
+          "한국어능력과 한국사회ㆍ문화에 대한 이해 등 대한민국에서 계속 살아가는 데 필요한 기본소양을 갖추고 있을 것"
         ],
         "zh": [
-          "在韩居留5年以上记录",
-          "收入及资产证明",
-          "韩语及社会理解测评"
+          "品行端正",
+          "具备维持生计的能力",
+          "具备在韩国持续生活所需的基本素养，如韩语能力和对韩国社会文化的理解"
         ],
         "en": [
-          "5+ years of residence in Korea",
-          "Proof of income and assets",
-          "Korean language and social understanding test"
+          "Good conduct and law-abiding",
+          "Ability to support oneself or family financially",
+          "Possession of basic knowledge necessary for continued life in Korea, including Korean language proficiency and understanding of Korean society and culture"
         ]
       }
     }
   ],
   "procedure": [
     {
-      "id": "step1",
-      "label": { "ko": "신청 접수", "zh": "申请受理", "en": "Application Intake" },
-      "agency": {
-        "ko": "관할 출입국·외국인청 또는 하이코리아",
-        "zh": "辖区出入境·外国人厅或HiKorea",
-        "en": "Local Immigration Office or HiKorea portal"
+      "id": "visa-application",
+      "label": {
+        "ko": "사증 발급 신청",
+        "zh": "签证申请",
+        "en": "Visa Application"
       },
-      "duration": { "ko": "당일", "zh": "当天", "en": "Same day" },
-      "lawRef": "출입국관리법 §25",
-      "note": {
-        "ko": "신청서와 첨부서류를 제출. 하이코리아 온라인 접수 시 방문 예약 불필요.",
-        "zh": "提交申请书及附件。HiKorea在线受理无需预约访问。",
-        "en": "Submit application and attachments. HiKorea online filing skips the in-person visit."
-      }
-    },
-    {
-      "id": "step2",
-      "label": { "ko": "서류 심사", "zh": "文件审查", "en": "Document Review" },
       "agency": {
-        "ko": "출입국·외국인청 심사과",
-        "zh": "出入境·外国人厅审查科",
-        "en": "Immigration Office, Review Division"
-      },
-      "duration": { "ko": "평균 14일", "zh": "平均14天", "en": "Avg. 14 days" },
-      "lawRef": "출입국관리법 §26",
-      "note": {
-        "ko": "보정 요청 시 기한 내 응답하지 않으면 반려될 수 있음.",
-        "zh": "如有补正要求未在期限内回复，可能被驳回。",
-        "en": "Failure to respond to corrections within the deadline may result in rejection."
-      }
-    },
-    {
-      "id": "step3",
-      "label": { "ko": "결과 통보", "zh": "结果通知", "en": "Decision Notice" },
-      "agency": {
-        "ko": "출입국·외국인청",
-        "zh": "出入境·外国人厅",
-        "en": "Immigration Office"
+        "ko": "법무부장관 (재외공관의 장 위임 가능)",
+        "zh": "法务部长官（可委托驻外使领馆馆长）",
+        "en": "Minister of Justice (may delegate to head of diplomatic mission abroad)"
       },
       "duration": {
-        "ko": "심사 완료 시",
-        "zh": "审查完成时",
-        "en": "Upon review completion"
+        "ko": "",
+        "zh": "",
+        "en": ""
       },
-      "lawRef": "출입국관리법 §27",
+      "lawRef": "출입국관리법 §7 ①, §8 ②; 출입국관리법 시행령 §7 ①",
       "note": {
-        "ko": "허가 시 외국인등록증 발급. 불허 시 사유 명시된 서면 통보.",
-        "zh": "获批时发放外国人登录证。不予许可时书面通知理由。",
-        "en": "On approval, ARC is issued. On denial, written notice with reason is sent."
+        "ko": "유효한 여권과 법무부장관이 발급한 사증을 소지해야 합니다.",
+        "zh": "必须持有有效护照和法务部长官签发的签证。",
+        "en": "Must possess a valid passport and a visa issued by the Minister of Justice."
       }
     },
     {
-      "id": "step4",
-      "label": { "ko": "이의신청", "zh": "异议申请", "en": "Appeal" },
+      "id": "entry-inspection",
+      "label": {
+        "ko": "입국 심사",
+        "zh": "入境审查",
+        "en": "Entry Inspection"
+      },
       "agency": {
-        "ko": "법무부 출입국외국인정책본부",
-        "zh": "法务部出入境外国人政策本部",
-        "en": "Ministry of Justice, Immigration Policy HQ"
+        "ko": "출입국관리공무원",
+        "zh": "出入境管理公务员",
+        "en": "Immigration Officer"
       },
       "duration": {
-        "ko": "통보일로부터 7일 이내",
-        "zh": "通知日起7天内",
-        "en": "Within 7 days of notice"
+        "ko": "",
+        "zh": "",
+        "en": ""
       },
-      "lawRef": "행정심판법 §27",
+      "lawRef": "출입국관리법 §12 ①",
       "note": {
-        "ko": "변호사 조력 권장. 행정소송 제기와 병행 가능.",
-        "zh": "建议律师协助。可与行政诉讼同时提起。",
-        "en": "Legal counsel recommended. May proceed alongside administrative litigation."
+        "ko": "유효한 여권과 입국신고서를 제출하고 입국심사를 받아야 합니다.",
+        "zh": "必须提交有效护照和入境申报单，并接受入境审查。",
+        "en": "Must submit a valid passport and arrival card, and undergo entry inspection."
+      }
+    },
+    {
+      "id": "foreigner-registration",
+      "label": {
+        "ko": "외국인 등록",
+        "zh": "外国人登记",
+        "en": "Foreigner Registration"
+      },
+      "agency": {
+        "ko": "체류지 관할 지방출입국ㆍ외국인관서의 장",
+        "zh": "居留地管辖地方出入境·外国人官署长",
+        "en": "Head of the local immigration office with jurisdiction over the place of stay"
+      },
+      "duration": {
+        "ko": "입국일로부터 90일 이내",
+        "zh": "入境之日起90日内",
+        "en": "Within 90 days from the date of entry"
+      },
+      "lawRef": "출입국관리법 §31 ①",
+      "note": {
+        "ko": "90일을 초과하여 체류하려면 입국일로부터 90일 이내에 등록해야 합니다.",
+        "zh": "若停留超过90日，须在入境之日起90日内办理登记。",
+        "en": "If staying for more than 90 days, registration must be completed within 90 days from the date of entry."
+      }
+    },
+    {
+      "id": "status-change-extension",
+      "label": {
+        "ko": "체류자격 변경/연장 허가",
+        "zh": "居留资格变更/延长许可",
+        "en": "Status of Stay Change/Extension Permit"
+      },
+      "agency": {
+        "ko": "법무부장관 (지방출입국ㆍ외국인관서의 장 경유)",
+        "zh": "法务部长官（经由地方出入境·外国人官署长）",
+        "en": "Minister of Justice (via head of local immigration office)"
+      },
+      "duration": {
+        "ko": "체류기간 만료 전",
+        "zh": "居留期限届满前",
+        "en": "Before the expiration of the period of stay"
+      },
+      "lawRef": "출입국관리법 §24 ①, §25 ①",
+      "note": {
+        "ko": "체류자격과 다른 활동을 하거나 체류기간을 초과하여 계속 체류하려면 미리 허가를 받아야 합니다.",
+        "zh": "若要从事与居留资格不符的活动或继续停留超过居留期限，须事先获得许可。",
+        "en": "If engaging in activities outside the scope of the status of stay or intending to stay beyond the permitted period, prior authorization is required."
+      }
+    },
+    {
+      "id": "departure-inspection",
+      "label": {
+        "ko": "출국 심사",
+        "zh": "出境审查",
+        "en": "Departure Inspection"
+      },
+      "agency": {
+        "ko": "출입국관리공무원",
+        "zh": "出入境管理公务员",
+        "en": "Immigration Officer"
+      },
+      "duration": {
+        "ko": "",
+        "zh": "",
+        "en": ""
+      },
+      "lawRef": "출입국관리법 §28 ①",
+      "note": {
+        "ko": "유효한 여권을 가지고 출국하는 출입국항에서 출국심사를 받아야 합니다.",
+        "zh": "必须持有有效护照，并在出境口岸接受出境审查。",
+        "en": "Must possess a valid passport and undergo departure inspection at the port of exit."
       }
     }
   ],
   "agencies": [
     {
-      "id": "immi-seoul",
+      "id": "moj",
       "name": {
-        "ko": "서울출입국·외국인청",
-        "zh": "首尔出入境·外国人厅",
-        "en": "Seoul Immigration Office"
+        "ko": "법무부",
+        "zh": "法务部",
+        "en": "Ministry of Justice"
       },
       "role": {
-        "ko": "비자 신청·연장·변경, 외국인등록",
-        "zh": "签证申请·延期·变更，外国人登录",
-        "en": "Visa application, renewal, and foreign registration"
-      },
-      "phone": "1345",
-      "address": {
-        "ko": "서울 양천구 목동동로 151",
-        "zh": "首尔阳川区木洞东路151",
-        "en": "151 Mokdong-dong-ro, Yangcheon-gu, Seoul"
-      },
-      "url": "https://www.hikorea.go.kr"
-    },
-    {
-      "id": "moj-immigration",
-      "name": {
-        "ko": "법무부 출입국외국인정책본부",
-        "zh": "法务部出入境外国人政策本部",
-        "en": "Ministry of Justice — Immigration Policy HQ"
-      },
-      "role": {
-        "ko": "출입국 정책, 이의신청 처리",
-        "zh": "出入境政策、异议申请处理",
-        "en": "Immigration policy, appeal processing"
+        "ko": "출입국 및 체류 정책 수립, 사증 발급, 각종 허가 결정 등",
+        "zh": "制定出入境及居留政策，签发签证，决定各类许可等",
+        "en": "Formulates immigration and stay policies, issues visas, and makes decisions on various permits."
       },
       "phone": "02-2110-4000",
-      "address": {
-        "ko": "경기 과천시 관문로 47",
-        "zh": "京畿道果川市关门路47",
-        "en": "47 Gwanmun-ro, Gwacheon-si, Gyeonggi"
-      },
-      "url": "https://www.moj.go.kr"
+      "address": "",
+      "url": ""
     },
     {
-      "id": "hikorea-portal",
+      "id": "local-immi-office",
       "name": {
-        "ko": "하이코리아 (HiKorea)",
-        "zh": "HiKorea 在线门户",
-        "en": "HiKorea Online Portal"
+        "ko": "지방출입국ㆍ외국인관서",
+        "zh": "地方出入境·外国人官署",
+        "en": "Local Immigration Office"
       },
       "role": {
-        "ko": "온라인 비자·체류 신청, 예약",
-        "zh": "在线签证·居留申请及预约",
-        "en": "Online visa & stay applications, appointments"
+        "ko": "외국인 등록, 체류자격 변경/연장 신청 접수 및 처리, 출입국 심사 등",
+        "zh": "外国人登记，居留资格变更/延长申请的受理和处理，出入境审查等",
+        "en": "Handles foreigner registration, receives and processes applications for status of stay changes/extensions, conducts entry/exit inspections, etc."
       },
       "phone": "1345",
-      "address": {
-        "ko": "온라인 서비스",
-        "zh": "在线服务",
-        "en": "Online service"
+      "address": "",
+      "url": ""
+    },
+    {
+      "id": "diplomatic-mission",
+      "name": {
+        "ko": "재외공관",
+        "zh": "驻外使领馆",
+        "en": "Diplomatic Missions Abroad"
       },
-      "url": "https://www.hikorea.go.kr"
+      "role": {
+        "ko": "사증 발급 권한 위임, 외국인입국허가서 발급 등",
+        "zh": "签证签发权限委托，外国人入境许可签发等",
+        "en": "Delegated authority for visa issuance, issuance of foreigner entry permits, etc."
+      },
+      "phone": "",
+      "address": "",
+      "url": ""
     }
   ],
   "deadlines": [
     {
-      "day": 0,
-      "title": { "ko": "사건 발생일", "zh": "事件发生日", "en": "Event Date" },
+      "day": 90,
+      "title": {
+        "ko": "외국인등록",
+        "zh": "外国人登记",
+        "en": "Foreigner Registration"
+      },
       "detail": {
-        "ko": "강제퇴거 명령·출입국 단속 등 계기가 된 사건이 일어난 날짜.",
-        "zh": "强制驱逐命令·出入境查处等触发事件发生的日期。",
-        "en": "Date the triggering event occurred (e.g., deportation, enforcement)."
+        "ko": "입국한 날부터 90일을 초과하여 대한민국에 체류하려면 입국한 날부터 90일 이내에 체류지 관할 지방출입국ㆍ외국인관서의 장에게 외국인등록을 하여야 합니다.",
+        "zh": "若停留超过90日，须在入境之日起90日内向居留地管辖的地方出入境·外国人官署长办理外国人登记。",
+        "en": "If staying in Korea for more than 90 days, foreigner registration must be completed with the head of the local immigration office with jurisdiction over the place of stay within 90 days from the date of entry."
       }
     },
     {
-      "day": 3,
+      "day": 30,
       "title": {
-        "ko": "긴급 상담 권장",
-        "zh": "建议紧急咨询",
-        "en": "Urgent Consultation Recommended"
+        "ko": "신분 변경에 따른 체류자격 변경허가",
+        "zh": "因身份变更申请居留资格变更许可",
+        "en": "Status of Stay Change Permit due to Status Change"
       },
       "detail": {
-        "ko": "사실관계 정리와 대응 방향 설정을 위해 72시간 이내 변호사 상담 권장.",
-        "zh": "建议在72小时内咨询律师以整理事实关系并确定应对方向。",
-        "en": "Consult an attorney within 72 hours to organize facts and plan response."
-      }
-    },
-    {
-      "day": 7,
-      "title": {
-        "ko": "이의신청 기한",
-        "zh": "异议申请期限",
-        "en": "Appeal Deadline"
-      },
-      "detail": {
-        "ko": "출입국 처분에 대한 이의신청은 통보일로부터 7일 이내.",
-        "zh": "对出入境处分的异议申请须在通知日起7日内提出。",
-        "en": "Appeals must be filed within 7 days of notice of decision."
-      }
-    },
-    {
-      "day": 14,
-      "title": {
-        "ko": "심사 평균 소요일",
-        "zh": "审查平均所需天数",
-        "en": "Avg. Review Timeframe"
-      },
-      "detail": {
-        "ko": "일반 체류자격 신청 심사는 접수일로부터 평균 14일 소요.",
-        "zh": "一般居留资格申请审查平均从受理日起14天。",
-        "en": "General visa applications take an average of 14 days from intake."
+        "ko": "신분이 변경되어 체류자격을 변경하려는 사람은 신분이 변경된 날부터 30일 이내에 법무부장관의 체류자격 변경허가를 받아야 합니다.",
+        "zh": "因身份变更而需变更居留资格者，须在身份变更之日起30日内获得法务部长官的居留资格变更许可。",
+        "en": "Persons wishing to change their status of stay due to a change in status must obtain permission from the Minister of Justice within 30 days from the date of status change."
       }
     },
     {
       "day": 90,
       "title": {
-        "ko": "행정소송 제소기한",
-        "zh": "行政诉讼起诉期限",
-        "en": "Administrative Litigation Deadline"
+        "ko": "17세가 된 외국인의 외국인등록증 발급 신청",
+        "zh": "年满17岁外国人的外国人登录证申请",
+        "en": "Application for Alien Registration Card for foreigners turning 17"
       },
       "detail": {
-        "ko": "처분을 안 날로부터 90일 이내 행정소송 제기 가능.",
-        "zh": "自知道处分之日起90日内可提起行政诉讼。",
-        "en": "Administrative litigation may be filed within 90 days of awareness."
+        "ko": "외국인등록증을 발급받지 아니한 외국인이 17세가 된 때에는 90일 이내에 체류지 관할 지방출입국ㆍ외국인관서의 장에게 외국인등록증 발급신청을 하여야 합니다.",
+        "zh": "未办理外国人登录证的外国人年满17岁时，须在90日内向居留地管辖的地方出入境·外国人官署长申请外国人登录证。",
+        "en": "Foreigners who have not been issued an Alien Registration Card must apply for one with the head of the local immigration office with jurisdiction over their place of stay within 90 days of turning 17."
+      }
+    },
+    {
+      "day": 15,
+      "title": {
+        "ko": "외국인등록사항 변경신고",
+        "zh": "外国人登记事项变更申报",
+        "en": "Report of Change in Foreigner Registration Details"
+      },
+      "detail": {
+        "ko": "외국인등록을 한 외국인은 성명, 성별, 생년월일, 국적, 여권 정보 등 변경 시 15일 이내에 체류지 관할 지방출입국ㆍ외국인관서의 장에게 변경신고를 하여야 합니다.",
+        "zh": "已办理外国人登记的外国人，若姓名、性别、出生日期、国籍、护照信息等发生变更，须在15日内向居留地管辖的地方出入境·外国人官署长申报变更。",
+        "en": "Foreigners who have completed foreigner registration must report changes to their name, gender, date of birth, nationality, passport information, etc., to the head of the local immigration office with jurisdiction over their place of stay within 15 days."
+      }
+    },
+    {
+      "day": 15,
+      "title": {
+        "ko": "체류지 변경 신고",
+        "zh": "居留地变更申报",
+        "en": "Report of Change of Residence"
+      },
+      "detail": {
+        "ko": "외국인등록을 한 외국인이 체류지를 변경하였을 때에는 전입한 날부터 15일 이내에 새로운 체류지의 시ㆍ군ㆍ구 또는 읍ㆍ면ㆍ동의 장이나 그 체류지를 관할하는 지방출입국ㆍ외국인관서의 장에게 전입신고를 하여야 합니다.",
+        "zh": "已办理外国人登记的外国人变更居留地时，须在迁入之日起15日内向新居留地的市·郡·区或邑·面·洞长或管辖该居留地的地方出入境·外国人官署长办理迁入申报。",
+        "en": "Foreigners who have completed foreigner registration must report a change of residence to the head of the city/county/district or eup/myeon/dong office of the new place of stay, or the head of the local immigration office with jurisdiction over that place, within 15 days from the date of moving in."
+      }
+    },
+    {
+      "day": 30,
+      "title": {
+        "ko": "외국인등록증 반납 (국민이 되거나 사망 시)",
+        "zh": "外国人登录证返还（成为国民或死亡时）",
+        "en": "Return of Alien Registration Card (upon acquiring nationality or death)"
+      },
+      "detail": {
+        "ko": "등록외국인이 국민이 되거나 사망한 경우, 해당 사실을 안 날 또는 주민등록을 마친 날부터 30일 이내에 외국인등록증을 반납하여야 합니다.",
+        "zh": "已登记的外国人若成为国民或死亡，须在知晓该事实之日或完成居民登记之日起30日内返还外国人登录证。",
+        "en": "If a registered foreigner acquires Korean nationality or dies, the Alien Registration Card must be returned within 30 days from the date of knowing the fact or completing resident registration."
       }
     }
   ],
   "laws": [
     {
-      "ref": "출입국관리법 제25조(체류기간 연장허가)",
+      "ref": "출입국관리법 제1조(목적)",
       "text": {
-        "ko": "외국인이 체류기간을 초과하여 계속 체류하려면 그 기간이 끝나기 전에 법무부장관의 체류기간 연장허가를 받아야 한다.",
-        "zh": "外国人欲超过居留期间继续居留的，应于期间结束前取得法务部长官的居留期间延长许可。",
-        "en": "A foreign national intending to remain beyond their stay period must obtain a stay extension from the Minister of Justice before expiry."
+        "ko": "제1조(목적) 이 법은 대한민국에 입국하거나 대한민국에서 출국하는 모든 국민 및 외국인의 출입국관리를 통한 안전한 국경관리, 대한민국에 체류하는 외국인의 체류관리와 사회통합 등에 관한 사항을 규정함을 목적으로 한다. <개정 2012. 1. 26., 2018. 3. 20.> [전문개정 2010. 5. 14.]",
+        "zh": "第1条（目的）本法旨在通过对所有出入大韩民国的国民及外国人进行出入境管理，实现安全的边境管理，并规定在韩外国人的居留管理和社会融合等事项。<修订 2012. 1. 26., 2018. 3. 20.> [全文修订 2010. 5. 14.]",
+        "en": "Article 1 (Purpose) The purpose of this Act is to regulate matters concerning the safe management of national borders through the control of entry and exit of all citizens and foreigners entering or departing from the Republic of Korea, as well as the management of foreigners' status of stay and social integration within the Republic of Korea. <Amended on Jan. 26, 2012; Mar. 20, 2018> [Wholly Amended on May 14, 2010]"
       },
-      "revisedAt": "2024-03-01",
-      "sourceUrl": "https://www.law.go.kr/법령/출입국관리법/제25조"
+      "revisedAt": "2018-03-20",
+      "sourceUrl": "https://www.law.go.kr/법령/출입국관리법"
+    },
+    {
+      "ref": "출입국관리법 제7조(외국인의 입국)",
+      "text": {
+        "ko": "제7조(외국인의 입국) ① 외국인이 입국할 때에는 유효한 여권과 법무부장관이 발급한 사증(査證)을 가지고 있어야 한다. ② 다음 각 호의 어느 하나에 해당하는 외국인은 제1항에도 불구하고 사증 없이 입국할 수 있다. 1. 재입국허가를 받은 사람 또는 재입국허가가 면제된 사람으로서 그 허가 또는 면제받은 기간이 끝나기 전에 입국하는 사람 2. 대한민국과 사증면제협정을 체결한 국가의 국민으로서 그 협정에 따라 면제대상이 되는 사람 3. 국제친선, 관광 또는 대한민국의 이익 등을 위하여 입국하는 사람으로서 대통령령으로 정하는 바에 따라 따로 입국허가를 받은 사람 4. 난민여행증명서를 발급받고 출국한 후 그 유효기간이 끝나기 전에 입국하는 사람 ③ 법무부장관은 공공질서의 유지나 국가이익에 필요하다고 인정하면 제2항제2호에 해당하는 사람에 대하여 사증면제협정의 적용을 일시 정지할 수 있다. ④ 대한민국과 수교(修交)하지 아니한 국가나 법무부장관이 외교부장관과 협의하여 지정한 국가의 국민은 제1항에도 불구하고 대통령령으로 정하는 바에 따라 재외공관의 장이나 지방출입국ㆍ외국인관서의 장이 발급한 외국인입국허가서를 가지고 입국할 수 있다. <개정 2013. 3. 23., 2014. 3. 18.> [전문개정 2010. 5. 14.]",
+        "zh": "第7条（外国人的入境）① 外国人入境时，必须持有有效护照和法务部长官签发的签证。② 尽管有第1款规定，但符合下列任一情形的外国人可以免签入境：1. 已获得再入境许可或免除再入境许可，并在该许可或免除期限届满前入境的人；2. 与大韩民国签订免签协定国家的国民，且根据该协定属于免签对象的人；3. 为国际友好、旅游或大韩民国利益等目的入境，并根据总统令另行获得入境许可的人；4. 已获得难民旅行证并出境，在其有效期届满前入境的人。③ 法务部长官认为为维护公共秩序或国家利益有必要时，可以暂时中止对符合第2款第2项规定的人适用免签协定。④ 未与大韩民国建交的国家或法务部长官与外交部长官协商指定国家的国民，尽管有第1款规定，但可以根据总统令的规定，持驻外使领馆馆长或地方出入境·外国人官署长签发的外国人入境许可书入境。<修订 2013. 3. 23., 2014. 3. 18.> [全文修订 2010. 5. 14.]",
+        "en": "Article 7 (Entry of Foreigners) ① A foreigner shall possess a valid passport and a visa issued by the Minister of Justice upon entering the Republic of Korea. ② Notwithstanding paragraph (1), a foreigner falling under any of the following subparagraphs may enter the Republic of Korea without a visa: 1. A person who has obtained re-entry permit or is exempted from re-entry permit, and enters before the expiration of such permit or exemption period; 2. A national of a country that has concluded a visa waiver agreement with the Republic of Korea, who is subject to exemption under such agreement; 3. A person who enters for the purpose of international friendship, tourism, or the interests of the Republic of Korea, and has obtained separate entry permission as prescribed by Presidential Decree; 4. A person who has been issued a refugee travel document and departed, and enters before the expiration of its validity period. ③ If the Minister of Justice deems it necessary for the maintenance of public order or national interest, he/she may temporarily suspend the application of a visa waiver agreement to a person falling under subparagraph 2 of paragraph (2). ④ Notwithstanding paragraph (1), a national of a country that has not established diplomatic relations with the Republic of Korea or a country designated by the Minister of Justice in consultation with the Minister of Foreign Affairs may enter the Republic of Korea with a foreigner entry permit issued by the head of a diplomatic mission abroad or the head of a local immigration office, as prescribed by Presidential Decree. <Amended on Mar. 23, 2013; Mar. 18, 2014> [Wholly Amended on May 14, 2010]"
+      },
+      "revisedAt": "2014-03-18",
+      "sourceUrl": "https://www.law.go.kr/법령/출입국관리법"
+    },
+    {
+      "ref": "출입국관리법 제10조(체류자격)",
+      "text": {
+        "ko": "제10조(체류자격) 입국하려는 외국인은 다음 각 호의 어느 하나에 해당하는 체류자격을 가져야 한다. 1. 일반체류자격: 이 법에 따라 대한민국에 체류할 수 있는 기간이 제한되는 체류자격 2. 영주자격: 대한민국에 영주(永住)할 수 있는 체류자격 [전문개정 2018. 3. 20.]",
+        "zh": "第10条（居留资格）拟入境的外国人必须具备下列任一居留资格：1. 一般居留资格：根据本法规定，在大韩民国居留期限受限制的居留资格；2. 永住资格：可在大韩民国永久居留的居留资格。[全文修订 2018. 3. 20.]",
+        "en": "Article 10 (Status of Stay) A foreigner intending to enter the Republic of Korea shall possess a status of stay falling under any of the following subparagraphs: 1. General status of stay: A status of stay for which the period of stay in the Republic of Korea is restricted under this Act; 2. Permanent residency status: A status of stay allowing permanent residence in the Republic of Korea. [Wholly Amended on Mar. 20, 2018]"
+      },
+      "revisedAt": "2018-03-20",
+      "sourceUrl": "https://www.law.go.kr/법령/출입국관리법"
+    },
+    {
+      "ref": "출입국관리법 제31조(외국인등록)",
+      "text": {
+        "ko": "제31조(외국인등록) ① 외국인이 입국한 날부터 90일을 초과하여 대한민국에 체류하려면 대통령령으로 정하는 바에 따라 입국한 날부터 90일 이내에 그의 체류지를 관할하는 지방출입국ㆍ외국인관서의 장에게 외국인등록을 하여야 한다. 다만, 다음 각 호의 어느 하나에 해당하는 외국인의 경우에는 그러하지 아니하다. <개정 2014. 3. 18.> 1. 주한외국공관(대사관과 영사관을 포함한다)과 국제기구의 직원 및 그의 가족 2. 대한민국정부와의 협정에 따라 외교관 또는 영사와 유사한 특권 및 면제를 누리는 사람과 그의 가족 3. 대한민국정부가 초청한 사람 등으로서 법무부령으로 정하는 사람 ② 제1항에도 불구하고 같은 항 각 호의 어느 하나에 해당하는 외국인은 본인이 원하는 경우 체류기간 내에 외국인등록을 할 수 있다. <신설 2016. 3. 29.> ③ 제23조에 따라 체류자격을 받는 사람으로서 그 날부터 90일을 초과하여 체류하게 되는 사람은 제1항 각 호 외의 부분 본문에도 불구하고 체류자격을 받는 때에 외국인등록을 하여야 한다. <개정 2016. 3. 29.> ④ 제24조에 따라 체류자격 변경허가를 받는 사람으로서 입국한 날부터 90일을 초과하여 체류하게 되는 사람은 제1항 각 호 외의 부분 본문에도 불구하고 체류자격 변경허가를 받는 때에 외국인등록을 하여야 한다. <개정 2016. 3. 29.> ⑤ 지방출입국ㆍ외국인관서의 장은 제1항부터 제4항까지의 규정에 따라 외국인등록을 한 사람에게는 대통령령으로 정하는 방법에 따라 개인별로 고유한 등록번호(이하 “외국인등록번호”라 한다)를 부여하여야 한다. <개정 2014. 3. 18., 2016. 3. 29.> [전문개정 2010. 5. 14.]",
+        "zh": "第31条（外国人登记）① 外国人若拟在大韩民国停留超过入境之日起90日，须根据总统令的规定，在入境之日起90日内向居留地管辖的地方出入境·外国人官署长办理外国人登记。但下列任一情形的外国人除外：<修订 2014. 3. 18.> 1. 驻韩外国使领馆（包括大使馆和领事馆）和国际机构的工作人员及其家属；2. 根据与大韩民国政府签订的协定享有外交官或领事类似特权和豁免的人员及其家属；3. 大韩民国政府邀请的人员等，且为法务部令规定的人员。② 尽管有第1款规定，但符合同款各项任一情形的外国人，若本人愿意，可在居留期限内办理外国人登记。<新设 2016. 3. 29.> ③ 根据第23条获得居留资格，且自该日起停留超过90日的人员，尽管有第1款除外部分本文的规定，但须在获得居留资格时办理外国人登记。<修订 2016. 3. 29.> ④ 根据第24条获得居留资格变更许可，且自入境之日起停留超过90日的人员，尽管有第1款除外部分本文的规定，但须在获得居留资格变更许可时办理外国人登记。<修订 2016. 3. 29.> ⑤ 地方出入境·外国人官署长须根据第1款至第4款的规定，对已办理外国人登记的人员，按照总统令规定的方法赋予个人唯一的登记号码（以下简称“外国人登记号码”）。<修订 2014. 3. 18., 2016. 3. 29.> [全文修订 2010. 5. 14.]",
+        "en": "Article 31 (Foreigner Registration) ① A foreigner who intends to stay in the Republic of Korea for more than 90 days from the date of entry shall register as a foreigner with the head of the local immigration office having jurisdiction over his/her place of stay within 90 days from the date of entry, as prescribed by Presidential Decree. However, this shall not apply to foreigners falling under any of the following subparagraphs: <Amended on Mar. 18, 2014> 1. Staff members of foreign diplomatic missions (including embassies and consulates) and international organizations stationed in Korea, and their families; 2. Persons enjoying privileges and immunities similar to those of diplomats or consuls pursuant to agreements with the Government of the Republic of Korea, and their families; 3. Persons invited by the Government of the Republic of Korea, etc., as prescribed by Ministry of Justice Ordinance. ② Notwithstanding paragraph (1), a foreigner falling under any of the subparagraphs of the same paragraph may register as a foreigner within the period of stay if he/she so desires. <Newly Inserted on Mar. 29, 2016> ③ A person who obtains a status of stay pursuant to Article 23 and stays for more than 90 days from that date shall register as a foreigner at the time of obtaining the status of stay, notwithstanding the main sentence of the part other than the subparagraphs of paragraph (1). <Amended on Mar. 29, 2016> ④ A person who obtains permission to change his/her status of stay pursuant to Article 24 and stays for more than 90 days from the date of entry shall register as a foreigner at the time of obtaining permission to change his/her status of stay, notwithstanding the main sentence of the part other than the subparagraphs of paragraph (1). <Amended on Mar. 29, 2016> ⑤ The head of a local immigration office shall assign a unique registration number (hereinafter referred to as \"foreigner registration number\") to each person who has registered as a foreigner pursuant to paragraphs (1) through (4), in accordance with the method prescribed by Presidential Decree. <Amended on Mar. 18, 2014; Mar. 29, 2016> [Wholly Amended on May 14, 2010]"
+      },
+      "revisedAt": "2016-03-29",
+      "sourceUrl": "https://www.law.go.kr/법령/출입국관리법"
     },
     {
       "ref": "출입국관리법 제46조(강제퇴거의 대상자)",
       "text": {
-        "ko": "지방출입국·외국인관서의 장은 다음 각 호의 어느 하나에 해당하는 외국인을 대한민국 밖으로 강제퇴거시킬 수 있다.",
-        "zh": "地方出入境·外国人厅长官对于属于下列任一情形的外国人，可将其强制驱逐出韩国。",
-        "en": "The head of a regional immigration office may deport any foreign national falling under the following."
+        "ko": "제46조(강제퇴거의 대상자) ① 지방출입국ㆍ외국인관서의 장은 이 장에 규정된 절차에 따라 다음 각 호의 어느 하나에 해당하는 외국인을 대한민국 밖으로 강제퇴거시킬 수 있다. <개정 2012. 1. 26., 2014. 3. 18., 2016. 3. 29., 2018. 3. 20., 2021. 8. 17.> 1. 제7조를 위반한 사람 2. 제7조의2를 위반한 외국인 또는 같은 조에 규정된 허위초청 등의 행위로 입국한 외국인 3. 제11조제1항 각 호의 어느 하나에 해당하는 입국금지 사유가 입국 후에 발견되거나 발생한 사람 4. 제12조제1항ㆍ제2항 또는 제12조의3을 위반한 사람 5. 제13조제2항에 따라 지방출입국ㆍ외국인관서의 장이 붙인 허가조건을 위반한 사람 6. 제14조제1항, 제14조의2제1항, 제15조제1항, 제16조제1항 또는 제16조의2제1항에 따른 허가를 받지 아니하고 상륙한 사람 7. 제14조제3항(제14조의2제3항에 따라 준용되는 경우를 포함한다), 제15조제2항, 제16조제2항 또는 제16조의2제2항에 따라 지방출입국ㆍ외국인관서의 장 또는 출입국관리공무원이 붙인 허가조건을 위반한 사람 8. 제17조제1항ㆍ제2항, 제18조, 제20조, 제23조, 제24조 또는 제25조를 위반한 사람 9. 제21조제1항 본문을 위반하여 허가를 받지 아니하고 근무처를 변경ㆍ추가하거나 같은 조 제2항을 위반하여 외국인을 고용ㆍ알선한 사람 10. 제22조에 따라 법무부장관이 정한 거소 또는 활동범위의 제한이나 그 밖의 준수사항을 위반한 사람 10의2. 제26조를 위반한 외국인 11. 제28조제1항 및 제2항을 위반하여 출국하려고 한 사람 12. 제31조에 따른 외국인등록 의무를 위반한 사람 12의2. 제33조의3을 위반한 외국인 13. 금고 이상의 형을 선고받고 석방된 사람 14. 제76조의4제1항 각 호의 어느 하나에 해당하는 사람 15. 그 밖에 제1호부터 제10호까지, 제10호의2, 제11호, 제12호, 제12호의2, 제13호 또는 제14호에 준하는 사람으로서 법무부령으로 정하는 사람 ② 영주자격을 가진 사람은 제1항에도 불구하고 대한민국 밖으로 강제퇴거되지 아니한다. 다만, 다음 각 호의 어느 하나에 해당하는 사람은 그러하지 아니하다. <개정 2018. 3. 20.> 1. 「형법」 제2편제1장 내란의 죄 또는 제2장 외환의 죄를 범한 사람 2. 5년 이상의 징역 또는 금고의 형을 선고받고 석방된 사람 중 법무부령으로 정하는 사람 3. 제12조의3제1항 또는 제2항을 위반하거나 이를 교사(敎唆) 또는 방조(幇助)한 사람 [전문개정 2010. 5. 14.]",
+        "zh": "第46条（强制出境对象）① 地方出入境·外国人官署长可根据本章规定的程序，将符合下列任一情形的外国人强制出境：<修订 2012. 1. 26., 2014. 3. 18., 2016. 3. 29., 2018. 3. 20., 2021. 8. 17.> 1. 违反第7条规定的人；2. 违反第7条之2规定的外国人，或通过该条规定的虚假邀请等行为入境的外国人；3. 入境后发现或发生符合第11条第1款各项任一情形的禁止入境事由的人；4. 违反第12条第1款、第2款或第12条之3规定的人；5. 违反第13条第2款规定，地方出入境·外国人官署长附加的许可条件的人；6. 未经第14条第1款、第14条之2第1款、第15条第1款、第16条第1款或第16条之2第1款规定的许可而登陆的人；7. 违反第14条第3款（包括根据第14条之2第3款准用的情形）、第15条第2款、第16条第2款或第16条之2第2款规定，地方出入境·外国人官署长或出入境管理公务员附加的许可条件的人；8. 违反第17条第1款、第2款、第18条、第20条、第23条、第24条或第25条规定的人；9. 违反第21条第1款本文规定，未经许可变更或增加工作地点，或违反同条第2款规定雇用或介绍外国人的人；10. 违反法务部长官根据第22条规定限制居所或活动范围或其他遵守事项的人；10之2. 违反第26条规定的外国人；11. 违反第28条第1款及第2款规定试图出境的人；12. 违反第31条规定的外国人登记义务的人；12之2. 违反第33条之3规定的外国人；13. 被判处监禁以上刑罚并已获释的人；14. 符合第76条之4第1款各项任一情形的人；15. 除第1款至第10款、第10款之2、第11款、第12款、第12款之2、第13款或第14款规定外，法务部令规定与之类似的人。② 尽管有第1款规定，但持有永住资格的人不得被强制出境。但下列任一情形的人除外：<修订 2018. 3. 20.> 1. 犯有《刑法》第2编第1章内乱罪或第2章外患罪的人；2. 被判处5年以上有期徒刑或监禁刑罚并已获释的人中，法务部令规定的人；3. 违反第12条之3第1款或第2款规定，或教唆、帮助其违反的人。[全文修订 2010. 5. 14.]",
+        "en": "Article 46 (Persons Subject to Deportation) ① The head of a local immigration office may deport a foreigner falling under any of the following subparagraphs from the Republic of Korea in accordance with the procedures prescribed in this Chapter: <Amended on Jan. 26, 2012; Mar. 18, 2014; Mar. 29, 2016; Mar. 20, 2018; Aug. 17, 2021> 1. A person who has violated Article 7; 2. A foreigner who has violated Article 7-2, or a foreigner who has entered through acts such as false invitation as prescribed in the same Article; 3. A person for whom any ground for entry prohibition under any subparagraph of Article 11 (1) is discovered or arises after entry; 4. A person who has violated Article 12 (1) or (2) or Article 12-3; 5. A person who has violated the conditions of permission imposed by the head of a local immigration office pursuant to Article 13 (2); 6. A person who has landed without permission under Article 14 (1), Article 14-2 (1), Article 15 (1), Article 16 (1), or Article 16-2 (1); 7. A person who has violated the conditions of permission imposed by the head of a local immigration office or an immigration officer pursuant to Article 14 (3) (including cases where it is applied mutatis mutandis pursuant to Article 14-2 (3)), Article 15 (2), Article 16 (2), or Article 16-2 (2); 8. A person who has violated Article 17 (1) or (2), Article 18, Article 20, Article 23, Article 24, or Article 25; 9. A person who has violated the main sentence of Article 21 (1) by changing or adding a workplace without permission, or who has violated Article 21 (2) by employing or arranging employment for a foreigner; 10. A person who has violated restrictions on residence or scope of activity, or other compliance matters prescribed by the Minister of Justice pursuant to Article 22; 10-2. A foreigner who has violated Article 26; 11. A person who has attempted to depart in violation of Article 28 (1) and (2); 12. A person who has violated the foreigner registration obligation under Article 31; 12-2. A foreigner who has violated Article 33-3; 13. A person who has been released after being sentenced to imprisonment or a heavier punishment; 14. A person falling under any subparagraph of Article 76-4 (1); 15. Any other person similar to those specified in subparagraphs 1 through 10, 10-2, 11, 12, 12-2, 13, or 14, as prescribed by Ministry of Justice Ordinance. ② Notwithstanding paragraph (1), a person with permanent residency status shall not be deported from the Republic of Korea. However, this shall not apply to a person falling under any of the following subparagraphs: <Amended on Mar. 20, 2018> 1. A person who has committed a crime of insurrection under Chapter 1 of Part Ⅱ of the Criminal Act or a crime of foreign aggression under Chapter 2 thereof; 2. A person prescribed by Ministry of Justice Ordinance among those released after being sentenced to imprisonment or a heavier punishment for five years or more; 3. A person who has violated Article 12-3 (1) or (2), or has instigated or aided such violation. [Wholly Amended on May 14, 2010]"
       },
-      "revisedAt": "2024-07-03",
-      "sourceUrl": "https://www.law.go.kr/법령/출입국관리법/제46조"
-    },
-    {
-      "ref": "출입국관리법 제60조(이의신청)",
-      "text": {
-        "ko": "강제퇴거명령에 대하여 이의가 있는 외국인은 이의신청서를 그 명령을 받은 날부터 7일 이내에 지방출입국·외국인관서의 장을 거쳐 법무부장관에게 제출하여야 한다.",
-        "zh": "对强制驱逐命令有异议的外国人，应自收到命令之日起7日内，经地方出入境·外国人厅长官向法务部长官提交异议申请书。",
-        "en": "A foreign national objecting to a deportation order must submit an appeal to the Minister of Justice, via the regional immigration office, within 7 days of receiving the order."
-      },
-      "revisedAt": "2024-03-01",
-      "sourceUrl": "https://www.law.go.kr/법령/출입국관리법/제60조"
+      "revisedAt": "2021-08-17",
+      "sourceUrl": "https://www.law.go.kr/법령/출입국관리법"
     }
   ],
   "sources": [
     {
-      "agency": "법제처",
+      "agency": "법무부",
       "title": "출입국관리법",
       "url": "https://www.law.go.kr/법령/출입국관리법",
-      "fetchedAt": "2026-04-20T00:00:00Z",
-      "kogl": "type-1"
-    },
-    {
-      "agency": "법제처",
-      "title": "출입국관리법 시행령",
-      "url": "https://www.law.go.kr/법령/출입국관리법시행령",
-      "fetchedAt": "2026-04-20T00:00:00Z",
-      "kogl": "type-1"
-    },
-    {
-      "agency": "생활법령정보",
-      "title": "외국인근로자 체류자격",
-      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?csmSeq=2042&ccfNo=1&cciNo=1&cnpClsNo=1",
-      "fetchedAt": "2026-04-20T00:00:00Z",
+      "fetchedAt": "2026-04-20T04:21:00.405Z",
       "kogl": "type-1"
     },
     {
       "agency": "법무부",
-      "title": "형사절차와 범죄피해자 지원 제도",
-      "url": "https://www.moj.go.kr/cvs/2701/subview.do",
-      "fetchedAt": "2026-04-20T00:00:00Z",
-      "kogl": "type-1"
-    },
-    {
-      "agency": "대검찰청",
-      "title": "사건처리절차",
-      "url": "https://spo.go.kr/site/chungju/01/10101030200002018120505.jsp",
-      "fetchedAt": "2026-04-20T00:00:00Z",
+      "title": "출입국관리법 시행령",
+      "url": "https://www.law.go.kr/법령/출입국관리법시행령",
+      "fetchedAt": "2026-04-20T04:21:00.405Z",
       "kogl": "type-1"
     }
   ],
   "disclaimer": {
-    "ko": "본 페이지는 공공 법령 데이터를 기반으로 작성된 정보 안내이며, 개별 사건에 대한 법률 자문이 아닙니다. 구체적인 사안은 변호사와 상담하시기 바랍니다.",
-    "zh": "本页面基于公开法律数据编写，仅为信息参考，不构成对个案的法律建议。具体事项请咨询律师。",
-    "en": "This page provides information based on public legal data and does not constitute legal advice for any specific matter. Please consult an attorney for your individual case."
+    "ko": "본 페이지는 법률사무소 한교에서 중국어권 고객을 위해 제공하는 일반적인 법률 정보입니다. 제공된 정보는 법적 조언을 대체할 수 없으며, 개별 사안에 대한 정확한 법률 자문을 위해서는 반드시 전문가와 상담하시기 바랍니다. 본 정보는 제공 시점의 법률을 기반으로 하며, 법률 변경에 따라 내용이 달라질 수 있습니다.",
+    "zh": "本页面由韩桥律师事务所为中文客户提供一般法律信息。所提供的信息不能替代法律建议，如需针对具体案件的准确法律咨询，请务必咨询专业人士。本信息基于提供时的法律，内容可能因法律变更而有所不同。",
+    "en": "This page provides general legal information by Hankyo Law Firm for Chinese-speaking clients. The information provided cannot substitute for legal advice. For accurate legal consultation on individual cases, please consult with a professional. This information is based on the laws at the time of provision, and the content may change due to legal amendments."
   }
 }

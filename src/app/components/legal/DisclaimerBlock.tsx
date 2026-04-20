@@ -1,13 +1,25 @@
 import type { LegalPageContent, Lang } from "../../../lib/legal/types";
 import { pick } from "../../../lib/legal/content";
 
-export function DisclaimerBlock({ content, lang }: { content: LegalPageContent; lang: Lang }) {
+export function DisclaimerBlock({
+  content,
+  lang,
+}: {
+  content: LegalPageContent;
+  lang: Lang;
+}) {
+  const text = pick(content.disclaimer, lang);
+  const paragraphs = text.split(/\n\s*\n+/);
   return (
-    <section className="py-16 bg-[#0f172a] text-white">
-      <div className="max-w-[980px] mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="font-display text-[10px] font-black tracking-[0.32em] uppercase text-[#b59a5d] mb-5">Disclaimer</p>
-        <p className="text-[15px] leading-[1.9] text-white/90">{pick(content.disclaimer, lang)}</p>
+    <div>
+      <h5 className="font-mono text-[11px] font-bold tracking-[0.2em] uppercase text-[#8d7842] mb-4">
+        면책 / Disclaimer
+      </h5>
+      <div className="text-[12.5px] leading-[1.7] text-[#94a3b8] space-y-2.5">
+        {paragraphs.map((p, i) => (
+          <p key={i}>{p}</p>
+        ))}
       </div>
-    </section>
+    </div>
   );
 }
