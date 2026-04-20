@@ -49,7 +49,7 @@ export function Layout() {
       {/* Top Utility Banner */}
       <div
         className={clsx(
-          "text-xs py-2 px-4 flex justify-between items-center sm:px-6 lg:px-8 relative z-40 transition-colors duration-300",
+          "text-xs py-3 px-4 flex justify-between items-center sm:px-6 lg:px-8 relative z-40 transition-colors duration-300",
           overlay ? "bg-transparent text-slate-200" : "bg-[#0f172a] text-slate-300"
         )}
       >
@@ -101,7 +101,10 @@ export function Layout() {
                 <img
                   src={hangyoLogo}
                   alt="HANGYO"
-                  className="h-9 w-auto"
+                  className={clsx(
+                    "h-14 lg:h-16 w-auto transition-all duration-300",
+                    overlay ? "brightness-0 invert opacity-90" : ""
+                  )}
                 />
               </Link>
             </div>
