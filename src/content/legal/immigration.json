@@ -1,19 +1,460 @@
 {
   "slug": "immigration",
-  "title": { "ko": "체류자격·출입국", "zh": "居留资格·出入境", "en": "Visa & Immigration" },
+  "title": {
+    "ko": "체류자격·출입국",
+    "zh": "居留资格·出入境",
+    "en": "Visa & Immigration"
+  },
   "summary": {
     "ko": "체류자격 선택과 연장·변경·이의 절차를 한눈에.",
     "zh": "一览居留资格选择与延期、变更、异议程序。",
-    "en": "Visa selection, renewal, change, and appeal in one view."
+    "en": "Visa selection, renewal, change, and appeal at a glance."
   },
-  "meta": { "generatedAt": "", "sourceCount": 0, "lastRevisionAt": "" },
-  "visas": [],
-  "decisionTree": { "rootId": "", "nodes": [] },
-  "procedure": [],
-  "agencies": [],
-  "deadlines": [],
-  "laws": [],
-  "sources": [],
+  "meta": {
+    "generatedAt": "2026-04-20T00:00:00Z",
+    "sourceCount": 5,
+    "lastRevisionAt": "2026-01-23"
+  },
+  "visas": [
+    {
+      "code": "F-4",
+      "label": { "ko": "재외동포", "zh": "海外同胞", "en": "Overseas Korean" },
+      "target": {
+        "ko": "대한민국 국적을 가졌던 자 또는 그 직계비속 (만 19세 이상)",
+        "zh": "曾持有韩国国籍者或其直系后代（年满19岁）",
+        "en": "Former Korean nationals or lineal descendants (age 19+)"
+      },
+      "period": {
+        "ko": "최대 3년, 연장 가능",
+        "zh": "最长3年，可延期",
+        "en": "Up to 3 years, renewable"
+      },
+      "requirements": {
+        "ko": [
+          "재외동포 증명 (본인 또는 부·조부모 제적등본)",
+          "신원증명서",
+          "체류지 증빙 자료"
+        ],
+        "zh": [
+          "海外同胞证明（本人或父母、祖父母除户籍誊本）",
+          "身份证明",
+          "居住地证明材料"
+        ],
+        "en": [
+          "Overseas Korean proof (own or parent/grandparent's family register)",
+          "Identity verification",
+          "Proof of residence"
+        ]
+      }
+    },
+    {
+      "code": "H-2",
+      "label": { "ko": "방문취업", "zh": "访问就业", "en": "Work & Visit" },
+      "target": {
+        "ko": "만 25세 이상 중국·구소련 지역 한국계 동포",
+        "zh": "年满25岁的中国及前苏联地区韩裔同胞",
+        "en": "Ethnic Koreans aged 25+ from China or former USSR"
+      },
+      "period": {
+        "ko": "최대 5년 (복수 출입국)",
+        "zh": "最长5年（可多次出入境）",
+        "en": "Up to 5 years (multiple entry)"
+      },
+      "requirements": {
+        "ko": ["한국어 능력시험 또는 동포 증빙", "범죄경력증명서", "건강진단서"],
+        "zh": ["韩语能力考试或同胞身份证明", "无犯罪证明", "健康体检证明"],
+        "en": [
+          "Korean proficiency test or ethnic Korean proof",
+          "Criminal record certificate",
+          "Health examination"
+        ]
+      }
+    },
+    {
+      "code": "D-10",
+      "label": { "ko": "구직", "zh": "求职", "en": "Job Seeker" },
+      "target": {
+        "ko": "국내 대학 졸업자 또는 일정 자격 보유 구직자",
+        "zh": "韩国大学毕业生或持有相关资格的求职者",
+        "en": "Korean university graduates or qualified job seekers"
+      },
+      "period": {
+        "ko": "6개월, 연장 시 최대 2년",
+        "zh": "6个月，延期后最长2年",
+        "en": "6 months, up to 2 years with renewal"
+      },
+      "requirements": {
+        "ko": ["학위 또는 자격 증명서", "구직활동 계획서", "체류 비용 증빙"],
+        "zh": ["学位或资格证书", "求职活动计划书", "居留费用证明"],
+        "en": [
+          "Degree or qualification certificate",
+          "Job search plan",
+          "Proof of financial means"
+        ]
+      }
+    },
+    {
+      "code": "E-9",
+      "label": {
+        "ko": "비전문취업",
+        "zh": "非专业就业",
+        "en": "Non-Professional Work"
+      },
+      "target": {
+        "ko": "고용허가제에 따른 외국인 근로자",
+        "zh": "依雇佣许可制度的外国劳动者",
+        "en": "Foreign workers under Employment Permit System"
+      },
+      "period": {
+        "ko": "최대 4년 10개월",
+        "zh": "最长4年10个月",
+        "en": "Up to 4 years 10 months"
+      },
+      "requirements": {
+        "ko": ["한국어능력시험 (EPS-TOPIK)", "고용허가서", "건강검진 및 자격 심사"],
+        "zh": ["韩语能力考试（EPS-TOPIK）", "雇佣许可书", "健康检查及资格审查"],
+        "en": [
+          "Korean proficiency test (EPS-TOPIK)",
+          "Employment permit",
+          "Health check and qualification review"
+        ]
+      }
+    },
+    {
+      "code": "F-5",
+      "label": { "ko": "영주", "zh": "永驻", "en": "Permanent Residence" },
+      "target": {
+        "ko": "5년 이상 국내 거주자 또는 특정 자격 요건 충족자",
+        "zh": "在韩居住5年以上或符合特定条件者",
+        "en": "Residents of 5+ years or meeting specific conditions"
+      },
+      "period": {
+        "ko": "무기한 (증명서 10년 갱신)",
+        "zh": "无限期（证件10年更新）",
+        "en": "Indefinite (certificate renewed every 10 years)"
+      },
+      "requirements": {
+        "ko": [
+          "국내 5년 이상 체류 기록",
+          "소득 및 자산 증빙",
+          "한국어·사회 이해 평가"
+        ],
+        "zh": [
+          "在韩居留5年以上记录",
+          "收入及资产证明",
+          "韩语及社会理解测评"
+        ],
+        "en": [
+          "5+ years of residence in Korea",
+          "Proof of income and assets",
+          "Korean language and social understanding test"
+        ]
+      }
+    }
+  ],
+  "decisionTree": {
+    "rootId": "q1",
+    "nodes": [
+      {
+        "id": "q1",
+        "question": {
+          "ko": "지금 한국에 체류 중이십니까?",
+          "zh": "您目前在韩国吗？",
+          "en": "Are you currently in Korea?"
+        },
+        "yes": { "nextId": "q2" },
+        "no": { "leafAnchor": "diagram-visas" }
+      },
+      {
+        "id": "q2",
+        "question": {
+          "ko": "현재 비자 만료까지 30일 이내인가요?",
+          "zh": "您的现有签证是否在30天内到期？",
+          "en": "Is your current visa expiring within 30 days?"
+        },
+        "yes": { "nextId": "q3" },
+        "no": { "leafAnchor": "diagram-procedure" }
+      },
+      {
+        "id": "q3",
+        "question": {
+          "ko": "출입국·외국인청에서 강제퇴거 명령을 받으셨나요?",
+          "zh": "您是否已收到出入境管理局的强制驱逐命令？",
+          "en": "Have you received a deportation order?"
+        },
+        "yes": { "leafAnchor": "diagram-deadlines" },
+        "no": { "leafAnchor": "diagram-procedure" }
+      }
+    ]
+  },
+  "procedure": [
+    {
+      "id": "step1",
+      "label": { "ko": "신청 접수", "zh": "申请受理", "en": "Application Intake" },
+      "agency": {
+        "ko": "관할 출입국·외국인청 또는 하이코리아",
+        "zh": "辖区出入境·外国人厅或HiKorea",
+        "en": "Local Immigration Office or HiKorea portal"
+      },
+      "duration": { "ko": "당일", "zh": "当天", "en": "Same day" },
+      "lawRef": "출입국관리법 §25",
+      "note": {
+        "ko": "신청서와 첨부서류를 제출. 하이코리아 온라인 접수 시 방문 예약 불필요.",
+        "zh": "提交申请书及附件。HiKorea在线受理无需预约访问。",
+        "en": "Submit application and attachments. HiKorea online filing skips the in-person visit."
+      }
+    },
+    {
+      "id": "step2",
+      "label": { "ko": "서류 심사", "zh": "文件审查", "en": "Document Review" },
+      "agency": {
+        "ko": "출입국·외국인청 심사과",
+        "zh": "出入境·外国人厅审查科",
+        "en": "Immigration Office, Review Division"
+      },
+      "duration": { "ko": "평균 14일", "zh": "平均14天", "en": "Avg. 14 days" },
+      "lawRef": "출입국관리법 §26",
+      "note": {
+        "ko": "보정 요청 시 기한 내 응답하지 않으면 반려될 수 있음.",
+        "zh": "如有补正要求未在期限内回复，可能被驳回。",
+        "en": "Failure to respond to corrections within the deadline may result in rejection."
+      }
+    },
+    {
+      "id": "step3",
+      "label": { "ko": "결과 통보", "zh": "结果通知", "en": "Decision Notice" },
+      "agency": {
+        "ko": "출입국·외국인청",
+        "zh": "出入境·外国人厅",
+        "en": "Immigration Office"
+      },
+      "duration": {
+        "ko": "심사 완료 시",
+        "zh": "审查完成时",
+        "en": "Upon review completion"
+      },
+      "lawRef": "출입국관리법 §27",
+      "note": {
+        "ko": "허가 시 외국인등록증 발급. 불허 시 사유 명시된 서면 통보.",
+        "zh": "获批时发放外国人登录证。不予许可时书面通知理由。",
+        "en": "On approval, ARC is issued. On denial, written notice with reason is sent."
+      }
+    },
+    {
+      "id": "step4",
+      "label": { "ko": "이의신청", "zh": "异议申请", "en": "Appeal" },
+      "agency": {
+        "ko": "법무부 출입국외국인정책본부",
+        "zh": "法务部出入境外国人政策本部",
+        "en": "Ministry of Justice, Immigration Policy HQ"
+      },
+      "duration": {
+        "ko": "통보일로부터 7일 이내",
+        "zh": "通知日起7天内",
+        "en": "Within 7 days of notice"
+      },
+      "lawRef": "행정심판법 §27",
+      "note": {
+        "ko": "변호사 조력 권장. 행정소송 제기와 병행 가능.",
+        "zh": "建议律师协助。可与行政诉讼同时提起。",
+        "en": "Legal counsel recommended. May proceed alongside administrative litigation."
+      }
+    }
+  ],
+  "agencies": [
+    {
+      "id": "immi-seoul",
+      "name": {
+        "ko": "서울출입국·외국인청",
+        "zh": "首尔出入境·外国人厅",
+        "en": "Seoul Immigration Office"
+      },
+      "role": {
+        "ko": "비자 신청·연장·변경, 외국인등록",
+        "zh": "签证申请·延期·变更，外国人登录",
+        "en": "Visa application, renewal, and foreign registration"
+      },
+      "phone": "1345",
+      "address": {
+        "ko": "서울 양천구 목동동로 151",
+        "zh": "首尔阳川区木洞东路151",
+        "en": "151 Mokdong-dong-ro, Yangcheon-gu, Seoul"
+      },
+      "url": "https://www.hikorea.go.kr"
+    },
+    {
+      "id": "moj-immigration",
+      "name": {
+        "ko": "법무부 출입국외국인정책본부",
+        "zh": "法务部出入境外国人政策本部",
+        "en": "Ministry of Justice — Immigration Policy HQ"
+      },
+      "role": {
+        "ko": "출입국 정책, 이의신청 처리",
+        "zh": "出入境政策、异议申请处理",
+        "en": "Immigration policy, appeal processing"
+      },
+      "phone": "02-2110-4000",
+      "address": {
+        "ko": "경기 과천시 관문로 47",
+        "zh": "京畿道果川市关门路47",
+        "en": "47 Gwanmun-ro, Gwacheon-si, Gyeonggi"
+      },
+      "url": "https://www.moj.go.kr"
+    },
+    {
+      "id": "hikorea-portal",
+      "name": {
+        "ko": "하이코리아 (HiKorea)",
+        "zh": "HiKorea 在线门户",
+        "en": "HiKorea Online Portal"
+      },
+      "role": {
+        "ko": "온라인 비자·체류 신청, 예약",
+        "zh": "在线签证·居留申请及预约",
+        "en": "Online visa & stay applications, appointments"
+      },
+      "phone": "1345",
+      "address": {
+        "ko": "온라인 서비스",
+        "zh": "在线服务",
+        "en": "Online service"
+      },
+      "url": "https://www.hikorea.go.kr"
+    }
+  ],
+  "deadlines": [
+    {
+      "day": 0,
+      "title": { "ko": "사건 발생일", "zh": "事件发生日", "en": "Event Date" },
+      "detail": {
+        "ko": "강제퇴거 명령·출입국 단속 등 계기가 된 사건이 일어난 날짜.",
+        "zh": "强制驱逐命令·出入境查处等触发事件发生的日期。",
+        "en": "Date the triggering event occurred (e.g., deportation, enforcement)."
+      }
+    },
+    {
+      "day": 3,
+      "title": {
+        "ko": "긴급 상담 권장",
+        "zh": "建议紧急咨询",
+        "en": "Urgent Consultation Recommended"
+      },
+      "detail": {
+        "ko": "사실관계 정리와 대응 방향 설정을 위해 72시간 이내 변호사 상담 권장.",
+        "zh": "建议在72小时内咨询律师以整理事实关系并确定应对方向。",
+        "en": "Consult an attorney within 72 hours to organize facts and plan response."
+      }
+    },
+    {
+      "day": 7,
+      "title": {
+        "ko": "이의신청 기한",
+        "zh": "异议申请期限",
+        "en": "Appeal Deadline"
+      },
+      "detail": {
+        "ko": "출입국 처분에 대한 이의신청은 통보일로부터 7일 이내.",
+        "zh": "对出入境处分的异议申请须在通知日起7日内提出。",
+        "en": "Appeals must be filed within 7 days of notice of decision."
+      }
+    },
+    {
+      "day": 14,
+      "title": {
+        "ko": "심사 평균 소요일",
+        "zh": "审查平均所需天数",
+        "en": "Avg. Review Timeframe"
+      },
+      "detail": {
+        "ko": "일반 체류자격 신청 심사는 접수일로부터 평균 14일 소요.",
+        "zh": "一般居留资格申请审查平均从受理日起14天。",
+        "en": "General visa applications take an average of 14 days from intake."
+      }
+    },
+    {
+      "day": 90,
+      "title": {
+        "ko": "행정소송 제소기한",
+        "zh": "行政诉讼起诉期限",
+        "en": "Administrative Litigation Deadline"
+      },
+      "detail": {
+        "ko": "처분을 안 날로부터 90일 이내 행정소송 제기 가능.",
+        "zh": "自知道处分之日起90日内可提起行政诉讼。",
+        "en": "Administrative litigation may be filed within 90 days of awareness."
+      }
+    }
+  ],
+  "laws": [
+    {
+      "ref": "출입국관리법 제25조(체류기간 연장허가)",
+      "text": {
+        "ko": "외국인이 체류기간을 초과하여 계속 체류하려면 그 기간이 끝나기 전에 법무부장관의 체류기간 연장허가를 받아야 한다.",
+        "zh": "外国人欲超过居留期间继续居留的，应于期间结束前取得法务部长官的居留期间延长许可。",
+        "en": "A foreign national intending to remain beyond their stay period must obtain a stay extension from the Minister of Justice before expiry."
+      },
+      "revisedAt": "2024-03-01",
+      "sourceUrl": "https://www.law.go.kr/법령/출입국관리법/제25조"
+    },
+    {
+      "ref": "출입국관리법 제46조(강제퇴거의 대상자)",
+      "text": {
+        "ko": "지방출입국·외국인관서의 장은 다음 각 호의 어느 하나에 해당하는 외국인을 대한민국 밖으로 강제퇴거시킬 수 있다.",
+        "zh": "地方出入境·外国人厅长官对于属于下列任一情形的外国人，可将其强制驱逐出韩国。",
+        "en": "The head of a regional immigration office may deport any foreign national falling under the following."
+      },
+      "revisedAt": "2024-07-03",
+      "sourceUrl": "https://www.law.go.kr/법령/출입국관리법/제46조"
+    },
+    {
+      "ref": "출입국관리법 제60조(이의신청)",
+      "text": {
+        "ko": "강제퇴거명령에 대하여 이의가 있는 외국인은 이의신청서를 그 명령을 받은 날부터 7일 이내에 지방출입국·외국인관서의 장을 거쳐 법무부장관에게 제출하여야 한다.",
+        "zh": "对强制驱逐命令有异议的外国人，应自收到命令之日起7日内，经地方出入境·外国人厅长官向法务部长官提交异议申请书。",
+        "en": "A foreign national objecting to a deportation order must submit an appeal to the Minister of Justice, via the regional immigration office, within 7 days of receiving the order."
+      },
+      "revisedAt": "2024-03-01",
+      "sourceUrl": "https://www.law.go.kr/법령/출입국관리법/제60조"
+    }
+  ],
+  "sources": [
+    {
+      "agency": "법제처",
+      "title": "출입국관리법",
+      "url": "https://www.law.go.kr/법령/출입국관리법",
+      "fetchedAt": "2026-04-20T00:00:00Z",
+      "kogl": "type-1"
+    },
+    {
+      "agency": "법제처",
+      "title": "출입국관리법 시행령",
+      "url": "https://www.law.go.kr/법령/출입국관리법시행령",
+      "fetchedAt": "2026-04-20T00:00:00Z",
+      "kogl": "type-1"
+    },
+    {
+      "agency": "생활법령정보",
+      "title": "외국인근로자 체류자격",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?csmSeq=2042&ccfNo=1&cciNo=1&cnpClsNo=1",
+      "fetchedAt": "2026-04-20T00:00:00Z",
+      "kogl": "type-1"
+    },
+    {
+      "agency": "법무부",
+      "title": "형사절차와 범죄피해자 지원 제도",
+      "url": "https://www.moj.go.kr/cvs/2701/subview.do",
+      "fetchedAt": "2026-04-20T00:00:00Z",
+      "kogl": "type-1"
+    },
+    {
+      "agency": "대검찰청",
+      "title": "사건처리절차",
+      "url": "https://spo.go.kr/site/chungju/01/10101030200002018120505.jsp",
+      "fetchedAt": "2026-04-20T00:00:00Z",
+      "kogl": "type-1"
+    }
+  ],
   "disclaimer": {
     "ko": "본 페이지는 공공 법령 데이터를 기반으로 작성된 정보 안내이며, 개별 사건에 대한 법률 자문이 아닙니다. 구체적인 사안은 변호사와 상담하시기 바랍니다.",
     "zh": "本页面基于公开法律数据编写，仅为信息参考，不构成对个案的法律建议。具体事项请咨询律师。",

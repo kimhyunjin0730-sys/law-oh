@@ -84,7 +84,7 @@ export function Services() {
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading 
           title="주요 업무 분야" 
-          subtitle="한교은 당신의 언어로 사건을 정확히 이해하고, 한국의 법리로 완벽한 방어막을 구축합니다." 
+          subtitle="한교는 당신의 언어로 사건을 정확히 이해하고, 한국의 법리로 완벽한 방어막을 구축합니다." 
           centered={true}
         />
 
@@ -131,7 +131,7 @@ export function Services() {
           <h3 className="text-3xl md:text-5xl font-extrabold mb-8 tracking-tight">지금 바로 전문적인 상담이 필요하십니까?</h3>
           <p className="text-slate-400 mb-12 max-w-3xl mx-auto text-xl font-medium leading-relaxed">
              한국에서의 법적 문제, 시간이 지체될수록 불리해질 수 있습니다. 
-             한교이 당신의 언어로 직접 상담하고 가장 확실한 해답을 찾아드립니다.
+             한교가 당신의 언어로 직접 상담하고 가장 확실한 해답을 찾아드립니다.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
              <Link

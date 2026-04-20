@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import clsx from "clsx";
 import { useLanguage } from "../context/LanguageContext";
 import { WeChatDialog } from "./WeChatDialog";
+import { Logo } from "./Logo";
 
 export function Layout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -96,14 +97,11 @@ export function Layout() {
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-24">
             <div className="flex items-center">
-              <Link to="/" className="flex-shrink-0 flex items-center gap-3">
-                <div className={clsx("flex flex-col items-center justify-center border-2 px-2 py-1 transition-colors duration-300", overlay ? "border-white" : "border-slate-900")}>
-                  <span className={clsx("font-display text-xl font-black leading-none tracking-[0.02em] transition-colors duration-300", overlay ? "text-white" : "text-slate-900")}>HANGYO</span>
-                  <span className={clsx("font-display text-[10px] font-extrabold tracking-[0.24em] uppercase transition-colors duration-300", overlay ? "text-white" : "text-slate-900")}>LAW FIRM</span>
-                </div>
-                <div className={clsx("flex flex-col ml-1 border-l pl-3 transition-colors duration-300", overlay ? "border-white/30" : "border-slate-300")}>
+              <Link to="/" className="flex-shrink-0 flex items-center gap-4">
+                <Logo className={clsx("w-14 h-14 transition-colors duration-300", overlay ? "text-white" : "text-[#0f172a]")} />
+                <div className={clsx("flex flex-col transition-colors duration-300")}>
                   <span className={clsx("text-xl font-bold leading-tight transition-colors duration-300", overlay ? "text-white" : "text-slate-900")}>법률사무소 한교</span>
-                  <span className={clsx("text-xs font-medium transition-colors duration-300", overlay ? "text-slate-300" : "text-slate-500")}>중국어 특화 법률 서비스</span>
+                  <span className={clsx("text-xs font-medium transition-colors duration-300", overlay ? "text-slate-300" : "text-slate-500")}>한중 법률 브리지 · 韩桥</span>
                 </div>
               </Link>
             </div>
@@ -208,12 +206,11 @@ export function Layout() {
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
             <div className="col-span-1 md:col-span-4">
-              <div className="flex items-center gap-3 mb-6 opacity-90">
-                <div className="flex flex-col items-center justify-center border-2 border-white px-2 py-1 text-white">
-                  <span className="text-xl font-bold leading-none tracking-tighter">HANGYO</span>
-                </div>
-                <div className="flex flex-col ml-1 border-l border-slate-600 pl-3">
+              <div className="flex items-center gap-4 mb-6 opacity-90">
+                <Logo className="w-12 h-12 text-white" />
+                <div className="flex flex-col">
                   <span className="text-xl font-bold text-white leading-tight">{t("nav.home")}</span>
+                  <span className="text-xs font-medium text-slate-400 tracking-wide">韩桥 · Hangyo Law Firm</span>
                 </div>
               </div>
               <p className="text-sm text-slate-500 max-w-sm mb-6 leading-relaxed font-medium">
