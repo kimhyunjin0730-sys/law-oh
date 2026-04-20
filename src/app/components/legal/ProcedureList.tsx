@@ -30,7 +30,7 @@ export function ProcedureList({ steps, lang, count, total }: Props) {
           >
             <div className="font-serif-ko font-black text-[44px] sm:text-[48px] leading-none tracking-tight text-[#0f172a] opacity-90">
               {String(idx + 1).padStart(2, "0")}
-              <span className="block font-mono text-[9.5px] font-bold tracking-[0.14em] text-[#b59a5d] mt-2 opacity-100">
+              <span className="block font-mono text-[9.5px] font-bold tracking-[0.14em] text-[#2563EB] mt-2 opacity-100">
                 {pick(s.duration, lang).toUpperCase()}
               </span>
             </div>

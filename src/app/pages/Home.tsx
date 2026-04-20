@@ -30,18 +30,10 @@ export function Home() {
             transition={{ duration: 0.8, delay: 0.25, ease: [0.2, 0.65, 0.3, 0.9] }}
             className="max-w-[900px]"
           >
-            {/* Tiny editorial tag */}
-            <div className="flex items-center gap-3 mb-6">
-              <span className="h-px w-10 bg-[#b59a5d]" />
-              <span className="font-display text-[11px] sm:text-xs font-extrabold tracking-[0.32em] uppercase text-[#b59a5d]">
-                HANGYO Law Firm · 법률사무소 한교
-              </span>
-            </div>
-
             {/* Solid main headline — English-only, "Korean Law" in gold */}
-            <h1 className="font-black leading-[1.06] tracking-[-0.02em] text-[44px] sm:text-[64px] lg:text-[88px]">
+            <h1 className="font-bold leading-[1.06] tracking-[-0.02em] text-[36px] sm:text-[52px] lg:text-[72px]">
               Think in Your Language,<br className="hidden sm:block" />
-              Defend in <span className="text-[#b59a5d]">Korean Law.</span>
+              Defend in <span className="text-[#2563EB]">Korean Law.</span>
             </h1>
 
             {/* Description */}
@@ -67,29 +59,13 @@ export function Home() {
               <WeChatDialog>
                 <button
                   type="button"
-                  className="group inline-flex items-center justify-center gap-3 bg-[#b59a5d] hover:bg-[#a38a53] text-white px-8 py-4 font-extrabold text-[15px] transition-colors"
+                  className="group inline-flex items-center justify-center gap-3 bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-8 py-4 font-extrabold text-[15px] transition-colors"
                 >
                   <MessageCircle size={18} strokeWidth={2.25} />
                   위챗 직접상담
                   <ArrowRight size={16} strokeWidth={2.25} className="transition-transform group-hover:translate-x-0.5" />
                 </button>
               </WeChatDialog>
-            </div>
-
-            {/* Trust line */}
-            <div className="mt-10 flex flex-wrap gap-x-7 gap-y-3 text-[12px] sm:text-[13px] text-slate-400 font-semibold">
-              <span className="flex items-center gap-2">
-                <span className="w-1 h-1 rounded-full bg-[#b59a5d]" />
-                중국어 직접 상담 가능
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="w-1 h-1 rounded-full bg-[#b59a5d]" />
-                형사·민사·출입국 원스톱
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="w-1 h-1 rounded-full bg-[#b59a5d]" />
-                24시간 긴급 위챗 대응
-              </span>
             </div>
           </motion.div>
         </div>
@@ -126,7 +102,7 @@ export function Home() {
             </WeChatDialog>
             <a
               href="tel:82-10-2999-6910"
-              className="group w-[78px] h-[78px] flex flex-col items-center justify-center gap-1 bg-[#b59a5d] text-white rounded-2xl hover:scale-[1.04] transition-transform"
+              className="group w-[78px] h-[78px] flex flex-col items-center justify-center gap-1 bg-[#2563EB] text-white rounded-2xl hover:scale-[1.04] transition-transform"
             >
               <Phone size={20} strokeWidth={2} />
               <span className="text-[11px] font-extrabold mt-0.5">전화상담</span>
@@ -148,13 +124,13 @@ export function Home() {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14 lg:mb-20">
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <span className="h-px w-10 bg-[#b59a5d]" />
-                <span className="font-display text-[11px] sm:text-xs font-black tracking-[0.36em] uppercase text-[#b59a5d]">
+                <span className="h-px w-10 bg-[#2563EB]" />
+                <span className="font-display text-[11px] sm:text-xs font-black tracking-[0.36em] uppercase text-[#2563EB]">
                   Professionals
                 </span>
               </div>
               <h2 className="text-[32px] sm:text-[44px] lg:text-[56px] font-black text-[#0f172a] tracking-tight leading-[1.1] mb-5">
-                법률사무소 한교의 <span className="text-[#b59a5d]">변호사</span>
+                법률사무소 한교의 <span className="text-[#2563EB]">변호사</span>
               </h2>
               <p className="text-base lg:text-lg text-slate-600 font-medium leading-relaxed max-w-[560px]">
                 한국어와 중국어 두 언어로 직접 소통하며, 통역 없이 사실관계부터 법률 분석까지 정확하게 짚어 드립니다.
@@ -186,7 +162,7 @@ export function Home() {
               />
               {/* Top-left editorial marker */}
               <div className="absolute top-6 left-6 font-display text-white text-[10px] sm:text-[11px] font-extrabold tracking-[0.32em] uppercase drop-shadow-md">
-                <span className="text-[#b59a5d]">No. 01</span>
+                <span className="text-[#2563EB]">No. 01</span>
                 <span className="mx-2 opacity-60">/</span>
                 Representative Attorney
               </div>
@@ -204,7 +180,7 @@ export function Home() {
                   오동현
                 </h3>
                 {/* Gold rule */}
-                <div aria-hidden className="h-[3px] w-14 bg-[#b59a5d] mb-5" />
+                <div aria-hidden className="h-[3px] w-14 bg-[#2563EB] mb-5" />
                 {/* Role */}
                 <p className="text-base lg:text-lg text-slate-700 font-bold mb-10">
                   대표 변호사 <span className="text-slate-400 mx-1.5">·</span> 법률사무소 한교
@@ -212,7 +188,7 @@ export function Home() {
 
                 {/* Specialties */}
                 <div>
-                  <p className="text-[10px] sm:text-[11px] font-black tracking-[0.28em] uppercase text-[#b59a5d] mb-4">
+                  <p className="text-[10px] sm:text-[11px] font-black tracking-[0.28em] uppercase text-[#2563EB] mb-4">
                     전문 분야
                   </p>
                   <ul className="space-y-3.5">
@@ -226,7 +202,7 @@ export function Home() {
                         key={i}
                         className="flex items-start gap-3.5 text-slate-700 font-medium text-[14px] sm:text-[15px] leading-relaxed"
                       >
-                        <span className="mt-[9px] w-1.5 h-1.5 rounded-full bg-[#b59a5d] shrink-0" />
+                        <span className="mt-[9px] w-1.5 h-1.5 rounded-full bg-[#2563EB] shrink-0" />
                         {item}
                       </li>
                     ))}
@@ -243,7 +219,7 @@ export function Home() {
                 </div>
                 <Link
                   to="/about"
-                  className="group inline-flex items-center justify-between sm:justify-center gap-3 bg-[#0f172a] hover:bg-[#b59a5d] text-white px-6 lg:px-7 py-3.5 font-extrabold text-[13px] tracking-wide transition-colors"
+                  className="group inline-flex items-center justify-between sm:justify-center gap-3 bg-[#0f172a] hover:bg-[#2563EB] text-white px-6 lg:px-7 py-3.5 font-extrabold text-[13px] tracking-wide transition-colors"
                 >
                   변호사 프로필
                   <ArrowRight size={15} strokeWidth={2.5} className="transition-transform group-hover:translate-x-0.5" />
@@ -263,7 +239,7 @@ export function Home() {
               title: "중국어권 특화 변호사",
               desc: "단순 어학을 넘어 중국 현지 실무와 한국 법리를 동시에 체득한 오동현 변호사가 복잡한 사건에 정교하게 대응합니다.",
               href: "/about",
-              icon: <GraduationCap className="w-8 h-8 text-[#b59a5d]" strokeWidth={1.4} />,
+              icon: <GraduationCap className="w-8 h-8 text-[#2563EB]" strokeWidth={1.4} />,
               bg: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=85&w=1200",
             },
             {
@@ -271,7 +247,7 @@ export function Home() {
               title: "형사·민사·출입국 통합",
               desc: "형사 방어, 민사 분쟁, 체류 자격 영향 분석을 하나의 사건 안에서 통합적으로 수행합니다.",
               href: "/services",
-              icon: <Layers className="w-8 h-8 text-[#b59a5d]" strokeWidth={1.4} />,
+              icon: <Layers className="w-8 h-8 text-[#2563EB]" strokeWidth={1.4} />,
               bg: "https://images.unsplash.com/photo-1521791136064-7986c2920216?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=85&w=1200",
             },
             {
@@ -279,7 +255,7 @@ export function Home() {
               title: "24시간 위챗 핫라인",
               desc: "출입국 단속·체포·급박한 상황까지 — 한국 시간 기준 24시간 중국어 위챗 상담 채널을 운영합니다.",
               href: "#",
-              icon: <Clock className="w-8 h-8 text-[#b59a5d]" strokeWidth={1.4} />,
+              icon: <Clock className="w-8 h-8 text-[#2563EB]" strokeWidth={1.4} />,
               bg: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=85&w=1200",
             },
           ].map((pillar, i) => (
@@ -301,7 +277,7 @@ export function Home() {
               </div>
               <div className="relative w-full flex flex-col justify-end p-10 lg:p-14">
                 <div className="mb-5">{pillar.icon}</div>
-                <p className="font-display text-[11px] font-black tracking-[0.36em] uppercase text-[#b59a5d] mb-4">
+                <p className="font-display text-[11px] font-black tracking-[0.36em] uppercase text-[#2563EB] mb-4">
                   {pillar.eyebrow}
                 </p>
                 <h3 className="text-2xl lg:text-[30px] font-black tracking-tight leading-tight mb-4">
@@ -312,7 +288,7 @@ export function Home() {
                 </p>
                 <Link
                   to={pillar.href}
-                  className="group/link inline-flex items-center gap-2.5 text-white border-b border-white/30 hover:border-[#b59a5d] pb-1.5 w-fit font-display text-[11px] font-black tracking-[0.28em] uppercase transition-colors"
+                  className="group/link inline-flex items-center gap-2.5 text-white border-b border-white/30 hover:border-[#2563EB] pb-1.5 w-fit font-display text-[11px] font-black tracking-[0.28em] uppercase transition-colors"
                 >
                   View More
                   <ArrowUpRight
@@ -323,7 +299,7 @@ export function Home() {
                 </Link>
               </div>
               {/* Numeric marker */}
-              <span className="absolute top-8 right-8 font-display text-[#b59a5d]/25 font-black text-5xl lg:text-6xl leading-none tracking-tight">
+              <span className="absolute top-8 right-8 font-display text-[#2563EB]/25 font-black text-5xl lg:text-6xl leading-none tracking-tight">
                 0{i + 1}
               </span>
             </motion.div>
@@ -343,19 +319,19 @@ export function Home() {
           <div className="mt-20 grid gap-8 md:grid-cols-3">
             {[
               {
-                icon: <MessageCircle className="h-12 w-12 text-[#b59a5d] mb-6" />,
+                icon: <MessageCircle className="h-12 w-12 text-[#2563EB] mb-6" />,
                 title: "직접 소통",
                 num: "01",
                 desc: "법률 상담에서 통역만 이용할 경우 뉘앙스가 달라지고, 중요한 사실이 누락되거나 왜곡될 수 있습니다. 오동현 변호사는 통역을 거친 후, 중국어로 직접 사실관계를 청취하고 법률 분석을 수행합니다."
               },
               {
-                icon: <Globe className="h-12 w-12 text-[#b59a5d] mb-6" />,
+                icon: <Globe className="h-12 w-12 text-[#2563EB] mb-6" />,
                 title: "중국 현지 경험에서 나오는 문화적 이해",
                 num: "02",
                 desc: "법률 문제는 단순히 조문의 해석이 아닙니다. 중국의 비즈니스 관행, 가족 문화, 사회적 맥락을 이해해야 진정한 해결책이 나옵니다. 오동현 변호사는 중국 소주·북경·광서성에서 직접 생활하고 근무한 경험을 보유하고 있습니다."
               },
               {
-                icon: <Scale className="h-12 w-12 text-[#b59a5d] mb-6" />,
+                icon: <Scale className="h-12 w-12 text-[#2563EB] mb-6" />,
                 title: "형사 처벌과 체류 자격의 연결고리를 아는 변호사",
                 num: "03",
                 desc: "한국에서 형사 처벌을 받으면 F-4, H-2 등 체류 자격이 취소되거나 강제퇴거로 이어질 수 있습니다. 한교는 형사 사건 수임 즉시, 사건의 법적 결과뿐 아니라 체류 자격에 미치는 영향까지 종합적으로 관리합니다."
@@ -367,14 +343,14 @@ export function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="bg-white p-10 border border-slate-200 hover:border-[#b59a5d] hover:shadow-xl transition-all group flex flex-col relative"
+                className="bg-white p-10 border border-slate-200 hover:border-[#2563EB] hover:shadow-xl transition-all group flex flex-col relative"
               >
-                <div className="absolute top-8 right-8 text-6xl font-black text-slate-50 opacity-50 group-hover:text-[#b59a5d]/10 transition-colors">
+                <div className="absolute top-8 right-8 text-6xl font-black text-slate-50 opacity-50 group-hover:text-[#2563EB]/10 transition-colors">
                   {feature.num}
                 </div>
                 {feature.icon}
                 <h3 className="text-2xl font-extrabold text-[#0f172a] mb-4">{feature.title}</h3>
-                <div className="w-8 h-[2px] bg-[#b59a5d] mb-6" />
+                <div className="w-8 h-[2px] bg-[#2563EB] mb-6" />
                 <p className="text-slate-600 leading-relaxed font-medium text-lg">{feature.desc}</p>
               </motion.div>
             ))}
@@ -430,14 +406,14 @@ export function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
-                className={`bg-white border-t-4 border-slate-200 hover:border-[#b59a5d] p-10 flex flex-col h-full hover:shadow-2xl transition-all cursor-pointer`}
+                className={`bg-white border-t-4 border-slate-200 hover:border-[#2563EB] p-10 flex flex-col h-full hover:shadow-2xl transition-all cursor-pointer`}
               >
-                <div className={`text-[#b59a5d] mb-6 font-black text-3xl opacity-40`}>
+                <div className={`text-[#2563EB] mb-6 font-black text-3xl opacity-40`}>
                   0{i + 1}
                 </div>
                 <h3 className="text-2xl font-extrabold text-[#0f172a] mb-4">{service.title}</h3>
                 <p className="text-slate-600 mb-8 flex-grow leading-relaxed font-medium text-lg">{service.desc}</p>
-                <Link to="/services" className="text-sm font-bold text-[#0f172a] hover:text-[#b59a5d] flex items-center gap-2 mt-auto transition-colors">
+                <Link to="/services" className="text-sm font-bold text-[#0f172a] hover:text-[#2563EB] flex items-center gap-2 mt-auto transition-colors">
                   자세히 보기 <ArrowRight size={16} />
                 </Link>
               </motion.div>
@@ -452,13 +428,13 @@ export function Home() {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14 lg:mb-20">
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <span className="h-px w-10 bg-[#b59a5d]" />
-                <span className="font-display text-[11px] sm:text-xs font-black tracking-[0.36em] uppercase text-[#b59a5d]">
+                <span className="h-px w-10 bg-[#2563EB]" />
+                <span className="font-display text-[11px] sm:text-xs font-black tracking-[0.36em] uppercase text-[#2563EB]">
                   Success Cases
                 </span>
               </div>
               <h2 className="text-[32px] sm:text-[44px] lg:text-[56px] font-black text-[#0f172a] tracking-tight leading-[1.1] mb-5">
-                중국어권 의뢰인을 위한 <span className="text-[#b59a5d]">업무사례</span>
+                중국어권 의뢰인을 위한 <span className="text-[#2563EB]">업무사례</span>
               </h2>
               <p className="text-base lg:text-lg text-slate-600 font-medium leading-relaxed max-w-[560px]">
                 체류 자격·형사·민사·계약 전 분야에 걸친 대표 사례를 안내합니다.
@@ -494,7 +470,7 @@ export function Home() {
                 className="group bg-white border border-slate-200 hover:border-[#0f172a] transition-colors p-8 lg:p-10 flex flex-col"
               >
                 <div className="flex items-center justify-between mb-5">
-                  <span className="inline-flex items-center gap-2 text-[11px] font-black tracking-[0.2em] uppercase text-[#b59a5d] border border-[#b59a5d]/40 px-3 py-1.5">
+                  <span className="inline-flex items-center gap-2 text-[11px] font-black tracking-[0.2em] uppercase text-[#2563EB] border border-[#2563EB]/40 px-3 py-1.5">
                     {c.tag}
                   </span>
                   <span className="font-display text-[10px] font-black tracking-[0.22em] uppercase text-slate-300">
@@ -512,7 +488,7 @@ export function Home() {
                   <ArrowUpRight
                     size={18}
                     strokeWidth={1.5}
-                    className="text-slate-300 group-hover:text-[#b59a5d] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
+                    className="text-slate-300 group-hover:text-[#2563EB] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
                   />
                 </div>
               </motion.article>
@@ -527,13 +503,13 @@ export function Home() {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14 lg:mb-20">
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <span className="h-px w-10 bg-[#b59a5d]" />
-                <span className="font-display text-[11px] sm:text-xs font-black tracking-[0.36em] uppercase text-[#b59a5d]">
+                <span className="h-px w-10 bg-[#2563EB]" />
+                <span className="font-display text-[11px] sm:text-xs font-black tracking-[0.36em] uppercase text-[#2563EB]">
                   Legal Information
                 </span>
               </div>
               <h2 className="text-[32px] sm:text-[44px] lg:text-[56px] font-black text-[#0f172a] tracking-tight leading-[1.1] mb-5">
-                변호사가 직접 쓰는 <span className="text-[#b59a5d]">법률 정보</span>
+                변호사가 직접 쓰는 <span className="text-[#2563EB]">법률 정보</span>
               </h2>
               <p className="text-base lg:text-lg text-slate-600 font-medium leading-relaxed max-w-[560px]">
                 복잡한 행정·형사·체류 절차를 쉬운 언어로 정리합니다. 중국어 해설 포함.
@@ -585,7 +561,7 @@ export function Home() {
                   <ArrowRight
                     size={14}
                     strokeWidth={1.75}
-                    className="text-slate-300 group-hover:text-[#b59a5d] group-hover:translate-x-0.5 transition-all"
+                    className="text-slate-300 group-hover:text-[#2563EB] group-hover:translate-x-0.5 transition-all"
                   />
                 </div>
               </motion.article>
@@ -599,14 +575,14 @@ export function Home() {
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14 lg:mb-20">
             <div className="inline-flex items-center gap-3 mb-6">
-              <span className="h-px w-10 bg-[#b59a5d]" />
-              <span className="font-display text-[11px] sm:text-xs font-black tracking-[0.36em] uppercase text-[#b59a5d]">
+              <span className="h-px w-10 bg-[#2563EB]" />
+              <span className="font-display text-[11px] sm:text-xs font-black tracking-[0.36em] uppercase text-[#2563EB]">
                 Client Voices
               </span>
-              <span className="h-px w-10 bg-[#b59a5d]" />
+              <span className="h-px w-10 bg-[#2563EB]" />
             </div>
             <h2 className="text-[32px] sm:text-[44px] lg:text-[56px] font-black text-[#0f172a] tracking-tight leading-[1.1] mb-5">
-              한교과 함께한 <span className="text-[#b59a5d]">후기</span>
+              한교과 함께한 <span className="text-[#2563EB]">후기</span>
             </h2>
             <p className="mx-auto max-w-[560px] text-base lg:text-lg text-slate-600 font-medium leading-relaxed">
               오동현 변호사의 조력으로 권리를 회복한 의뢰인의 후기입니다.
@@ -645,8 +621,8 @@ export function Home() {
                 transition={{ duration: 0.6, delay: i * 0.08 }}
                 className="relative bg-[#faf6ef] border border-[#e9e3d2] p-8 lg:p-10 flex flex-col"
               >
-                <Quote className="absolute top-6 right-6 w-10 h-10 text-[#b59a5d]/25" strokeWidth={1.25} />
-                <span className="inline-flex items-center self-start text-[11px] font-black tracking-[0.2em] uppercase text-[#b59a5d] border border-[#b59a5d]/40 px-3 py-1.5 mb-5">
+                <Quote className="absolute top-6 right-6 w-10 h-10 text-[#2563EB]/25" strokeWidth={1.25} />
+                <span className="inline-flex items-center self-start text-[11px] font-black tracking-[0.2em] uppercase text-[#2563EB] border border-[#2563EB]/40 px-3 py-1.5 mb-5">
                   {t.tag}
                 </span>
                 <blockquote className="flex-grow">
@@ -676,14 +652,14 @@ export function Home() {
           className="absolute inset-0 opacity-[0.05]"
           style={{
             backgroundImage:
-              "linear-gradient(135deg, transparent 49.5%, #b59a5d 49.5%, #b59a5d 50.5%, transparent 50.5%)",
+              "linear-gradient(135deg, transparent 49.5%, #2563EB 49.5%, #2563EB 50.5%, transparent 50.5%)",
             backgroundSize: "64px 64px",
           }}
         />
         <div className="relative max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-3 mb-6">
-            <Hash size={16} className="text-[#b59a5d]" strokeWidth={2} />
-            <span className="font-display text-[11px] font-black tracking-[0.36em] uppercase text-[#b59a5d]">
+            <Hash size={16} className="text-[#2563EB]" strokeWidth={2} />
+            <span className="font-display text-[11px] font-black tracking-[0.36em] uppercase text-[#2563EB]">
               Ask the Attorney
             </span>
           </div>
@@ -712,7 +688,7 @@ export function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: i * 0.03 }}
-                className="group inline-flex items-center gap-2 border border-white/20 hover:border-[#b59a5d] hover:bg-[#b59a5d]/10 px-5 py-2.5 text-[13px] lg:text-sm font-display font-bold text-white/85 hover:text-white tracking-wide transition-colors"
+                className="group inline-flex items-center gap-2 border border-white/20 hover:border-[#2563EB] hover:bg-[#2563EB]/10 px-5 py-2.5 text-[13px] lg:text-sm font-display font-bold text-white/85 hover:text-white tracking-wide transition-colors"
               >
                 {tag}
               </motion.a>
@@ -730,38 +706,38 @@ export function Home() {
                 eyebrow: "Consultation",
                 title: "한교 법률 상담",
                 desc: "365일 24시간 중국어 직접 상담",
-                icon: <MessageCircle className="w-7 h-7 text-[#b59a5d]" strokeWidth={1.4} />,
+                icon: <MessageCircle className="w-7 h-7 text-[#2563EB]" strokeWidth={1.4} />,
                 href: "#consult",
               },
               {
                 eyebrow: "Cases",
                 title: "업무사례",
                 desc: "중국어권 의뢰인 맞춤 솔루션",
-                icon: <Briefcase className="w-7 h-7 text-[#b59a5d]" strokeWidth={1.4} />,
+                icon: <Briefcase className="w-7 h-7 text-[#2563EB]" strokeWidth={1.4} />,
                 href: "/cases",
               },
               {
                 eyebrow: "Attorney",
                 title: "구성원 소개",
                 desc: "오동현 대표 변호사 프로필",
-                icon: <ShieldCheck className="w-7 h-7 text-[#b59a5d]" strokeWidth={1.4} />,
+                icon: <ShieldCheck className="w-7 h-7 text-[#2563EB]" strokeWidth={1.4} />,
                 href: "/about",
               },
               {
                 eyebrow: "Practice",
                 title: "업무분야",
                 desc: "5대 핵심 업무 영역",
-                icon: <Layers className="w-7 h-7 text-[#b59a5d]" strokeWidth={1.4} />,
+                icon: <Layers className="w-7 h-7 text-[#2563EB]" strokeWidth={1.4} />,
                 href: "/services",
               },
             ].map((q, i) => (
               <Link
                 key={i}
                 to={q.href}
-                className="group block bg-[#faf6ef] border border-[#e9e3d2] hover:border-[#b59a5d] p-8 lg:p-10 transition-colors"
+                className="group block bg-[#faf6ef] border border-[#e9e3d2] hover:border-[#2563EB] p-8 lg:p-10 transition-colors"
               >
                 <div className="mb-8">{q.icon}</div>
-                <p className="font-display text-[10px] font-black tracking-[0.28em] uppercase text-[#b59a5d] mb-3">
+                <p className="font-display text-[10px] font-black tracking-[0.28em] uppercase text-[#2563EB] mb-3">
                   {q.eyebrow}
                 </p>
                 <h3 className="text-xl lg:text-2xl font-extrabold text-[#0f172a] tracking-tight mb-3">
@@ -773,7 +749,7 @@ export function Home() {
                 <ArrowUpRight
                   size={18}
                   strokeWidth={1.5}
-                  className="text-slate-400 group-hover:text-[#b59a5d] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
+                  className="text-slate-400 group-hover:text-[#2563EB] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
                 />
               </Link>
             ))}
@@ -782,12 +758,12 @@ export function Home() {
       </section>
 
       {/* ─────────── CONSULTATION INTAKE FORM ─────────── */}
-      <section id="consult" className="py-24 lg:py-32 bg-[#0f172a] text-white border-t-[6px] border-[#b59a5d]">
+      <section id="consult" className="py-24 lg:py-32 bg-[#0f172a] text-white border-t-[6px] border-[#2563EB]">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-16">
           <div className="lg:col-span-5">
             <div className="flex items-center gap-3 mb-6">
-              <span className="h-px w-10 bg-[#b59a5d]" />
-              <span className="font-display text-[11px] font-black tracking-[0.36em] uppercase text-[#b59a5d]">
+              <span className="h-px w-10 bg-[#2563EB]" />
+              <span className="font-display text-[11px] font-black tracking-[0.36em] uppercase text-[#2563EB]">
                 Consultation
               </span>
             </div>
@@ -798,9 +774,9 @@ export function Home() {
               중국어·한국어 어느 쪽이든 편한 언어로 남겨 주세요. 24시간 이내 오동현 변호사가 직접 회신드립니다.
             </p>
             <div className="space-y-5">
-              <div className="flex items-start gap-4 border-l-2 border-[#b59a5d] pl-5">
+              <div className="flex items-start gap-4 border-l-2 border-[#2563EB] pl-5">
                 <div>
-                  <p className="font-display text-[10px] font-black tracking-[0.28em] uppercase text-[#b59a5d] mb-1">
+                  <p className="font-display text-[10px] font-black tracking-[0.28em] uppercase text-[#2563EB] mb-1">
                     WeChat · 24h
                   </p>
                   <p className="text-base font-bold tabular-nums">wudongxuan002</p>
@@ -830,7 +806,7 @@ export function Home() {
               <h3 className="font-display text-[22px] lg:text-[26px] font-black tracking-tight">
                 상담 신청서
               </h3>
-              <span className="font-display text-[10px] font-black tracking-[0.26em] uppercase text-[#b59a5d]">
+              <span className="font-display text-[10px] font-black tracking-[0.26em] uppercase text-[#2563EB]">
                 Intake · KR / CN
               </span>
             </div>
@@ -866,7 +842,7 @@ export function Home() {
                     key={lang}
                     className="flex items-center gap-2 border border-slate-200 hover:border-[#0f172a] px-4 py-2 cursor-pointer transition-colors text-[13px] font-semibold"
                   >
-                    <input type="radio" name="lang" className="accent-[#b59a5d]" />
+                    <input type="radio" name="lang" className="accent-[#2563EB]" />
                     {lang}
                   </label>
                 ))}
@@ -897,13 +873,13 @@ export function Home() {
               />
             </div>
             <label className="flex items-baseline gap-2 mb-7 text-[12px] text-slate-600 font-medium">
-              <input type="checkbox" className="accent-[#b59a5d] mt-0.5" />
+              <input type="checkbox" className="accent-[#2563EB] mt-0.5" />
               개인정보 수집 및 이용에 동의합니다. (상담 목적에 한하여 활용)
             </label>
             <div className="flex flex-col sm:flex-row gap-3">
               <button
                 type="submit"
-                className="group flex-1 inline-flex items-center justify-center gap-3 bg-[#0f172a] hover:bg-[#b59a5d] text-white px-6 py-4 font-extrabold text-[14px] tracking-wide transition-colors"
+                className="group flex-1 inline-flex items-center justify-center gap-3 bg-[#0f172a] hover:bg-[#2563EB] text-white px-6 py-4 font-extrabold text-[14px] tracking-wide transition-colors"
               >
                 무료 상담 신청하기
                 <ArrowRight
@@ -930,12 +906,12 @@ export function Home() {
       </section>
 
       {/* Guide / Lead Magnet Section */}
-      <section className="py-24 bg-[#0f172a] relative border-t-8 border-[#b59a5d]">
+      <section className="py-24 bg-[#0f172a] relative border-t-8 border-[#2563EB]">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col md:flex-row items-center gap-16">
             <div className="md:w-2/3 text-white">
               <div className="flex items-center gap-4 mb-6">
-                <span className="inline-flex items-center px-4 py-1 border border-[#b59a5d] text-[#b59a5d] font-bold text-sm">
+                <span className="inline-flex items-center px-4 py-1 border border-[#2563EB] text-[#2563EB] font-bold text-sm">
                   무료 가이드북 배포
                 </span>
               </div>
@@ -944,21 +920,21 @@ export function Home() {
                 <span className="text-slate-400 font-bold text-3xl md:text-4xl mt-2 block">조선족을 위한 5대 필수 법률 가이드</span>
               </h2>
               <ul className="space-y-4 mb-10 text-slate-300 font-bold text-lg">
-                <li className="flex items-center gap-3"><CheckCircle2 size={24} className="text-[#b59a5d] shrink-0" /> 비자(F4, H2) 상실 피하는 법 (음주운전, 벌금형)</li>
-                <li className="flex items-center gap-3"><CheckCircle2 size={24} className="text-[#b59a5d] shrink-0" /> 사장이 돈 안 줄 때 증거 남기는 법</li>
-                <li className="flex items-center gap-3"><CheckCircle2 size={24} className="text-[#b59a5d] shrink-0" /> 보이스피싱 전달책 연루 시 행동 요령</li>
-                <li className="flex items-center gap-3"><CheckCircle2 size={24} className="text-[#b59a5d] shrink-0" /> 중국 재산 상속 및 이혼 판결 효력</li>
-                <li className="flex items-center gap-3"><CheckCircle2 size={24} className="text-[#b59a5d] shrink-0" /> 한교(韩桥) 24시 위챗 QR코드 제공</li>
+                <li className="flex items-center gap-3"><CheckCircle2 size={24} className="text-[#2563EB] shrink-0" /> 비자(F4, H2) 상실 피하는 법 (음주운전, 벌금형)</li>
+                <li className="flex items-center gap-3"><CheckCircle2 size={24} className="text-[#2563EB] shrink-0" /> 사장이 돈 안 줄 때 증거 남기는 법</li>
+                <li className="flex items-center gap-3"><CheckCircle2 size={24} className="text-[#2563EB] shrink-0" /> 보이스피싱 전달책 연루 시 행동 요령</li>
+                <li className="flex items-center gap-3"><CheckCircle2 size={24} className="text-[#2563EB] shrink-0" /> 중국 재산 상속 및 이혼 판결 효력</li>
+                <li className="flex items-center gap-3"><CheckCircle2 size={24} className="text-[#2563EB] shrink-0" /> 한교(韩桥) 24시 위챗 QR코드 제공</li>
               </ul>
               
-              <a href="#" className="inline-flex items-center justify-center gap-3 bg-[#b59a5d] hover:bg-[#a38a53] text-white px-10 py-5 font-extrabold text-lg transition-all w-full sm:w-auto shadow-xl">
+              <a href="#" className="inline-flex items-center justify-center gap-3 bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-10 py-5 font-extrabold text-lg transition-all w-full sm:w-auto shadow-xl">
                 <Download size={22} />
                 가이드북 다운로드
               </a>
             </div>
             
             <div className="md:w-1/3 flex justify-center w-full">
-              <div className="bg-white p-8 shadow-2xl w-full max-w-md border-t-4 border-[#b59a5d]">
+              <div className="bg-white p-8 shadow-2xl w-full max-w-md border-t-4 border-[#2563EB]">
                 <div className="aspect-[3/4] bg-slate-50 border border-slate-200 flex flex-col items-center justify-center p-8 text-center">
                   <FileText size={56} className="mb-6 text-[#0f172a]" />
                   <p className="font-extrabold text-2xl text-[#0f172a] mb-4">한국 생존<br/>법률 가이드북</p>

@@ -148,7 +148,7 @@ export function LegalSidebar({
           <ul className="flex flex-col gap-3.5">
             {cases.map((c, i) => (
               <li key={i} className="flex gap-2.5 text-[13.5px] leading-snug text-[#475569]">
-                <span className="text-[#b59a5d] text-[9px] flex-shrink-0 pt-[5px]">◆</span>
+                <span className="text-[#2563EB] text-[9px] flex-shrink-0 pt-[5px]">◆</span>
                 <Link to={c.to} className="hover:text-[#0f172a] hover:underline">
                   {c.label}
                 </Link>

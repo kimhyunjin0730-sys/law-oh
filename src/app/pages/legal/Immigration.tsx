@@ -153,7 +153,7 @@ export function Immigration() {
         />
         <div className="relative max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-12 lg:gap-16 items-center">
           <div>
-            <p className="font-mono text-[11px] font-bold tracking-[0.26em] uppercase text-[#b59a5d] mb-5">
+            <p className="font-mono text-[11px] font-bold tracking-[0.26em] uppercase text-[#2563EB] mb-5">
               {cta.eyebrow}
             </p>
             <h2 className="font-serif-ko font-bold text-[28px] sm:text-[34px] lg:text-[42px] leading-[1.25] tracking-tight mb-4 whitespace-pre-line">
@@ -164,7 +164,7 @@ export function Immigration() {
           <div className="flex flex-col gap-3.5">
             <Link
               to="/#consult"
-              className="inline-flex items-center justify-between gap-4 bg-[#b59a5d] text-[#020617] py-5 px-7 font-serif-ko font-bold text-[17px] tracking-tight transition-all hover:bg-[#fff3a8] hover:-translate-y-0.5 group"
+              className="inline-flex items-center justify-between gap-4 bg-[#2563EB] text-[#020617] py-5 px-7 font-serif-ko font-bold text-[17px] tracking-tight transition-all hover:bg-[#fff3a8] hover:-translate-y-0.5 group"
             >
               <span>{cta.primary}</span>
               <span className="font-mono text-[22px] transition-transform group-hover:translate-x-1">
@@ -173,7 +173,7 @@ export function Immigration() {
             </Link>
             <a
               href="tel:82-10-2999-6910"
-              className="inline-flex items-center justify-between gap-4 border border-white/25 text-[#f4f6fa] py-4 px-7 font-semibold text-[14.5px] transition-colors hover:border-[#b59a5d] hover:text-[#b59a5d]"
+              className="inline-flex items-center justify-between gap-4 border border-white/25 text-[#f4f6fa] py-4 px-7 font-semibold text-[14.5px] transition-colors hover:border-[#2563EB] hover:text-[#2563EB]"
             >
               <span>{cta.secondary}</span>
               <span>📞</span>

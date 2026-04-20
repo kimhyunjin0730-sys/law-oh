@@ -7,7 +7,7 @@ export function Services() {
   const services = [
     {
       id: "immigration",
-      icon: <ShieldCheck className="w-16 h-16 text-[#b59a5d] mb-8" />,
+      icon: <ShieldCheck className="w-16 h-16 text-[#2563EB] mb-8" />,
       title: "체류 자격 · 출입국 법률 자문",
       cn: "(签证·出入境)",
       description: "형사 사건 수임 즉시 체류 자격에 미치는 영향을 병행 분석하여 전략을 수립합니다.",
@@ -18,11 +18,11 @@ export function Services() {
         "강제퇴거 명령 불복 및 이의신청 대응",
         "출입국 단속 시 긴급 대응 (위챗 24시간)"
       ],
-      color: "border-[#b59a5d]"
+      color: "border-[#2563EB]"
     },
     {
       id: "criminal",
-      icon: <Scale className="w-16 h-16 text-[#b59a5d] mb-8" />,
+      icon: <Scale className="w-16 h-16 text-[#2563EB] mb-8" />,
       title: "형사 사건",
       cn: "(刑事案件)",
       description: "억울한 혐의는 벗고, 피해는 신속히 구제받을 수 있도록 치밀하게 조력합니다.",
@@ -38,7 +38,7 @@ export function Services() {
     },
     {
       id: "civil",
-      icon: <FileText className="w-16 h-16 text-[#b59a5d] mb-8" />,
+      icon: <FileText className="w-16 h-16 text-[#2563EB] mb-8" />,
       title: "민사 · 금융 사건",
       cn: "(民事·金融案件)",
       description: "복잡한 금전 분쟁에서 의뢰인의 재산권을 끝까지 보호합니다.",
@@ -52,7 +52,7 @@ export function Services() {
     },
     {
       id: "corporate",
-      icon: <Briefcase className="w-16 h-16 text-[#b59a5d] mb-8" />,
+      icon: <Briefcase className="w-16 h-16 text-[#2563EB] mb-8" />,
       title: "대중(對中) 계약 · 기업 자문",
       cn: "(涉华合同·企业)",
       description: "중국어 원문을 기준으로 리스크를 직접 분석하고 검토합니다.",
@@ -66,7 +66,7 @@ export function Services() {
     },
     {
       id: "family",
-      icon: <HeartHandshake className="w-16 h-16 text-[#b59a5d] mb-8" />,
+      icon: <HeartHandshake className="w-16 h-16 text-[#2563EB] mb-8" />,
       title: "가사 · 상속 사건",
       cn: "(家事·继承)",
       description: "국경을 넘나드는 가족 간의 문제를 합리적으로 해결합니다.",
@@ -93,20 +93,20 @@ export function Services() {
             <Link
               key={service.id}
               to={`/services/${service.id}`}
-              className="flex flex-col lg:flex-row bg-slate-50 border border-slate-200 group hover:border-[#b59a5d] transition-colors"
+              className="flex flex-col lg:flex-row bg-slate-50 border border-slate-200 group hover:border-[#2563EB] transition-colors"
             >
-              <div className="lg:w-1/3 bg-white p-12 lg:p-16 border-b lg:border-b-0 lg:border-r border-slate-200 group-hover:border-[#b59a5d]/30 transition-colors">
+              <div className="lg:w-1/3 bg-white p-12 lg:p-16 border-b lg:border-b-0 lg:border-r border-slate-200 group-hover:border-[#2563EB]/30 transition-colors">
                 {service.icon}
-                <h3 className="text-3xl font-extrabold text-[#0f172a] mb-2 tracking-tight group-hover:text-[#b59a5d] transition-colors">
+                <h3 className="text-3xl font-extrabold text-[#0f172a] mb-2 tracking-tight group-hover:text-[#2563EB] transition-colors">
                   {service.title}
                 </h3>
-                <span className="block text-xl font-bold text-[#b59a5d] mb-6">
+                <span className="block text-xl font-bold text-[#2563EB] mb-6">
                   {service.cn}
                 </span>
                 <p className="text-slate-600 font-medium leading-relaxed text-lg">
                   {service.description}
                 </p>
-                <div className="mt-8 inline-flex items-center gap-2 font-display text-[12px] font-extrabold tracking-[0.22em] uppercase text-[#0f172a] border-b border-[#0f172a] pb-1 group-hover:text-[#b59a5d] group-hover:border-[#b59a5d] transition-colors">
+                <div className="mt-8 inline-flex items-center gap-2 font-display text-[12px] font-extrabold tracking-[0.22em] uppercase text-[#0f172a] border-b border-[#0f172a] pb-1 group-hover:text-[#2563EB] group-hover:border-[#2563EB] transition-colors">
                   자세히 보기
                   <ArrowRight size={14} strokeWidth={2.5} className="transition-transform group-hover:translate-x-1" />
                 </div>
@@ -118,7 +118,7 @@ export function Services() {
                     const [main, sub] = item.split(': ');
                     return (
                       <div key={idx} className="flex gap-4 items-start">
-                        <div className="w-2 h-2 bg-[#b59a5d] mt-2.5 shrink-0" />
+                        <div className="w-2 h-2 bg-[#2563EB] mt-2.5 shrink-0" />
                         <div>
                           <span className="block font-extrabold text-[#0f172a] text-lg mb-2">{main}</span>
                           {sub && <span className="block text-slate-600 text-base leading-relaxed font-medium">{sub}</span>}
@@ -132,7 +132,7 @@ export function Services() {
           ))}
         </div>
 
-        <div className="mt-32 bg-[#0f172a] text-center text-white p-16 lg:p-24 border-t-[8px] border-[#b59a5d]">
+        <div className="mt-32 bg-[#0f172a] text-center text-white p-16 lg:p-24 border-t-[8px] border-[#2563EB]">
           <h3 className="text-3xl md:text-5xl font-extrabold mb-8 tracking-tight">지금 바로 전문적인 상담이 필요하십니까?</h3>
           <p className="text-slate-400 mb-12 max-w-3xl mx-auto text-xl font-medium leading-relaxed">
              한국에서의 법적 문제, 시간이 지체될수록 불리해질 수 있습니다. 
@@ -148,7 +148,7 @@ export function Services() {
               <WeChatDialog>
                 <button
                   type="button"
-                  className="bg-[#b59a5d] hover:bg-[#a38a53] text-white px-10 py-5 font-extrabold text-xl transition-colors flex justify-center items-center gap-3"
+                  className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-10 py-5 font-extrabold text-xl transition-colors flex justify-center items-center gap-3"
                 >
                   위챗 직접 상담 (wudongxuan002)
                 </button>

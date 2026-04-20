@@ -29,13 +29,13 @@ export function WeChatDialog({ children }: { children: ReactElement }) {
           aria-describedby={undefined}
         >
           {/* Gold top rule */}
-          <div aria-hidden className="h-1 w-full bg-[#b59a5d]" />
+          <div aria-hidden className="h-1 w-full bg-[#2563EB]" />
 
           <div className="p-7 sm:p-9">
             {/* Header */}
             <div className="flex items-start justify-between gap-4 mb-1">
               <div className="flex items-center gap-2.5">
-                <span className="text-[10px] font-bold tracking-[0.28em] uppercase text-[#b59a5d]">
+                <span className="text-[10px] font-bold tracking-[0.28em] uppercase text-[#2563EB]">
                   WeChat 24h
                 </span>
               </div>
@@ -87,7 +87,7 @@ export function WeChatDialog({ children }: { children: ReactElement }) {
                 </div>
                 <div className="mt-1 font-extrabold text-lg tabular-nums">{WECHAT_ID}</div>
               </div>
-              <div className="inline-flex items-center gap-2 bg-[#b59a5d] group-hover:bg-[#c9b07e] text-white px-4 py-2.5 font-bold text-sm transition-colors">
+              <div className="inline-flex items-center gap-2 bg-[#2563EB] group-hover:bg-[#c9b07e] text-white px-4 py-2.5 font-bold text-sm transition-colors">
                 {copied === "id" ? <Check size={15} strokeWidth={2.5} /> : <Copy size={15} strokeWidth={2} />}
                 {copied === "id" ? "복사됨" : "ID 복사"}
               </div>
@@ -121,17 +121,17 @@ export function WeChatDialog({ children }: { children: ReactElement }) {
             {/* How-to */}
             <ol className="mt-5 space-y-2 text-[12.5px] text-slate-600 font-medium leading-relaxed">
               <li className="flex gap-2.5">
-                <span className="font-extrabold text-[#b59a5d] shrink-0 tabular-nums">01</span>
+                <span className="font-extrabold text-[#2563EB] shrink-0 tabular-nums">01</span>
                 위챗 앱을 실행하고 <b className="text-[#0a0a0a]">추가하기(+)</b>를 누릅니다.
               </li>
               <li className="flex gap-2.5">
-                <span className="font-extrabold text-[#b59a5d] shrink-0 tabular-nums">02</span>
+                <span className="font-extrabold text-[#2563EB] shrink-0 tabular-nums">02</span>
                 <span>
                   <b className="text-[#0a0a0a]">ID 검색</b> 또는 <b className="text-[#0a0a0a]">QR 스캔</b>으로 친구 요청을 보냅니다.
                 </span>
               </li>
               <li className="flex gap-2.5">
-                <span className="font-extrabold text-[#b59a5d] shrink-0 tabular-nums">03</span>
+                <span className="font-extrabold text-[#2563EB] shrink-0 tabular-nums">03</span>
                 <span>수락 후 <b className="text-[#0a0a0a]">24시간 이내</b>에 회신드립니다.</span>
               </li>
             </ol>

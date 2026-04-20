@@ -67,13 +67,13 @@ export function ServiceDetail() {
               <span className="text-[#dbe1ea]">›</span>
               <span className="text-[#0f172a]">{svc.title}</span>
             </div>
-            <p className="font-mono text-[11px] font-bold tracking-[0.26em] uppercase text-[#b59a5d] mb-4">
+            <p className="font-mono text-[11px] font-bold tracking-[0.26em] uppercase text-[#2563EB] mb-4">
               {svc.eyebrow}
             </p>
             <h1 className="font-black tracking-[-0.02em] leading-[1.08] text-[40px] sm:text-[56px] lg:text-[76px] text-[#0f172a]">
               <TitleWithMark title={svc.title} mark={svc.highlight} />
             </h1>
-            <p className="mt-3 text-[18px] sm:text-[20px] text-[#b59a5d] font-semibold tracking-tight">
+            <p className="mt-3 text-[18px] sm:text-[20px] text-[#2563EB] font-semibold tracking-tight">
               {svc.cn}
             </p>
             <p className="mt-5 max-w-[560px] text-[16px] sm:text-[17px] leading-relaxed text-[#475569]">
@@ -137,7 +137,7 @@ export function ServiceDetail() {
               Hangyo Practice — {svc.eyebrow}
             </div>
             <div
-              className="absolute bottom-6 right-6 w-[78px] h-[78px] grid place-items-center font-serif-ko font-black text-[24px] tracking-tight bg-[#b59a5d] text-[#020617] shadow-[0_8px_24px_-8px_rgba(0,0,0,.4)]"
+              className="absolute bottom-6 right-6 w-[78px] h-[78px] grid place-items-center font-serif-ko font-black text-[24px] tracking-tight bg-[#2563EB] text-[#020617] shadow-[0_8px_24px_-8px_rgba(0,0,0,.4)]"
               style={{ transform: "rotate(-6deg)" }}
             >
               <span aria-hidden className="absolute inset-[6px] border-2 border-[#020617]" />
@@ -175,7 +175,7 @@ export function ServiceDetail() {
                   return (
                     <li
                       key={idx}
-                      className="bg-white border border-[#dbe1ea] border-l-[3px] border-l-[#b59a5d] py-4 px-5 transition-all hover:-translate-y-px hover:shadow-[0_1px_0_rgba(15,23,42,.04),0_12px_32px_-18px_rgba(15,23,42,.18)]"
+                      className="bg-white border border-[#dbe1ea] border-l-[3px] border-l-[#2563EB] py-4 px-5 transition-all hover:-translate-y-px hover:shadow-[0_1px_0_rgba(15,23,42,.04),0_12px_32px_-18px_rgba(15,23,42,.18)]"
                     >
                       <div className="flex items-start gap-3">
                         <span className="grid place-items-center w-5 h-5 rounded-full bg-[#0f172a] mt-0.5 flex-shrink-0">
@@ -224,7 +224,7 @@ export function ServiceDetail() {
         />
         <div className="relative max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-12 lg:gap-16 items-center">
           <div>
-            <p className="font-mono text-[11px] font-bold tracking-[0.26em] uppercase text-[#b59a5d] mb-5">
+            <p className="font-mono text-[11px] font-bold tracking-[0.26em] uppercase text-[#2563EB] mb-5">
               한교 — 法律事務所 · 韩桥
             </p>
             <h2 className="font-serif-ko font-bold text-[28px] sm:text-[34px] lg:text-[42px] leading-[1.25] tracking-tight mb-4">
@@ -237,14 +237,14 @@ export function ServiceDetail() {
           <div className="flex flex-col gap-3.5">
             <Link
               to="/#consult"
-              className="inline-flex items-center justify-between gap-4 bg-[#b59a5d] text-[#020617] py-5 px-7 font-serif-ko font-bold text-[17px] tracking-tight transition-all hover:bg-[#fff3a8] hover:-translate-y-0.5 group"
+              className="inline-flex items-center justify-between gap-4 bg-[#2563EB] text-[#020617] py-5 px-7 font-serif-ko font-bold text-[17px] tracking-tight transition-all hover:bg-[#fff3a8] hover:-translate-y-0.5 group"
             >
               <span>온라인 상담 접수</span>
               <span className="font-mono text-[22px] transition-transform group-hover:translate-x-1">→</span>
             </Link>
             <a
               href="tel:82-10-2999-6910"
-              className="inline-flex items-center justify-between gap-4 border border-white/25 text-[#f4f6fa] py-4 px-7 font-semibold text-[14.5px] transition-colors hover:border-[#b59a5d] hover:text-[#b59a5d]"
+              className="inline-flex items-center justify-between gap-4 border border-white/25 text-[#f4f6fa] py-4 px-7 font-semibold text-[14.5px] transition-colors hover:border-[#2563EB] hover:text-[#2563EB]"
             >
               <span>전화 상담  82-10-2999-6910</span>
               <span>📞</span>

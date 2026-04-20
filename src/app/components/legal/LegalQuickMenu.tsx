@@ -39,7 +39,7 @@ export function LegalQuickMenu() {
         href="tel:82-10-2999-6910"
         className="flex flex-col items-center gap-1.5 px-4 py-3.5 text-[11px] font-semibold tracking-tight hover:bg-[#0f172a] transition-colors"
       >
-        <span className="w-7 h-7 grid place-items-center rounded-full bg-[#b59a5d]">
+        <span className="w-7 h-7 grid place-items-center rounded-full bg-[#2563EB]">
           <Phone size={14} strokeWidth={1.8} className="text-white" />
         </span>
         전화<br />상담

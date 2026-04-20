@@ -9,7 +9,7 @@ export function SectionHeading({
 }) {
   return (
     <div className={`mb-16 md:mb-24 ${centered ? "text-center flex flex-col items-center" : ""}`}>
-      <div className={`w-8 h-1 bg-[#b59a5d] mb-6 ${centered ? "mx-auto" : ""}`} />
+      <div className={`w-8 h-1 bg-[#2563EB] mb-6 ${centered ? "mx-auto" : ""}`} />
       <h2 className="text-3xl md:text-5xl font-extrabold text-[#0f172a] tracking-tight leading-tight">
         {title}
       </h2>

@@ -76,7 +76,7 @@ export function LegalHero({ content, lang, highlight, eyebrow }: Props) {
 
           {/* Eyebrow */}
           {eyebrow ? (
-            <p className="font-mono text-[11px] font-bold tracking-[0.26em] uppercase text-[#b59a5d] mb-4">
+            <p className="font-mono text-[11px] font-bold tracking-[0.26em] uppercase text-[#2563EB] mb-4">
               {eyebrow}
             </p>
           ) : null}
@@ -154,7 +154,7 @@ export function LegalHero({ content, lang, highlight, eyebrow }: Props) {
           </div>
           {/* 韩桥 stamp */}
           <div
-            className="absolute bottom-6 right-6 w-[78px] h-[78px] grid place-items-center font-serif-ko font-black text-[28px] tracking-tight bg-[#b59a5d] text-[#020617] shadow-[0_8px_24px_-8px_rgba(0,0,0,.4)]"
+            className="absolute bottom-6 right-6 w-[78px] h-[78px] grid place-items-center font-serif-ko font-black text-[28px] tracking-tight bg-[#2563EB] text-[#020617] shadow-[0_8px_24px_-8px_rgba(0,0,0,.4)]"
             style={{ transform: "rotate(-6deg)" }}
           >
             <span aria-hidden className="absolute inset-[6px] border-2 border-[#020617]" />

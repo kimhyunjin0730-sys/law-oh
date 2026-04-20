@@ -59,7 +59,7 @@ export function VisaTable({ visas, lang, count, total }: Props) {
                       {pick(v.requirements, lang).map((r, ri) => (
                         <li key={ri} className="relative pl-3.5 text-[13.5px] text-[#475569]">
                           <span
-                            className="absolute left-0 top-[9px] w-[5px] h-[5px] rounded-full bg-[#b59a5d]"
+                            className="absolute left-0 top-[9px] w-[5px] h-[5px] rounded-full bg-[#2563EB]"
                             aria-hidden
                           />
                           {r}

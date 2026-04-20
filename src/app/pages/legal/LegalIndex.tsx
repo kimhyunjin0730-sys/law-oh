@@ -22,8 +22,8 @@ export function LegalIndex() {
         <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {TOPICS.map((x) => {
             const body = (
-              <div className="group h-full bg-white border border-[#e9e3d2] p-8 transition-colors hover:border-[#b59a5d]">
-                <div className="mb-6 font-display text-[10px] font-black tracking-[0.28em] uppercase text-[#b59a5d]">
+              <div className="group h-full bg-white border border-[#e9e3d2] p-8 transition-colors hover:border-[#2563EB]">
+                <div className="mb-6 font-display text-[10px] font-black tracking-[0.28em] uppercase text-[#2563EB]">
                   {x.active ? "Available" : t("legal.coming_soon")}
                 </div>
                 <h3 className="text-2xl font-extrabold text-[#0f172a] tracking-tight mb-3">{pickTitle(x)}</h3>

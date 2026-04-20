@@ -34,7 +34,7 @@ export function PageSubnav({ items }: Props) {
               >
                 {it.label}
                 {it.soon ? (
-                  <span className="ml-1.5 align-middle font-mono text-[9px] font-bold tracking-[0.1em] text-[#b59a5d]">
+                  <span className="ml-1.5 align-middle font-mono text-[9px] font-bold tracking-[0.1em] text-[#2563EB]">
                     SOON
                   </span>
                 ) : null}

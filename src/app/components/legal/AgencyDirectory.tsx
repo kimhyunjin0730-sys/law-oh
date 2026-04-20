@@ -32,7 +32,7 @@ export function AgencyDirectory({ agencies, lang, count, total }: Props) {
             key={a.id}
             className="bg-white border border-[#dbe1ea] py-5 px-5 transition-colors hover:border-[#0f172a]"
           >
-            <div className="font-mono text-[10.5px] font-semibold tracking-[0.1em] uppercase text-[#b59a5d] mb-3">
+            <div className="font-mono text-[10.5px] font-semibold tracking-[0.1em] uppercase text-[#2563EB] mb-3">
               {pick(a.role, lang)}
             </div>
             <h3 className="font-serif-ko font-bold text-[16px] text-[#0f172a] tracking-tight mb-3.5">

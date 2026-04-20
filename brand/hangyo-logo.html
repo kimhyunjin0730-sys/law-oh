@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>한교 — Azure Meridian · Plate No. 01</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azure: #2563EB;
+    --azure-deep: #1D4ED8;
+    --azure-soft: #60A5FA;
+    --ivory: #F4EFE6;
+    --ivory-warm: #EEE7D6;
+    --ink: #0B1020;
+    --ink-soft: #1F2A44;
+    --rule: rgba(11, 16, 32, 0.12);
+
+    --hangul: "Pretendard Variable", Pretendard, -apple-system, system-ui, sans-serif;
+    --display: "Instrument Serif", "Libre Baskerville", Georgia, serif;
+    --label:   "Archivo", "Helvetica Neue", Arial, sans-serif;
+    --mono:    "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    background: var(--ivory);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    font-family: var(--hangul);
+    width: 1600px;
+    height: 2100px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(1100px 700px at 50% 38%, rgba(37, 99, 235, 0.03), transparent 70%),
+      var(--ivory);
+  }
+
+  /* ─── paper grain overlay ─── */
+  body::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(rgba(11,16,32,0.025) 1px, transparent 1px),
+      radial-gradient(rgba(11,16,32,0.02) 1px, transparent 1px);
+    background-size: 3px 3px, 7px 7px;
+    background-position: 0 0, 1.5px 1.5px;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+    opacity: 0.6;
+  }
+
+  /* ─── framing corners ─── */
+  .corner {
+    position: absolute;
+    width: 46px; height: 46px;
+    border: 1px solid var(--ink);
+  }
+  .corner.tl { top: 64px; left: 64px; border-right: none; border-bottom: none; }
+  .corner.tr { top: 64px; right: 64px; border-left: none; border-bottom: none; }
+  .corner.bl { bottom: 64px; left: 64px; border-right: none; border-top: none; }
+  .corner.br { bottom: 64px; right: 64px; border-left: none; border-top: none; }
+
+  /* ─── masthead ─── */
+  .masthead {
+    position: absolute;
+    top: 110px; left: 110px; right: 110px;
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: var(--mono);
+    font-size: 12px; font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .masthead .r { color: var(--azure); }
+
+  .sub-mast {
+    position: absolute;
+    top: 148px; left: 110px; right: 110px;
+    display: flex; justify-content: space-between;
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 17px;
+    color: var(--ink-soft);
+    letter-spacing: 0.01em;
+  }
+
+  /* hairline across top */
+  .top-rule {
+    position: absolute;
+    top: 198px; left: 110px; right: 110px;
+    height: 1px;
+    background: var(--ink);
+    opacity: 0.9;
+  }
+  /* small azure tick on top rule */
+  .top-rule::after {
+    content: "";
+    position: absolute;
+    left: 50%; top: -3px;
+    transform: translateX(-50%);
+    width: 60px; height: 7px;
+    background: var(--azure);
+  }
+
+  /* ─── THE MARK ─── */
+  .mark-zone {
+    position: absolute;
+    top: 320px;
+    left: 0; right: 0;
+    height: 900px;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .mark {
+    position: relative;
+    display: flex; align-items: flex-end;
+    padding: 0 40px;
+  }
+  .mark .glyph {
+    font-family: var(--hangul);
+    font-weight: 900;
+    font-size: 620px;
+    line-height: 0.82;
+    letter-spacing: -0.06em;
+    color: var(--ink);
+    position: relative;
+    z-index: 2;
+    font-feature-settings: "ss01", "ss02";
+  }
+  .mark .glyph .two { color: var(--azure); }
+
+  /* the azure horizon line — the "bridge" — crossing the characters */
+  .mark-zone .horizon {
+    position: absolute;
+    left: 110px; right: 110px;
+    top: 58%;
+    height: 3px;
+    background: var(--azure);
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  .mark-zone .horizon::before,
+  .mark-zone .horizon::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px; height: 10px;
+    background: var(--azure);
+    border-radius: 50%;
+  }
+  .mark-zone .horizon::before { left: -10px; }
+  .mark-zone .horizon::after  { right: -10px; }
+
+  /* serif whisper — above the mark */
+  .mark-whisper {
+    position: absolute;
+    left: 0; right: 0;
+    top: 280px;
+    text-align: center;
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 26px;
+    letter-spacing: 0.01em;
+    color: var(--ink-soft);
+  }
+
+  /* tiny hanja anchor under the mark */
+  .mark-hanja {
+    position: absolute;
+    left: 0; right: 0;
+    top: 1210px;
+    text-align: center;
+    font-family: var(--hangul);
+    font-weight: 500;
+    font-size: 34px;
+    letter-spacing: 0.5em;
+    color: var(--ink);
+    padding-left: 0.5em; /* compensate for last-letter spacing */
+  }
+  .mark-hanja .dot {
+    display: inline-block;
+    width: 5px; height: 5px;
+    background: var(--azure);
+    border-radius: 50%;
+    margin: 0 18px;
+    transform: translateY(-9px);
+  }
+
+  /* ─── specimen row ─── */
+  .specimen {
+    position: absolute;
+    left: 110px; right: 110px;
+    top: 1360px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+  }
+  .cell {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    border: 1px solid var(--ink);
+    overflow: hidden;
+  }
+  .cell .corner-label {
+    position: absolute;
+    top: 16px; left: 18px;
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .cell .num {
+    position: absolute;
+    top: 16px; right: 18px;
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    color: var(--azure);
+  }
+  .cell .cap {
+    position: absolute;
+    left: 18px; right: 18px; bottom: 16px;
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    display: flex; justify-content: space-between;
+  }
+
+  /* cell 1 — color chip */
+  .cell.chip {
+    background: var(--azure);
+  }
+  .cell.chip .chip-hex {
+    position: absolute;
+    inset: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    color: #EAF2FF;
+  }
+  .cell.chip .chip-hex .code {
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: 42px;
+    letter-spacing: 0.04em;
+  }
+  .cell.chip .chip-hex .pantone {
+    margin-top: 12px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    opacity: 0.85;
+  }
+  .cell.chip .corner-label,
+  .cell.chip .num { color: #EAF2FF; }
+  .cell.chip .cap { color: rgba(234, 242, 255, 0.8); }
+
+  /* cell 2 — construction grid */
+  .cell.grid {
+    background: var(--ivory-warm);
+  }
+  .cell.grid .g {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(11,16,32,0.07) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(11,16,32,0.07) 1px, transparent 1px);
+    background-size: calc(100% / 8) calc(100% / 8);
+  }
+  .cell.grid .crosshair {
+    position: absolute;
+    inset: 0;
+  }
+  .cell.grid .crosshair::before,
+  .cell.grid .crosshair::after {
+    content: "";
+    position: absolute;
+    background: var(--azure);
+  }
+  .cell.grid .crosshair::before {
+    left: 50%; top: 18%; bottom: 18%;
+    width: 1px; transform: translateX(-0.5px);
+  }
+  .cell.grid .crosshair::after {
+    top: 50%; left: 18%; right: 18%;
+    height: 1px; transform: translateY(-0.5px);
+  }
+  .cell.grid .mini-mark {
+    position: absolute;
+    inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--hangul);
+    font-weight: 900;
+    font-size: 180px;
+    letter-spacing: -0.06em;
+    color: var(--ink);
+    padding-bottom: 8px;
+  }
+  .cell.grid .mini-mark .two { color: var(--azure); }
+
+  /* cell 3 — negative on navy */
+  .cell.neg {
+    background: var(--ink);
+  }
+  .cell.neg .mini-mark {
+    position: absolute;
+    inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--hangul);
+    font-weight: 900;
+    font-size: 180px;
+    letter-spacing: -0.06em;
+    color: #EAF2FF;
+    padding-bottom: 8px;
+  }
+  .cell.neg .mini-mark .two { color: var(--azure-soft); }
+  .cell.neg .corner-label,
+  .cell.neg .num { color: #EAF2FF; }
+  .cell.neg .cap { color: rgba(234, 242, 255, 0.65); }
+
+  /* ─── manifesto line ─── */
+  .manifesto {
+    position: absolute;
+    left: 110px; right: 110px;
+    top: 1870px;
+    text-align: center;
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 30px;
+    letter-spacing: 0.002em;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+  .manifesto em {
+    font-style: italic;
+    color: var(--azure);
+    border-bottom: 1px solid var(--azure);
+    padding-bottom: 2px;
+  }
+
+  /* ─── bottom colophon ─── */
+  .colophon {
+    position: absolute;
+    left: 110px; right: 110px;
+    bottom: 130px;
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .colophon .center {
+    font-family: var(--display);
+    font-style: italic;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    font-size: 15px;
+    color: var(--ink-soft);
+  }
+
+  .bottom-rule {
+    position: absolute;
+    bottom: 172px;
+    left: 110px; right: 110px;
+    height: 1px;
+    background: var(--ink);
+    opacity: 0.9;
+  }
+  .bottom-rule::before {
+    content: "";
+    position: absolute;
+    left: 50%; bottom: -3px;
+    transform: translateX(-50%);
+    width: 60px; height: 7px;
+    background: var(--azure);
+  }
+</style>
+</head>
+<body>
+
+  <!-- framing corners -->
+  <span class="corner tl"></span>
+  <span class="corner tr"></span>
+  <span class="corner bl"></span>
+  <span class="corner br"></span>
+
+  <!-- masthead -->
+  <div class="masthead">
+    <span>HANGYO · LEGAL BRIDGE</span>
+    <span class="r">PLATE №. 01 / MARK</span>
+  </div>
+  <div class="sub-mast">
+    <span>Seoul · Beijing</span>
+    <span>Azure Meridian · Identity Specimen</span>
+  </div>
+  <div class="top-rule"></div>
+
+  <!-- whisper above mark -->
+  <div class="mark-whisper">
+    a measured span between two jurisdictions
+  </div>
+
+  <!-- THE MARK -->
+  <div class="mark-zone">
+    <div class="horizon"></div>
+    <div class="mark">
+      <span class="glyph"><span class="one">한</span><span class="two">교</span></span>
+    </div>
+  </div>
+
+  <!-- hanja ancestral signature -->
+  <div class="mark-hanja">
+    法 <span class="dot"></span> 律 <span class="dot"></span> 事 <span class="dot"></span> 務 <span class="dot"></span> 所 <span class="dot"></span> 韩 <span class="dot"></span> 桥
+  </div>
+
+  <!-- specimen row -->
+  <div class="specimen">
+    <div class="cell chip">
+      <span class="corner-label">Primary · Azure</span>
+      <span class="num">01 / 03</span>
+      <div class="chip-hex">
+        <span class="code">#2563EB</span>
+        <span class="pantone">RGB 37 · 99 · 235</span>
+      </div>
+      <div class="cap">
+        <span>Porcelain Cobalt</span>
+        <span>C100 M78 Y0 K0</span>
+      </div>
+    </div>
+
+    <div class="cell grid">
+      <span class="corner-label">Construction</span>
+      <span class="num">02 / 03</span>
+      <div class="g"></div>
+      <div class="crosshair"></div>
+      <div class="mini-mark"><span class="one">한</span><span class="two">교</span></div>
+      <div class="cap">
+        <span>8 × 8 Optical Grid</span>
+        <span>X-height 5u</span>
+      </div>
+    </div>
+
+    <div class="cell neg">
+      <span class="corner-label">Reversed</span>
+      <span class="num">03 / 03</span>
+      <div class="mini-mark"><span class="one">한</span><span class="two">교</span></div>
+      <div class="cap">
+        <span>On Ink</span>
+        <span>#0B1020</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- manifesto -->
+  <div class="manifesto">
+    두 언어 사이에 놓인 <em>하나의 다리</em>.<br>
+    One span. Two jurisdictions. A single quiet line.
+  </div>
+
+  <div class="bottom-rule"></div>
+  <!-- colophon -->
+  <div class="colophon">
+    <span>EST. 2024 · SEOUL</span>
+    <span class="center">법률사무소 한교 · Hangyo Law</span>
+    <span>TYPE · PRETENDARD</span>
+  </div>
+
+</body>
+</html>

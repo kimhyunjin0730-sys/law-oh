@@ -58,14 +58,14 @@ export function Layout() {
             href="tel:82-10-2999-6910"
             className="flex items-center gap-2 tracking-wide font-medium hover:text-white transition-colors"
           >
-            <Phone size={14} className="text-[#b59a5d]" /> {t("top.consult")} : 82-10-2999-6910
+            <Phone size={14} className="text-[#2563EB]" /> {t("top.consult")} : 82-10-2999-6910
           </a>
           <WeChatDialog>
             <button
               type="button"
               className="hidden sm:flex items-center gap-2 tracking-wide font-medium hover:text-white transition-colors"
             >
-              <MessageCircle size={14} className="text-[#b59a5d]" /> {t("top.wechat")} : wudongxuan002
+              <MessageCircle size={14} className="text-[#2563EB]" /> {t("top.wechat")} : wudongxuan002
             </button>
           </WeChatDialog>
         </div>
@@ -119,7 +119,7 @@ export function Layout() {
                         "inline-flex items-center text-lg font-bold transition-colors duration-300 py-8 border-b-2",
                         active
                           ? overlay
-                            ? "text-white border-[#b59a5d]"
+                            ? "text-white border-[#2563EB]"
                             : "text-[#0f172a] border-[#0f172a]"
                           : overlay
                             ? "text-slate-200 border-transparent hover:text-white"
@@ -134,7 +134,7 @@ export function Layout() {
               <WeChatDialog>
                 <button
                   type="button"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-[#b59a5d] text-white text-sm font-bold shadow-md hover:bg-[#a38a53] transition-colors gap-2"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-[#2563EB] text-white text-sm font-bold shadow-md hover:bg-[#1D4ED8] transition-colors gap-2"
                 >
                   <MessageCircle size={18} />
                   {t("nav.wechat")}
@@ -177,7 +177,7 @@ export function Layout() {
                  <WeChatDialog>
                   <button
                     type="button"
-                    className="w-full flex items-center justify-center px-4 py-4 bg-[#b59a5d] text-base font-bold text-white shadow-sm gap-2"
+                    className="w-full flex items-center justify-center px-4 py-4 bg-[#2563EB] text-base font-bold text-white shadow-sm gap-2"
                   >
                     <MessageCircle size={18} />
                     위챗 24시간 상담 (wudongxuan002)
@@ -202,7 +202,7 @@ export function Layout() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-[#111111] text-slate-400 py-16 border-t-[6px] border-[#b59a5d]">
+      <footer className="bg-[#111111] text-slate-400 py-16 border-t-[6px] border-[#2563EB]">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
             <div className="col-span-1 md:col-span-4">
