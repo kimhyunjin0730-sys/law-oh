@@ -7,101 +7,161 @@ import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 export function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="relative bg-[#050B14] text-white h-[800px] flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
+      {/* Hero Section — Cinematic */}
+      <section className="relative bg-[#050B14] text-white min-h-[760px] lg:min-h-[860px] flex items-end overflow-hidden">
+        {/* Background image */}
         <div className="absolute inset-0">
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1633272266667-6ab973d9427a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzZW91bCUyMGNpdHlzY2FwZSUyMG1vZGVybnxlbnwxfHx8fDE3NzYzOTgzMTV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-            alt="Seoul cityscape"
-            className="w-full h-full object-cover object-center opacity-40 mix-blend-luminosity scale-105"
+            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=85&w=1920"
+            alt="변호사 상담 이미지"
+            className="w-full h-full object-cover object-center scale-[1.02]"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0f172a] via-[#0f172a]/90 to-transparent" />
+          {/* Layered cinematic overlays */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#050B14] via-[#050B14]/85 to-[#050B14]/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050B14] via-transparent to-[#050B14]/60" />
+          <div className="absolute inset-0 bg-[#050B14]/20" />
         </div>
 
-        <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 w-full text-center sm:text-left pt-20">
+        {/* Ghosted outline intro line — sits above main headline */}
+        <div className="absolute top-[14%] sm:top-[16%] lg:top-[18%] left-0 right-0 pointer-events-none z-10">
+          <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, ease: [0.2, 0.65, 0.3, 0.9] }}
+              className="font-black tracking-[-0.02em] leading-[1.05] text-[36px] sm:text-[56px] lg:text-[84px] xl:text-[96px]"
+              style={{
+                WebkitTextStroke: "1px rgba(255,255,255,0.28)",
+                color: "transparent",
+              }}
+            >
+              한국과 중국, 두 언어로<br className="hidden sm:block" />
+              <span className="opacity-70">당신의 권리를 지킵니다</span>
+            </motion.h2>
+          </div>
+        </div>
+
+        {/* Main content bottom-left */}
+        <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pb-16 lg:pb-24">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="grid lg:grid-cols-2 gap-12 items-center"
+            transition={{ duration: 0.8, delay: 0.25, ease: [0.2, 0.65, 0.3, 0.9] }}
+            className="max-w-[900px]"
           >
-            <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
-              <span className="inline-flex items-center px-4 py-1.5 border border-[#b59a5d] text-[#b59a5d] text-sm font-bold tracking-widest uppercase mb-8">
-                BECOME LAW FIRM
+            {/* Tiny editorial tag */}
+            <div className="flex items-center gap-3 mb-6">
+              <span className="h-px w-10 bg-[#b59a5d]" />
+              <span className="text-[11px] sm:text-xs font-bold tracking-[0.28em] uppercase text-[#b59a5d]">
+                Become Law Firm · 법률사무소 비컴
               </span>
-              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-[1.15]">
-                한국과 중국, 두 언어로<br className="hidden sm:block" />
-                당신의 <span className="text-[#b59a5d]">권리</span>를 지킵니다.
-              </h1>
-              <p className="text-xl sm:text-2xl text-slate-300 font-bold mb-8 tracking-widest uppercase">
-                韩国与中国，用两种语言守护您的权利。
-              </p>
-              <p className="mt-4 text-base sm:text-lg text-slate-400 max-w-2xl leading-relaxed mb-8 font-medium">
-                한국에서 법적 문제에 부딪혔을 때, 가장 두려운 것은 '내 말이 제대로 전달되지 않는 것'입니다. 
-                법률사무소 비컴의 오동현 변호사는 중국어 소통에 문제가 없으며, 중국 현지에서 수년간 생활하고 일한 경험을 바탕으로 중국어권 의뢰인의 상황을 누구보다 정확하게 이해합니다.
-              </p>
-              <p className="text-lg sm:text-xl text-white font-bold mb-12">
-                당신의 이야기를, 당신의 언어로 들을 준비가 되어 있습니다.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mt-4">
-                <a
-                  href="tel:82-10-2999-6910"
-                  className="flex items-center justify-center gap-3 bg-white text-[#0f172a] hover:bg-slate-100 px-10 py-5 font-extrabold text-lg transition-all w-full sm:w-auto"
-                >
-                  <Phone size={22} />
-                  전화 상담하기
-                </a>
-                <a
-                  href="https://weixin.qq.com/" // WeChat Direct
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center justify-center gap-3 bg-[#b59a5d] hover:bg-[#a38a53] text-white px-10 py-5 font-extrabold text-lg transition-all w-full sm:w-auto"
-                >
-                  <MessageCircle size={22} />
-                  위챗 직접상담
-                </a>
-              </div>
-              
-              <div className="mt-12 flex flex-wrap justify-center sm:justify-start gap-x-8 gap-y-4 text-sm text-slate-300 font-bold tracking-wide">
-                <span className="flex items-center gap-2">
-                  <CheckCircle2 size={16} className="text-[#b59a5d]" /> 중국어 직접 상담 가능
-                </span>
-                <span className="flex items-center gap-2">
-                  <CheckCircle2 size={16} className="text-[#b59a5d]" /> 형사·민사·출입국 원스톱
-                </span>
-                <span className="flex items-center gap-2">
-                  <CheckCircle2 size={16} className="text-[#b59a5d]" /> 24시간 긴급 위챗 대응
-                </span>
-              </div>
             </div>
-            
-            <div className="hidden lg:flex justify-end">
-              <div className="w-[480px] bg-white text-slate-900 p-12 shadow-2xl relative">
-                <div className="absolute top-0 left-0 w-full h-2 bg-[#b59a5d]"></div>
-                <h3 className="text-3xl font-extrabold mb-2 tracking-tight text-[#0f172a]">비공개 상담접수</h3>
-                <p className="text-slate-500 font-medium mb-8 text-sm">상담하신 내용은 철저하게 비밀이 보장됩니다.</p>
-                <div className="space-y-5 mb-8">
-                  <div>
-                    <label className="block text-sm font-bold mb-2 text-[#0f172a]">의뢰인 성함</label>
-                    <input type="text" className="w-full px-4 py-3 border border-slate-300 text-[#0f172a] placeholder-slate-400 focus:outline-none focus:border-[#0f172a]" placeholder="성함을 입력해주세요" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-bold mb-2 text-[#0f172a]">연락처</label>
-                    <input type="tel" className="w-full px-4 py-3 border border-slate-300 text-[#0f172a] placeholder-slate-400 focus:outline-none focus:border-[#0f172a]" placeholder="연락처를 남겨주세요" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-bold mb-2 text-[#0f172a]">상담내용 요약</label>
-                    <textarea rows={3} className="w-full px-4 py-3 border border-slate-300 text-[#0f172a] placeholder-slate-400 focus:outline-none focus:border-[#0f172a] resize-none" placeholder="상담 받고 싶은 내용을 간단히 적어주세요."></textarea>
-                  </div>
-                </div>
-                <button className="w-full bg-[#0f172a] hover:bg-slate-800 text-white font-extrabold py-4 transition-colors">
-                  무료 상담 신청하기
-                </button>
-              </div>
+
+            {/* Solid main headline — the punch */}
+            <h1 className="font-black leading-[1.08] tracking-[-0.02em] text-[40px] sm:text-[56px] lg:text-[76px]">
+              형사·민사·출입국에서<br className="hidden sm:block" />
+              <span className="text-[#b59a5d]">명확한 해법</span>을 제시합니다
+            </h1>
+
+            {/* Chinese subtitle — restrained */}
+            <p className="mt-6 text-base sm:text-lg lg:text-xl text-slate-300/90 font-medium tracking-wide">
+              韩国与中国，用两种语言守护您的权利。
+            </p>
+
+            {/* Description */}
+            <p className="mt-6 max-w-[640px] text-[15px] sm:text-base text-slate-300/80 leading-[1.85] font-medium">
+              중국어 직접 상담이 가능한 오동현 변호사와 함께, 통역을 거치지 않고 사실관계부터 법률 분석까지 정확하게 의뢰인의 상황을 이해합니다.
+            </p>
+
+            {/* CTAs */}
+            <div className="mt-10 lg:mt-12 flex flex-col sm:flex-row gap-3">
+              <a
+                href="tel:82-10-2999-6910"
+                className="group inline-flex items-center justify-between gap-6 bg-white text-[#0a0a0a] hover:bg-slate-100 pl-6 pr-4 py-4 font-extrabold text-[15px] transition-all min-w-[280px]"
+              >
+                <span className="flex items-center gap-3">
+                  <Phone size={18} strokeWidth={2.25} />
+                  전화 상담하기
+                </span>
+                <span className="flex items-center gap-2 border-l border-slate-300 pl-4">
+                  <span className="tabular-nums text-[13px] text-slate-500 font-bold">1660-1028</span>
+                  <ArrowRight size={16} strokeWidth={2.25} className="transition-transform group-hover:translate-x-0.5" />
+                </span>
+              </a>
+              <a
+                href="https://weixin.qq.com/"
+                target="_blank"
+                rel="noreferrer"
+                className="group inline-flex items-center justify-center gap-3 bg-[#b59a5d] hover:bg-[#a38a53] text-white px-8 py-4 font-extrabold text-[15px] transition-colors"
+              >
+                <MessageCircle size={18} strokeWidth={2.25} />
+                위챗 직접상담
+                <ArrowRight size={16} strokeWidth={2.25} className="transition-transform group-hover:translate-x-0.5" />
+              </a>
+            </div>
+
+            {/* Trust line */}
+            <div className="mt-10 flex flex-wrap gap-x-7 gap-y-3 text-[12px] sm:text-[13px] text-slate-400 font-semibold">
+              <span className="flex items-center gap-2">
+                <span className="w-1 h-1 rounded-full bg-[#b59a5d]" />
+                중국어 직접 상담 가능
+              </span>
+              <span className="flex items-center gap-2">
+                <span className="w-1 h-1 rounded-full bg-[#b59a5d]" />
+                형사·민사·출입국 원스톱
+              </span>
+              <span className="flex items-center gap-2">
+                <span className="w-1 h-1 rounded-full bg-[#b59a5d]" />
+                24시간 긴급 위챗 대응
+              </span>
             </div>
           </motion.div>
+        </div>
+
+        {/* Right-floating Quick Menu — mirrors reference */}
+        <motion.aside
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, delay: 0.5 }}
+          className="hidden lg:flex absolute right-5 top-1/2 -translate-y-1/2 z-20"
+          aria-label="빠른 상담 메뉴"
+        >
+          <div className="bg-white/[0.06] backdrop-blur-xl border border-white/15 rounded-[28px] p-3 flex flex-col gap-2.5 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.5)]">
+            <div className="text-center py-2 px-2">
+              <div className="text-[10px] font-black tracking-[0.18em] uppercase text-white leading-tight">
+                Quick<br />Menu
+              </div>
+            </div>
+            <a
+              href="#consultation"
+              className="group w-[78px] h-[78px] flex flex-col items-center justify-center gap-1 bg-white text-[#0a0a0a] rounded-2xl hover:scale-[1.04] transition-transform"
+            >
+              <FileText size={20} strokeWidth={2} />
+              <span className="text-[11px] font-extrabold mt-0.5">온라인상담</span>
+            </a>
+            <a
+              href="https://weixin.qq.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="group w-[78px] h-[78px] flex flex-col items-center justify-center gap-1 bg-[#09BB07] text-white rounded-2xl hover:scale-[1.04] transition-transform"
+            >
+              <MessageCircle size={20} strokeWidth={2} />
+              <span className="text-[11px] font-extrabold mt-0.5">위챗상담</span>
+            </a>
+            <a
+              href="tel:82-10-2999-6910"
+              className="group w-[78px] h-[78px] flex flex-col items-center justify-center gap-1 bg-[#b59a5d] text-white rounded-2xl hover:scale-[1.04] transition-transform"
+            >
+              <Phone size={20} strokeWidth={2} />
+              <span className="text-[11px] font-extrabold mt-0.5">전화상담</span>
+            </a>
+          </div>
+        </motion.aside>
+
+        {/* Scroll hint */}
+        <div aria-hidden className="hidden lg:flex absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex-col items-center gap-2 text-slate-400">
+          <div className="h-8 w-px bg-gradient-to-b from-transparent via-slate-400/40 to-slate-400/80" />
+          <span className="text-[10px] tracking-[0.3em] uppercase font-semibold">Scroll</span>
         </div>
       </section>
 

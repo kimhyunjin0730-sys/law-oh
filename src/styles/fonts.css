@@ -1,13 +1,1 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500&display=swap");
-
-:root {
-  --font-serif: "Cormorant Garamond", "Noto Serif KR", "Apple SD Gothic Neo", serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-
-  --ink: #0a0a0a;
-  --ivory: #f7f4ec;
-  --champagne: #b59a5d;
-  --champagne-soft: #c9b07e;
-  --paper: #ffffff;
-}
