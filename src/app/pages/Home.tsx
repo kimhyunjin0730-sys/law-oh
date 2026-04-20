@@ -9,40 +9,40 @@ export function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section — Cinematic (extends behind transparent header) */}
-      <section className="relative bg-[#050B14] text-white min-h-[900px] lg:min-h-[980px] flex items-end overflow-hidden pt-[128px]">
+      <section className="relative bg-[#050B14] text-white min-h-[900px] lg:min-h-[980px] flex items-center justify-center overflow-hidden pt-[128px]">
         {/* Background image */}
         <div className="absolute inset-0">
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=85&w=1920"
-            alt="변호사 상담 이미지"
+            src="https://images.unsplash.com/photo-1538485399081-7c8ce013b933?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=85&w=1920"
+            alt="Seoul 야경 배경"
             className="w-full h-full object-cover object-center scale-[1.02]"
           />
-          {/* Layered overlays — lightened so photo reads through more */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#050B14]/95 via-[#050B14]/55 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050B14] via-[#050B14]/20 to-[#050B14]/40" />
+          {/* Layered overlays — even vignette so centered text reads clean */}
+          <div className="absolute inset-0 bg-[#050B14]/70" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050B14] via-[#050B14]/35 to-[#050B14]/55" />
         </div>
 
-        {/* Main content bottom-left */}
-        <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pb-16 lg:pb-24">
+        {/* Main content — centered, nudged slightly above optical center */}
+        <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 text-center -translate-y-6 lg:-translate-y-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.25, ease: [0.2, 0.65, 0.3, 0.9] }}
-            className="max-w-[900px]"
+            className="max-w-[960px] mx-auto"
           >
-            {/* Solid main headline — English-only, "Korean Law" in gold */}
+            {/* Solid main headline — English-only, "Korean Law" in azure */}
             <h1 className="font-bold leading-[1.06] tracking-[-0.02em] text-[36px] sm:text-[52px] lg:text-[72px]">
               Think in Your Language,<br className="hidden sm:block" />
               Defend in <span className="text-[#2563EB]">Korean Law.</span>
             </h1>
 
             {/* Description */}
-            <p className="mt-6 max-w-[640px] text-[15px] sm:text-base text-slate-300/80 leading-[1.85] font-medium">
+            <p className="mt-7 mx-auto max-w-[640px] text-[15px] sm:text-base text-slate-300/85 leading-[1.85] font-medium">
               중국어 직접 상담이 가능한 오동현 변호사와 함께, 통역을 거치지 않고 사실관계부터 법률 분석까지 정확하게 의뢰인의 상황을 이해합니다.
             </p>
 
             {/* CTAs */}
-            <div className="mt-10 lg:mt-12 flex flex-col sm:flex-row gap-3">
+            <div className="mt-10 lg:mt-12 flex flex-col sm:flex-row gap-3 justify-center">
               <a
                 href="tel:82-10-2999-6910"
                 className="group inline-flex items-center justify-between gap-6 bg-white text-[#0a0a0a] hover:bg-slate-100 pl-6 pr-4 py-4 font-extrabold text-[15px] transition-all min-w-[280px]"
