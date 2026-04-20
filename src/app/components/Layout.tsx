@@ -43,8 +43,20 @@ export function Layout() {
         )}
       >
         <div className="flex gap-6">
-          <span className="flex items-center gap-2 tracking-wide font-medium"><Phone size={14} className="text-[#b59a5d]"/> {t("top.consult")} : 82-10-2999-6910</span>
-          <span className="hidden sm:flex items-center gap-2 tracking-wide font-medium"><MessageCircle size={14} className="text-[#b59a5d]"/> {t("top.wechat")} : wudongxuan002</span>
+          <a
+            href="tel:82-10-2999-6910"
+            className="flex items-center gap-2 tracking-wide font-medium hover:text-white transition-colors"
+          >
+            <Phone size={14} className="text-[#b59a5d]" /> {t("top.consult")} : 82-10-2999-6910
+          </a>
+          <WeChatDialog>
+            <button
+              type="button"
+              className="hidden sm:flex items-center gap-2 tracking-wide font-medium hover:text-white transition-colors"
+            >
+              <MessageCircle size={14} className="text-[#b59a5d]" /> {t("top.wechat")} : wudongxuan002
+            </button>
+          </WeChatDialog>
         </div>
         <div className="flex items-center gap-6">
           <div className={clsx("hidden lg:block transition-colors duration-300", overlay ? "text-slate-300/90" : "text-slate-400")}>

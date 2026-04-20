@@ -84,7 +84,7 @@ export function Home() {
                   전화 상담하기
                 </span>
                 <span className="flex items-center gap-2 border-l border-slate-300 pl-4">
-                  <span className="tabular-nums text-[13px] text-slate-500 font-bold">1660-1028</span>
+                  <span className="tabular-nums text-[13px] text-slate-500 font-bold">010-2999-6910</span>
                   <ArrowRight size={16} strokeWidth={2.25} className="transition-transform group-hover:translate-x-0.5" />
                 </span>
               </a>
@@ -133,7 +133,7 @@ export function Home() {
               </div>
             </div>
             <a
-              href="#consultation"
+              href="#consult"
               className="group w-[78px] h-[78px] flex flex-col items-center justify-center gap-1 bg-white text-[#0a0a0a] rounded-2xl hover:scale-[1.04] transition-transform"
             >
               <FileText size={20} strokeWidth={2} />
