@@ -1,10 +1,9 @@
 import { Outlet, Link, useLocation } from "react-router";
-import { Menu, X, Phone, MessageCircle, ArrowRight, Globe } from "lucide-react";
+import { Menu, X, ArrowRight, Globe } from "lucide-react";
 import { useState, useEffect } from "react";
 import clsx from "clsx";
 import { useLanguage } from "../context/LanguageContext";
-import { WeChatDialog } from "./WeChatDialog";
-import { Logo } from "./Logo";
+import hangyoLogo from "../../assets/hangyo-logo.png";
 
 export function Layout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -97,18 +96,18 @@ export function Layout() {
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-24">
             <div className="flex items-center">
-              <Link to="/" className="flex-shrink-0 flex items-center gap-4">
-                <Logo className={clsx("w-14 h-14 transition-colors duration-300", overlay ? "text-white" : "text-[#0f172a]")} />
-                <div className={clsx("flex flex-col transition-colors duration-300")}>
-                  <span className={clsx("text-xl font-bold leading-tight transition-colors duration-300", overlay ? "text-white" : "text-slate-900")}>법률사무소 한교</span>
-                  <span className={clsx("text-xs font-medium transition-colors duration-300", overlay ? "text-slate-300" : "text-slate-500")}>한중 법률 브리지 · 韩桥</span>
-                </div>
+              <Link to="/" className="flex-shrink-0 flex items-center">
+                <img
+                  src={hangyoLogo}
+                  alt="HANGYO"
+                  className="h-9 w-auto"
+                />
               </Link>
             </div>
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center">
-              <div className="flex space-x-12 mr-10">
+              <div className="flex space-x-12">
                 {navLinks.map((link) => {
                   const active = location.pathname === link.path;
                   return (
@@ -131,15 +130,6 @@ export function Layout() {
                   );
                 })}
               </div>
-              <WeChatDialog>
-                <button
-                  type="button"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-[#2563EB] text-white text-sm font-bold shadow-md hover:bg-[#1D4ED8] transition-colors gap-2"
-                >
-                  <MessageCircle size={18} />
-                  {t("nav.wechat")}
-                </button>
-              </WeChatDialog>
             </div>
 
             {/* Mobile menu button */}
@@ -173,24 +163,7 @@ export function Layout() {
                   {link.name}
                 </Link>
               ))}
-              <div className="py-6 flex flex-col gap-3">
-                 <WeChatDialog>
-                  <button
-                    type="button"
-                    className="w-full flex items-center justify-center px-4 py-4 bg-[#2563EB] text-base font-bold text-white shadow-sm gap-2"
-                  >
-                    <MessageCircle size={18} />
-                    위챗 24시간 상담 (wudongxuan002)
-                  </button>
-                </WeChatDialog>
-                <a
-                  href="tel:82-10-2999-6910"
-                  className="w-full flex items-center justify-center px-4 py-4 border border-slate-300 text-base font-bold text-slate-800 gap-2"
-                >
-                  <Phone size={18} />
-                  전화 상담 연결
-                </a>
-              </div>
+
             </div>
           </div>
         )}
@@ -207,11 +180,11 @@ export function Layout() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
             <div className="col-span-1 md:col-span-4">
               <div className="flex items-center gap-4 mb-6 opacity-90">
-                <Logo className="w-12 h-12 text-white" />
-                <div className="flex flex-col">
-                  <span className="text-xl font-bold text-white leading-tight">{t("nav.home")}</span>
-                  <span className="text-xs font-medium text-slate-400 tracking-wide">韩桥 · Hangyo Law Firm</span>
-                </div>
+                <img
+                  src={hangyoLogo}
+                  alt="HANGYO"
+                  className="h-8 w-auto brightness-0 invert"
+                />
               </div>
               <p className="text-sm text-slate-500 max-w-sm mb-6 leading-relaxed font-medium">
                 {t("footer.desc")}

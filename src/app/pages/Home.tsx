@@ -4,16 +4,17 @@ import { motion } from "motion/react";
 import { SectionHeading } from "../components/SectionHeading";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { WeChatDialog } from "../components/WeChatDialog";
+import mainheader from "../../assets/mainheader.jpg";
 
 export function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section — Cinematic (extends behind transparent header) */}
-      <section className="relative bg-[#050B14] text-white min-h-[900px] lg:min-h-[980px] flex items-center justify-center overflow-hidden pt-[128px]">
+      <section className="relative bg-[#050B14] text-white min-h-[520px] sm:min-h-[680px] lg:min-h-[900px] flex items-center justify-center overflow-hidden pt-[96px] lg:pt-[128px]">
         {/* Background image */}
         <div className="absolute inset-0">
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1538485399081-7c8ce013b933?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=85&w=1920"
+            src={mainheader}
             alt="Seoul 야경 배경"
             className="w-full h-full object-cover object-center scale-[1.02]"
           />
@@ -23,7 +24,7 @@ export function Home() {
         </div>
 
         {/* Main content — centered, nudged slightly above optical center */}
-        <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 text-center -translate-y-6 lg:-translate-y-10">
+        <div className="relative z-10 w-full max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-8 text-center -translate-y-3 sm:-translate-y-6 lg:-translate-y-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -31,42 +32,16 @@ export function Home() {
             className="max-w-[960px] mx-auto"
           >
             {/* Solid main headline — English-only, "Korean Law" in azure */}
-            <h1 className="font-bold leading-[1.06] tracking-[-0.02em] text-[36px] sm:text-[52px] lg:text-[72px]">
+            <h1 className="font-bold leading-[1.08] tracking-[-0.02em] text-[32px] sm:text-[48px] lg:text-[72px]">
               Think in Your Language,<br className="hidden sm:block" />
               Defend in <span className="text-[#2563EB]">Korean Law.</span>
             </h1>
 
-            {/* Description */}
-            <p className="mt-7 mx-auto max-w-[640px] text-[15px] sm:text-base text-slate-300/85 leading-[1.85] font-medium">
-              중국어 직접 상담이 가능한 오동현 변호사와 함께, 통역을 거치지 않고 사실관계부터 법률 분석까지 정확하게 의뢰인의 상황을 이해합니다.
+            {/* Bilingual tagline */}
+            <p className="mt-6 lg:mt-7 mx-auto max-w-[640px] text-[15px] sm:text-lg text-slate-300/90 leading-[1.8] font-medium tracking-tight">
+              한국과 중국, 두 언어로 당신의 권리를 지킵니다.<br />
+              <span className="text-slate-400/80">韩国与中国，用两种语言守护您的权利。</span>
             </p>
-
-            {/* CTAs */}
-            <div className="mt-10 lg:mt-12 flex flex-col sm:flex-row gap-3 justify-center">
-              <a
-                href="tel:82-10-2999-6910"
-                className="group inline-flex items-center justify-between gap-6 bg-white text-[#0a0a0a] hover:bg-slate-100 pl-6 pr-4 py-4 font-extrabold text-[15px] transition-all min-w-[280px]"
-              >
-                <span className="flex items-center gap-3">
-                  <Phone size={18} strokeWidth={2.25} />
-                  전화 상담하기
-                </span>
-                <span className="flex items-center gap-2 border-l border-slate-300 pl-4">
-                  <span className="tabular-nums text-[13px] text-slate-500 font-bold">010-2999-6910</span>
-                  <ArrowRight size={16} strokeWidth={2.25} className="transition-transform group-hover:translate-x-0.5" />
-                </span>
-              </a>
-              <WeChatDialog>
-                <button
-                  type="button"
-                  className="group inline-flex items-center justify-center gap-3 bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-8 py-4 font-extrabold text-[15px] transition-colors"
-                >
-                  <MessageCircle size={18} strokeWidth={2.25} />
-                  위챗 직접상담
-                  <ArrowRight size={16} strokeWidth={2.25} className="transition-transform group-hover:translate-x-0.5" />
-                </button>
-              </WeChatDialog>
-            </div>
           </motion.div>
         </div>
 
