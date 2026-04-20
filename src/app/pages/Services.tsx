@@ -89,14 +89,15 @@ export function Services() {
         />
 
         <div className="mt-20 space-y-16">
-          {services.map((service, index) => (
-            <div 
-              key={service.id} 
-              className={`flex flex-col lg:flex-row bg-slate-50 border border-slate-200 group hover:border-[#b59a5d] transition-colors`}
+          {services.map((service) => (
+            <Link
+              key={service.id}
+              to={`/services/${service.id}`}
+              className="flex flex-col lg:flex-row bg-slate-50 border border-slate-200 group hover:border-[#b59a5d] transition-colors"
             >
               <div className="lg:w-1/3 bg-white p-12 lg:p-16 border-b lg:border-b-0 lg:border-r border-slate-200 group-hover:border-[#b59a5d]/30 transition-colors">
                 {service.icon}
-                <h3 className="text-3xl font-extrabold text-[#0f172a] mb-2 tracking-tight">
+                <h3 className="text-3xl font-extrabold text-[#0f172a] mb-2 tracking-tight group-hover:text-[#b59a5d] transition-colors">
                   {service.title}
                 </h3>
                 <span className="block text-xl font-bold text-[#b59a5d] mb-6">
@@ -105,8 +106,12 @@ export function Services() {
                 <p className="text-slate-600 font-medium leading-relaxed text-lg">
                   {service.description}
                 </p>
+                <div className="mt-8 inline-flex items-center gap-2 font-display text-[12px] font-extrabold tracking-[0.22em] uppercase text-[#0f172a] border-b border-[#0f172a] pb-1 group-hover:text-[#b59a5d] group-hover:border-[#b59a5d] transition-colors">
+                  자세히 보기
+                  <ArrowRight size={14} strokeWidth={2.5} className="transition-transform group-hover:translate-x-1" />
+                </div>
               </div>
-              
+
               <div className="lg:w-2/3 p-12 lg:p-16 flex flex-col justify-center">
                 <div className="grid sm:grid-cols-2 gap-x-12 gap-y-8">
                   {service.items.map((item, idx) => {
@@ -123,7 +128,7 @@ export function Services() {
                   })}
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
