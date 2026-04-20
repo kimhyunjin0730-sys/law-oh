@@ -103,7 +103,7 @@ export function Layout() {
                   alt="HANGYO"
                   className={clsx(
                     "h-24 lg:h-28 w-auto transition-all duration-300",
-                    overlay ? "brightness-0 invert opacity-90 mix-blend-screen" : "mix-blend-multiply"
+                    overlay ? "brightness-0 invert opacity-90" : ""
                   )}
                 />
               </Link>
@@ -187,7 +187,7 @@ export function Layout() {
                 <img
                   src={hangyoLogo}
                   alt="HANGYO"
-                  className="h-12 lg:h-16 w-auto brightness-0 invert mix-blend-screen"
+                  className="h-12 lg:h-16 w-auto brightness-0 invert"
                 />
               </div>
               <p className="text-sm text-slate-500 max-w-sm mb-6 leading-relaxed font-medium">
