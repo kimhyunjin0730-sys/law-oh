@@ -76,8 +76,8 @@ export function Layout() {
             <div className="flex items-center">
               <Link to="/" className="flex-shrink-0 flex items-center gap-3">
                 <div className={clsx("flex flex-col items-center justify-center border-2 px-2 py-1 transition-colors duration-300", overlay ? "border-white" : "border-slate-900")}>
-                  <span className={clsx("text-xl font-bold leading-none tracking-tighter transition-colors duration-300", overlay ? "text-white" : "text-slate-900")}>BECOME</span>
-                  <span className={clsx("text-[10px] font-bold tracking-widest uppercase transition-colors duration-300", overlay ? "text-white" : "text-slate-900")}>LAW FIRM</span>
+                  <span className={clsx("font-display text-xl font-black leading-none tracking-[0.02em] transition-colors duration-300", overlay ? "text-white" : "text-slate-900")}>BECOME</span>
+                  <span className={clsx("font-display text-[10px] font-extrabold tracking-[0.24em] uppercase transition-colors duration-300", overlay ? "text-white" : "text-slate-900")}>LAW FIRM</span>
                 </div>
                 <div className={clsx("flex flex-col ml-1 border-l pl-3 transition-colors duration-300", overlay ? "border-white/30" : "border-slate-300")}>
                   <span className={clsx("text-xl font-bold leading-tight transition-colors duration-300", overlay ? "text-white" : "text-slate-900")}>법률사무소 비컴</span>

@@ -52,7 +52,7 @@ export function Home() {
             {/* Tiny editorial tag */}
             <div className="flex items-center gap-3 mb-6">
               <span className="h-px w-10 bg-[#b59a5d]" />
-              <span className="text-[11px] sm:text-xs font-bold tracking-[0.28em] uppercase text-[#b59a5d]">
+              <span className="font-display text-[11px] sm:text-xs font-extrabold tracking-[0.32em] uppercase text-[#b59a5d]">
                 Become Law Firm · 법률사무소 비컴
               </span>
             </div>
@@ -173,7 +173,7 @@ export function Home() {
             <div>
               <div className="flex items-center gap-3 mb-6">
                 <span className="h-px w-10 bg-[#b59a5d]" />
-                <span className="text-[11px] sm:text-xs font-black tracking-[0.32em] uppercase text-[#b59a5d]">
+                <span className="font-display text-[11px] sm:text-xs font-black tracking-[0.36em] uppercase text-[#b59a5d]">
                   Professionals
                 </span>
               </div>
@@ -186,7 +186,7 @@ export function Home() {
             </div>
             <Link
               to="/about"
-              className="group inline-flex items-center justify-center gap-3 self-start md:self-end border-2 border-[#0f172a] hover:bg-[#0f172a] text-[#0f172a] hover:text-white px-7 py-3.5 font-extrabold text-sm tracking-wider transition-colors whitespace-nowrap"
+              className="group font-display inline-flex items-center justify-center gap-3 self-start md:self-end border-2 border-[#0f172a] hover:bg-[#0f172a] text-[#0f172a] hover:text-white px-7 py-3.5 font-extrabold text-sm tracking-[0.22em] transition-colors whitespace-nowrap"
             >
               VIEW MORE
               <ArrowRight size={16} strokeWidth={2.5} className="transition-transform group-hover:translate-x-0.5" />
@@ -209,7 +209,7 @@ export function Home() {
                 className="absolute inset-0 w-full h-full object-cover object-top"
               />
               {/* Top-left editorial marker */}
-              <div className="absolute top-6 left-6 text-white text-[10px] sm:text-[11px] font-bold tracking-[0.3em] uppercase drop-shadow-md">
+              <div className="absolute top-6 left-6 font-display text-white text-[10px] sm:text-[11px] font-extrabold tracking-[0.32em] uppercase drop-shadow-md">
                 <span className="text-[#b59a5d]">No. 01</span>
                 <span className="mx-2 opacity-60">/</span>
                 Representative Attorney
@@ -220,7 +220,7 @@ export function Home() {
             <div className="p-10 sm:p-12 lg:p-16 xl:p-20 flex flex-col justify-between bg-white">
               <div>
                 {/* Romanized */}
-                <p className="text-[11px] sm:text-xs font-black tracking-[0.36em] uppercase text-slate-400 mb-4">
+                <p className="font-display text-[11px] sm:text-xs font-black tracking-[0.42em] uppercase text-slate-400 mb-4">
                   Donghyun OH
                 </p>
                 {/* Korean name */}
