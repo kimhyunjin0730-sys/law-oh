@@ -19,8 +19,9 @@ describe("validateOutput", () => {
       slug: "immigration",
       title: { ko: "a", zh: "b", en: "c" },
       summary: { ko: "a", zh: "b", en: "c" },
+      overview: { ko: "a", zh: "b", en: "c" },
       meta: { generatedAt: "2026-04-20", sourceCount: 1, lastRevisionAt: "2024-03-01" },
-      visas: [], decisionTree: { rootId: "", nodes: [] }, procedure: [],
+      visas: [], procedure: [],
       agencies: [], deadlines: [], laws: [], sources: [],
       disclaimer: { ko: "a", zh: "b", en: "c" },
     };

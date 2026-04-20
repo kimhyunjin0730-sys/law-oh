@@ -24,7 +24,7 @@ try {
   add("/legal", false, e.message.split("\n")[0]);
 }
 
-// 2) /legal/immigration
+// 2) /legal/immigration — static info layout
 try {
   const page = await ctx.newPage();
   const bads = [];
@@ -32,27 +32,33 @@ try {
   const resp = await page.goto(BASE + "/legal/immigration", { waitUntil: "networkidle", timeout: 45000 });
   add("/legal/immigration 200", resp.status() === 200, String(resp.status()));
   add("/legal/immigration no 404", bads.length === 0, bads.join(" | "));
-  for (const id of ["diagram-visas", "diagram-decision", "diagram-procedure", "diagram-agencies", "diagram-deadlines"]) {
-    const count = await page.locator(`#${id}`).count();
-    add(`${id} exists`, count === 1, `count=${count}`);
-  }
-  const toggleCount = await page.locator("button", { hasText: /Text version|Show diagram/ }).count();
-  add("5 text-version toggles present", toggleCount === 5, `count=${toggleCount}`);
+
+  // Overview heading (KO first — default lang)
+  const overviewKo = await page.getByRole("heading", { name: "개관" }).count();
+  add("Overview heading (KO)", overviewKo >= 1, `count=${overviewKo}`);
+
+  // At least one table (VisaTable / DeadlineTable)
+  const tableCount = await page.locator("table").count();
+  add("At least one <table> present", tableCount >= 1, `count=${tableCount}`);
+
+  // Law articles contain law.go.kr link
+  const lawLink = await page.locator('a[href*="law.go.kr"]').count();
+  add("law.go.kr link in laws section", lawLink >= 1, `count=${lawLink}`);
+
+  // Agency directory has tel: anchor
+  const telAnchor = await page.locator('a[href^="tel:"]').count();
+  add("tel: anchor in agency directory", telAnchor >= 1, `count=${telAnchor}`);
+
   const cta = page.locator("a", { hasText: /온라인 상담 접수|在线咨询|Online consult/ }).first();
   const href = await cta.getAttribute("href").catch(() => null);
   add("CTA → /#consult", href === "/#consult", `href=${href}`);
-  const firstVisa = page.locator("#diagram-visas button").first();
-  await firstVisa.click({ timeout: 5000 }).catch(() => {});
-  await page.waitForTimeout(300);
-  const dialogVisible = await page.locator('[role="dialog"]').count();
-  add("Visa slide-over opens", dialogVisible > 0);
-  await page.keyboard.press("Escape").catch(() => {});
+
   await page.close();
 } catch (e) {
   add("/legal/immigration", false, e.message.split("\n")[0]);
 }
 
-// 3) Language switch
+// 3) Language switch — check ZH/EN overview heading renders
 try {
   const page = await ctx.newPage();
   await page.goto(BASE + "/legal/immigration", { waitUntil: "networkidle" });
@@ -60,10 +66,14 @@ try {
   await page.waitForTimeout(500);
   const zhBody = await page.locator("body").innerText();
   add("ZH toggle renders Chinese", /[\u4e00-\u9fff]/.test(zhBody));
+  const overviewZh = await page.getByRole("heading", { name: "概述" }).count();
+  add("Overview heading (ZH)", overviewZh >= 1, `count=${overviewZh}`);
   await page.locator("button", { hasText: "EN" }).first().click({ timeout: 5000 });
   await page.waitForTimeout(500);
   const enBody = await page.locator("body").innerText();
   add("EN toggle renders English", enBody.includes("Legal Info") || enBody.includes("Visa"));
+  const overviewEn = await page.getByRole("heading", { name: "Overview" }).count();
+  add("Overview heading (EN)", overviewEn >= 1, `count=${overviewEn}`);
   await page.close();
 } catch (e) {
   add("Language switch", false, e.message.split("\n")[0]);

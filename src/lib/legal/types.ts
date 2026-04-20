@@ -12,17 +12,10 @@ export interface SourceRef {
 
 export interface VisaNode {
   code: string;              // "F-4", "H-2", ...
-  label: Localized<string>;  // short label rendered in diagram node
+  label: Localized<string>;  // short label
   target: Localized<string>; // who this visa is for
   period: Localized<string>; // validity period
-  requirements: Localized<string[]>; // checkboxes in slide-over
-}
-
-export interface DecisionNode {
-  id: string;
-  question: Localized<string>;
-  yes: { nextId: string } | { leafAnchor: string };
-  no:  { nextId: string } | { leafAnchor: string };
+  requirements: Localized<string[]>; // requirement list
 }
 
 export interface ProcedureStep {
@@ -60,19 +53,16 @@ export interface LegalPageContent {
   slug: "immigration";
   title: Localized<string>;
   summary: Localized<string>;             // one-sentence, ≤ 40 chars KO
+  overview: Localized<string>;            // prose paragraph per language
   meta: {
     generatedAt: string;                   // ISO
     sourceCount: number;
     lastRevisionAt: string;                // oldest revision in law list
   };
-  visas: VisaNode[];                      // Diagram 1
-  decisionTree: {
-    rootId: string;
-    nodes: DecisionNode[];
-  };                                      // Diagram 2
-  procedure: ProcedureStep[];             // Diagram 3 (linear for MVP)
-  agencies: AgencyNode[];                 // Diagram 4
-  deadlines: DeadlineEvent[];             // Diagram 5
+  visas: VisaNode[];
+  procedure: ProcedureStep[];
+  agencies: AgencyNode[];
+  deadlines: DeadlineEvent[];
   laws: LawArticle[];
   sources: SourceRef[];
   disclaimer: Localized<string>;

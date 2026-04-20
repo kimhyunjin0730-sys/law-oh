@@ -2,11 +2,12 @@ import { Link } from "react-router";
 import { useLanguage } from "../../context/LanguageContext";
 import { getLegalContent, pick } from "../../../lib/legal/content";
 import { LegalHero } from "../../components/legal/LegalHero";
-import { VisaMapDiagram } from "../../components/legal/VisaMapDiagram";
-import { DecisionTreeDiagram } from "../../components/legal/DecisionTreeDiagram";
-import { ProcedureFlowDiagram } from "../../components/legal/ProcedureFlowDiagram";
-import { AgencyNetworkDiagram } from "../../components/legal/AgencyNetworkDiagram";
-import { DeadlineTimeline } from "../../components/legal/DeadlineTimeline";
+import { OverviewProse } from "../../components/legal/OverviewProse";
+import { VisaTable } from "../../components/legal/VisaTable";
+import { ProcedureList } from "../../components/legal/ProcedureList";
+import { LawArticles } from "../../components/legal/LawArticles";
+import { AgencyDirectory } from "../../components/legal/AgencyDirectory";
+import { DeadlineTable } from "../../components/legal/DeadlineTable";
 import { SourceBlock } from "../../components/legal/SourceBlock";
 import { DisclaimerBlock } from "../../components/legal/DisclaimerBlock";
 
@@ -14,20 +15,15 @@ export function Immigration() {
   const { language } = useLanguage();
   const c = getLegalContent("immigration");
 
-  const tTitle = {
-    ko: { visas: "체류자격 맵", tree: "내 상황에 맞는 절차", proc: "절차 플로우", agen: "기관 네트워크", dead: "시한 타임라인" },
-    zh: { visas: "居留资格地图", tree: "适合我情况的程序", proc: "程序流程", agen: "机关网络", dead: "时限时间轴" },
-    en: { visas: "Visa Map", tree: "My-Case Decision Tree", proc: "Procedure Flow", agen: "Agency Network", dead: "Deadline Timeline" },
-  }[language];
-
   return (
     <div className="bg-[#faf6ef] min-h-screen legal-body">
       <LegalHero content={c} lang={language} />
-      <VisaMapDiagram visas={c.visas} lang={language} title={tTitle.visas} ariaSummary="체류자격 비자 유형 5가지를 한눈에 보여주는 다이어그램" />
-      <DecisionTreeDiagram rootId={c.decisionTree.rootId} nodes={c.decisionTree.nodes} lang={language} title={tTitle.tree} ariaSummary="질문에 Yes/No로 답하며 필요한 절차를 찾는 의사결정 트리" />
-      <ProcedureFlowDiagram steps={c.procedure} lang={language} title={tTitle.proc} ariaSummary="체류자격 절차의 단계별 흐름과 상세 정보" />
-      <AgencyNetworkDiagram agencies={c.agencies} lang={language} title={tTitle.agen} ariaSummary="의뢰인 중심으로 관련 기관들의 역할과 연락처를 보여주는 네트워크" />
-      <DeadlineTimeline events={c.deadlines} lang={language} title={tTitle.dead} ariaSummary="긴급 대응 시한을 Day 0부터 시간축으로 보여주는 타임라인" />
+      <OverviewProse text={pick(c.overview, language)} lang={language} />
+      <VisaTable visas={c.visas} lang={language} />
+      <ProcedureList steps={c.procedure} lang={language} />
+      <LawArticles laws={c.laws} lang={language} />
+      <AgencyDirectory agencies={c.agencies} lang={language} />
+      <DeadlineTable events={c.deadlines} lang={language} />
 
       {/* CTA */}
       <section className="py-20 border-t border-[#e9e3d2] bg-white">

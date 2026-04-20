@@ -10,6 +10,11 @@
     "zh": "一览居留资格选择与延期、变更、异议程序。",
     "en": "Visa selection, renewal, change, and appeal at a glance."
   },
+  "overview": {
+    "ko": "대한민국의 출입국·체류 제도는 외국인의 체류 목적에 따라 세분화된 비자 유형을 두고 있으며, 일반 체류자격은 신청·심사·결과 통보·이의신청의 네 단계로 진행됩니다. 각 단계의 관할 기관은 출입국·외국인청과 법무부이며, 처분에 불복하는 경우 통보일로부터 7일 이내 이의신청, 안 날로부터 90일 이내 행정소송이 가능합니다. 본 페이지는 법제처 국가법령정보센터, 생활법령정보, 법무부가 공개한 자료를 정리해 중국어권 의뢰인이 자신의 상황에 맞는 비자 유형과 절차, 기관 연락처, 주요 법적 시한을 한곳에서 확인할 수 있도록 구성했습니다.",
+    "zh": "韩国的出入境·居留制度依据外国人在韩居留的目的设置了细分的签证类型，一般居留资格的办理按申请、审查、结果通知、异议申请四个阶段进行。各阶段的主管机关为出入境·外国人厅与法务部，对处分不服者可在收到通知之日起7日内提出异议申请、知道处分之日起90日内提起行政诉讼。本页面整理了法制处国家法令信息中心、生活法令信息及法务部公开发布的资料，便于中文使用者的当事人在同一页面中了解适合自身情况的签证类型、办理程序、主管机关联系方式与主要法定期限。",
+    "en": "Korea's immigration and residence framework defines distinct visa categories based on the foreign national's purpose of stay, with general status applications proceeding through four stages: intake, review, decision, and appeal. The responsible bodies are the Immigration & Foreign Affairs Offices and the Ministry of Justice; appeals must be filed within 7 days of notice, and administrative litigation within 90 days of awareness of the disposition. This page consolidates materials published by the Korea Law Information Center, the Easy-Law portal, and the Ministry of Justice so that Chinese-speaking clients can find the applicable visa type, procedural path, agency contacts, and statutory deadlines in one place."
+  },
   "meta": {
     "generatedAt": "2026-04-20T00:00:00Z",
     "sourceCount": 5,
@@ -152,41 +157,6 @@
       }
     }
   ],
-  "decisionTree": {
-    "rootId": "q1",
-    "nodes": [
-      {
-        "id": "q1",
-        "question": {
-          "ko": "지금 한국에 체류 중이십니까?",
-          "zh": "您目前在韩国吗？",
-          "en": "Are you currently in Korea?"
-        },
-        "yes": { "nextId": "q2" },
-        "no": { "leafAnchor": "diagram-visas" }
-      },
-      {
-        "id": "q2",
-        "question": {
-          "ko": "현재 비자 만료까지 30일 이내인가요?",
-          "zh": "您的现有签证是否在30天内到期？",
-          "en": "Is your current visa expiring within 30 days?"
-        },
-        "yes": { "nextId": "q3" },
-        "no": { "leafAnchor": "diagram-procedure" }
-      },
-      {
-        "id": "q3",
-        "question": {
-          "ko": "출입국·외국인청에서 강제퇴거 명령을 받으셨나요?",
-          "zh": "您是否已收到出入境管理局的强制驱逐命令？",
-          "en": "Have you received a deportation order?"
-        },
-        "yes": { "leafAnchor": "diagram-deadlines" },
-        "no": { "leafAnchor": "diagram-procedure" }
-      }
-    ]
-  },
   "procedure": [
     {
       "id": "step1",
