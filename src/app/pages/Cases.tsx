@@ -173,7 +173,7 @@ export function Cases() {
 
         <div className="mt-20 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {currentContent.categories.map((category) => (
-            <div key={category.id} className="bg-white border-t-[6px] border-[#0f172a] shadow-sm hover:shadow-xl transition-shadow p-12 flex flex-col h-full group hover:border-[#2563EB]">
+            <div key={category.id} className="min-w-0 bg-white border-t-[6px] border-[#0f172a] shadow-sm hover:shadow-xl transition-shadow p-12 flex flex-col h-full group hover:border-[#2563EB]">
               {category.icon}
               <h3 className="text-2xl md:text-3xl font-extrabold text-[#0f172a] tracking-tight mb-10">{category.title}</h3>
 

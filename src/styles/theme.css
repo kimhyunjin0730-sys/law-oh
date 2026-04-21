@@ -132,6 +132,15 @@
     line-break: strict;
   }
 
+  /* Chinese has no internal word boundaries; `keep-all` would treat
+     long phrases like "非营利财团法人章程起草及两国运营结构咨询" as one
+     unbreakable unit and blow out narrow grid columns. Override to the
+     browser default so CJK wraps at character boundaries when needed. */
+  :lang(zh) {
+    word-break: normal;
+    overflow-wrap: anywhere;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     text-wrap: balance;
   }
