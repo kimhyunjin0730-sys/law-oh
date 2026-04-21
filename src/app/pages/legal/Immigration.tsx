@@ -106,9 +106,9 @@ export function Immigration() {
   }[language];
 
   const cta = {
-    ko: { eyebrow: "한교 — 法律事務所 · 韩桥", h: "체류 문제는\n시간이 결정합니다.", p: "이의신청 7일, 행정소송 90일 — 법정 시한을 놓치면 회복이 어렵습니다. 가능한 한 빨리 의뢰인의 상황을 변호사와 공유하세요.", primary: "온라인 상담 접수", secondary: "전화 상담  82-10-2999-6910" },
-    zh: { eyebrow: "韩桥 · Hangyo Law Firm", h: "居留问题，\n时间决定结果。", p: "异议7日、行政诉讼90日 — 错过法定期限将难以挽回。请尽早将情况告知律师。", primary: "在线咨询", secondary: "电话咨询  82-10-2999-6910" },
-    en: { eyebrow: "Hangyo Law Firm · 韩桥", h: "In immigration,\ntiming decides everything.", p: "7 days for appeal, 90 days for litigation — missing a statutory deadline is often irreversible. Share your situation with a lawyer as early as possible.", primary: "Online consultation", secondary: "Call  82-10-2999-6910" },
+    ko: { eyebrow: "비컴 — 法律事務所 · BECOME", h: "체류 문제는\n시간이 결정합니다.", p: "이의신청 7일, 행정소송 90일 — 법정 시한을 놓치면 회복이 어렵습니다. 가능한 한 빨리 의뢰인의 상황을 변호사와 공유하세요.", primary: "온라인 상담 접수", secondary: "전화 상담  82-10-2999-6910" },
+    zh: { eyebrow: "BECOME · BECOME Law Firm", h: "居留问题，\n时间决定结果。", p: "异议7日、行政诉讼90日 — 错过法定期限将难以挽回。请尽早将情况告知律师。", primary: "在线咨询", secondary: "电话咨询  82-10-2999-6910" },
+    en: { eyebrow: "BECOME Law Firm · BECOME", h: "In immigration,\ntiming decides everything.", p: "7 days for appeal, 90 days for litigation — missing a statutory deadline is often irreversible. Share your situation with a lawyer as early as possible.", primary: "Online consultation", secondary: "Call  82-10-2999-6910" },
   }[language];
 
   return (

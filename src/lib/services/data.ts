@@ -28,10 +28,10 @@ export const SERVICES = {
       eyebrow: "VISA · IMMIGRATION",
       blurb: "형사 사건 수임 즉시 체류 자격에 미치는 영향을 병행 분석하여 전략을 수립합니다.",
       highlight: "출입국",
-      stamp: "韩桥",
+      stamp: "BECOME",
       kanji: "入",
       overview: [
-        "외국인의 한국 체류는 형사·민사 사건의 결과만큼이나 출입국 절차에 의해 결정됩니다. 한교는 사건 수임 단계에서부터 체류 자격에 미치는 영향을 병행 분석하고, 강제퇴거·출국명령·체류기간 만료 등 모든 시한을 의뢰인의 사건 흐름과 함께 관리합니다.",
+        "외국인의 한국 체류는 형사·민사 사건의 결과만큼이나 출입국 절차에 의해 결정됩니다. 비컴는 사건 수임 단계에서부터 체류 자격에 미치는 영향을 병행 분석하고, 강제퇴거·출국명령·체류기간 만료 등 모든 시한을 의뢰인의 사건 흐름과 함께 관리합니다.",
         "F-4·F-5·F-6·H-2·D-2·D-10 등 주요 체류자격의 신청·연장·변경, 거부 처분 이의신청 7일 시한, 행정심판·행정소송 90일 시한까지 — 단계별로 어떤 서류가 필요하고 어떤 위험이 잠재하는지 중국어로 직접 설명드립니다.",
       ],
       sections: [
@@ -80,7 +80,7 @@ export const SERVICES = {
       stamp: "防御",
       kanji: "刑",
       overview: [
-        "형사 사건은 사실관계의 미세한 차이가 결과를 가른다. 한교는 의뢰인의 진술과 증거를 한국어로 충실히 정리하면서, 중국어로는 본인의 상황을 깊이 공감해 듣습니다. 통역을 거치지 않기에 미묘한 사실관계의 뉘앙스가 누락되지 않습니다.",
+        "형사 사건은 사실관계의 미세한 차이가 결과를 가른다. 비컴는 의뢰인의 진술과 증거를 한국어로 충실히 정리하면서, 중국어로는 본인의 상황을 깊이 공감해 듣습니다. 통역을 거치지 않기에 미묘한 사실관계의 뉘앙스가 누락되지 않습니다.",
         "보이스피싱 전달책, 사기, 횡령, 정보통신망법 위반, 성범죄, 음주운전 등 — 각 혐의별로 고의성·인식·인과관계의 핵심 쟁점을 분석하고 무혐의·불기소·집행유예를 목표로 변론 전략을 수립합니다.",
       ],
       sections: [
@@ -127,7 +127,7 @@ export const SERVICES = {
       stamp: "权利",
       kanji: "权",
       overview: [
-        "민사·금융 사건은 입증 자료의 깊이가 결과를 결정합니다. 한교는 통장 거래내역, 계약서, 메신저 기록 등 산재된 증거를 시간순으로 재구성하고, 의뢰인의 한·중 양국 자료를 통합 분석합니다.",
+        "민사·금융 사건은 입증 자료의 깊이가 결과를 결정합니다. 비컴는 통장 거래내역, 계약서, 메신저 기록 등 산재된 증거를 시간순으로 재구성하고, 의뢰인의 한·중 양국 자료를 통합 분석합니다.",
         "보이스피싱 피해자의 채무부존재 확인, P2P 금융 연대보증, 중고차 3자 사기 등 — 의뢰인이 가해자가 아닌 피해자임을 입증하는 데 필요한 모든 사실관계를 변호사가 직접 추적합니다.",
       ],
       sections: [
@@ -181,7 +181,7 @@ export const SERVICES = {
       stamp: "合同",
       kanji: "约",
       overview: [
-        "한국 변호사가 중국어 원문 계약서를 직접 검토할 수 있는 사무소는 흔치 않습니다. 한교는 번역본이 아닌 원문 기준으로 조항의 모호성과 한국 법상의 해석 위험을 동시에 분석합니다.",
+        "한국 변호사가 중국어 원문 계약서를 직접 검토할 수 있는 사무소는 흔치 않습니다. 비컴는 번역본이 아닌 원문 기준으로 조항의 모호성과 한국 법상의 해석 위험을 동시에 분석합니다.",
         "한·중 수출입 계약, 비영리 법인 설립, 지식재산권 침해 분쟁 등 — 양국 법률체계가 충돌하는 지점에서 어느 쪽이 우선하는지, 어느 법원에 제소할지를 함께 설계합니다.",
       ],
       sections: [
@@ -227,7 +227,7 @@ export const SERVICES = {
       kanji: "家",
       overview: [
         "한·중 가족 사건은 단순한 이혼이나 상속이 아닙니다. 양국 법원의 판결 효력, 자녀의 국적, 한국 내 재산과 중국 내 재산의 분할까지 — 두 법체계가 동시에 작동합니다.",
-        "한교는 한국 가사 절차를 진행하면서 중국 법원 판결의 한국 내 효력을 사전에 검토하고, 의뢰인이 양국에서 동일한 결과를 얻을 수 있도록 통합 전략을 수립합니다.",
+        "비컴는 한국 가사 절차를 진행하면서 중국 법원 판결의 한국 내 효력을 사전에 검토하고, 의뢰인이 양국에서 동일한 결과를 얻을 수 있도록 통합 전략을 수립합니다.",
       ],
       sections: [
         {
@@ -270,10 +270,10 @@ export const SERVICES = {
       eyebrow: "VISA · IMMIGRATION",
       blurb: "在接手刑事案件的同时，并行分析对居留资格的影响并制定应对策略。",
       highlight: "出入境",
-      stamp: "韩桥",
+      stamp: "BECOME",
       kanji: "入",
       overview: [
-        "外国人在韩国的居留，既取决于刑事或民事案件的结果，也由出入境程序全权决定。韩桥律师事务所在接手案件阶段，便会并行分析对居留资格的影响，同时结合案件进展全程管理强制遣返、出境命令、居留期满等所有的法定应对期限。",
+        "外国人在韩国的居留，既取决于刑事或民事案件的结果，也由出入境程序全权决定。BECOME律师事务所在接手案件阶段，便会并行分析对居留资格的影响，同时结合案件进展全程管理强制遣返、出境命令、居留期满等所有的法定应对期限。",
         "从F-4、F-5、F-6、H-2、D-2、D-10等主要签证的申请·延期·变更，到针对拒签决定需在7日内提起的异议申请，直至90日内提起的行政法庭诉讼，我们将阶段性地用中文为您直接解释：何时需要什么文件、存在什么潜在风险。",
       ],
       sections: [
@@ -322,7 +322,7 @@ export const SERVICES = {
       stamp: "防御",
       kanji: "刑",
       overview: [
-        "刑事案件的成败，往往系于事实细节的毫厘之差。韩桥律师事务所在以韩语忠实整理全盘陈述与物证的同时，并以中文深刻切身感受这背后的隐情与无奈。因为不经过第三方翻译，所以事实关系中的微妙语感才能被精准地传达给法官和检察官。",
+        "刑事案件的成败，往往系于事实细节的毫厘之差。BECOME律师事务所在以韩语忠实整理全盘陈述与物证的同时，并以中文深刻切身感受这背后的隐情与无奈。因为不经过第三方翻译，所以事实关系中的微妙语感才能被精准地传达给法官和检察官。",
         "诸如沦为语音诈骗中间人、涉嫌欺诈或贪污、违反网络通讯法、涉嫌性犯罪或酒驾肇事等各类型嫌疑，我们都会深度剥离故意性、认知程度及因果关系三大核心争议点，并确立以无嫌疑、不起诉、缓刑为目标的有效辩护策略。",
       ],
       sections: [
@@ -369,7 +369,7 @@ export const SERVICES = {
       stamp: "权利",
       kanji: "权",
       overview: [
-        "民事和金融案件的核心要义是在于深挖举证资料的厚重质量来决定成败。韩桥能够按时间顺序精准重构散乱的出入账记录明细表、复杂的商用合同及微信通讯记录，并综合分析当事人在中、韩两地留下的痕迹与资料。",
+        "民事和金融案件的核心要义是在于深挖举证资料的厚重质量来决定成败。BECOME能够按时间顺序精准重构散乱的出入账记录明细表、复杂的商用合同及微信通讯记录，并综合分析当事人在中、韩两地留下的痕迹与资料。",
         "像是针对误入电信诈骗圈套的不知情网主主张'债务不存在'之确认，反驳P2P借贷网贷引发连带保证偿付责任，剖析倒卖二手车牵涉到第三方诈欺陷阱等等——为了证明您不是肇事者也是受害人这一立场，律师将不遗余力为您搜证还原真相。",
       ],
       sections: [
@@ -424,7 +424,7 @@ export const SERVICES = {
       kanji: "约",
       overview: [
         "由韩国大律师本人不借助翻译器和字典直接对长篇幅的正式中文法律合同条文咬文嚼字并逐条审阅批注在同业内尤显稀贵难得。这不仅仅只是停留在语句翻译层面，同时结合大韩民国商法与法院一贯判定原则和偏重解析那暗藏在文字下的字眼和含糊的违约界定条款风险。",
-        "除了中韩间大宗进出口代理与合作分销，跨国商会分会的非官方民办财团设立、再到针对在韩恶意抢注知识产权专利商标或因违规盗用仿制等纷争之预防与应对… 在冲突之际以孰边为主、在哪里起诉才能达到自身利益最大化，这些方方面面韩桥也将尽善尽美全程统筹构思及把控。",
+        "除了中韩间大宗进出口代理与合作分销，跨国商会分会的非官方民办财团设立、再到针对在韩恶意抢注知识产权专利商标或因违规盗用仿制等纷争之预防与应对… 在冲突之际以孰边为主、在哪里起诉才能达到自身利益最大化，这些方方面面BECOME也将尽善尽美全程统筹构思及把控。",
       ],
       sections: [
         {
@@ -469,7 +469,7 @@ export const SERVICES = {
       kanji: "家",
       overview: [
         "牵扯进有别于一般韩国家庭的涉韩、涉华之离婚、争产及亲权划归绝非常规家事法领域能够处理。这牵涉两国法院出具的裁判最终是否可以对等落实并在他国也得到同等实施，以及对小孩未来常驻属地及国籍划归的综合影响。甚至是涉及到不仅在韩国国内，以及分布于中国各省的动产、有价证券期权及土地不动资产等等是否要参与及对半分摊的问题—这势必成为两国属地法理在执行力上强强碰撞的棘手纠葛。",
-        "韩桥不会停留在只是代位跟进在韩国单方的各项家事申请进度程序这种表面服务；反而会站在比目前更加深邃宏观角度在先期全面核对其作为一国判决（中方或韩方判决书及调节协议下带之文案）转译拿至另一方地域后可有效贯彻的实际履行能力（有无相互约束阻断可能性）。以让被代理的海外委托及韩华群体做到两国承认和一致执行效力为先决宗旨之全面合规及利益收网行动计划制定者。",
+        "BECOME不会停留在只是代位跟进在韩国单方的各项家事申请进度程序这种表面服务；反而会站在比目前更加深邃宏观角度在先期全面核对其作为一国判决（中方或韩方判决书及调节协议下带之文案）转译拿至另一方地域后可有效贯彻的实际履行能力（有无相互约束阻断可能性）。以让被代理的海外委托及韩华群体做到两国承认和一致执行效力为先决宗旨之全面合规及利益收网行动计划制定者。",
       ],
       sections: [
         {
@@ -499,7 +499,7 @@ export const SERVICES = {
       ],
       cases: [
         "作为指定委托人成功代理请求韩国户籍登记所及庭院批准并转册来自【中国单方面提诉下达】之破裂家庭宣判生效证文记录在案获得核准接纳引用案例",
-        "居中介入夫妻中韩地带双方名下财产不便过界核查评估分配并在进入庭审之前便由韩桥穿针引线敲定各自保有或划账并出具合意完结调解宣判案",
+        "居中介入夫妻中韩地带双方名下财产不便过界核查评估分配并在进入庭审之前便由BECOME穿针引线敲定各自保有或划账并出具合意完结调解宣判案",
         "向国内咨询者及常驻侨胞下达就继承遗留在国内省份县市区之各类建筑房屋等遗迹转汇或产权归属更名手续提交指点服务",
       ],
     },
@@ -512,10 +512,10 @@ export const SERVICES = {
       eyebrow: "VISA · IMMIGRATION",
       blurb: "We assess immigration impacts alongside criminal defense strictly to establish the safest compliance strategy.",
       highlight: "Immigration",
-      stamp: "韩桥",
+      stamp: "BECOME",
       kanji: "入",
       overview: [
-        "A foreigner's residency in South Korea is profoundly decided by immigration regulations as much as the factual consequence of any civil or criminal litigations. The Hangyo Law Firm assesses from the beginning how each stage of a legal process will directly risk our client’s visa status. We rigorously track the statutory deadlines ranging from deportation & departure orders to basic renewals simultaneously to the client's litigation flow.",
+        "A foreigner's residency in South Korea is profoundly decided by immigration regulations as much as the factual consequence of any civil or criminal litigations. The BECOME Law Firm assesses from the beginning how each stage of a legal process will directly risk our client’s visa status. We rigorously track the statutory deadlines ranging from deportation & departure orders to basic renewals simultaneously to the client's litigation flow.",
         "From the standard request, prolongation, or conversion of significant visa classifications (e.g., F-4, F-5, F-6, H-2, D-2, D-10), all the way to executing the uncompromising 7-day limitation for challenging visa rejection & 90-day margin for appealing at an administrative court—we explicitly explain which document operates under what potential danger entirely and confidently in Chinese.",
       ],
       sections: [
@@ -564,7 +564,7 @@ export const SERVICES = {
       stamp: "防御",
       kanji: "刑",
       overview: [
-        "Slightest variations within factual circumstances dictate the definitive fate of all criminal litigations. The Hangyo Law Firm dutifully refines our client’s testimonies and physical evidence precisely utilizing standard Korean judicially, all the while resonating emotionally with our clients fully comprehending their testimonies in Chinese. Since everything is routed natively—without translator dependencies—we retain absolute nuances capturing every factual circumstance meticulously.",
+        "Slightest variations within factual circumstances dictate the definitive fate of all criminal litigations. The BECOME Law Firm dutifully refines our client’s testimonies and physical evidence precisely utilizing standard Korean judicially, all the while resonating emotionally with our clients fully comprehending their testimonies in Chinese. Since everything is routed natively—without translator dependencies—we retain absolute nuances capturing every factual circumstance meticulously.",
         "From alleged acting as voice-phishing money mules, executing systematic corporate embezzlement, breaching IT privacy regulations, facing sexual misconduct charges, to dealing with DUI violations—we target key controversies including intent, recognition factors, and absolute causation. We design an aggressive stance ultimately prioritizing a non-charge (case dismissed), non-indictment, or at worst, conditional probation.",
       ],
       sections: [
@@ -611,7 +611,7 @@ export const SERVICES = {
       stamp: "权利",
       kanji: "权",
       overview: [
-        "The depth enveloping evidential arrays strictly seals the result concerning civil or financial controversies. The Hangyo firm systematically reconstructs deeply scattered timelines involving bank transmission traces, corporate agreements, and mobile chat records. We subsequently formulate universally consolidated analyses merging client records spanning both South Korea and China equivalently.",
+        "The depth enveloping evidential arrays strictly seals the result concerning civil or financial controversies. The BECOME firm systematically reconstructs deeply scattered timelines involving bank transmission traces, corporate agreements, and mobile chat records. We subsequently formulate universally consolidated analyses merging client records spanning both South Korea and China equivalently.",
         "Whether verifying 'absence of liability' regarding victims looped within massive voice-phishing schemes, confronting P2P joint surety claims, or addressing triple-party pre-owned automobile frauds—our attorneys directly track every underlying factual thread determining unequivocally that the client operates specifically as the victim instead of the assumed perpetrator.",
       ],
       sections: [
@@ -665,7 +665,7 @@ export const SERVICES = {
       stamp: "合同",
       kanji: "约",
       overview: [
-        "Finding an established Korean legal attorney fully and professionally capable of executing comprehensive vetting dealing directly matching Chinese indigenous original documents remains extraordinarily rare. The Hangyo firm dissects the ambiguous phrases checking their correlated interpretative hazards directly translating identically underneath South Korean statutes—thus disregarding heavily unreliable indirect translations.",
+        "Finding an established Korean legal attorney fully and professionally capable of executing comprehensive vetting dealing directly matching Chinese indigenous original documents remains extraordinarily rare. The BECOME firm dissects the ambiguous phrases checking their correlated interpretative hazards directly translating identically underneath South Korean statutes—thus disregarding heavily unreliable indirect translations.",
         "From massive bilateral import-export treaties, establishing pure non-profit incorporated entities, down to solving deep-rooted intellectual property infringements—we intricately design the priority parameters specifying precisely which jurisdictional system overrules the other and optimally electing which court is best authorized to tackle claims effectively addressing clashing bilateral legal codes.",
       ],
       sections: [
@@ -711,7 +711,7 @@ export const SERVICES = {
       kanji: "家",
       overview: [
         "Sino-Korean familial entanglements far exceed the mundane boundaries typical of sheer divore or inheritance proceedings. This territory demands overlapping mechanisms connecting two fully disjointed legal frameworks concurrently assessing judicial validities produced by opposing courts, tracking offspring citizenship delineations, combined closely evaluating mutual capital division encompassing assets residing equally within both domestic domains.",
-        "The Hangyo firm undertakes regularized domestic family administrative proceedings while evaluating fundamentally standard Chinese decrees pre-empting potential discrepancies occurring inside South Korea's territory. We architect a holistic synchronized plan enabling clients achieving consistent outcomes optimally standardized across identically applied jurisdictions.",
+        "The BECOME firm undertakes regularized domestic family administrative proceedings while evaluating fundamentally standard Chinese decrees pre-empting potential discrepancies occurring inside South Korea's territory. We architect a holistic synchronized plan enabling clients achieving consistent outcomes optimally standardized across identically applied jurisdictions.",
       ],
       sections: [
         {

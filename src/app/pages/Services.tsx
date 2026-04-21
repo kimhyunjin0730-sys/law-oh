@@ -10,10 +10,10 @@ export function Services() {
   const content = {
     ko: {
       title: "주요 업무 분야",
-      subtitle: "한교는 당신의 언어로 사건을 정확히 이해하고, 한국의 법리로 완벽한 방어막을 구축합니다.",
+      subtitle: "비컴는 당신의 언어로 사건을 정확히 이해하고, 한국의 법리로 완벽한 방어막을 구축합니다.",
       detailBtn: "자세히 보기",
       ctaTitle: "지금 바로 전문적인 상담이 필요하십니까?",
-      ctaDesc: "한국에서의 법적 문제, 시간이 지체될수록 불리해질 수 있습니다. 한교가 당신의 언어로 직접 상담하고 가장 확실한 해답을 찾아드립니다.",
+      ctaDesc: "한국에서의 법적 문제, 시간이 지체될수록 불리해질 수 있습니다. 비컴가 당신의 언어로 직접 상담하고 가장 확실한 해답을 찾아드립니다.",
       onlineBtn: "온라인 상담 접수",
       wechatBtn: "위챗 직접 상담",
       phoneBtn: "전화 상담",
@@ -94,10 +94,10 @@ export function Services() {
     },
     zh: {
       title: "主要业务领域",
-      subtitle: "韩桥用您的语言准确理解案件，以韩国法理构筑完美的防御网。",
+      subtitle: "BECOME用您的语言准确理解案件，以韩国法理构筑完美的防御网。",
       detailBtn: "查看详情",
       ctaTitle: "您现在需要专业咨询吗？",
-      ctaDesc: "在韩国的法律问题，时间拖得越久可能越不利。韩桥用您的母语直接与您沟通，为您寻找最确切的答案。",
+      ctaDesc: "在韩国的法律问题，时间拖得越久可能越不利。BECOME用您的母语直接与您沟通，为您寻找最确切的答案。",
       onlineBtn: "在线咨询申请",
       wechatBtn: "微信直接咨询",
       phoneBtn: "电话咨询",
@@ -178,10 +178,10 @@ export function Services() {
     },
     en: {
       title: "Practice Areas",
-      subtitle: "HANGYO understands your case precisely in your language and builds a perfect defense with Korean legal logic.",
+      subtitle: "BECOME understands your case precisely in your language and builds a perfect defense with Korean legal logic.",
       detailBtn: "View Details",
       ctaTitle: "Need Professional Consultation Now?",
-      ctaDesc: "Legal issues in Korea can become more disadvantageous as time delays. HANGYO will consult directly in your language and find the clearest solution.",
+      ctaDesc: "Legal issues in Korea can become more disadvantageous as time delays. BECOME will consult directly in your language and find the clearest solution.",
       onlineBtn: "Submit Online",
       wechatBtn: "WeChat Consultation",
       phoneBtn: "Call Us",

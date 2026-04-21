@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import clsx from "clsx";
 import { useLanguage } from "../context/LanguageContext";
 import { WeChatDialog } from "./WeChatDialog";
-import hangyoLogo from "../../assets/hangyo.png";
+import becomeLogo from "../../assets/become-logo.svg";
 
 export function Layout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -99,8 +99,8 @@ export function Layout() {
             <div className="flex items-center">
               <Link to="/" className="flex-shrink-0 flex items-center">
                 <img
-                  src={hangyoLogo}
-                  alt="HANGYO"
+                  src={becomeLogo}
+                  alt="BECOME Law Firm"
                   className={clsx(
                     "h-32 lg:h-40 w-auto transition-all duration-300",
                     overlay ? "brightness-0 invert opacity-90" : ""
@@ -185,8 +185,8 @@ export function Layout() {
             <div className="col-span-1 md:col-span-4">
               <div className="flex items-center gap-4 mb-6 opacity-90">
                 <img
-                  src={hangyoLogo}
-                  alt="HANGYO"
+                  src={becomeLogo}
+                  alt="BECOME Law Firm"
                   className="h-16 lg:h-20 w-auto brightness-0 invert"
                 />
               </div>

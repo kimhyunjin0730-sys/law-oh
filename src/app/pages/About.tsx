@@ -1,8 +1,8 @@
 import { motion } from "motion/react";
 import { GraduationCap, Briefcase, Award, MapPin } from "lucide-react";
 import { SectionHeading } from "../components/SectionHeading";
-import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { useLanguage } from "../context/LanguageContext";
+import ohDonghyun from "../../assets/oh-donghyun.png";
 
 export function About() {
   const { language } = useLanguage();
@@ -14,7 +14,7 @@ export function About() {
       intro1_sub: "'내 말이 제대로 전달되지 않는 것'",
       intro1_part1: "한국에서 법적 문제에 부딪혔을 때, 가장 두려운 것은 ",
       intro1_part2: "입니다.",
-      intro2: "법률사무소 한교의 오동현 변호사는 중국어 소통에 문제가 없으며, 중국 현지에서 수년간 생활하고 일한 경험을 바탕으로 중국어권 의뢰인의 상황을 누구보다 정확하게 이해합니다.",
+      intro2: "법률사무소 비컴의 오동현 변호사는 중국어 소통에 문제가 없으며, 중국 현지에서 수년간 생활하고 일한 경험을 바탕으로 중국어권 의뢰인의 상황을 누구보다 정확하게 이해합니다.",
       intro3: "당신의 이야기를, 당신의 언어로 들을 준비가 되어 있습니다.",
       nameTitle: "오동현",
       nameSub: "대표 변호사",
@@ -70,8 +70,8 @@ export function About() {
       ],
       timelineTitle: "주요 경력 요약",
       timeline: [
-        { year: "2026. 02", title: "법률사무소 한교 파트너 변호사 (현재)" },
-        { year: "2025. 07", title: "법률사무소 한교 소속변호사" },
+        { year: "2026. 02", title: "법률사무소 비컴 파트너 변호사 (현재)" },
+        { year: "2025. 07", title: "법률사무소 비컴 소속변호사" },
         { year: "2025. 01", title: "법무법인 동감 소속변호사" },
         { year: "2024. 11", title: "국제지식재산연수원 변리사 연수과정 수료" },
         { year: "2024", title: "대한변호사협회 연수" },
@@ -91,7 +91,7 @@ export function About() {
       intro1_sub: "“我的话没被准确传达”",
       intro1_part1: "在韩国遇到法律问题时，最害怕的就是 ",
       intro1_part2: "。",
-      intro2: "韩桥律师事务所的吴东宪律师精通中韩双语且沟通无碍。凭借在中国多年生活与工作经验，能够比任何人都更加精准地理解中文客户的现实处境。",
+      intro2: "BECOME律师事务所的吴东宪律师精通中韩双语且沟通无碍。凭借在中国多年生活与工作经验，能够比任何人都更加精准地理解中文客户的现实处境。",
       intro3: "我们已准备好，用您的语言倾听您的故事。",
       nameTitle: "吴东宪",
       nameSub: "主任/代表律师",
@@ -147,8 +147,8 @@ export function About() {
       ],
       timelineTitle: "主要履历摘要",
       timeline: [
-        { year: "2026. 02", title: "韩桥律师事务所 合伙人律师 (当前)" },
-        { year: "2025. 07", title: "韩桥律师事务所 执业律师" },
+        { year: "2026. 02", title: "BECOME律师事务所 合伙人律师 (当前)" },
+        { year: "2025. 07", title: "BECOME律师事务所 执业律师" },
         { year: "2025. 01", title: "同感法务法人 执业律师" },
         { year: "2024. 11", title: "结业于国际常识产权研修院专利辩理师培训班" },
         { year: "2024", title: "大韩辩护士协会研修" },
@@ -168,7 +168,7 @@ export function About() {
       intro1_sub: "'Being misunderstood'",
       intro1_part1: "When confronting legal issues in Korea, the greatest fear is ",
       intro1_part2: ".",
-      intro2: "Attorney Oh Dong-hyun of HANGYO Law Firm has absolutely no barrier in Chinese communication. Drawing from his years of working and living in mainland China, he identifies and understands the struggles of Chinese-speaking clients better than anyone.",
+      intro2: "Attorney Oh Dong-hyun of BECOME Law Firm has absolutely no barrier in Chinese communication. Drawing from his years of working and living in mainland China, he identifies and understands the struggles of Chinese-speaking clients better than anyone.",
       intro3: "We are ready to listen to your story, exactly in your language.",
       nameTitle: "Donghyun Oh",
       nameSub: "Managing Partner",
@@ -224,8 +224,8 @@ export function About() {
       ],
       timelineTitle: "Brief Career Timeline",
       timeline: [
-        { year: "2026. 02", title: "Partner Attorney at HANGYO Law Firm (Current)" },
-        { year: "2025. 07", title: "Attorney at HANGYO Law Firm" },
+        { year: "2026. 02", title: "Partner Attorney at BECOME Law Firm (Current)" },
+        { year: "2025. 07", title: "Attorney at BECOME Law Firm" },
         { year: "2025. 01", title: "Attorney at DongGam Law Firm" },
         { year: "2024. 11", title: "Graduate Patent Attorney Training at Int'l IP Training Institute" },
         { year: "2024", title: "Korean Bar Association Program Completion" },
@@ -270,16 +270,15 @@ export function About() {
         </motion.div>
 
         <div className="mt-20 border border-slate-200 bg-white flex flex-col lg:flex-row shadow-sm">
-          <div className="lg:w-2/5 relative min-h-[500px] lg:min-h-0 bg-slate-100">
-            <ImageWithFallback
-              src="https://images.unsplash.com/photo-1665224752123-a2ea29dddcb2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhc2lhbiUyMGxhd3llciUyMHBvcnRyYWl0JTIwcHJvZmVzc2lvbmFsfGVufDF8fHx8MTc3NjM5ODMxNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+          <div className="lg:w-2/5 relative min-h-[500px] lg:min-h-0 bg-transparent">
+            <img
+              src={ohDonghyun}
               alt={currentContent.nameFull}
-              className="absolute inset-0 w-full h-full object-cover object-top grayscale"
+              className="absolute inset-0 w-full h-full object-contain object-center"
             />
-            <div className="absolute inset-0 bg-[#0f172a]/10 mix-blend-multiply" />
-            <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-[#0f172a] to-transparent lg:hidden">
-              <h3 className="text-3xl font-extrabold text-white mb-2">{currentContent.nameFull}</h3>
-              <p className="text-[#2563EB] font-bold">법률사무소 한교 {currentContent.nameSub}</p>
+            <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-white to-transparent lg:hidden">
+              <h3 className="text-3xl font-extrabold text-[#0f172a] mb-2">{currentContent.nameFull}</h3>
+              <p className="text-[#2563EB] font-bold">법률사무소 비컴 {currentContent.nameSub}</p>
             </div>
           </div>
           

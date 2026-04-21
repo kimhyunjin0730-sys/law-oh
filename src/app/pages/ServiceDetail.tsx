@@ -74,7 +74,7 @@ export function ServiceDetail() {
       sidebarCtaTitle: "개별 사안은 다릅니다.\n변호사와 상담하세요.",
       sidebarCtaBody: "중국어 직접 상담 가능. 의뢰인의 사실관계와 사건 단계에 따라 결과가 달라집니다.",
       sidebarCtaBtn: "온라인 상담 접수 →",
-      bottomCtaEyebrow: "한교 — 法律事務所 · 韩桥",
+      bottomCtaEyebrow: "비컴 — 法律事務所 · BECOME",
       bottomCtaH: "지금 상황을\n변호사와 공유하세요.",
       bottomCtaP: "사건 단계가 진행될수록 회복이 어려워집니다. 한국어가 어렵다면 중국어로 직접 설명해 드립니다.",
       bottomCtaPrimary: "온라인 상담 접수",
@@ -92,7 +92,7 @@ export function ServiceDetail() {
       sidebarCtaTitle: "个案情况各异。\n请咨询律师。",
       sidebarCtaBody: "可中文直接咨询。结果会根据委托人的事实关系和案件阶段而有所不同。",
       sidebarCtaBtn: "在线咨询申请 →",
-      bottomCtaEyebrow: "韩桥 — 法律事务所 · Hangyo",
+      bottomCtaEyebrow: "BECOME — 法律事务所 · BECOME",
       bottomCtaH: "请将目前的情况\n告知律师。",
       bottomCtaP: "案件进展越深，越难以挽回。如果韩语沟通有困难，我们将直接用中文为您讲解。",
       bottomCtaPrimary: "在线咨询申请",
@@ -110,7 +110,7 @@ export function ServiceDetail() {
       sidebarCtaTitle: "Every case is unique.\nConsult with a lawyer.",
       sidebarCtaBody: "Direct Chinese consultation available. Outcome varies by facts and case stage.",
       sidebarCtaBtn: "Online Inquiry →",
-      bottomCtaEyebrow: "Hangyo — Law Firm · 韩桥",
+      bottomCtaEyebrow: "BECOME — Law Firm · BECOME",
       bottomCtaH: "Share your situation\nwith a lawyer now.",
       bottomCtaP: "The further a case proceeds, the harder it is to recover. If Korean is difficult, we consult directly in Chinese.",
       bottomCtaPrimary: "Online Inquiry",
@@ -201,7 +201,7 @@ export function ServiceDetail() {
               {svc.kanji}
             </div>
             <div className="absolute bottom-6 left-6 font-mono text-[11px] font-semibold tracking-[0.14em] uppercase text-[#fff3a8]/60">
-              Hangyo Practice — {svc.eyebrow}
+              BECOME Practice — {svc.eyebrow}
             </div>
             <div
               className="absolute bottom-6 right-6 w-[78px] h-[78px] grid place-items-center font-serif-ko font-black text-[24px] tracking-tight bg-[#2563EB] text-[#020617] shadow-[0_8px_24px_-8px_rgba(0,0,0,.4)]"

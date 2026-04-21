@@ -84,8 +84,8 @@ try {
   const page = await ctx.newPage();
   await page.goto(BASE + "/", { waitUntil: "networkidle" });
   const body = await page.locator("body").innerText();
-  add("HOME uses 한교 brand", body.includes("법률사무소 한교"));
-  add("HOME removed 비컴", !body.includes("비컴"));
+  add("HOME uses 비컴 brand", body.includes("법률사무소 비컴"));
+  add("HOME removed 한교", !body.includes("한교"));
   add("HOME nav has 구성원 소개", body.includes("구성원 소개") || body.includes("구성원"));
   await page.close();
 } catch (e) {

@@ -22,7 +22,7 @@ export function Home() {
       },
       professionals: {
         eyebrow: "Professionals",
-        title: <>법률사무소 한교의 <span className="text-[#2563EB]">변호사</span></>,
+        title: <>법률사무소 비컴의 <span className="text-[#2563EB]">변호사</span></>,
         desc: "한국어와 중국어 두 언어로 직접 소통하며, 통역 없이 사실관계부터 법률 분석까지 정확하게 짚어 드립니다.",
         viewMore: "VIEW MORE"
       },
@@ -30,7 +30,7 @@ export function Home() {
         role: "Representative Attorney",
         nameKo: "오동현",
         nameEn: "Donghyun OH",
-        office: "대표 변호사 · 법률사무소 한교",
+        office: "대표 변호사 · 법률사무소 비컴",
         specialtiesLabel: "전문 분야",
         specs: [
           "형사 사건 방어 · 민사 분쟁 대리",
@@ -62,7 +62,7 @@ export function Home() {
         }
       ],
       strengths: {
-        title: "왜 법률사무소 한교인가",
+        title: "왜 법률사무소 비컴인가",
         subtitle: "단순한 법률 지식을 넘어, 중국의 문화와 당신의 언어를 완벽하게 이해합니다.",
         items: [
           {
@@ -75,7 +75,7 @@ export function Home() {
           },
           {
             title: "형사 처벌과 체류 자격의 연결고리를 아는 변호사",
-            desc: "한국에서 형사 처벌을 받으면 F-4, H-2 등 체류 자격이 취소되거나 강제퇴거로 이어질 수 있습니다. 한교는 형사 사건 수임 즉시, 사건의 법적 결과뿐 아니라 체류 자격에 미치는 영향까지 종합적으로 관리합니다."
+            desc: "한국에서 형사 처벌을 받으면 F-4, H-2 등 체류 자격이 취소되거나 강제퇴거로 이어질 수 있습니다. 비컴는 형사 사건 수임 즉시, 사건의 법적 결과뿐 아니라 체류 자격에 미치는 영향까지 종합적으로 관리합니다."
           }
         ]
       },
@@ -139,7 +139,7 @@ export function Home() {
       },
       testimonials: {
         eyebrow: "Client Voices",
-        title: <>한교과 함께한 <span className="text-[#2563EB]">후기</span></>,
+        title: <>비컴과 함께한 <span className="text-[#2563EB]">후기</span></>,
         desc: "오동현 변호사의 조력으로 권리를 회복한 의뢰인의 후기입니다.",
         previewNote: "* 런칭 전 템플릿 — 실제 후기는 수임 후 게시됩니다.",
         previewLabel: "예시 후기",
@@ -153,7 +153,7 @@ export function Home() {
           {
             tag: "보이스피싱",
             title: "불안했던 수사 단계를 잘 넘길 수 있었습니다",
-            quote: "전달책으로 몰렸을 때 경황이 없었는데, 한교에서 초기부터 개입해 고의성이 없었다는 걸 입증해 주셔서 불기소를 받았습니다.",
+            quote: "전달책으로 몰렸을 때 경황이 없었는데, 비컴에서 초기부터 개입해 고의성이 없었다는 걸 입증해 주셔서 불기소를 받았습니다.",
             author: "K씨 · 조선족",
           },
           {
@@ -166,18 +166,18 @@ export function Home() {
       },
       hashtags: {
         eyebrow: "Ask the Attorney",
-        title: "한교에게 무엇이든 물어보세요",
+        title: "비컴에게 무엇이든 물어보세요",
         items: ["#F4비자", "#H2비자", "#보이스피싱", "#음주운전", "#강제퇴거", "#체류자격", "#횡령", "#대중계약", "#중국이혼판결", "#P2P연대보증", "#성범죄방어", "#위챗상담"]
       },
       quickLinks: [
-        { eyebrow: "Consultation", title: "한교 법률 상담", desc: "365일 24시간 중국어 직접 상담", icon: <MessageCircle className="w-7 h-7 text-[#2563EB]" strokeWidth={1.4} />, href: "#consult" },
+        { eyebrow: "Consultation", title: "비컴 법률 상담", desc: "365일 24시간 중국어 직접 상담", icon: <MessageCircle className="w-7 h-7 text-[#2563EB]" strokeWidth={1.4} />, href: "#consult" },
         { eyebrow: "Cases", title: "업무사례", desc: "중국어권 의뢰인 맞춤 솔루션", icon: <Briefcase className="w-7 h-7 text-[#2563EB]" strokeWidth={1.4} />, href: "/cases" },
         { eyebrow: "Attorney", title: "구성원 소개", desc: "오동현 대표 변호사 프로필", icon: <ShieldCheck className="w-7 h-7 text-[#2563EB]" strokeWidth={1.4} />, href: "/about" },
         { eyebrow: "Practice", title: "업무분야", desc: "5대 핵심 업무 영역", icon: <Layers className="w-7 h-7 text-[#2563EB]" strokeWidth={1.4} />, href: "/services" },
       ],
       consult: {
         eyebrow: "Consultation",
-        title: "한교 상담 접수",
+        title: "비컴 상담 접수",
         desc: "중국어·한국어 어느 쪽이든 편한 언어로 남겨 주세요. 24시간 이내 오동현 변호사가 직접 회신드립니다."
       },
       form: {
@@ -206,12 +206,12 @@ export function Home() {
           "사장이 돈 안 줄 때 증거 남기는 법",
           "보이스피싱 전달책 연루 시 행동 요령",
           "중국 재산 상속 및 이혼 판결 효력",
-          "한교(韩桥) 24시 위챗 QR코드 제공"
+          "비컴(BECOME) 24시 위챗 QR코드 제공"
         ],
         download: "가이드북 다운로드",
         mockupTitle: "한국 생존 법률 가이드북",
         mockupDesc: "클릭하여 PDF 다운로드",
-        wechatLabel: "한교(韩桥) 24시 위챗"
+        wechatLabel: "비컴(BECOME) 24시 위챗"
       }
     },
     zh: {
@@ -225,7 +225,7 @@ export function Home() {
       },
       professionals: {
         eyebrow: "专家团队",
-        title: <>韩桥律师事务所的 <span className="text-[#2563EB]">律师</span></>,
+        title: <>BECOME律师事务所的 <span className="text-[#2563EB]">律师</span></>,
         desc: "用韩语和中文两种语言直接沟通, 无需翻译, 从事实关系到法律分析为您精准把关。",
         viewMore: "查看更多"
       },
@@ -233,7 +233,7 @@ export function Home() {
         role: "代表律师",
         nameKo: "吴东宪",
         nameEn: "Donghyun OH",
-        office: "代表律师 · 韩桥律师事务所",
+        office: "代表律师 · BECOME律师事务所",
         specialtiesLabel: "专业领域",
         specs: [
           "刑事案件辩护 · 民事纠纷代理",
@@ -265,7 +265,7 @@ export function Home() {
         }
       ],
       strengths: {
-        title: "为什么选择韩桥律师事务所",
+        title: "为什么选择BECOME律师事务所",
         subtitle: "超越单纯的法律知识, 完美理解中国的文化和您的语言。",
         items: [
           {
@@ -278,7 +278,7 @@ export function Home() {
           },
           {
             title: "深谙刑事处罚与居留资格关联性的律师",
-            desc: "在韩国受到刑事处罚时, F-4、H-2 等居留资格可能会被取消或导致强制遣返。韩桥在接手刑事案件的同时, 也会综合管理案件的法律后果及其对居留资格的影响。"
+            desc: "在韩国受到刑事处罚时, F-4、H-2 等居留资格可能会被取消或导致强制遣返。BECOME在接手刑事案件的同时, 也会综合管理案件的法律后果及其对居留资格的影响。"
           }
         ]
       },
@@ -342,7 +342,7 @@ export function Home() {
       },
       testimonials: {
         eyebrow: "客户评价",
-        title: <>与韩桥并肩作战后的评价</>,
+        title: <>与BECOME并肩作战后的评价</>,
         desc: "吴东宪律师帮助恢复权利的客户评价。",
         previewNote: "* 上线前模板 — 实际评价将在结案后发布。",
         previewLabel: "示例评价",
@@ -356,7 +356,7 @@ export function Home() {
           {
             tag: "话务诈骗",
             title: "顺利渡过了让人不安的调查阶段",
-            quote: "被当作车手卷入案件时感到不知所措，韩桥从初期就介入并证明了我不存在主观故意，最终获得了不予起诉处分。",
+            quote: "被当作车手卷入案件时感到不知所措，BECOME从初期就介入并证明了我不存在主观故意，最终获得了不予起诉处分。",
             author: "K某 · 朝鲜族",
           },
           {
@@ -369,18 +369,18 @@ export function Home() {
       },
       hashtags: {
         eyebrow: "咨询律师",
-        title: "向韩桥提问任何问题",
+        title: "向BECOME提问任何问题",
         items: ["#F4签证", "#H2签证", "#话务诈骗", "#酒驾", "#强制遣返", "#居留资格", "#贪污", "#涉华合同", "#中国离婚判决", "#P2P连带保证", "#性犯罪辩护", "#微信咨询"]
       },
       quickLinks: [
-        { eyebrow: "Consultation", title: "韩桥法律咨询", desc: "365天 24小时中文直接咨询", icon: <MessageCircle className="w-7 h-7 text-[#2563EB]" strokeWidth={1.4} />, href: "#consult" },
+        { eyebrow: "Consultation", title: "BECOME法律咨询", desc: "365天 24小时中文直接咨询", icon: <MessageCircle className="w-7 h-7 text-[#2563EB]" strokeWidth={1.4} />, href: "#consult" },
         { eyebrow: "Cases", title: "业务案例", desc: "华人客户量身定制方案", icon: <Briefcase className="w-7 h-7 text-[#2563EB]" strokeWidth={1.4} />, href: "/cases" },
         { eyebrow: "Attorney", title: "成员介绍", desc: "吴东宪代表律师简介", icon: <ShieldCheck className="w-7 h-7 text-[#2563EB]" strokeWidth={1.4} />, href: "/about" },
         { eyebrow: "Practice", title: "业务领域", desc: "五大核心业务领域", icon: <Layers className="w-7 h-7 text-[#2563EB]" strokeWidth={1.4} />, href: "/services" },
       ],
       consult: {
         eyebrow: "Consultation",
-        title: "韩桥咨询申请",
+        title: "BECOME咨询申请",
         desc: "请使用您认为方便的 中文或韩语留言。吴东宪律师将在 24 小时内直接回复。"
       },
       form: {
@@ -409,12 +409,12 @@ export function Home() {
           "老板拖欠工资时如何保留证据",
           "卷入话务诈骗车手时的 行动要领",
           "中国财产继承及离婚判决效力",
-          "提供韩桥(韩桥) 24 小时微信二维码"
+          "提供BECOME(BECOME) 24 小时微信二维码"
         ],
         download: "下载指南手册",
         mockupTitle: "韩国生存法律手册",
         mockupDesc: "点击下载 PDF 文件",
-        wechatLabel: "韩桥(韩桥) 24 小时微信"
+        wechatLabel: "BECOME(BECOME) 24 小时微信"
       }
     },
     en: {
@@ -428,7 +428,7 @@ export function Home() {
       },
       professionals: {
         eyebrow: "Professionals",
-        title: <>Attorneys of <span className="text-[#2563EB]">Hangyo Law Firm</span></>,
+        title: <>Attorneys of <span className="text-[#2563EB]">BECOME Law Firm</span></>,
         desc: "Communicate directly in Korean and Chinese. We provide accurate legal analysis from factual grounds without the need for an interpreter.",
         viewMore: "VIEW MORE"
       },
@@ -436,7 +436,7 @@ export function Home() {
         role: "Representative Attorney",
         nameKo: "Donghyun OH",
         nameEn: "Donghyun OH",
-        office: "Managing Partner · Hangyo Law Firm",
+        office: "Managing Partner · BECOME Law Firm",
         specialtiesLabel: "Expertise",
         specs: [
           "Criminal Defense · Civil Litigation",
@@ -468,7 +468,7 @@ export function Home() {
         }
       ],
       strengths: {
-        title: "Why Hangyo Law Firm?",
+        title: "Why BECOME Law Firm?",
         subtitle: "Beyond legal expertise, we understand Chinese culture and your language perfectly.",
         items: [
           {
@@ -545,7 +545,7 @@ export function Home() {
       },
       testimonials: {
         eyebrow: "Client Voices",
-        title: <>Success stories with <span className="text-[#2563EB]">Hangyo</span></>,
+        title: <>Success stories with <span className="text-[#2563EB]">BECOME</span></>,
         desc: "Protecting rights through expert legal support.",
         previewNote: "* Pre-launch template — actual testimonials will be added soon.",
         previewLabel: "Example Testimonial",
@@ -559,7 +559,7 @@ export function Home() {
           {
             tag: "Fraud",
             title: "Navigated the uncertain investigation phase smoothly",
-            quote: "When I was caught up in a mule case, Hangyo intervened early and proved I had no harmful intent, resulting in a non-indictment.",
+            quote: "When I was caught up in a mule case, BECOME intervened early and proved I had no harmful intent, resulting in a non-indictment.",
             author: "Client K · Joseonjok",
           },
           {
@@ -572,11 +572,11 @@ export function Home() {
       },
       hashtags: {
         eyebrow: "Ask the Attorney",
-        title: "Ask Hangyo Anything",
+        title: "Ask BECOME Anything",
         items: ["#F4Visa", "#H2Visa", "#Fraud", "#DUI", "#Deportation", "#Residency", "#Embezzlement", "#ChinaContracts", "#ChineseDecree", "#P2PSurety", "#SexCrimeDefense", "#WeChatConsult"]
       },
       quickLinks: [
-        { eyebrow: "Consultation", title: "Hangyo Legal Consult", desc: "24/7 direct Chinese consultation", icon: <MessageCircle className="w-7 h-7 text-[#2563EB]" strokeWidth={1.4} />, href: "#consult" },
+        { eyebrow: "Consultation", title: "BECOME Legal Consult", desc: "24/7 direct Chinese consultation", icon: <MessageCircle className="w-7 h-7 text-[#2563EB]" strokeWidth={1.4} />, href: "#consult" },
         { eyebrow: "Cases", title: "Work Cases", desc: "Solutions for Chinese-speaking clients", icon: <Briefcase className="w-7 h-7 text-[#2563EB]" strokeWidth={1.4} />, href: "/cases" },
         { eyebrow: "Attorney", title: "Member Intro", desc: "Representative Attorney Bio", icon: <ShieldCheck className="w-7 h-7 text-[#2563EB]" strokeWidth={1.4} />, href: "/about" },
         { eyebrow: "Practice", title: "Practice Areas", desc: "5 core practice domains", icon: <Layers className="w-7 h-7 text-[#2563EB]" strokeWidth={1.4} />, href: "/services" },
@@ -612,12 +612,12 @@ export function Home() {
           "How to document unpaid wages",
           "Action plan for voice-phishing mule cases",
           "Inheritance and Divorce decree validity",
-          "Hangyo 24h WeChat QR Code provided"
+          "BECOME 24h WeChat QR Code provided"
         ],
         download: "Download Guidebook",
         mockupTitle: "Korea Survival Legal Guide",
         mockupDesc: "Click to download PDF",
-        wechatLabel: "Hangyo 24h WeChat"
+        wechatLabel: "BECOME 24h WeChat"
       }
     }
   }[language as keyof typeof content] || content.ko;

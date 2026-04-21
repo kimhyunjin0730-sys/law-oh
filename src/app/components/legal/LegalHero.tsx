@@ -23,8 +23,8 @@ const VISUAL_KANJI: Record<string, string> = {
 };
 
 const VISUAL_STAMP: Record<string, string> = {
-  immigration: "韩桥",
-  default: "韩桥",
+  immigration: "BECOME",
+  default: "BECOME",
 };
 
 /** Renders the page title with optional buttercream highlighter on a chosen substring.
@@ -120,7 +120,7 @@ export function LegalHero({ content, lang, highlight, eyebrow }: Props) {
           </dl>
         </div>
 
-        {/* Visual column — slate gradient card with kanji + 韩桥 stamp */}
+        {/* Visual column — slate gradient card with kanji + BECOME stamp */}
         <div
           className="relative aspect-[4/3] overflow-hidden shadow-[0_30px_60px_-30px_rgba(15,23,42,.5)]"
           aria-hidden
@@ -150,9 +150,9 @@ export function LegalHero({ content, lang, highlight, eyebrow }: Props) {
           </div>
           {/* caption bottom-left */}
           <div className="absolute bottom-6 left-6 font-mono text-[11px] font-semibold tracking-[0.14em] uppercase text-[#fff3a8]/60">
-            Hangyo Legal Brief — 出入國
+            BECOME Legal Brief — 出入國
           </div>
-          {/* 韩桥 stamp */}
+          {/* BECOME stamp */}
           <div
             className="absolute bottom-6 right-6 w-[78px] h-[78px] grid place-items-center font-serif-ko font-black text-[28px] tracking-tight bg-[#2563EB] text-[#020617] shadow-[0_8px_24px_-8px_rgba(0,0,0,.4)]"
             style={{ transform: "rotate(-6deg)" }}

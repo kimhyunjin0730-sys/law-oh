@@ -5,7 +5,7 @@ export function Logo({ className = "" }: { className?: string }) {
       viewBox="0 0 100 100"
       className={className}
       fill="none"
-      aria-label="한교 법률사무소 로고"
+      aria-label="BECOME 법률사무소 로고"
       role="img"
     >
       {/* Seal — inherits currentColor from parent so it adapts to context */}
@@ -24,32 +24,44 @@ export function Logo({ className = "" }: { className?: string }) {
         strokeWidth="1"
       />
 
-      {/* 한교 wordmark — center */}
+      {/* BECOME wordmark — center */}
       <text
         x="50"
-        y="60"
+        y="56"
         textAnchor="middle"
-        fontFamily='"Pretendard Variable", Pretendard, "Apple SD Gothic Neo", sans-serif'
+        fontFamily='"Playfair Display", "Times New Roman", Georgia, serif'
         fontWeight="900"
-        fontSize="38"
-        letterSpacing="-1.5"
+        fontSize="22"
+        letterSpacing="0.5"
         fill="#2563EB"
       >
-        한교
+        BECOME
       </text>
 
-      {/* Azure horizon — the bridge span */}
+      {/* Divider rule */}
       <line
-        x1="18"
-        y1="76"
-        x2="82"
-        y2="76"
+        x1="22"
+        y1="66"
+        x2="78"
+        y2="66"
         stroke="#2563EB"
-        strokeWidth="2"
+        strokeWidth="1.2"
         strokeLinecap="round"
       />
-      <circle cx="18" cy="76" r="2.2" fill="#2563EB" />
-      <circle cx="82" cy="76" r="2.2" fill="#2563EB" />
+
+      {/* LAW FIRM subtitle */}
+      <text
+        x="50"
+        y="80"
+        textAnchor="middle"
+        fontFamily='"Pretendard Variable", Pretendard, "Apple SD Gothic Neo", sans-serif'
+        fontWeight="700"
+        fontSize="10"
+        letterSpacing="3"
+        fill="#2563EB"
+      >
+        LAW FIRM
+      </text>
     </svg>
   );
 }
