@@ -50,37 +50,37 @@ export function Layout() {
       <div
         className={clsx(
           "text-xs py-3 px-4 flex justify-between items-center sm:px-6 lg:px-8 relative z-40 transition-colors duration-300",
-          overlay ? "bg-transparent text-slate-700" : "bg-[#0f172a] text-slate-300"
+          overlay ? "bg-transparent text-slate-200" : "bg-[#0f172a] text-slate-300"
         )}
       >
         <div className="flex gap-6">
           <a
             href="tel:82-10-2999-6910"
-            className={clsx("flex items-center gap-2 tracking-wide font-medium transition-colors", overlay ? "hover:text-[#0f172a]" : "hover:text-white")}
+            className="flex items-center gap-2 tracking-wide font-medium hover:text-white transition-colors"
           >
             <Phone size={14} className="text-[#2563EB]" /> {t("top.consult")} : 82-10-2999-6910
           </a>
           <WeChatDialog>
             <button
               type="button"
-              className={clsx("hidden sm:flex items-center gap-2 tracking-wide font-medium transition-colors", overlay ? "hover:text-[#0f172a]" : "hover:text-white")}
+              className="hidden sm:flex items-center gap-2 tracking-wide font-medium hover:text-white transition-colors"
             >
               <MessageCircle size={14} className="text-[#2563EB]" /> {t("top.wechat")} : wudongxuan002
             </button>
           </WeChatDialog>
         </div>
         <div className="flex items-center gap-6">
-          <div className={clsx("hidden lg:block transition-colors duration-300", overlay ? "text-slate-600" : "text-slate-400")}>
+          <div className={clsx("hidden lg:block transition-colors duration-300", overlay ? "text-slate-300/90" : "text-slate-400")}>
             {t("top.slogan")}
           </div>
           {/* Language Switcher */}
-          <div className={clsx("flex items-center gap-2 border-l pl-6 transition-colors duration-300", overlay ? "border-slate-400/40" : "border-slate-700")}>
-            <Globe size={14} className={clsx("transition-colors duration-300", overlay ? "text-slate-600" : "text-slate-400")} />
-            <button onClick={() => setLanguage('ko')} className={clsx("font-bold transition-colors", language === 'ko' ? (overlay ? "text-[#0f172a]" : "text-white") : overlay ? "text-slate-500 hover:text-[#0f172a]" : "text-slate-500 hover:text-white")}>KO</button>
-            <span className={clsx("transition-colors", overlay ? "text-slate-400/60" : "text-slate-600")}>|</span>
-            <button onClick={() => setLanguage('zh')} className={clsx("font-bold transition-colors", language === 'zh' ? (overlay ? "text-[#0f172a]" : "text-white") : overlay ? "text-slate-500 hover:text-[#0f172a]" : "text-slate-500 hover:text-white")}>ZH</button>
-            <span className={clsx("transition-colors", overlay ? "text-slate-400/60" : "text-slate-600")}>|</span>
-            <button onClick={() => setLanguage('en')} className={clsx("font-bold transition-colors", language === 'en' ? (overlay ? "text-[#0f172a]" : "text-white") : overlay ? "text-slate-500 hover:text-[#0f172a]" : "text-slate-500 hover:text-white")}>EN</button>
+          <div className={clsx("flex items-center gap-2 border-l pl-6 transition-colors duration-300", overlay ? "border-white/20" : "border-slate-700")}>
+            <Globe size={14} className={clsx("transition-colors duration-300", overlay ? "text-slate-300/80" : "text-slate-400")} />
+            <button onClick={() => setLanguage('ko')} className={clsx("hover:text-white font-bold transition-colors", language === 'ko' ? "text-white" : overlay ? "text-slate-400" : "text-slate-500")}>KO</button>
+            <span className={clsx("transition-colors", overlay ? "text-white/20" : "text-slate-600")}>|</span>
+            <button onClick={() => setLanguage('zh')} className={clsx("hover:text-white font-bold transition-colors", language === 'zh' ? "text-white" : overlay ? "text-slate-400" : "text-slate-500")}>ZH</button>
+            <span className={clsx("transition-colors", overlay ? "text-white/20" : "text-slate-600")}>|</span>
+            <button onClick={() => setLanguage('en')} className={clsx("hover:text-white font-bold transition-colors", language === 'en' ? "text-white" : overlay ? "text-slate-400" : "text-slate-500")}>EN</button>
           </div>
         </div>
       </div>
@@ -101,7 +101,10 @@ export function Layout() {
                 <img
                   src={becomeLogo}
                   alt="BECOME Law Firm"
-                  className="h-14 lg:h-16 w-auto transition-all duration-300"
+                  className={clsx(
+                    "h-14 lg:h-16 w-auto transition-all duration-300",
+                    overlay ? "brightness-0 invert opacity-90" : ""
+                  )}
                 />
               </Link>
             </div>
@@ -118,9 +121,11 @@ export function Layout() {
                       className={clsx(
                         "inline-flex items-center text-base lg:text-lg font-bold transition-colors duration-300 py-6 lg:py-8 border-b-2",
                         active
-                          ? "text-[#0f172a] border-[#0f172a]"
+                          ? overlay
+                            ? "text-white border-[#2563EB]"
+                            : "text-[#0f172a] border-[#0f172a]"
                           : overlay
-                            ? "text-slate-700 border-transparent hover:text-[#0f172a]"
+                            ? "text-slate-200 border-transparent hover:text-white"
                             : "text-slate-600 border-transparent hover:text-[#0f172a]"
                       )}
                     >
@@ -135,7 +140,7 @@ export function Layout() {
             <div className="flex items-center md:hidden">
               <button
                 type="button"
-                className={clsx("inline-flex items-center justify-center p-2 focus:outline-none transition-colors duration-300", overlay ? "text-[#0f172a] hover:text-slate-700" : "text-slate-600 hover:text-slate-900")}
+                className={clsx("inline-flex items-center justify-center p-2 focus:outline-none transition-colors duration-300", overlay ? "text-white hover:text-slate-200" : "text-slate-600 hover:text-slate-900")}
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
               >
                 {isMenuOpen ? <X className="block h-8 w-8" aria-hidden="true" /> : <Menu className="block h-8 w-8" aria-hidden="true" />}
