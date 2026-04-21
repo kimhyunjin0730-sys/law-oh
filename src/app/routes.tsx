@@ -7,6 +7,10 @@ import { ServiceDetail } from "./pages/ServiceDetail";
 import { Cases } from "./pages/Cases";
 import { LegalIndex } from "./pages/legal/LegalIndex";
 import { Immigration } from "./pages/legal/Immigration";
+import { Criminal } from "./pages/legal/Criminal";
+import { Labor } from "./pages/legal/Labor";
+import { Fraud } from "./pages/legal/Fraud";
+import { ChinaFamily } from "./pages/legal/ChinaFamily";
 
 export const router = createBrowserRouter(
   [
@@ -21,6 +25,10 @@ export const router = createBrowserRouter(
         { path: "cases", Component: Cases },
         { path: "legal", Component: LegalIndex },
         { path: "legal/immigration", Component: Immigration },
+        { path: "legal/criminal", Component: Criminal },
+        { path: "legal/labor", Component: Labor },
+        { path: "legal/fraud", Component: Fraud },
+        { path: "legal/china-family", Component: ChinaFamily },
       ],
     },
   ],
