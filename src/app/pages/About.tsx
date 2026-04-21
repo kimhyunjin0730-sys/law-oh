@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { GraduationCap, Briefcase, Award, MapPin } from "lucide-react";
 import { SectionHeading } from "../components/SectionHeading";
 import { useLanguage } from "../context/LanguageContext";
-import ohDonghyun from "../../assets/oh-donghyun.png";
+import ohDonghyunCutout from "../../assets/oh-donghyun-cutout.png";
 
 export function About() {
   const { language } = useLanguage();
@@ -244,21 +244,71 @@ export function About() {
   const currentContent = content[language as keyof typeof content] || content.ko;
 
   return (
-    <div className="bg-white min-h-screen pt-24 pb-32">
+    <div className="bg-white min-h-screen pt-10 md:pt-14 pb-32">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <SectionHeading 
-          title={currentContent.title} 
-          subtitle={currentContent.subtitle} 
-          centered={true}
-        />
 
-        {/* Intro paragraph */}
+        {/* PORTRAIT HERO — photo + identity above the fold */}
+        <motion.section
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="relative isolate overflow-hidden rounded-xl
+                     bg-gradient-to-br from-[#EFE9FB] via-[#E6DDF6] to-[#DCD0F0]
+                     shadow-[0_1px_3px_rgba(15,23,42,0.05),0_30px_70px_-30px_rgba(79,70,229,0.30)]"
+        >
+          {/* OH watermark — huge, low-contrast, behind everything */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -right-[6%] -bottom-[18%] select-none
+                       font-serif font-black leading-none tracking-[-0.08em]
+                       text-[18rem] md:text-[24rem] lg:text-[30rem] text-white/45 mix-blend-screen"
+          >
+            OH
+          </div>
+
+          {/* Top eyebrow — small brand line, matches the baked-in composition */}
+          <p className="absolute top-6 md:top-8 left-6 md:left-10 z-10
+                        text-[11px] md:text-xs font-bold tracking-[0.22em] text-[#0f172a]/60 uppercase">
+            법률사무소 비컴 · BECOME Law Firm
+          </p>
+
+          <div className="relative grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-6 lg:gap-10
+                          px-6 pt-16 pb-0 md:px-12 md:pt-20 lg:px-14 lg:pt-24 lg:pb-6">
+            {/* LEFT: editorial identity */}
+            <div className="flex flex-col justify-center order-2 lg:order-1 z-10 pb-10 lg:pb-20">
+              <h1 className="text-[4rem] md:text-[5.25rem] lg:text-[6rem] leading-[0.92] font-black tracking-tight text-[#0f172a]">
+                {currentContent.nameTitle}
+              </h1>
+              <p className="mt-3 text-2xl md:text-3xl lg:text-[2.25rem] font-extrabold tracking-tight text-[#2563EB]">
+                대표변호사
+              </p>
+              <div className="w-14 h-[3px] bg-[#0f172a] mt-7 mb-6" />
+              <blockquote className="text-base md:text-lg text-[#0f172a] leading-[1.7] italic font-semibold max-w-[48ch] whitespace-pre-line">
+                {currentContent.quote}
+              </blockquote>
+            </div>
+
+            {/* RIGHT: portrait cutout */}
+            <div className="relative order-1 lg:order-2 min-h-[340px] md:min-h-[420px] lg:min-h-[540px] z-[5]">
+              <img
+                src={ohDonghyunCutout}
+                alt={currentContent.nameFull}
+                className="absolute inset-x-0 bottom-0 w-full h-full object-contain object-bottom
+                           drop-shadow-[0_24px_28px_rgba(15,23,42,0.22)]"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Intro narrative — below the hero */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-16 max-w-[900px] mx-auto text-center"
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="mt-20 md:mt-24 max-w-[900px] mx-auto text-center"
         >
           <p className="text-lg lg:text-xl text-slate-600 font-medium leading-[1.85]">
             {currentContent.intro1_part1} <strong className="text-[#0f172a]">{currentContent.intro1_sub}</strong>{currentContent.intro1_part2}<br/>
@@ -269,36 +319,9 @@ export function About() {
           </p>
         </motion.div>
 
-        <div className="mt-20 border border-slate-200 bg-white flex flex-col lg:flex-row shadow-[0_1px_3px_rgba(15,23,42,0.04),0_20px_40px_-20px_rgba(15,23,42,0.12)]">
-          {/* Portrait — image already carries its own brand composition (BECOME · 오동현 파트너 변호사),
-              so the container is an elegant frame, not an overlay. Aspect ratio locked to the source (1179×1363). */}
-          <div className="lg:w-[44%] relative bg-gradient-to-br from-slate-50 to-white overflow-hidden">
-            <div className="aspect-[1179/1363] lg:aspect-auto lg:h-full">
-              <img
-                src={ohDonghyun}
-                alt={currentContent.nameFull}
-                className="w-full h-full object-contain object-center"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            {/* Hairline right divider on desktop — mirrors the editorial seal feel */}
-            <div className="hidden lg:block absolute top-10 bottom-10 right-0 w-px bg-gradient-to-b from-transparent via-slate-200 to-transparent" />
-          </div>
-
-          <div className="lg:w-[56%] p-10 md:p-16 lg:p-20 bg-white">
-            <div className="hidden lg:block mb-10">
-              <h3 className="text-[2.75rem] leading-tight font-extrabold text-[#0f172a] tracking-tight mb-3">
-                {currentContent.nameTitle}
-                <span className="text-xl text-slate-500 font-bold ml-3 align-middle tracking-normal">
-                  {currentContent.nameSub}
-                </span>
-              </h3>
-              <div className="w-12 h-[3px] bg-[#2563EB] mb-8" />
-              <blockquote className="text-[1.35rem] leading-[1.65] font-extrabold text-[#0f172a] border-l-4 border-[#2563EB] pl-7 py-1 italic tracking-tight whitespace-pre-line">
-                {currentContent.quote}
-              </blockquote>
-            </div>
+        {/* DETAIL CARD — education / experience / activities (scroll below hero) */}
+        <div className="mt-20 border border-slate-200 bg-white shadow-[0_1px_3px_rgba(15,23,42,0.04),0_20px_40px_-20px_rgba(15,23,42,0.12)]">
+          <div className="p-10 md:p-16 lg:p-20 bg-white">
 
             <div className="space-y-16">
               <section>
