@@ -584,15 +584,15 @@ function ValuesDiagram({
           transition={{ duration: 0.6, delay: 0.05 }}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
         >
-          <div className="bg-white rounded-xl md:rounded-2xl px-4 py-3 sm:px-5 sm:py-4 md:px-7 md:py-5 lg:px-8 lg:py-6 text-center shadow-[0_18px_44px_-18px_rgba(15,23,42,0.22)] border border-slate-100">
-            <p className="font-serif font-black italic text-[1.05rem] sm:text-xl md:text-2xl lg:text-[1.85rem] tracking-tight text-[#0f172a] leading-none">
+          <div className="bg-white rounded-xl md:rounded-2xl px-3.5 py-3 sm:px-4 sm:py-3.5 md:px-5 md:py-4 lg:px-6 lg:py-5 text-center shadow-[0_18px_44px_-18px_rgba(15,23,42,0.22)] border border-slate-100">
+            <p className="font-serif font-black italic text-[1rem] sm:text-[1.15rem] md:text-[1.35rem] lg:text-[1.55rem] tracking-tight text-[#0f172a] leading-none">
               BECOME
             </p>
-            <p className="font-mono text-[8px] sm:text-[9px] md:text-[10px] font-bold tracking-[0.28em] uppercase text-[#2563EB] mt-1 md:mt-1.5">
+            <p className="font-mono text-[8px] sm:text-[9px] md:text-[10px] font-bold tracking-[0.26em] uppercase text-[#2563EB] mt-1 md:mt-1.5">
               Law Firm
             </p>
-            <div className="hidden sm:block w-7 md:w-8 h-[2px] bg-[#0f172a] my-2 md:my-3 mx-auto" />
-            <p className="hidden sm:block text-[10.5px] md:text-[11.5px] lg:text-[12px] font-bold text-[#0f172a] max-w-[140px] md:max-w-[170px] leading-snug">
+            <div className="hidden lg:block w-7 h-[2px] bg-[#0f172a] my-2.5 mx-auto" />
+            <p className="hidden lg:block text-[11.5px] font-bold text-[#0f172a] max-w-[140px] leading-snug">
               {centerSub}
             </p>
           </div>
