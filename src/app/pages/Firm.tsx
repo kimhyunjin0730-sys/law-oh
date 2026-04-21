@@ -381,20 +381,6 @@ export function Firm() {
                     </p>
                   ))}
                 </div>
-
-                {/* Highlights row */}
-                <div className="mt-10 grid grid-cols-3 gap-4 md:gap-8 pt-8 border-t border-slate-200">
-                  {c.intro.aboutHighlights.map((h, i) => (
-                    <div key={i}>
-                      <p className="font-mono text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-slate-500 mb-2">
-                        {h.label}
-                      </p>
-                      <p className="text-2xl md:text-3xl font-black text-[#0f172a] tracking-tight">
-                        {h.value}
-                      </p>
-                    </div>
-                  ))}
-                </div>
               </div>
             </section>
 
@@ -440,7 +426,7 @@ export function Firm() {
             transition={{ duration: 0.55, ease: [0.2, 0.65, 0.3, 0.9] }}
           >
             {/* Section header */}
-            <div className="max-w-[820px] mb-16 md:mb-20">
+            <div className="max-w-[820px] mb-12 md:mb-16">
               <p className="font-mono text-[11px] md:text-xs font-bold tracking-[0.3em] uppercase text-[#2563EB] mb-4">
                 {c.values.eyebrow}
               </p>
@@ -451,6 +437,9 @@ export function Firm() {
                 {c.values.subtitle}
               </p>
             </div>
+
+            {/* Cardinal diagram — static-symmetric layout, animated dashed rings */}
+            <ValuesDiagram items={c.values.items.map((it) => ({ name: it.name, tagline: it.tagline }))} />
 
             {/* Vertical numbered sections */}
             <div className="space-y-16 md:space-y-24">
@@ -528,6 +517,141 @@ export function Firm() {
             </Link>
           </div>
         </div>
+      </div>
+    </div>
+  );
+}
+
+/* ────────────────────────────────────────────────────────────────
+   ValuesDiagram — symmetric cardinal layout with rotating dashed
+   rings. Cards positioned via CSS percent + transform for
+   guaranteed symmetry; rings rotate via CSS transform on plain
+   HTML divs (avoids the SVG transform-origin pitfall that broke
+   the previous orbital diagram).
+   Hidden under md to keep the editorial sections below the only
+   touchpoint on small screens.
+   ──────────────────────────────────────────────────────────────── */
+function ValuesDiagram({ items }: { items: { name: string; tagline: string }[] }) {
+  // Cardinal placement order: top, right, bottom, left
+  const positions = [
+    { className: "top-0 left-1/2 -translate-x-1/2", line: { x1: 50, y1: 50, x2: 50, y2: 13 } },
+    { className: "top-1/2 right-0 -translate-y-1/2", line: { x1: 50, y1: 50, x2: 87, y2: 50 } },
+    { className: "bottom-0 left-1/2 -translate-x-1/2", line: { x1: 50, y1: 50, x2: 50, y2: 87 } },
+    { className: "top-1/2 left-0 -translate-y-1/2", line: { x1: 50, y1: 50, x2: 13, y2: 50 } },
+  ];
+
+  return (
+    <div className="hidden md:block mb-20 md:mb-28">
+      <div className="relative mx-auto aspect-square w-full max-w-[820px]">
+        {/* Rotating dashed rings — HTML divs with reliable CSS rotation */}
+        <div
+          aria-hidden
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#2563EB]/30"
+          style={{
+            width: "72%",
+            height: "72%",
+            animation: "spin 60s linear infinite",
+          }}
+        />
+        <div
+          aria-hidden
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#2563EB]/20"
+          style={{
+            width: "52%",
+            height: "52%",
+            animation: "spin 90s linear infinite reverse",
+          }}
+        />
+        {/* Innermost solid hairline (no rotation) */}
+        <div
+          aria-hidden
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-slate-200"
+          style={{ width: "36%", height: "36%" }}
+        />
+
+        {/* Soft center glow */}
+        <div
+          aria-hidden
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none"
+          style={{
+            width: "48%",
+            height: "48%",
+            background:
+              "radial-gradient(circle, rgba(37,99,235,0.10) 0%, rgba(37,99,235,0) 70%)",
+          }}
+        />
+
+        {/* SVG connection lines — center to each cardinal card */}
+        <svg
+          aria-hidden
+          className="absolute inset-0 w-full h-full pointer-events-none z-[1]"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          {positions.map((p, i) => (
+            <line
+              key={i}
+              x1={p.line.x1}
+              y1={p.line.y1}
+              x2={p.line.x2}
+              y2={p.line.y2}
+              stroke="rgba(37,99,235,0.22)"
+              strokeWidth="0.25"
+              strokeDasharray="0.6 1.2"
+              strokeLinecap="round"
+              vectorEffect="non-scaling-stroke"
+            />
+          ))}
+        </svg>
+
+        {/* Center BECOME seal */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.92 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.05 }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
+        >
+          <div className="bg-white rounded-2xl px-9 py-7 text-center shadow-[0_24px_60px_-20px_rgba(15,23,42,0.20)] border border-slate-100">
+            <p className="font-serif font-black italic text-[2.25rem] tracking-tight text-[#0f172a] leading-none">
+              BECOME
+            </p>
+            <p className="font-mono text-[10px] font-bold tracking-[0.32em] uppercase text-[#2563EB] mt-1.5">
+              Law Firm
+            </p>
+            <div className="w-9 h-[2px] bg-[#0f172a] my-3 mx-auto" />
+            <p className="text-[12.5px] font-bold text-[#0f172a] max-w-[180px] leading-snug">
+              네 가지 원칙으로 변론합니다.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Four cardinal cards — symmetric via percent + transform */}
+        {items.map((item, i) => {
+          const pos = positions[i];
+          return (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, scale: 0.92 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
+              className={`absolute w-[230px] z-[5] ${pos.className}`}
+            >
+              <div className="bg-white border border-slate-200 hover:border-[#2563EB] transition-colors rounded-lg p-5 shadow-[0_8px_24px_-12px_rgba(15,23,42,0.18)]">
+                <div className="flex items-center gap-2.5 mb-2">
+                  <span className="grid place-items-center w-7 h-7 rounded-full bg-[#0f172a] text-white">
+                    {VALUE_ICONS[i]}
+                  </span>
+                  <h4 className="text-[1.05rem] font-extrabold text-[#0f172a] tracking-tight">
+                    {item.name}
+                  </h4>
+                </div>
+                <p className="text-[#2563EB] font-bold text-[12.5px] leading-snug">
+                  {item.tagline}
+                </p>
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
     </div>
   );
