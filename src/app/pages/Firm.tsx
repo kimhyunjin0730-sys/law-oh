@@ -23,6 +23,7 @@ const COPY: Record<Lang, {
     eyebrow: string;
     title: string;
     subtitle: string;
+    centerSub: string;
     items: { name: string; tagline: string; body: string[] }[];
   };
 }> = {
@@ -52,6 +53,7 @@ const COPY: Record<Lang, {
       eyebrow: "Core Values",
       title: "비컴이 일하는 네 가지 원칙",
       subtitle: "변하지 않는 네 개의 약속이 모든 사건의 기준이 됩니다.",
+      centerSub: "네 가지 원칙으로 변론합니다.",
       items: [
         {
           name: "직접 소통",
@@ -118,6 +120,7 @@ const COPY: Record<Lang, {
       eyebrow: "Core Values",
       title: "BECOME 工作的四项原则",
       subtitle: "不变的四项承诺，是每一件案件的标准。",
+      centerSub: "以四项原则为您辩护。",
       items: [
         {
           name: "直接沟通",
@@ -184,6 +187,7 @@ const COPY: Record<Lang, {
       eyebrow: "Core Values",
       title: "Four principles BECOME works by.",
       subtitle: "Four promises that don't change — and that set the bar for every case.",
+      centerSub: "Four principles, one defense.",
       items: [
         {
           name: "Direct Dialogue",
@@ -246,7 +250,7 @@ export function Firm() {
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Page header */}
         <div className="text-center mb-10 md:mb-14">
-          <p className="font-mono text-xs font-bold tracking-[0.3em] uppercase text-[#2563EB] mb-4">
+          <p className="font-mono text-[11px] font-bold tracking-[0.28em] uppercase text-[#2563EB] mb-4">
             About BECOME
           </p>
           <h1 className="text-3xl md:text-5xl font-extrabold text-[#0f172a] tracking-tight leading-tight mb-4">
@@ -411,16 +415,19 @@ export function Firm() {
           >
             {/* Compact section header — kept tight so the diagram lands above the fold */}
             <div className="text-center mb-6 md:mb-8">
-              <p className="font-mono text-[10px] md:text-[11px] font-bold tracking-[0.3em] uppercase text-[#2563EB] mb-3">
+              <p className="font-mono text-[11px] font-bold tracking-[0.28em] uppercase text-[#2563EB] mb-3">
                 {c.values.eyebrow}
               </p>
-              <h2 className="text-[1.5rem] md:text-[2rem] lg:text-[2.5rem] leading-[1.15] font-black tracking-tight text-[#0f172a]">
+              <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight leading-tight text-[#0f172a]">
                 {c.values.title}
               </h2>
             </div>
 
             {/* Cardinal diagram — at-a-glance view, animated dashed rings */}
-            <ValuesDiagram items={c.values.items.map((it) => ({ name: it.name, tagline: it.tagline }))} />
+            <ValuesDiagram
+              items={c.values.items.map((it) => ({ name: it.name, tagline: it.tagline }))}
+              centerSub={c.values.centerSub}
+            />
 
             {/* Subtitle below the diagram (was above) — keeps the diagram tight */}
             <p className="text-center text-sm md:text-base text-slate-600 font-medium leading-relaxed max-w-[640px] mx-auto mb-16 md:mb-24">
@@ -497,7 +504,13 @@ export function Firm() {
    Hidden under md to keep the editorial sections below the only
    touchpoint on small screens.
    ──────────────────────────────────────────────────────────────── */
-function ValuesDiagram({ items }: { items: { name: string; tagline: string }[] }) {
+function ValuesDiagram({
+  items,
+  centerSub,
+}: {
+  items: { name: string; tagline: string }[];
+  centerSub: string;
+}) {
   // Cardinal placement order: top, right, bottom, left
   const positions = [
     { className: "top-0 left-1/2 -translate-x-1/2", line: { x2: 50, y2: 14 } },
@@ -580,7 +593,7 @@ function ValuesDiagram({ items }: { items: { name: string; tagline: string }[] }
             </p>
             <div className="hidden sm:block w-7 md:w-8 h-[2px] bg-[#0f172a] my-2 md:my-3 mx-auto" />
             <p className="hidden sm:block text-[10.5px] md:text-[11.5px] lg:text-[12px] font-bold text-[#0f172a] max-w-[140px] md:max-w-[170px] leading-snug">
-              네 가지 원칙으로 변론합니다.
+              {centerSub}
             </p>
           </div>
         </motion.div>

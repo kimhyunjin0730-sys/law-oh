@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import { SectionHeading } from "../components/SectionHeading";
-import { FolderCheck, ArrowRight, Scale, Briefcase, FileText } from "lucide-react";
+import { ArrowRight, Scale, Briefcase, FileText } from "lucide-react";
 import { WeChatDialog } from "../components/WeChatDialog";
 import { useLanguage } from "../context/LanguageContext";
 
@@ -163,7 +163,7 @@ export function Cases() {
   const currentContent = content[language as keyof typeof content] || content.ko;
 
   return (
-    <div className="bg-slate-50 min-h-screen pt-24 pb-32">
+    <div className="bg-slate-50 min-h-screen pt-28 md:pt-36 pb-32">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading 
           title={currentContent.title} 
@@ -175,13 +175,13 @@ export function Cases() {
           {currentContent.categories.map((category) => (
             <div key={category.id} className="bg-white border-t-[6px] border-[#0f172a] shadow-sm hover:shadow-xl transition-shadow p-12 flex flex-col h-full group hover:border-[#2563EB]">
               {category.icon}
-              <h3 className="text-3xl font-extrabold text-[#0f172a] tracking-tight mb-10">{category.title}</h3>
-              
-              <ul className="space-y-6 flex-grow">
+              <h3 className="text-2xl md:text-3xl font-extrabold text-[#0f172a] tracking-tight mb-10">{category.title}</h3>
+
+              <ul className="space-y-5 flex-grow">
                 {category.cases.map((caseItem, idx) => (
                   <li key={idx} className="flex items-start gap-4">
-                    <div className="w-2 h-2 bg-[#2563EB] mt-2.5 shrink-0" />
-                    <span className="text-slate-700 leading-relaxed font-bold text-lg">
+                    <div className="w-2 h-2 bg-[#2563EB] mt-[11px] shrink-0" />
+                    <span className="text-[16px] md:text-[17px] leading-[1.85] text-slate-700 font-medium">
                       {caseItem}
                     </span>
                   </li>
@@ -193,24 +193,24 @@ export function Cases() {
 
         <div className="mt-32 bg-[#0f172a] border border-slate-800 p-12 md:p-20 flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="text-center md:text-left">
-            <h4 className="text-3xl font-extrabold text-white mb-4 tracking-tight">
+            <h4 className="text-2xl md:text-3xl font-extrabold text-white mb-4 tracking-tight">
               {currentContent.contactPrefix}<span className="text-[#2563EB]">{currentContent.contactHighlight}</span>{currentContent.contactSuffix}
             </h4>
-            <p className="text-slate-400 font-medium text-xl">{currentContent.contactDesc}</p>
+            <p className="text-base md:text-lg text-slate-400 font-medium">{currentContent.contactDesc}</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 shrink-0">
             <Link
               to="/#consult"
-              className="flex items-center gap-3 bg-white text-[#0f172a] hover:bg-slate-100 px-10 py-5 font-extrabold text-xl transition-colors whitespace-nowrap"
+              className="flex items-center gap-3 bg-white text-[#0f172a] hover:bg-slate-100 px-8 py-4 font-bold text-base md:text-lg transition-colors whitespace-nowrap"
             >
-              {currentContent.onlineBtn} <ArrowRight size={24} />
+              {currentContent.onlineBtn} <ArrowRight size={20} />
             </Link>
             <WeChatDialog>
               <button
                 type="button"
-                className="flex items-center gap-3 bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-10 py-5 font-extrabold text-xl transition-colors whitespace-nowrap"
+                className="flex items-center gap-3 bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-8 py-4 font-bold text-base md:text-lg transition-colors whitespace-nowrap"
               >
-                {currentContent.wechatBtn} <ArrowRight size={24} />
+                {currentContent.wechatBtn} <ArrowRight size={20} />
               </button>
             </WeChatDialog>
           </div>

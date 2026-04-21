@@ -265,7 +265,7 @@ export function Services() {
   const currentContent = content[language as keyof typeof content] || content.ko;
 
   return (
-    <div className="bg-white min-h-screen pt-24 pb-32">
+    <div className="bg-white min-h-screen pt-28 md:pt-36 pb-32">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading 
           title={currentContent.title} 
@@ -282,13 +282,13 @@ export function Services() {
             >
               <div className="lg:w-1/3 bg-white p-12 lg:p-16 border-b lg:border-b-0 lg:border-r border-slate-200 group-hover:border-[#2563EB]/30 transition-colors">
                 {service.icon}
-                <h3 className="text-3xl font-extrabold text-[#0f172a] mb-2 tracking-tight group-hover:text-[#2563EB] transition-colors">
+                <h3 className="text-2xl md:text-3xl font-extrabold text-[#0f172a] mb-2 tracking-tight group-hover:text-[#2563EB] transition-colors">
                   {service.title}
                 </h3>
-                <span className="block text-xl font-bold text-[#2563EB] mb-6">
+                <span className="block text-base md:text-lg font-bold text-[#2563EB] mb-6">
                   {service.cn}
                 </span>
-                <p className="text-slate-600 font-medium leading-relaxed text-lg">
+                <p className="text-[16px] md:text-[17px] leading-[1.85] text-slate-600 font-medium">
                   {service.description}
                 </p>
                 <div className="mt-8 inline-flex items-center gap-2 font-display text-[12px] font-extrabold tracking-[0.22em] uppercase text-[#0f172a] border-b border-[#0f172a] pb-1 group-hover:text-[#2563EB] group-hover:border-[#2563EB] transition-colors">
@@ -305,8 +305,8 @@ export function Services() {
                       <div key={idx} className="flex gap-4 items-start">
                         <div className="w-2 h-2 bg-[#2563EB] mt-2.5 shrink-0" />
                         <div>
-                          <span className="block font-extrabold text-[#0f172a] text-lg mb-2">{main}</span>
-                          {sub && <span className="block text-slate-600 text-base leading-relaxed font-medium">{sub}</span>}
+                          <span className="block font-extrabold text-[#0f172a] text-[17px] md:text-[18px] leading-tight mb-2">{main}</span>
+                          {sub && <span className="block text-slate-600 text-[15px] md:text-[16px] leading-[1.75] font-medium">{sub}</span>}
                         </div>
                       </div>
                     );
@@ -318,28 +318,28 @@ export function Services() {
         </div>
 
         <div className="mt-32 bg-[#0f172a] text-center text-white p-16 lg:p-24 border-t-[8px] border-[#2563EB]">
-          <h3 className="text-3xl md:text-5xl font-extrabold mb-8 tracking-tight">{currentContent.ctaTitle}</h3>
-          <p className="text-slate-400 mb-12 max-w-3xl mx-auto text-xl font-medium leading-relaxed">
+          <h3 className="text-2xl md:text-3xl font-extrabold mb-6 tracking-tight">{currentContent.ctaTitle}</h3>
+          <p className="text-base md:text-lg text-slate-400 mb-12 max-w-3xl mx-auto font-medium leading-relaxed">
              {currentContent.ctaDesc}
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
              <Link
                 to="/#consult"
-                className="bg-white text-[#0f172a] hover:bg-slate-100 px-10 py-5 font-extrabold text-xl transition-colors flex justify-center items-center gap-3"
+                className="bg-white text-[#0f172a] hover:bg-slate-100 px-8 py-4 font-bold text-base md:text-lg transition-colors flex justify-center items-center gap-3"
               >
                 {currentContent.onlineBtn}
               </Link>
               <WeChatDialog>
                 <button
                   type="button"
-                  className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-10 py-5 font-extrabold text-xl transition-colors flex justify-center items-center gap-3"
+                  className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-8 py-4 font-bold text-base md:text-lg transition-colors flex justify-center items-center gap-3"
                 >
                   {currentContent.wechatBtn} (wudongxuan002)
                 </button>
               </WeChatDialog>
               <a
                 href="tel:82-10-2999-6910"
-                className="border border-white/30 text-white hover:bg-white hover:text-[#0f172a] px-10 py-5 font-extrabold text-xl transition-colors flex justify-center items-center gap-3"
+                className="border border-white/30 text-white hover:bg-white hover:text-[#0f172a] px-8 py-4 font-bold text-base md:text-lg transition-colors flex justify-center items-center gap-3"
               >
                 {currentContent.phoneBtn} (82-10-2999-6910)
               </a>

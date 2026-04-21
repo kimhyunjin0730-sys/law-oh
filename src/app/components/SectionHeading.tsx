@@ -14,7 +14,7 @@ export function SectionHeading({
         {title}
       </h2>
       {subtitle && (
-        <p className={`mt-6 max-w-3xl text-lg md:text-xl text-slate-600 font-medium leading-relaxed ${centered ? "mx-auto text-center" : ""}`}>
+        <p className={`mt-6 max-w-3xl text-base md:text-lg text-slate-600 font-medium leading-relaxed ${centered ? "mx-auto text-center" : ""}`}>
           {subtitle}
         </p>
       )}
