@@ -34,7 +34,7 @@ export function Layout() {
   }, []);
 
   const navLinks = [
-    { name: t("nav.home"), path: "/" },
+    { name: t("nav.home"), path: "/firm" },
     { name: t("nav.about"), path: "/about" },
     { name: t("nav.services"), path: "/services" },
     { name: t("nav.cases"), path: "/cases" },

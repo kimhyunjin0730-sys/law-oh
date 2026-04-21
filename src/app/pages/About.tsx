@@ -279,7 +279,7 @@ export function About() {
                 {currentContent.nameTitle}
               </h1>
               <p className="mt-3 text-2xl md:text-3xl lg:text-[2.25rem] font-extrabold tracking-tight text-[#2563EB]">
-                대표변호사
+                {currentContent.nameSub}
               </p>
               <div className="w-14 h-[3px] bg-[#0f172a] mt-7 mb-6" />
               <blockquote className="text-base md:text-lg text-[#0f172a] leading-[1.7] italic font-semibold max-w-[48ch] whitespace-pre-line">

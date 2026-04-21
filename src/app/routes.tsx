@@ -5,6 +5,7 @@ import { About } from "./pages/About";
 import { Services } from "./pages/Services";
 import { ServiceDetail } from "./pages/ServiceDetail";
 import { Cases } from "./pages/Cases";
+import { Firm } from "./pages/Firm";
 import { LegalIndex } from "./pages/legal/LegalIndex";
 import { Immigration } from "./pages/legal/Immigration";
 import { Criminal } from "./pages/legal/Criminal";
@@ -23,6 +24,7 @@ export const router = createBrowserRouter(
         { path: "services", Component: Services },
         { path: "services/:slug", Component: ServiceDetail },
         { path: "cases", Component: Cases },
+        { path: "firm", Component: Firm },
         { path: "legal", Component: LegalIndex },
         { path: "legal/immigration", Component: Immigration },
         { path: "legal/criminal", Component: Criminal },
