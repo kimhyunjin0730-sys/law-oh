@@ -4,10 +4,10 @@ import { useLanguage } from "../../context/LanguageContext";
 
 const TOPICS = [
   { slug: "immigration", title: "체류자격·출입국", titleZh: "居留资格·出入境", titleEn: "Visa & Immigration", active: true },
-  { slug: "criminal", title: "형사 초기대응", titleZh: "刑事初步应对", titleEn: "Criminal Response", active: false },
-  { slug: "labor", title: "노동·임금체불", titleZh: "劳动·欠薪", titleEn: "Labor & Unpaid Wages", active: false },
-  { slug: "fraud", title: "사기·보이스피싱", titleZh: "诈骗·语音钓鱼", titleEn: "Fraud & Voice Phishing", active: false },
-  { slug: "china-family", title: "중국 이혼·상속", titleZh: "中国离婚·继承", titleEn: "China Divorce & Inheritance", active: false },
+  { slug: "criminal", title: "형사 초기대응", titleZh: "刑事初步应对", titleEn: "Criminal Response", active: true },
+  { slug: "labor", title: "노동·임금체불", titleZh: "劳动·欠薪", titleEn: "Labor & Unpaid Wages", active: true },
+  { slug: "fraud", title: "사기·보이스피싱", titleZh: "诈骗·语音钓鱼", titleEn: "Fraud & Voice Phishing", active: true },
+  { slug: "china-family", title: "중국 이혼·상속", titleZh: "中国离婚·继承", titleEn: "China Divorce & Inheritance", active: true },
 ];
 
 export function LegalIndex() {
