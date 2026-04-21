@@ -12,6 +12,7 @@ import { Criminal } from "./pages/legal/Criminal";
 import { Labor } from "./pages/legal/Labor";
 import { Fraud } from "./pages/legal/Fraud";
 import { ChinaFamily } from "./pages/legal/ChinaFamily";
+import { NotFound } from "./pages/NotFound";
 
 export const router = createBrowserRouter(
   [
@@ -31,6 +32,7 @@ export const router = createBrowserRouter(
         { path: "legal/labor", Component: Labor },
         { path: "legal/fraud", Component: Fraud },
         { path: "legal/china-family", Component: ChinaFamily },
+        { path: "*", Component: NotFound },
       ],
     },
   ],

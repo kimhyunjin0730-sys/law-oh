@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="8" fill="#0f172a"/>
+  <text x="32" y="46"
+        text-anchor="middle"
+        font-family="'Playfair Display', 'Noto Serif KR', 'Times New Roman', Georgia, serif"
+        font-weight="900"
+        font-style="italic"
+        font-size="42"
+        fill="#ffffff">B</text>
+  <line x1="14" y1="54" x2="50" y2="54" stroke="#2563EB" stroke-width="2.5"/>
+</svg>

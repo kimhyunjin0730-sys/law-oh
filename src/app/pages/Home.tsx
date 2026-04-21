@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import { useState } from "react";
 import { ArrowRight, CheckCircle2, MessageCircle, Phone, Globe, Scale, Users, FileText, Download, MapPin, GraduationCap, Layers, Hash, ShieldCheck, Briefcase, HeartHandshake, ArrowUpRight, Quote, Clock, Mail } from "lucide-react";
 import { motion } from "motion/react";
 import { SectionHeading } from "../components/SectionHeading";
@@ -10,6 +11,93 @@ import ohDonghyunCutout from "../../assets/oh-donghyun-cutout.png";
 
 export function Home() {
   const { language } = useLanguage();
+
+  // ── Consult form state ────────────────────────────────────────────────
+  const [form, setForm] = useState({
+    name: "",
+    contact: "",
+    inqLang: "한국어",
+    field: "",
+    message: "",
+    agreed: false,
+  });
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [submitted, setSubmitted] = useState(false);
+
+  const formMsgs = {
+    ko: {
+      errRequired: "필수 입력 항목입니다.",
+      errAgree: "개인정보 수집에 동의해 주세요.",
+      successTitle: "메일 작성 화면으로 이동했습니다.",
+      successDesc: "메일 앱이 열리지 않으면 lawohdh@gmail.com 으로 직접 보내주시거나 위챗(wudongxuan002)으로 연락 주세요. 24시간 이내에 회신드립니다.",
+      another: "새로 작성하기",
+      mailtoSubject: "[비컴 상담 문의]",
+      bodyName: "이름",
+      bodyContact: "연락처",
+      bodyLang: "상담 언어",
+      bodyField: "상담 분야",
+      bodyContent: "문의 내용",
+      bodyUnspec: "미지정",
+    },
+    zh: {
+      errRequired: "此项为必填。",
+      errAgree: "请同意收集个人信息。",
+      successTitle: "已为您打开邮件撰写界面。",
+      successDesc: "如未自动打开邮件应用，请直接发送至 lawohdh@gmail.com，或通过微信(wudongxuan002)联系我们。我们将在24小时内回复。",
+      another: "重新填写",
+      mailtoSubject: "[BECOME 咨询申请]",
+      bodyName: "姓名",
+      bodyContact: "联系方式",
+      bodyLang: "咨询语言",
+      bodyField: "咨询领域",
+      bodyContent: "咨询内容",
+      bodyUnspec: "未指定",
+    },
+    en: {
+      errRequired: "This field is required.",
+      errAgree: "Please agree to the data collection notice.",
+      successTitle: "Your email client has been opened.",
+      successDesc: "If your email app didn't open, please write to lawohdh@gmail.com directly or reach us on WeChat (wudongxuan002). We respond within 24 hours.",
+      another: "Start a new inquiry",
+      mailtoSubject: "[BECOME Inquiry]",
+      bodyName: "Name",
+      bodyContact: "Contact",
+      bodyLang: "Preferred language",
+      bodyField: "Practice area",
+      bodyContent: "Inquiry",
+      bodyUnspec: "Unspecified",
+    },
+  }[language];
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const errs: Record<string, string> = {};
+    if (!form.name.trim()) errs.name = formMsgs.errRequired;
+    if (!form.contact.trim()) errs.contact = formMsgs.errRequired;
+    if (!form.message.trim()) errs.message = formMsgs.errRequired;
+    if (!form.agreed) errs.agreed = formMsgs.errAgree;
+    setErrors(errs);
+    if (Object.keys(errs).length > 0) return;
+
+    const body = [
+      `${formMsgs.bodyName}: ${form.name}`,
+      `${formMsgs.bodyContact}: ${form.contact}`,
+      `${formMsgs.bodyLang}: ${form.inqLang}`,
+      `${formMsgs.bodyField}: ${form.field || formMsgs.bodyUnspec}`,
+      "",
+      `─ ${formMsgs.bodyContent} ─`,
+      form.message,
+    ].join("\n");
+    const mailto = `mailto:lawohdh@gmail.com?subject=${encodeURIComponent(`${formMsgs.mailtoSubject} ${form.name}`)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
+    setSubmitted(true);
+  };
+
+  const resetForm = () => {
+    setForm({ name: "", contact: "", inqLang: "한국어", field: "", message: "", agreed: false });
+    setErrors({});
+    setSubmitted(false);
+  };
 
   const content = {
     ko: {
@@ -129,13 +217,13 @@ export function Home() {
         eyebrow: "Legal Information",
         title: <>변호사가 직접 쓰는 <span className="text-[#2563EB]">법률 정보</span></>,
         desc: "복잡한 행정·형사·체류 절차를 쉬운 언어로 정리합니다. 중국어 해설 포함.",
-        soon: "준비중",
+        soon: "자세히 보기",
         items: [
-          { title: "F-4 비자 상실, 이런 경우 취소됩니다", tags: ["#F4", "#비자"], excerpt: "벌금형·음주운전이 체류 자격에 미치는 영향과 유지 전략." },
-          { title: "보이스피싱 전달책 연루, 첫 72시간 행동 요령", tags: ["#보이스피싱", "#형사"], excerpt: "수사 초기 진술부터 불기소 목표까지 단계별 대응." },
-          { title: "중국 이혼 판결, 한국에서 집행되나요?", tags: ["#가사", "#상속"], excerpt: "중국 법원 판결의 한국 내 효력과 재산분할 절차." },
-          { title: "대중 수출입 계약, 원문 검토 체크포인트", tags: ["#계약", "#대중"], excerpt: "중국어 원문 계약서에서 자주 놓치는 리스크 조항 7가지." },
-          { title: "강제퇴거 명령 받았다면 — 이의신청 절차", tags: ["#출입국", "#행정"], excerpt: "불복·이의신청·행정소송까지 실무 흐름 가이드." },
+          { slug: "immigration", title: "F-4 비자 상실, 이런 경우 취소됩니다", tags: ["#F4", "#비자"], excerpt: "벌금형·음주운전이 체류 자격에 미치는 영향과 유지 전략." },
+          { slug: "fraud", title: "보이스피싱 전달책 연루, 첫 72시간 행동 요령", tags: ["#보이스피싱", "#형사"], excerpt: "수사 초기 진술부터 불기소 목표까지 단계별 대응." },
+          { slug: "china-family", title: "중국 이혼 판결, 한국에서 집행되나요?", tags: ["#가사", "#상속"], excerpt: "중국 법원 판결의 한국 내 효력과 재산분할 절차." },
+          { slug: "china-family", title: "대중 수출입 계약, 원문 검토 체크포인트", tags: ["#계약", "#대중"], excerpt: "중국어 원문 계약서에서 자주 놓치는 리스크 조항 7가지." },
+          { slug: "immigration", title: "강제퇴거 명령 받았다면 — 이의신청 절차", tags: ["#출입국", "#행정"], excerpt: "불복·이의신청·행정소송까지 실무 흐름 가이드." },
         ]
       },
       testimonials: {
@@ -196,7 +284,7 @@ export function Home() {
         agreements: "개인정보 수집 및 이용에 동의합니다. (상담 목적에 한하여 활용)",
         submit: "무료 상담 신청하기",
         wechatDirect: "위챗으로 바로",
-        previewNote: "* 런칭 전 프리뷰 — 제출 기능은 백엔드 연결 후 활성화됩니다. 현재는 위챗/전화/이메일 이용 권장."
+        previewNote: "* 제출 시 기본 메일 앱이 열려 lawohdh@gmail.com 으로 회신 가능한 메일이 작성됩니다. 메일 앱이 없으시면 위챗(wudongxuan002) 또는 전화로도 접수 가능합니다."
       },
       guide: {
         badge: "무료 가이드북 배포",
@@ -332,13 +420,13 @@ export function Home() {
         eyebrow: "法律信息",
         title: <>律师亲撰的 <span className="text-[#2563EB]">法律百科</span></>,
         desc: "用易懂的语言整理复杂的行政、刑事、居留程序。包含中文解析。",
-        soon: "准备中",
+        soon: "查看详情",
         items: [
-          { title: "丧失 F-4 签证，这些情况下会被取消", tags: ["#F4", "#签证"], excerpt: "罚金刑、酒驾对居留资格的影响及维持策略。" },
-          { title: "卷入话务诈骗车手，最初 72 小时行动指南", tags: ["#话务诈骗", "#刑事"], excerpt: "从侦查初期陈述到以不予起诉为目标的阶段性应对。" },
-          { title: "中国离婚判决，在韩国能执行吗？", tags: ["#家事", "#继承"], excerpt: "中国法院判决在韩国境内的效力及财产分割程序。" },
-          { title: "涉华进出口合同，原文审核要点", tags: ["#合同", "#涉华"], excerpt: "中文原文合同中经常被忽视的 7 个风险条款。" },
-          { title: "收到强制遣返令怎么办 — 异议申请程序", tags: ["#出入境", "#行政"], excerpt: "从不服、异议申请到行政诉讼的 实务流程指南。" },
+          { slug: "immigration", title: "丧失 F-4 签证，这些情况下会被取消", tags: ["#F4", "#签证"], excerpt: "罚金刑、酒驾对居留资格的影响及维持策略。" },
+          { slug: "fraud", title: "卷入话务诈骗车手，最初 72 小时行动指南", tags: ["#话务诈骗", "#刑事"], excerpt: "从侦查初期陈述到以不予起诉为目标的阶段性应对。" },
+          { slug: "china-family", title: "中国离婚判决，在韩国能执行吗？", tags: ["#家事", "#继承"], excerpt: "中国法院判决在韩国境内的效力及财产分割程序。" },
+          { slug: "china-family", title: "涉华进出口合同，原文审核要点", tags: ["#合同", "#涉华"], excerpt: "中文原文合同中经常被忽视的 7 个风险条款。" },
+          { slug: "immigration", title: "收到强制遣返令怎么办 — 异议申请程序", tags: ["#出入境", "#行政"], excerpt: "从不服、异议申请到行政诉讼的 实务流程指南。" },
         ]
       },
       testimonials: {
@@ -399,7 +487,7 @@ export function Home() {
         agreements: "同意收集及使用个人信息。(仅用于咨询目的)",
         submit: "申请免费咨询",
         wechatDirect: "直接微信联系",
-        previewNote: "* 上线前预览 — 提交功能将在后台连接后启用。目前建议使用微信/电话/邮件。"
+        previewNote: "* 提交时将打开邮件应用，自动撰写发往 lawohdh@gmail.com 的邮件。如未安装邮件应用，可通过微信(wudongxuan002)或电话联系。"
       },
       guide: {
         badge: "免费领取指南",
@@ -534,14 +622,14 @@ export function Home() {
       legalInfo: {
         eyebrow: "Legal Information",
         title: <>Legal Info written by <span className="text-[#2563EB]">Attorneys</span></>,
-        soon: "Coming Soon",
+        soon: "Read more",
         desc: "Clarifying complex administrative and criminal procedures. Includes Chinese guides.",
         items: [
-          { title: "Loss of F-4 Visa: Cancellation Trigger Cases", tags: ["#F4", "#Visa"], excerpt: "Impact of fines and DUIs on residency and maintenance strategies." },
-          { title: "Voice Phishing Mule Cases: First 72h Action Plan", tags: ["#Fraud", "#Criminal"], excerpt: "Step-by-step response from initial statement to non-indictment." },
-          { title: "Can Chinese Divorce Decrees be Enforced in Korea?", tags: ["#Family", "#Inheritance"], excerpt: "Validity of Chinese court orders and asset division procedures." },
-          { title: "China Export-Import Contracts: Audit Checkpoints", tags: ["#Contracts", "#China"], excerpt: "7 risk clauses often missed in Chinese-language contracts." },
-          { title: "Received a Deportation Order? Appeal Procedures", tags: ["#Immigration", "#Admin"], excerpt: "실무 흐름 가이드 for appeals and administrative litigation." },
+          { slug: "immigration", title: "Loss of F-4 Visa: Cancellation Trigger Cases", tags: ["#F4", "#Visa"], excerpt: "Impact of fines and DUIs on residency and maintenance strategies." },
+          { slug: "fraud", title: "Voice Phishing Mule Cases: First 72h Action Plan", tags: ["#Fraud", "#Criminal"], excerpt: "Step-by-step response from initial statement to non-indictment." },
+          { slug: "china-family", title: "Can Chinese Divorce Decrees be Enforced in Korea?", tags: ["#Family", "#Inheritance"], excerpt: "Validity of Chinese court orders and asset division procedures." },
+          { slug: "china-family", title: "China Export-Import Contracts: Audit Checkpoints", tags: ["#Contracts", "#China"], excerpt: "7 risk clauses often missed in Chinese-language contracts." },
+          { slug: "immigration", title: "Received a Deportation Order? Appeal Procedures", tags: ["#Immigration", "#Admin"], excerpt: "Practical flow guide for appeals and administrative litigation." },
         ]
       },
       testimonials: {
@@ -602,7 +690,7 @@ export function Home() {
         agreements: "I agree to the collection and use of personal information.",
         submit: "Request Free Consultation",
         wechatDirect: "Contact via WeChat",
-        previewNote: "* Pre-launch preview — submission will be active after backend link."
+        previewNote: "* On submit, your default email client opens with a pre-filled message to lawohdh@gmail.com. If you don't use an email app, reach us via WeChat (wudongxuan002) or phone."
       },
       guide: {
         badge: "Free Guidebook",
@@ -1066,39 +1154,43 @@ export function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 lg:gap-6">
             {content.legalInfo.items.map((a, i) => (
-              <motion.article
+              <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.5, delay: i * 0.06 }}
-                className="group bg-white p-6 lg:p-7 flex flex-col hover:-translate-y-1 transition-transform"
               >
-                <span className="font-display text-[10px] font-black tracking-[0.24em] uppercase text-slate-400 mb-4">
-                  Article {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="text-[16px] lg:text-[17px] font-extrabold text-[#0f172a] leading-snug mb-3 min-h-[3.5rem]">
-                  {a.title}
-                </h3>
-                <p className="text-[13px] text-slate-600 font-medium leading-[1.75] flex-grow mb-5">
-                  {a.excerpt}
-                </p>
-                <div className="flex flex-wrap gap-1.5 mb-4">
-                  {a.tags.map((t) => (
-                    <span key={t} className="font-display text-[10px] font-semibold text-slate-500 bg-slate-100 px-2 py-1">
-                      {t}
-                    </span>
-                  ))}
-                </div>
-                <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-[11px]">
-                  <span className="font-semibold text-slate-400 italic">{content.legalInfo.soon}</span>
-                  <ArrowRight
-                    size={14}
-                    strokeWidth={1.75}
-                    className="text-slate-300 group-hover:text-[#2563EB] group-hover:translate-x-0.5 transition-all"
-                  />
-                </div>
-              </motion.article>
+                <Link
+                  to={`/legal/${a.slug}`}
+                  className="group bg-white p-6 lg:p-7 flex flex-col h-full hover:-translate-y-1 transition-transform"
+                >
+                  <span className="font-display text-[10px] font-black tracking-[0.24em] uppercase text-slate-400 mb-4">
+                    Article {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="text-[16px] lg:text-[17px] font-extrabold text-[#0f172a] leading-snug mb-3 min-h-[3.5rem] group-hover:text-[#2563EB] transition-colors">
+                    {a.title}
+                  </h3>
+                  <p className="text-[13px] text-slate-600 font-medium leading-[1.75] flex-grow mb-5">
+                    {a.excerpt}
+                  </p>
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {a.tags.map((t: string) => (
+                      <span key={t} className="font-display text-[10px] font-semibold text-slate-500 bg-slate-100 px-2 py-1">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span className="font-semibold text-slate-500 group-hover:text-[#2563EB] transition-colors">{content.legalInfo.soon}</span>
+                    <ArrowRight
+                      size={14}
+                      strokeWidth={1.75}
+                      className="text-slate-300 group-hover:text-[#2563EB] group-hover:translate-x-0.5 transition-all"
+                    />
+                  </div>
+                </Link>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -1183,17 +1275,20 @@ export function Home() {
           </h2>
           <div className="flex flex-wrap justify-center gap-3 lg:gap-4 max-w-[900px] mx-auto">
             {content.hashtags.items.map((tag, i) => (
-              <motion.a
+              <motion.div
                 key={tag}
-                href="#"
                 initial={{ opacity: 0, y: 8 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: i * 0.03 }}
-                className="group inline-flex items-center gap-2 border border-white/20 hover:border-[#2563EB] hover:bg-[#2563EB]/10 px-5 py-2.5 text-[13px] lg:text-sm font-display font-bold text-white/85 hover:text-white tracking-wide transition-colors"
               >
-                {tag}
-              </motion.a>
+                <Link
+                  to="/legal"
+                  className="group inline-flex items-center gap-2 border border-white/20 hover:border-[#2563EB] hover:bg-[#2563EB]/10 px-5 py-2.5 text-[13px] lg:text-sm font-display font-bold text-white/85 hover:text-white tracking-wide transition-colors"
+                >
+                  {tag}
+                </Link>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -1274,104 +1369,174 @@ export function Home() {
             </div>
           </div>
 
-          <form className="lg:col-span-7 bg-white text-[#0f172a] p-8 lg:p-12" onSubmit={(e) => e.preventDefault()}>
-            <div className="flex items-center justify-between mb-8 pb-5 border-b border-slate-100">
-              <h3 className="font-display text-[22px] lg:text-[26px] font-black tracking-tight">
-                {content.form.title}
-              </h3>
-              <span className="font-display text-[10px] font-black tracking-[0.26em] uppercase text-[#2563EB]">
-                {content.form.badge}
-              </span>
-            </div>
-            <div className="grid sm:grid-cols-2 gap-5 mb-5">
-              <div>
-                <label className="block text-[11px] font-black tracking-[0.2em] uppercase text-slate-500 mb-2">
-                  01 · {content.form.nameLabel}
-                </label>
-                <input
-                  type="text"
-                  placeholder={content.form.namePlaceholder}
-                  className="w-full bg-transparent border-0 border-b border-slate-300 focus:border-[#0f172a] pb-2 text-[15px] placeholder:text-slate-400 focus:outline-none transition-colors"
-                />
-              </div>
-              <div>
-                <label className="block text-[11px] font-black tracking-[0.2em] uppercase text-slate-500 mb-2">
-                  02 · {content.form.contactLabel}
-                </label>
-                <input
-                  type="tel"
-                  placeholder="010-0000-0000"
-                  className="w-full bg-transparent border-0 border-b border-slate-300 focus:border-[#0f172a] pb-2 text-[15px] placeholder:text-slate-400 focus:outline-none transition-colors tabular-nums"
-                />
-              </div>
-            </div>
-            <div className="mb-5">
-              <label className="block text-[11px] font-black tracking-[0.2em] uppercase text-slate-500 mb-2">
-                03 · {content.form.langLabel}
-              </label>
-              <div className="flex gap-3">
-                {["한국어", "中文", "English"].map((lang) => (
-                  <label
-                    key={lang}
-                    className="flex items-center gap-2 border border-slate-200 hover:border-[#0f172a] px-4 py-2 cursor-pointer transition-colors text-[13px] font-semibold"
+          {submitted ? (
+            <div className="lg:col-span-7 bg-white text-[#0f172a] p-8 lg:p-12 flex flex-col justify-center min-h-[480px]">
+              <div className="max-w-[520px]">
+                <div className="w-14 h-14 rounded-full bg-[#2563EB]/10 grid place-items-center mb-6">
+                  <CheckCircle2 size={28} className="text-[#2563EB]" strokeWidth={2.25} />
+                </div>
+                <h3 className="font-display text-[22px] lg:text-[28px] font-black tracking-tight mb-4">
+                  {formMsgs.successTitle}
+                </h3>
+                <p className="text-[15px] lg:text-[16px] text-slate-600 font-medium leading-[1.85] mb-8">
+                  {formMsgs.successDesc}
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <button
+                    type="button"
+                    onClick={resetForm}
+                    className="inline-flex items-center justify-center gap-2 bg-[#0f172a] hover:bg-[#2563EB] text-white px-6 py-3.5 font-bold text-[14px] transition-colors"
                   >
-                    <input type="radio" name="lang" className="accent-[#2563EB]" />
-                    {lang}
-                  </label>
-                ))}
+                    {formMsgs.another}
+                  </button>
+                  <WeChatDialog>
+                    <button
+                      type="button"
+                      className="inline-flex items-center justify-center gap-2 border border-[#0f172a] hover:bg-[#0f172a] hover:text-white text-[#0f172a] px-5 py-3.5 font-bold text-[14px] transition-colors"
+                    >
+                      <MessageCircle size={15} strokeWidth={2.25} />
+                      {content.form.wechatDirect}
+                    </button>
+                  </WeChatDialog>
+                </div>
               </div>
             </div>
-            <div className="mb-5">
-              <label className="block text-[11px] font-black tracking-[0.2em] uppercase text-slate-500 mb-2">
-                04 · {content.form.fieldLabel}
-              </label>
-              <select className="w-full bg-transparent border-0 border-b border-slate-300 focus:border-[#0f172a] pb-2 text-[15px] focus:outline-none transition-colors">
-                <option>{content.form.selectPlaceholder}</option>
-                {content.form.fields.map((f) => (
-                  <option key={f}>{f}</option>
-                ))}
-              </select>
-            </div>
-            <div className="mb-8">
-              <label className="block text-[11px] font-black tracking-[0.2em] uppercase text-slate-500 mb-2">
-                05 · {content.form.msgLabel}
-              </label>
-              <textarea
-                rows={4}
-                placeholder={content.form.msgPlaceholder}
-                className="w-full bg-transparent border-0 border-b border-slate-300 focus:border-[#0f172a] pb-2 text-[15px] placeholder:text-slate-400 focus:outline-none resize-none transition-colors leading-[1.75]"
-              />
-            </div>
-            <label className="flex items-baseline gap-2 mb-7 text-[12px] text-slate-600 font-medium">
-              <input type="checkbox" className="accent-[#2563EB] mt-0.5" />
-              {content.form.agreements}
-            </label>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <button
-                type="submit"
-                className="group flex-1 inline-flex items-center justify-center gap-3 bg-[#0f172a] hover:bg-[#2563EB] text-white px-6 py-4 font-extrabold text-[14px] tracking-wide transition-colors"
-              >
-                {content.form.submit}
-                <ArrowRight
-                  size={15}
-                  strokeWidth={2.5}
-                  className="transition-transform group-hover:translate-x-0.5"
-                />
-              </button>
-              <WeChatDialog>
-                <button
-                  type="button"
-                  className="inline-flex items-center justify-center gap-2 border border-[#0f172a] hover:bg-[#0f172a] hover:text-white text-[#0f172a] px-5 py-4 font-extrabold text-[14px] transition-colors"
+          ) : (
+            <form className="lg:col-span-7 bg-white text-[#0f172a] p-8 lg:p-12" onSubmit={handleSubmit} noValidate>
+              <div className="flex items-center justify-between mb-8 pb-5 border-b border-slate-100">
+                <h3 className="font-display text-[22px] lg:text-[26px] font-black tracking-tight">
+                  {content.form.title}
+                </h3>
+                <span className="font-display text-[10px] font-black tracking-[0.26em] uppercase text-[#2563EB]">
+                  {content.form.badge}
+                </span>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-5 mb-5">
+                <div>
+                  <label htmlFor="cf-name" className="block text-[11px] font-black tracking-[0.2em] uppercase text-slate-500 mb-2">
+                    01 · {content.form.nameLabel}
+                  </label>
+                  <input
+                    id="cf-name"
+                    type="text"
+                    autoComplete="name"
+                    placeholder={content.form.namePlaceholder}
+                    value={form.name}
+                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    aria-invalid={!!errors.name}
+                    className={`w-full bg-transparent border-0 border-b pb-2 text-[15px] placeholder:text-slate-400 focus:outline-none transition-colors ${errors.name ? "border-red-400 focus:border-red-500" : "border-slate-300 focus:border-[#0f172a]"}`}
+                  />
+                  {errors.name && <p className="mt-1.5 text-[11px] text-red-500 font-semibold">{errors.name}</p>}
+                </div>
+                <div>
+                  <label htmlFor="cf-contact" className="block text-[11px] font-black tracking-[0.2em] uppercase text-slate-500 mb-2">
+                    02 · {content.form.contactLabel}
+                  </label>
+                  <input
+                    id="cf-contact"
+                    type="tel"
+                    autoComplete="tel"
+                    placeholder="010-0000-0000"
+                    value={form.contact}
+                    onChange={(e) => setForm({ ...form, contact: e.target.value })}
+                    aria-invalid={!!errors.contact}
+                    className={`w-full bg-transparent border-0 border-b pb-2 text-[15px] placeholder:text-slate-400 focus:outline-none transition-colors tabular-nums ${errors.contact ? "border-red-400 focus:border-red-500" : "border-slate-300 focus:border-[#0f172a]"}`}
+                  />
+                  {errors.contact && <p className="mt-1.5 text-[11px] text-red-500 font-semibold">{errors.contact}</p>}
+                </div>
+              </div>
+              <div className="mb-5">
+                <label className="block text-[11px] font-black tracking-[0.2em] uppercase text-slate-500 mb-2">
+                  03 · {content.form.langLabel}
+                </label>
+                <div className="flex gap-3">
+                  {["한국어", "中文", "English"].map((lang) => (
+                    <label
+                      key={lang}
+                      className={`flex items-center gap-2 border px-4 py-2 cursor-pointer transition-colors text-[13px] font-semibold ${form.inqLang === lang ? "border-[#0f172a] bg-slate-50" : "border-slate-200 hover:border-[#0f172a]"}`}
+                    >
+                      <input
+                        type="radio"
+                        name="cf-lang"
+                        value={lang}
+                        checked={form.inqLang === lang}
+                        onChange={() => setForm({ ...form, inqLang: lang })}
+                        className="accent-[#2563EB]"
+                      />
+                      {lang}
+                    </label>
+                  ))}
+                </div>
+              </div>
+              <div className="mb-5">
+                <label htmlFor="cf-field" className="block text-[11px] font-black tracking-[0.2em] uppercase text-slate-500 mb-2">
+                  04 · {content.form.fieldLabel}
+                </label>
+                <select
+                  id="cf-field"
+                  value={form.field}
+                  onChange={(e) => setForm({ ...form, field: e.target.value })}
+                  className="w-full bg-transparent border-0 border-b border-slate-300 focus:border-[#0f172a] pb-2 text-[15px] focus:outline-none transition-colors"
                 >
-                  <MessageCircle size={15} strokeWidth={2.25} />
-                  {content.form.wechatDirect}
+                  <option value="">{content.form.selectPlaceholder}</option>
+                  {content.form.fields.map((f) => (
+                    <option key={f} value={f}>{f}</option>
+                  ))}
+                </select>
+              </div>
+              <div className="mb-7">
+                <label htmlFor="cf-message" className="block text-[11px] font-black tracking-[0.2em] uppercase text-slate-500 mb-2">
+                  05 · {content.form.msgLabel}
+                </label>
+                <textarea
+                  id="cf-message"
+                  rows={4}
+                  placeholder={content.form.msgPlaceholder}
+                  value={form.message}
+                  onChange={(e) => setForm({ ...form, message: e.target.value })}
+                  aria-invalid={!!errors.message}
+                  className={`w-full bg-transparent border-0 border-b pb-2 text-[15px] placeholder:text-slate-400 focus:outline-none resize-none transition-colors leading-[1.75] ${errors.message ? "border-red-400 focus:border-red-500" : "border-slate-300 focus:border-[#0f172a]"}`}
+                />
+                {errors.message && <p className="mt-1.5 text-[11px] text-red-500 font-semibold">{errors.message}</p>}
+              </div>
+              <label className="flex items-baseline gap-2 mb-2 text-[12px] text-slate-600 font-medium">
+                <input
+                  type="checkbox"
+                  checked={form.agreed}
+                  onChange={(e) => setForm({ ...form, agreed: e.target.checked })}
+                  aria-invalid={!!errors.agreed}
+                  className="accent-[#2563EB] mt-0.5"
+                />
+                {content.form.agreements}
+              </label>
+              {errors.agreed && <p className="mb-5 text-[11px] text-red-500 font-semibold">{errors.agreed}</p>}
+              <div className="flex flex-col sm:flex-row gap-3 mt-5">
+                <button
+                  type="submit"
+                  className="group flex-1 inline-flex items-center justify-center gap-3 bg-[#0f172a] hover:bg-[#2563EB] text-white px-6 py-4 font-extrabold text-[14px] tracking-wide transition-colors"
+                >
+                  {content.form.submit}
+                  <ArrowRight
+                    size={15}
+                    strokeWidth={2.5}
+                    className="transition-transform group-hover:translate-x-0.5"
+                  />
                 </button>
-              </WeChatDialog>
-            </div>
-            <p className="mt-5 text-[11px] text-slate-400 font-medium italic">
-              {content.form.previewNote}
-            </p>
-          </form>
+                <WeChatDialog>
+                  <button
+                    type="button"
+                    className="inline-flex items-center justify-center gap-2 border border-[#0f172a] hover:bg-[#0f172a] hover:text-white text-[#0f172a] px-5 py-4 font-extrabold text-[14px] transition-colors"
+                  >
+                    <MessageCircle size={15} strokeWidth={2.25} />
+                    {content.form.wechatDirect}
+                  </button>
+                </WeChatDialog>
+              </div>
+              <p className="mt-5 text-[11px] text-slate-400 font-medium italic">
+                {content.form.previewNote}
+              </p>
+            </form>
+          )}
         </div>
       </section>
 
@@ -1398,10 +1563,10 @@ export function Home() {
                 ))}
               </ul>
               
-              <a href="#" className="inline-flex items-center justify-center gap-3 bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-10 py-5 font-extrabold text-lg transition-all w-full sm:w-auto shadow-xl">
+              <Link to="/#consult" className="inline-flex items-center justify-center gap-3 bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-10 py-5 font-extrabold text-lg transition-all w-full sm:w-auto shadow-xl">
                 <Download size={22} />
                 {content.guide.download}
-              </a>
+              </Link>
             </div>
             
             <div className="md:w-1/3 flex justify-center w-full">

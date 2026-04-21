@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://law-oh.kr/sitemap.xml
