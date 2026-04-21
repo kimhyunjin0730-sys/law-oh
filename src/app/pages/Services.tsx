@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import { SectionHeading } from "../components/SectionHeading";
-import { ShieldCheck, Scale, FileText, Briefcase, HeartHandshake, CheckCircle2, ArrowRight } from "lucide-react";
+import { ShieldCheck, Scale, FileText, Briefcase, HeartHandshake, ArrowRight } from "lucide-react";
 import { WeChatDialog } from "../components/WeChatDialog";
 import { useLanguage } from "../context/LanguageContext";
 
@@ -265,7 +265,7 @@ export function Services() {
   const currentContent = content[language as keyof typeof content] || content.ko;
 
   return (
-    <div className="bg-white min-h-screen pt-28 md:pt-36 pb-32">
+    <div className="bg-white min-h-screen pt-28 md:pt-36 pb-24 md:pb-32">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading 
           title={currentContent.title} 
@@ -273,14 +273,14 @@ export function Services() {
           centered={true}
         />
 
-        <div className="mt-20 space-y-16">
+        <div className="mt-16 md:mt-24 space-y-10 md:space-y-14">
           {currentContent.services.map((service) => (
             <Link
               key={service.id}
               to={`/services/${service.id}`}
               className="flex flex-col lg:flex-row bg-slate-50 border border-slate-200 group hover:border-[#2563EB] transition-colors"
             >
-              <div className="lg:w-1/3 bg-white p-12 lg:p-16 border-b lg:border-b-0 lg:border-r border-slate-200 group-hover:border-[#2563EB]/30 transition-colors">
+              <div className="lg:w-1/3 bg-white p-8 lg:p-12 border-b lg:border-b-0 lg:border-r border-slate-200 group-hover:border-[#2563EB]/30 transition-colors">
                 {service.icon}
                 <h3 className="text-2xl md:text-3xl font-extrabold text-[#0f172a] mb-2 tracking-tight group-hover:text-[#2563EB] transition-colors">
                   {service.title}
@@ -297,8 +297,8 @@ export function Services() {
                 </div>
               </div>
 
-              <div className="lg:w-2/3 p-12 lg:p-16 flex flex-col justify-center">
-                <div className="grid sm:grid-cols-2 gap-x-12 gap-y-8">
+              <div className="lg:w-2/3 p-8 lg:p-12 flex flex-col justify-center">
+                <div className="grid sm:grid-cols-2 gap-x-10 gap-y-6">
                   {service.items.map((item, idx) => {
                     const [main, sub] = item.split(': ');
                     return (
@@ -317,7 +317,7 @@ export function Services() {
           ))}
         </div>
 
-        <div className="mt-32 bg-[#0f172a] text-center text-white p-16 lg:p-24 border-t-[8px] border-[#2563EB]">
+        <div className="mt-20 md:mt-28 bg-[#0f172a] text-center text-white p-10 md:p-14 lg:p-16 border-t-[8px] border-[#2563EB]">
           <h3 className="text-2xl md:text-3xl font-extrabold mb-6 tracking-tight">{currentContent.ctaTitle}</h3>
           <p className="text-base md:text-lg text-slate-400 mb-12 max-w-3xl mx-auto font-medium leading-relaxed">
              {currentContent.ctaDesc}

@@ -163,7 +163,7 @@ export function Cases() {
   const currentContent = content[language as keyof typeof content] || content.ko;
 
   return (
-    <div className="bg-slate-50 min-h-screen pt-28 md:pt-36 pb-32">
+    <div className="bg-slate-50 min-h-screen pt-28 md:pt-36 pb-24 md:pb-32">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading 
           title={currentContent.title} 
@@ -171,13 +171,13 @@ export function Cases() {
           centered={true}
         />
 
-        <div className="mt-20 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 md:mt-24 grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
           {currentContent.categories.map((category) => (
-            <div key={category.id} className="min-w-0 bg-white border-t-[6px] border-[#0f172a] shadow-sm hover:shadow-xl transition-shadow p-12 flex flex-col h-full group hover:border-[#2563EB]">
+            <div key={category.id} className="min-w-0 bg-white border-t-[6px] border-[#0f172a] shadow-sm hover:shadow-xl transition-shadow p-8 lg:p-10 flex flex-col h-full group hover:border-[#2563EB]">
               {category.icon}
-              <h3 className="text-2xl md:text-3xl font-extrabold text-[#0f172a] tracking-tight mb-10">{category.title}</h3>
+              <h3 className="text-2xl md:text-3xl font-extrabold text-[#0f172a] tracking-tight mb-6 md:mb-8">{category.title}</h3>
 
-              <ul className="space-y-5 flex-grow">
+              <ul className="space-y-4 flex-grow">
                 {category.cases.map((caseItem, idx) => (
                   <li key={idx} className="flex items-start gap-4">
                     <div className="w-2 h-2 bg-[#2563EB] mt-[11px] shrink-0" />
@@ -191,7 +191,7 @@ export function Cases() {
           ))}
         </div>
 
-        <div className="mt-32 bg-[#0f172a] border border-slate-800 p-12 md:p-20 flex flex-col md:flex-row items-center justify-between gap-12">
+        <div className="mt-20 md:mt-28 bg-[#0f172a] border border-slate-800 p-10 md:p-14 lg:p-16 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-10">
           <div className="text-center md:text-left">
             <h4 className="text-2xl md:text-3xl font-extrabold text-white mb-4 tracking-tight">
               {currentContent.contactPrefix}<span className="text-[#2563EB]">{currentContent.contactHighlight}</span>{currentContent.contactSuffix}
