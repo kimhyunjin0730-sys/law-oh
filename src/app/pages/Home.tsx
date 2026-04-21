@@ -5,7 +5,7 @@ import { SectionHeading } from "../components/SectionHeading";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { WeChatDialog } from "../components/WeChatDialog";
 import { useLanguage } from "../context/LanguageContext";
-import mainheader from "../../assets/mainheader.jpg";
+import ohDonghyunCutout from "../../assets/oh-donghyun-cutout.png";
 
 export function Home() {
   const { language } = useLanguage();
@@ -624,37 +624,57 @@ export function Home() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section — Cinematic (extends behind transparent header) */}
-      <section className="relative bg-[#050B14] text-white min-h-[520px] sm:min-h-[680px] lg:min-h-[900px] flex items-center justify-center overflow-hidden pt-[96px] lg:pt-[128px]">
-        {/* Background image */}
-        <div className="absolute inset-0">
-          <ImageWithFallback
-            src={mainheader}
-            alt="Seoul 야경 배경"
-            className="w-full h-full object-cover object-center scale-[1.02]"
-          />
-          {/* Layered overlays — even vignette so centered text reads clean */}
-          <div className="absolute inset-0 bg-[#050B14]/40" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050B14]/80 via-[#050B14]/20 to-[#050B14]/40" />
+      {/* Hero Section — Editorial (light-blue panel with portrait, extends behind transparent header) */}
+      <section className="relative text-[#0f172a] min-h-[600px] sm:min-h-[720px] lg:min-h-[880px] flex items-center overflow-hidden pt-[96px] lg:pt-[128px] bg-gradient-to-br from-[#EAF3FC] via-[#D6E5F4] to-[#BBD2EA]">
+        {/* BECOME watermark — huge, behind everything */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -left-[3%] -bottom-[14%] select-none z-0
+                     font-serif font-black italic leading-none tracking-[-0.05em]
+                     text-[14rem] md:text-[20rem] lg:text-[26rem] text-white/60 mix-blend-overlay"
+        >
+          BECOME
         </div>
 
-        {/* Main content — centered, nudged slightly above optical center */}
-        <div className="relative z-10 w-full max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-8 text-center -translate-y-3 sm:-translate-y-6 lg:-translate-y-10">
+        {/* Soft top-edge fade so the transparent header reads cleanly */}
+        <div aria-hidden className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white/40 to-transparent z-0" />
+
+        {/* Main grid — text on left, portrait on right (portrait hidden on small screens) */}
+        <div className="relative z-10 w-full max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] items-center gap-6 lg:gap-10 lg:pr-32">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.25, ease: [0.2, 0.65, 0.3, 0.9] }}
-            className="max-w-[960px] mx-auto"
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.2, 0.65, 0.3, 0.9] }}
+            className="max-w-[700px] text-center lg:text-left"
           >
-            {/* Solid main headline — English-only, "Korean Law" in azure */}
-            <h1 className="font-bold leading-[1.08] tracking-[-0.02em] text-[32px] sm:text-[48px] lg:text-[72px]">
+            <p className="text-xs md:text-sm font-bold tracking-[0.22em] text-[#2563EB] uppercase mb-5">
+              법률사무소 비컴 · BECOME Law Firm
+            </p>
+            {/* Headline — kept English-only with "Korean Law" azure accent */}
+            <h1 className="font-bold leading-[1.06] tracking-[-0.02em] text-[34px] sm:text-[52px] lg:text-[68px] text-[#0f172a]">
               {content.heroTitle}
             </h1>
 
             {/* Bilingual tagline */}
-            <p className="mt-6 lg:mt-7 mx-auto max-w-[640px] text-[15px] sm:text-lg text-slate-300/90 leading-[1.8] font-medium tracking-tight">
+            <p className="mt-6 lg:mt-7 mx-auto lg:mx-0 max-w-[620px] text-[15px] sm:text-lg text-slate-700 leading-[1.8] font-medium tracking-tight">
               {content.heroSub}
             </p>
+          </motion.div>
+
+          {/* Portrait cutout — hidden under md, anchored to panel bottom on lg+ */}
+          <motion.div
+            initial={{ opacity: 0, x: 24 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9, delay: 0.35, ease: [0.2, 0.65, 0.3, 0.9] }}
+            className="hidden md:block relative h-[440px] lg:h-[760px] -mb-[96px] lg:-mb-[128px]"
+          >
+            <img
+              src={ohDonghyunCutout}
+              alt="오동현 대표변호사"
+              className="absolute inset-x-0 bottom-0 w-full h-full object-contain object-bottom drop-shadow-[0_28px_36px_rgba(15,23,42,0.22)]"
+              loading="eager"
+              decoding="async"
+            />
           </motion.div>
         </div>
 
@@ -666,7 +686,7 @@ export function Home() {
           className="hidden lg:flex absolute right-5 top-1/2 -translate-y-1/2 z-20"
           aria-label="빠른 상담 메뉴"
         >
-          <div className="bg-white/[0.06] backdrop-blur-xl border border-white/15 rounded-[28px] p-3 flex flex-col gap-2.5 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.5)]">
+          <div className="bg-[#0f172a]/85 backdrop-blur-xl border border-white/10 rounded-[28px] p-3 flex flex-col gap-2.5 shadow-[0_20px_60px_-20px_rgba(15,23,42,0.45)]">
             <div className="text-center py-2 px-2">
               <div className="text-[10px] font-black tracking-[0.18em] uppercase text-white leading-tight">
                 {content.quickMenu.title}
@@ -699,8 +719,8 @@ export function Home() {
         </motion.aside>
 
         {/* Scroll hint */}
-        <div aria-hidden className="hidden lg:flex absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex-col items-center gap-2 text-slate-400">
-          <div className="h-8 w-px bg-gradient-to-b from-transparent via-slate-400/40 to-slate-400/80" />
+        <div aria-hidden className="hidden lg:flex absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex-col items-center gap-2 text-slate-600">
+          <div className="h-8 w-px bg-gradient-to-b from-transparent via-slate-500/40 to-slate-700/80" />
           <span className="text-[10px] tracking-[0.3em] uppercase font-semibold">Scroll</span>
         </div>
       </section>

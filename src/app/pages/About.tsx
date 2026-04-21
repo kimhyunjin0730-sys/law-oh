@@ -1,5 +1,4 @@
 import { motion } from "motion/react";
-import { GraduationCap, Briefcase, Award, MapPin } from "lucide-react";
 import { SectionHeading } from "../components/SectionHeading";
 import { useLanguage } from "../context/LanguageContext";
 import ohDonghyunCutout from "../../assets/oh-donghyun-cutout.png";
@@ -253,17 +252,17 @@ export function About() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           className="relative isolate overflow-hidden rounded-xl
-                     bg-gradient-to-br from-[#EFE9FB] via-[#E6DDF6] to-[#DCD0F0]
-                     shadow-[0_1px_3px_rgba(15,23,42,0.05),0_30px_70px_-30px_rgba(79,70,229,0.30)]"
+                     bg-gradient-to-br from-[#EAF3FC] via-[#D6E5F4] to-[#BBD2EA]
+                     shadow-[0_1px_3px_rgba(15,23,42,0.05),0_30px_70px_-30px_rgba(37,99,235,0.30)]"
         >
-          {/* OH watermark — huge, low-contrast, behind everything */}
+          {/* BECOME watermark — huge, low-contrast, behind everything */}
           <div
             aria-hidden
-            className="pointer-events-none absolute -right-[6%] -bottom-[18%] select-none
-                       font-serif font-black leading-none tracking-[-0.08em]
-                       text-[18rem] md:text-[24rem] lg:text-[30rem] text-white/45 mix-blend-screen"
+            className="pointer-events-none absolute -right-[8%] -bottom-[12%] select-none
+                       font-serif font-black italic leading-none tracking-[-0.05em]
+                       text-[10rem] md:text-[14rem] lg:text-[18rem] text-white/65 mix-blend-overlay"
           >
-            OH
+            BECOME
           </div>
 
           {/* Top eyebrow — small brand line, matches the baked-in composition */}
