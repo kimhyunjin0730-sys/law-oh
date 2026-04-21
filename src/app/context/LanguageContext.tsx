@@ -10,7 +10,7 @@ interface LanguageContextType {
 
 const translations = {
   ko: {
-    'nav.home': '법률사무소 비컴',
+    'nav.home': '비컴 소개',
     'nav.about': '구성원 소개',
     'nav.services': '주요업무',
     'nav.cases': '성공사례',
@@ -34,7 +34,7 @@ const translations = {
     'lawyerName': '오동현',
   },
   zh: {
-    'nav.home': 'BECOME 律师事务所',
+    'nav.home': 'BECOME 介绍',
     'nav.about': '成员介绍',
     'nav.services': '主要业务',
     'nav.cases': '成功案例',
@@ -58,7 +58,7 @@ const translations = {
     'lawyerName': '吴东宪',
   },
   en: {
-    'nav.home': 'BECOME Law Firm',
+    'nav.home': 'About BECOME',
     'nav.about': 'Our Team',
     'nav.services': 'Practice Areas',
     'nav.cases': 'Success Cases',

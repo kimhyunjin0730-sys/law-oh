@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion } from "motion/react";
-import { Link } from "react-router";
-import { ArrowRight, MessageSquare, Sparkles, ShieldCheck, HeartHandshake } from "lucide-react";
+import { MessageSquare, Sparkles, ShieldCheck, HeartHandshake } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 import ohDonghyunCutout from "../../assets/oh-donghyun-cutout.png";
 
@@ -29,8 +28,6 @@ const COPY: Record<Lang, {
     subtitle: string;
     items: { name: string; tagline: string; body: string[] }[];
   };
-  ctaTitle: string;
-  ctaButton: string;
 }> = {
   ko: {
     pageTitle: "법률사무소 비컴",
@@ -104,8 +101,6 @@ const COPY: Record<Lang, {
         },
       ],
     },
-    ctaTitle: "당신의 사안을 당신의 언어로 들려주세요.",
-    ctaButton: "온라인 상담 접수",
   },
   zh: {
     pageTitle: "BECOME 律师事务所",
@@ -179,8 +174,6 @@ const COPY: Record<Lang, {
         },
       ],
     },
-    ctaTitle: "请用您的语言告诉我们您的案件。",
-    ctaButton: "在线咨询",
   },
   en: {
     pageTitle: "BECOME Law Firm",
@@ -254,8 +247,6 @@ const COPY: Record<Lang, {
         },
       ],
     },
-    ctaTitle: "Tell us your case, in your language.",
-    ctaButton: "Online consultation",
   },
 };
 
@@ -499,26 +490,6 @@ export function Firm() {
           </motion.section>
         )}
 
-        {/* CTA strip */}
-        <div className="mt-20 md:mt-28">
-          <div className="bg-[#0f172a] text-white rounded-xl px-8 md:px-12 py-10 md:py-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-            <div>
-              <p className="font-mono text-[11px] font-bold tracking-[0.26em] uppercase text-[#2563EB] mb-3">
-                Need a lawyer?
-              </p>
-              <p className="text-xl md:text-2xl font-extrabold tracking-tight">
-                {c.ctaTitle}
-              </p>
-            </div>
-            <Link
-              to="/#consult"
-              className="group inline-flex items-center gap-3 bg-[#2563EB] hover:bg-[#1d4ed8] text-white px-7 py-4 font-extrabold tracking-tight transition-colors rounded-md whitespace-nowrap"
-            >
-              {c.ctaButton}
-              <ArrowRight size={18} strokeWidth={2.5} className="transition-transform group-hover:translate-x-0.5" />
-            </Link>
-          </div>
-        </div>
       </div>
     </div>
   );
