@@ -425,21 +425,23 @@ export function Firm() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: [0.2, 0.65, 0.3, 0.9] }}
           >
-            {/* Section header */}
-            <div className="max-w-[820px] mb-12 md:mb-16">
-              <p className="font-mono text-[11px] md:text-xs font-bold tracking-[0.3em] uppercase text-[#2563EB] mb-4">
+            {/* Compact section header — kept tight so the diagram lands above the fold */}
+            <div className="text-center mb-6 md:mb-8">
+              <p className="font-mono text-[10px] md:text-[11px] font-bold tracking-[0.3em] uppercase text-[#2563EB] mb-3">
                 {c.values.eyebrow}
               </p>
-              <h2 className="text-[2rem] md:text-[2.75rem] lg:text-[3.25rem] leading-[1.1] font-black tracking-tight text-[#0f172a] mb-4">
+              <h2 className="text-[1.5rem] md:text-[2rem] lg:text-[2.5rem] leading-[1.15] font-black tracking-tight text-[#0f172a]">
                 {c.values.title}
               </h2>
-              <p className="text-base md:text-lg text-slate-600 font-medium leading-relaxed">
-                {c.values.subtitle}
-              </p>
             </div>
 
-            {/* Cardinal diagram — static-symmetric layout, animated dashed rings */}
+            {/* Cardinal diagram — at-a-glance view, animated dashed rings */}
             <ValuesDiagram items={c.values.items.map((it) => ({ name: it.name, tagline: it.tagline }))} />
+
+            {/* Subtitle below the diagram (was above) — keeps the diagram tight */}
+            <p className="text-center text-sm md:text-base text-slate-600 font-medium leading-relaxed max-w-[640px] mx-auto mb-16 md:mb-24">
+              {c.values.subtitle}
+            </p>
 
             {/* Vertical numbered sections */}
             <div className="space-y-16 md:space-y-24">
@@ -534,33 +536,27 @@ export function Firm() {
 function ValuesDiagram({ items }: { items: { name: string; tagline: string }[] }) {
   // Cardinal placement order: top, right, bottom, left
   const positions = [
-    { className: "top-0 left-1/2 -translate-x-1/2", line: { x1: 50, y1: 50, x2: 50, y2: 13 } },
-    { className: "top-1/2 right-0 -translate-y-1/2", line: { x1: 50, y1: 50, x2: 87, y2: 50 } },
-    { className: "bottom-0 left-1/2 -translate-x-1/2", line: { x1: 50, y1: 50, x2: 50, y2: 87 } },
-    { className: "top-1/2 left-0 -translate-y-1/2", line: { x1: 50, y1: 50, x2: 13, y2: 50 } },
+    { className: "top-0 left-1/2 -translate-x-1/2", line: { x2: 50, y2: 14 } },
+    { className: "top-1/2 right-0 -translate-y-1/2", line: { x2: 86, y2: 50 } },
+    { className: "bottom-0 left-1/2 -translate-x-1/2", line: { x2: 50, y2: 86 } },
+    { className: "top-1/2 left-0 -translate-y-1/2", line: { x2: 14, y2: 50 } },
   ];
 
   return (
-    <div className="hidden md:block mb-20 md:mb-28">
-      <div className="relative mx-auto aspect-square w-full max-w-[820px]">
+    <div className="mb-10 md:mb-12">
+      {/* Container is responsive-square so it stays symmetric at every breakpoint
+          AND the whole diagram fits within a single viewport on common laptops/phones.  */}
+      <div className="relative mx-auto aspect-square w-full max-w-[320px] sm:max-w-[420px] md:max-w-[480px] lg:max-w-[560px]">
         {/* Rotating dashed rings — HTML divs with reliable CSS rotation */}
         <div
           aria-hidden
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#2563EB]/30"
-          style={{
-            width: "72%",
-            height: "72%",
-            animation: "spin 60s linear infinite",
-          }}
+          style={{ width: "72%", height: "72%", animation: "spin 60s linear infinite" }}
         />
         <div
           aria-hidden
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#2563EB]/20"
-          style={{
-            width: "52%",
-            height: "52%",
-            animation: "spin 90s linear infinite reverse",
-          }}
+          style={{ width: "52%", height: "52%", animation: "spin 90s linear infinite reverse" }}
         />
         {/* Innermost solid hairline (no rotation) */}
         <div
@@ -591,8 +587,8 @@ function ValuesDiagram({ items }: { items: { name: string; tagline: string }[] }
           {positions.map((p, i) => (
             <line
               key={i}
-              x1={p.line.x1}
-              y1={p.line.y1}
+              x1={50}
+              y1={50}
               x2={p.line.x2}
               y2={p.line.y2}
               stroke="rgba(37,99,235,0.22)"
@@ -604,28 +600,28 @@ function ValuesDiagram({ items }: { items: { name: string; tagline: string }[] }
           ))}
         </svg>
 
-        {/* Center BECOME seal */}
+        {/* Center BECOME seal — responsive padding + type */}
         <motion.div
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.05 }}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
         >
-          <div className="bg-white rounded-2xl px-9 py-7 text-center shadow-[0_24px_60px_-20px_rgba(15,23,42,0.20)] border border-slate-100">
-            <p className="font-serif font-black italic text-[2.25rem] tracking-tight text-[#0f172a] leading-none">
+          <div className="bg-white rounded-xl md:rounded-2xl px-4 py-3 sm:px-5 sm:py-4 md:px-7 md:py-5 lg:px-8 lg:py-6 text-center shadow-[0_18px_44px_-18px_rgba(15,23,42,0.22)] border border-slate-100">
+            <p className="font-serif font-black italic text-[1.05rem] sm:text-xl md:text-2xl lg:text-[1.85rem] tracking-tight text-[#0f172a] leading-none">
               BECOME
             </p>
-            <p className="font-mono text-[10px] font-bold tracking-[0.32em] uppercase text-[#2563EB] mt-1.5">
+            <p className="font-mono text-[8px] sm:text-[9px] md:text-[10px] font-bold tracking-[0.28em] uppercase text-[#2563EB] mt-1 md:mt-1.5">
               Law Firm
             </p>
-            <div className="w-9 h-[2px] bg-[#0f172a] my-3 mx-auto" />
-            <p className="text-[12.5px] font-bold text-[#0f172a] max-w-[180px] leading-snug">
+            <div className="hidden sm:block w-7 md:w-8 h-[2px] bg-[#0f172a] my-2 md:my-3 mx-auto" />
+            <p className="hidden sm:block text-[10.5px] md:text-[11.5px] lg:text-[12px] font-bold text-[#0f172a] max-w-[140px] md:max-w-[170px] leading-snug">
               네 가지 원칙으로 변론합니다.
             </p>
           </div>
         </motion.div>
 
-        {/* Four cardinal cards — symmetric via percent + transform */}
+        {/* Four cardinal cards — responsive width, tagline drops on the smallest screens */}
         {items.map((item, i) => {
           const pos = positions[i];
           return (
@@ -634,18 +630,18 @@ function ValuesDiagram({ items }: { items: { name: string; tagline: string }[] }
               initial={{ opacity: 0, scale: 0.92 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
-              className={`absolute w-[230px] z-[5] ${pos.className}`}
+              className={`absolute w-[110px] sm:w-[150px] md:w-[178px] lg:w-[210px] z-[5] ${pos.className}`}
             >
-              <div className="bg-white border border-slate-200 hover:border-[#2563EB] transition-colors rounded-lg p-5 shadow-[0_8px_24px_-12px_rgba(15,23,42,0.18)]">
-                <div className="flex items-center gap-2.5 mb-2">
-                  <span className="grid place-items-center w-7 h-7 rounded-full bg-[#0f172a] text-white">
+              <div className="bg-white border border-slate-200 hover:border-[#2563EB] transition-colors rounded-md md:rounded-lg p-2.5 sm:p-3 md:p-4 lg:p-5 shadow-[0_6px_18px_-10px_rgba(15,23,42,0.18)]">
+                <div className="flex items-center gap-1.5 sm:gap-2 md:gap-2.5 mb-1 md:mb-2">
+                  <span className="grid place-items-center w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 rounded-full bg-[#0f172a] text-white shrink-0">
                     {VALUE_ICONS[i]}
                   </span>
-                  <h4 className="text-[1.05rem] font-extrabold text-[#0f172a] tracking-tight">
+                  <h4 className="text-[12px] sm:text-[13.5px] md:text-[15px] lg:text-[1.05rem] font-extrabold text-[#0f172a] tracking-tight leading-tight">
                     {item.name}
                   </h4>
                 </div>
-                <p className="text-[#2563EB] font-bold text-[12.5px] leading-snug">
+                <p className="hidden sm:block text-[#2563EB] font-bold text-[10.5px] md:text-[11.5px] lg:text-[12.5px] leading-snug">
                   {item.tagline}
                 </p>
               </div>
