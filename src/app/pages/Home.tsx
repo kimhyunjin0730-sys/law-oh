@@ -824,7 +824,7 @@ export function Home() {
       </section>
 
       {/* 3-PILLAR — Professional / Expertise / Availability */}
-      <section className="bg-[#050B14] text-white border-y border-white/5">
+      <section className="bg-[#1a2540] text-white border-y border-white/5">
         <div className="grid lg:grid-cols-3">
           {content.pillars.map((pillar, i) => (
             <motion.div
@@ -843,9 +843,9 @@ export function Home() {
                     "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=85&w=1200"
                   ][i]}
                   alt=""
-                  className="w-full h-full object-cover opacity-[0.22] group-hover:opacity-[0.35] transition-opacity duration-700 scale-110 group-hover:scale-100"
+                  className="w-full h-full object-cover opacity-[0.32] group-hover:opacity-[0.45] transition-opacity duration-700 scale-110 group-hover:scale-100"
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-[#050B14]/60 via-[#050B14]/85 to-[#050B14]" />
+                <div className="absolute inset-0 bg-gradient-to-b from-[#1a2540]/55 via-[#1a2540]/80 to-[#1a2540]/95" />
               </div>
               <div className="relative w-full flex flex-col justify-end p-10 lg:p-14">
                 <div className="mb-5">{[<GraduationCap className="w-8 h-8 text-[#2563EB]" strokeWidth={1.4} />, <Layers className="w-8 h-8 text-[#2563EB]" strokeWidth={1.4} />, <Clock className="w-8 h-8 text-[#2563EB]" strokeWidth={1.4} />][i]}</div>
@@ -917,7 +917,7 @@ export function Home() {
       </section>
 
       {/* ─────────── PRACTICE AREAS ─────────── */}
-      <section className="py-24 lg:py-32 bg-[#0f172a] text-white overflow-hidden relative">
+      <section className="py-24 lg:py-32 bg-[#1a2540] text-white overflow-hidden relative">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16 lg:mb-24">
             <div>
@@ -945,7 +945,7 @@ export function Home() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: i * 0.1 }}
-                className="group p-10 lg:p-14 bg-[#0f172a] hover:bg-[#161e31] transition-colors relative"
+                className="group p-10 lg:p-14 bg-[#1a2540] hover:bg-[#243151] transition-colors relative"
               >
                 <div className="text-[64px] font-black text-white/5 absolute top-10 right-10 group-hover:text-[#2563EB]/10 transition-colors">
                   0{i + 1}
@@ -1161,7 +1161,7 @@ export function Home() {
       </section>
 
       {/* ─────────── HASHTAG SEARCH ─────────── */}
-      <section className="py-20 lg:py-24 bg-[#0a0e1a] text-white overflow-hidden relative">
+      <section className="py-20 lg:py-24 bg-[#1a2540] text-white overflow-hidden relative">
         <div
           aria-hidden
           className="absolute inset-0 opacity-[0.05]"
@@ -1231,7 +1231,7 @@ export function Home() {
       </section>
 
       {/* ─────────── CONSULTATION INTAKE FORM ─────────── */}
-      <section id="consult" className="py-24 lg:py-32 bg-[#0f172a] text-white border-t-[6px] border-[#2563EB]">
+      <section id="consult" className="py-24 lg:py-32 bg-[#1a2540] text-white border-t-[6px] border-[#2563EB]">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-16">
           <div className="lg:col-span-5">
             <div className="flex items-center gap-3 mb-6">
@@ -1376,7 +1376,7 @@ export function Home() {
       </section>
 
       {/* Guide / Lead Magnet Section */}
-      <section className="py-24 bg-[#0f172a] relative border-t-8 border-[#2563EB]">
+      <section className="py-24 bg-[#1a2540] relative border-t-8 border-[#2563EB]">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col md:flex-row items-center gap-16">
             <div className="md:w-2/3 text-white">
