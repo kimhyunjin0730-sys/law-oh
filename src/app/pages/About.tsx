@@ -269,24 +269,33 @@ export function About() {
           </p>
         </motion.div>
 
-        <div className="mt-20 border border-slate-200 bg-white flex flex-col lg:flex-row shadow-sm">
-          <div className="lg:w-2/5 relative min-h-[500px] lg:min-h-0 bg-transparent">
-            <img
-              src={ohDonghyun}
-              alt={currentContent.nameFull}
-              className="absolute inset-0 w-full h-full object-contain object-center"
-            />
-            <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-white to-transparent lg:hidden">
-              <h3 className="text-3xl font-extrabold text-[#0f172a] mb-2">{currentContent.nameFull}</h3>
-              <p className="text-[#2563EB] font-bold">법률사무소 비컴 {currentContent.nameSub}</p>
+        <div className="mt-20 border border-slate-200 bg-white flex flex-col lg:flex-row shadow-[0_1px_3px_rgba(15,23,42,0.04),0_20px_40px_-20px_rgba(15,23,42,0.12)]">
+          {/* Portrait — image already carries its own brand composition (BECOME · 오동현 파트너 변호사),
+              so the container is an elegant frame, not an overlay. Aspect ratio locked to the source (1179×1363). */}
+          <div className="lg:w-[44%] relative bg-gradient-to-br from-slate-50 to-white overflow-hidden">
+            <div className="aspect-[1179/1363] lg:aspect-auto lg:h-full">
+              <img
+                src={ohDonghyun}
+                alt={currentContent.nameFull}
+                className="w-full h-full object-contain object-center"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
+            {/* Hairline right divider on desktop — mirrors the editorial seal feel */}
+            <div className="hidden lg:block absolute top-10 bottom-10 right-0 w-px bg-gradient-to-b from-transparent via-slate-200 to-transparent" />
           </div>
-          
-          <div className="lg:w-3/5 p-10 md:p-16 lg:p-24 bg-white">
-            <div className="hidden lg:block mb-12">
-              <h3 className="text-4xl font-extrabold text-[#0f172a] mb-4">{currentContent.nameTitle} <span className="text-2xl text-slate-500 font-bold ml-2">{currentContent.nameSub}</span></h3>
-              <div className="w-12 h-1 bg-[#2563EB] mb-8" />
-              <blockquote className="text-2xl font-extrabold text-[#0f172a] leading-relaxed border-l-4 border-[#2563EB] pl-8 py-2 bg-slate-50/50 italic tracking-tight whitespace-pre-line">
+
+          <div className="lg:w-[56%] p-10 md:p-16 lg:p-20 bg-white">
+            <div className="hidden lg:block mb-10">
+              <h3 className="text-[2.75rem] leading-tight font-extrabold text-[#0f172a] tracking-tight mb-3">
+                {currentContent.nameTitle}
+                <span className="text-xl text-slate-500 font-bold ml-3 align-middle tracking-normal">
+                  {currentContent.nameSub}
+                </span>
+              </h3>
+              <div className="w-12 h-[3px] bg-[#2563EB] mb-8" />
+              <blockquote className="text-[1.35rem] leading-[1.65] font-extrabold text-[#0f172a] border-l-4 border-[#2563EB] pl-7 py-1 italic tracking-tight whitespace-pre-line">
                 {currentContent.quote}
               </blockquote>
             </div>
