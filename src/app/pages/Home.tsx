@@ -907,7 +907,7 @@ export function Home() {
                 <h3 className="text-xl lg:text-[22px] font-black text-[#0f172a] mb-5 tracking-tight leading-snug">
                   {item.title}
                 </h3>
-                <p className="text-[14px] lg:text-[15px] text-slate-600 font-medium leading-[1.85]">
+                <p className="text-[15px] lg:text-[16px] text-slate-700 font-medium leading-[1.85]">
                   {item.desc}
                 </p>
               </motion.div>
@@ -924,7 +924,7 @@ export function Home() {
               <h2 className="text-[32px] sm:text-[44px] lg:text-[56px] font-black tracking-tight leading-[1.1] mb-6">
                 {content.services.title}
               </h2>
-              <p className="text-base lg:text-lg text-slate-400 font-medium leading-relaxed max-w-[560px]">
+              <p className="text-base lg:text-lg text-slate-300 font-medium leading-relaxed max-w-[560px]">
                 {content.services.subtitle}
               </p>
             </div>
@@ -953,7 +953,7 @@ export function Home() {
                 <h3 className="text-xl lg:text-[24px] font-black mb-6 tracking-tight group-hover:text-[#2563EB] transition-colors">
                   {s.title}
                 </h3>
-                <p className="text-[15px] lg:text-[16px] text-slate-400 font-medium leading-[1.8] mb-10">
+                <p className="text-[15px] lg:text-[16px] text-slate-300 font-medium leading-[1.8] mb-10">
                   {s.desc}
                 </p>
                 <Link
