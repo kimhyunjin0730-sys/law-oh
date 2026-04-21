@@ -25,8 +25,9 @@ const COPY: Record<Lang, {
   };
   values: {
     eyebrow: string;
-    centerSub: string;
-    items: { name: string; tagline: string; body: string }[];
+    title: string;
+    subtitle: string;
+    items: { name: string; tagline: string; body: string[] }[];
   };
   ctaTitle: string;
   ctaButton: string;
@@ -62,27 +63,44 @@ const COPY: Record<Lang, {
     },
     values: {
       eyebrow: "Core Values",
-      centerSub: "직접 듣고, 정확히 변론하는 곳",
+      title: "비컴이 일하는 네 가지 원칙",
+      subtitle: "변하지 않는 네 개의 약속이 모든 사건의 기준이 됩니다.",
       items: [
         {
           name: "직접 소통",
           tagline: "통역 없는 변론, 그 자체로 무기.",
-          body: "변호사가 직접 중국어로 사실관계를 청취하고 변론합니다. 통역의 누락이 결과를 바꾸지 못하도록 합니다.",
+          body: [
+            "한국에서 외국인이 처음 마주하는 가장 큰 벽은 언어가 아니라, 자신의 말이 변호사 → 통역인 → 검사·판사를 거치는 동안 결을 잃는다는 사실입니다. 미묘한 어조와 시점, 의도가 한 단계씩 마모되는 동안 사실관계는 점점 단순해지고, 그 단순화가 곧 처분과 판결의 근거가 됩니다.",
+            "비컴은 변호사 본인이 중국어로 직접 청취·변론합니다. 통역의 단계 자체가 없으므로, 의뢰인이 사용하는 단어 하나하나가 그대로 변론서에 옮겨집니다. 형사 진술, 민사 증인 신문, 출입국 의견서 — 어떤 단계에서도 의뢰인의 진의가 왜곡되지 않습니다.",
+            "이는 단순한 \u2018서비스 편의\u2019가 아니라, 외국인 의뢰인의 변호인의 조력을 받을 권리(형사소송법 제244조의2)를 실효성 있게 보장하는 방식이라고 믿습니다.",
+          ],
         },
         {
           name: "정확한 분석",
           tagline: "한 사건, 두 나라의 시선으로.",
-          body: "한국 법리뿐 아니라 중국 현지의 비즈니스·문화 맥락까지 함께 분석해 의뢰인의 현실을 그대로 읽어냅니다.",
+          body: [
+            "같은 사실관계라도 한국 법원의 시각과 중국 의뢰인의 사회·문화적 맥락에서 보이는 모습은 다릅니다. 단순히 한국 법조문만 적용해 답을 내리는 것은, 의뢰인이 처한 실제 상황을 절반밖에 보지 못하는 일과 같습니다.",
+            "비컴은 한국의 법리·판례·실무 동향을 기본으로, 중국 현지의 비즈니스 관행, 가족 관계 구조, 계약 문화, 행정 절차까지 입체적으로 분석합니다. 형사 사건의 양형 자료, 민사 사건의 손해 산정, 가사 사건의 양육권 평가 — 어떤 단계에서도 \u2018한 나라 법전만 보는 분석\u2019은 배제합니다.",
+            "이는 과거 중국 현지에서 직접 일하고 생활한 변호사의 실무 경험이 있기에 가능한 깊이입니다.",
+          ],
         },
         {
           name: "끝까지 책임",
           tagline: "처분 이후의 시간까지 함께.",
-          body: "형사 처분이 비자·체류 자격에 미치는 영향까지 사전 평가하고, 사건 종료 후 회복 단계까지 동행합니다.",
+          body: [
+            "의뢰인에게 사건의 끝은 판결문이 아닙니다. 형사 처분 이후 비자가 어떻게 되는지, 민사 판결 이후 강제집행을 어떻게 진행할지, 가사 사건 이후 자녀의 학교·체류 자격을 어떻게 정리할지 — 그 모든 \u2018후속 단계\u2019가 의뢰인에게는 더 큰 사건이 됩니다.",
+            "비컴은 사건 수임 단계에서부터 처분 이후의 경로를 함께 설계합니다. 형사 사건이라면 강제퇴거 가능성을, 민사 사건이라면 자산 가압류 시점을, 가사 사건이라면 양국 등록 절차를 동시에 트래킹합니다.",
+            "한 단계가 끝났다고 손을 떼지 않는 것 — 이것이 비컴이 \u2018대리인\u2019이 아닌 \u2018동반자\u2019라고 스스로를 부르는 이유입니다.",
+          ],
         },
         {
           name: "신뢰의 원칙",
           tagline: "의뢰인이 없으면 우리도 없습니다.",
-          body: "한 분 한 분의 사건을 인생의 동반자로 여기며, 비밀 유지·정직한 의견·시한 관리 세 원칙을 지킵니다.",
+          body: [
+            "법무 서비스에서 가장 무거운 약속은 결과에 대한 약속이 아니라, 의뢰인에 대한 정직함의 약속입니다. 비컴은 어떤 사건이든 승소 가능성을 객관적으로 평가하고, 의뢰인에게 부정적인 요소도 회피하지 않고 전달합니다.",
+            "비밀 유지는 수임 여부와 무관하게 적용됩니다. 상담 단계에서 들은 어떤 사실도 외부로 새지 않으며, 사건 종료 후에도 동일하게 보호됩니다.",
+            "시한 관리는 변호사 본인이 직접 챙깁니다. 이의신청 7일, 행정소송 90일, 항소 7일 — 단 하루의 누락도 의뢰인의 권리를 회복 불가능하게 만들 수 있다는 사실을 매 순간 의식합니다.",
+          ],
         },
       ],
     },
@@ -120,27 +138,44 @@ const COPY: Record<Lang, {
     },
     values: {
       eyebrow: "Core Values",
-      centerSub: "直接倾听，精准辩护",
+      title: "BECOME 工作的四项原则",
+      subtitle: "不变的四项承诺，是每一件案件的标准。",
       items: [
         {
           name: "直接沟通",
-          tagline: "无需翻译的辩护本身就是力量。",
-          body: "律师以中文直接听取事实关系并进行辩护。绝不让翻译遗漏改变案件结果。",
+          tagline: "无需翻译的辩护，本身就是力量。",
+          body: [
+            "外籍当事人在韩国遇到的最大障碍并非语言本身，而是自己的陈述经由律师 → 翻译 → 检察官·法官的层层传递时不断被磨损。微妙的语气、时机和意图在每一阶段被稀释，事实关系逐渐被简化，而这种简化直接成为处分和判决的依据。",
+            "BECOME律师事务所由律师本人以中文直接听取陈述并进行辩护。因为完全没有翻译环节，当事人使用的每一个词都直接进入辩护书。无论是刑事陈述、民事证人讯问，还是出入境意见书，当事人的本意都不会在任何阶段被扭曲。",
+            "我们认为，这不仅是\u201C服务上的便利\u201D，更是切实保障外籍当事人获得律师协助权利（《刑事诉讼法》第244条之2）的方式。",
+          ],
         },
         {
           name: "精准分析",
           tagline: "一件案件，两国视角。",
-          body: "不仅以韩国法理，更结合中国当地的商业与文化语境，准确把握当事人所处的现实。",
+          body: [
+            "同样的事实关系，从韩国法院的视角和中国当事人的社会文化语境出发，所呈现的样貌截然不同。仅依韩国法条直接得出结论，等于只看到当事人现实的一半。",
+            "BECOME以韩国法理、判例与实务动态为基础，结合中国当地的商业惯例、家庭关系结构、合同文化与行政程序进行立体分析。无论是刑事案件的量刑材料、民事案件的损害评估，还是家事案件的抚养权评估，我们都拒绝\u201C仅看一国法典的分析\u201D。",
+            "这种深度，源于律师过去在中国当地实际工作与生活的实务经验。",
+          ],
         },
         {
           name: "负责到底",
           tagline: "处分之后的时间也与您同行。",
-          body: "事前评估刑事处分对签证·居留资格的影响，案件结束后的恢复阶段亦持续陪同。",
+          body: [
+            "对当事人而言，案件的终点并非判决书。刑事处分后签证如何处理、民事判决后如何进行强制执行、家事案件后子女的就学与居留资格如何整理 — 所有这些\u201C后续阶段\u201D对当事人而言才是更大的案件。",
+            "BECOME自接案阶段起便与当事人共同设计处分之后的路径。刑事案件中预判强制遣返可能性、民事案件中把握资产假扣押时点、家事案件中同步追踪两国登记程序。",
+            "一阶段结束后绝不撒手 — 这正是BECOME自称\u201C同行者\u201D而非\u201C代理人\u201D的原因。",
+          ],
         },
         {
           name: "信任原则",
           tagline: "没有当事人，就没有我们。",
-          body: "将每一位当事人视为人生的同行者，恪守保密、诚实意见、期限管理三项原则。",
+          body: [
+            "法律服务中最沉重的承诺，不是对结果的承诺，而是对当事人的诚实承诺。BECOME对任何案件都客观评估胜诉可能性，绝不回避向当事人传达不利因素。",
+            "保密义务不论是否最终受案均同等适用。咨询阶段听到的任何事实都不会外泄，案件结束后亦同样受保护。",
+            "期限管理由律师本人亲自把控。异议申请7日、行政诉讼90日、上诉7日 — 哪怕一日的疏漏都可能令当事人的权利无法挽回，这一点我们时刻铭记。",
+          ],
         },
       ],
     },
@@ -178,27 +213,44 @@ const COPY: Record<Lang, {
     },
     values: {
       eyebrow: "Core Values",
-      centerSub: "Heard directly. Argued precisely.",
+      title: "Four principles BECOME works by.",
+      subtitle: "Four promises that don't change — and that set the bar for every case.",
       items: [
         {
           name: "Direct Dialogue",
           tagline: "Defense without an interpreter is its own weapon.",
-          body: "Counsel listens to the facts and argues the case directly in Chinese — no translation gaps to alter the outcome.",
+          body: [
+            "The first wall a foreigner hits in Korea is not the language itself — it is the fact that one's words lose texture as they pass from client to lawyer to interpreter to prosecutor and judge. Tone, timing, and intent are sanded down at every step, the facts are simplified, and that simplification becomes the basis of disposition and judgment.",
+            "At BECOME, counsel listens and argues in Chinese personally. Because there is no translation layer, every word the client uses lands in the brief intact. From criminal interrogations to civil witness examinations to immigration submissions, the client's true meaning is never bent at any stage.",
+            "We treat this not as a service convenience, but as the way to give the foreign client's right to counsel (Korean Criminal Procedure Act, Art. 244-2) real, working force.",
+          ],
         },
         {
           name: "Precise Analysis",
           tagline: "One case, the lens of two countries.",
-          body: "Not only Korean doctrine, but the business and cultural context inside China — read together to grasp the client's actual reality.",
+          body: [
+            "The same set of facts looks different through a Korean court's lens than through the social and cultural context of a Chinese client. Applying only the Korean code is like seeing half of the client's actual reality.",
+            "BECOME starts from Korean doctrine, precedent, and practice trends — then layers in Chinese business customs, family structure, contract culture, and administrative procedure. Whether it is sentencing material in a criminal matter, damages calculation in a civil matter, or custody assessment in a family matter, we refuse 'one-jurisdiction-only' analysis.",
+            "That depth is possible because counsel has worked and lived inside China, not merely studied it from abroad.",
+          ],
         },
         {
           name: "Accountable to the End",
           tagline: "We stay through the time after disposition.",
-          body: "Pre-assess how a criminal disposition affects visa and residency, and stay with you through the recovery phase after the case ends.",
+          body: [
+            "For a client, the case does not end with the verdict. What happens to the visa after a criminal disposition, how to enforce a civil judgment, how to settle a child's school and residency after a family matter — every one of those 'next steps' is, for the client, the larger case.",
+            "BECOME designs the post-disposition path from the moment we take on the matter. Criminal cases track deportation risk; civil cases track the right moment for asset attachment; family cases track registration in both countries — all in parallel.",
+            "We do not let go when one stage ends. That is why BECOME calls itself a 'companion' rather than a mere 'representative'.",
+          ],
         },
         {
           name: "Trust First",
           tagline: "Without our clients, we don't exist.",
-          body: "We treat every client as a life companion — confidentiality, honest counsel, and disciplined deadlines as our three pillars.",
+          body: [
+            "The heaviest promise in legal service is not a promise about outcome, but a promise of honesty toward the client. BECOME assesses the probability of success objectively in every case, and does not flinch from telling the client the unfavorable facts.",
+            "Confidentiality applies whether or not we are ultimately retained. Anything heard at consultation stays inside our walls, and remains protected after the case ends.",
+            "Deadlines are managed by counsel personally. Seven days for appeal, ninety days for litigation, seven days for criminal appeal — every day matters, and we are aware that a single missed day can make a client's right unrecoverable.",
+          ],
         },
       ],
     },
@@ -270,7 +322,7 @@ export function Firm() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: [0.2, 0.65, 0.3, 0.9] }}
           >
-            {/* Hero panel — title + portrait only (prose moved below) */}
+            {/* Hero panel — title + portrait only */}
             <section
               className="relative isolate overflow-hidden rounded-xl
                          bg-gradient-to-br from-[#EAF3FC] via-[#D6E5F4] to-[#BBD2EA]
@@ -379,7 +431,7 @@ export function Firm() {
           </motion.div>
         )}
 
-        {/* VALUES TAB — orbital diagram (lg+) / stacked grid (mobile) */}
+        {/* VALUES TAB — editorial vertical layout, 4 numbered sections with extended prose */}
         {tab === "values" && (
           <motion.section
             key="values"
@@ -387,36 +439,77 @@ export function Firm() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: [0.2, 0.65, 0.3, 0.9] }}
           >
-            <p className="font-mono text-[11px] md:text-xs font-bold tracking-[0.3em] uppercase text-[#2563EB] text-center mb-10">
-              {c.values.eyebrow}
-            </p>
+            {/* Section header */}
+            <div className="max-w-[820px] mb-16 md:mb-20">
+              <p className="font-mono text-[11px] md:text-xs font-bold tracking-[0.3em] uppercase text-[#2563EB] mb-4">
+                {c.values.eyebrow}
+              </p>
+              <h2 className="text-[2rem] md:text-[2.75rem] lg:text-[3.25rem] leading-[1.1] font-black tracking-tight text-[#0f172a] mb-4">
+                {c.values.title}
+              </h2>
+              <p className="text-base md:text-lg text-slate-600 font-medium leading-relaxed">
+                {c.values.subtitle}
+              </p>
+            </div>
 
-            {/* DESKTOP — orbital diagram */}
-            <OrbitalDiagram items={c.values.items} centerSub={c.values.centerSub} />
-
-            {/* MOBILE — 2x2 stacked grid */}
-            <div className="lg:hidden grid grid-cols-1 sm:grid-cols-2 gap-5 mt-2">
+            {/* Vertical numbered sections */}
+            <div className="space-y-16 md:space-y-24">
               {c.values.items.map((item, i) => (
-                <article
+                <motion.article
                   key={i}
-                  className="group bg-white border border-slate-200 hover:border-[#2563EB] transition-colors p-7 rounded-lg shadow-sm hover:shadow-[0_18px_40px_-20px_rgba(37,99,235,0.35)]"
+                  initial={{ opacity: 0, y: 18 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-80px" }}
+                  transition={{ duration: 0.55, delay: 0.05, ease: [0.2, 0.65, 0.3, 0.9] }}
+                  className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-8 lg:gap-16 pb-16 md:pb-20 border-b border-slate-200 last:border-b-0 last:pb-0"
                 >
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="grid place-items-center w-9 h-9 rounded-full bg-[#0f172a] text-white">
-                      {VALUE_ICONS[i]}
-                    </span>
-                    <h3 className="text-xl font-extrabold text-[#0f172a] tracking-tight">{item.name}</h3>
+                  {/* Left column — number + name + tagline + icon */}
+                  <div className="lg:sticky lg:top-32 self-start">
+                    <div className="flex items-baseline gap-3 mb-5">
+                      <span className="font-serif font-black text-[#2563EB] text-[2.25rem] leading-none tabular-nums">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <span className="font-mono text-[10px] font-bold tracking-[0.28em] uppercase text-slate-400">
+                        Value
+                      </span>
+                    </div>
+
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="grid place-items-center w-9 h-9 rounded-full bg-[#0f172a] text-white">
+                        {VALUE_ICONS[i]}
+                      </span>
+                      <h3 className="text-2xl md:text-[1.85rem] font-black text-[#0f172a] tracking-tight">
+                        {item.name}
+                      </h3>
+                    </div>
+
+                    <p className="text-[#2563EB] font-bold text-base leading-snug max-w-[260px]">
+                      {item.tagline}
+                    </p>
+                    <div className="w-10 h-[3px] bg-[#0f172a] mt-5" />
                   </div>
-                  <p className="text-[#2563EB] font-bold text-[15px] mb-3">{item.tagline}</p>
-                  <p className="text-[14.5px] leading-[1.75] text-slate-600 font-medium">{item.body}</p>
-                </article>
+
+                  {/* Right column — extended body paragraphs */}
+                  <div>
+                    <div className="space-y-5 max-w-[68ch]">
+                      {item.body.map((p, j) => (
+                        <p
+                          key={j}
+                          className="text-[16px] md:text-[16.5px] leading-[1.85] text-slate-700 font-medium"
+                        >
+                          {p}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                </motion.article>
               ))}
             </div>
           </motion.section>
         )}
 
         {/* CTA strip */}
-        <div className="mt-20 md:mt-28 max-w-[1100px] mx-auto px-2">
+        <div className="mt-20 md:mt-28">
           <div className="bg-[#0f172a] text-white rounded-xl px-8 md:px-12 py-10 md:py-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
               <p className="font-mono text-[11px] font-bold tracking-[0.26em] uppercase text-[#2563EB] mb-3">
@@ -436,190 +529,6 @@ export function Firm() {
           </div>
         </div>
       </div>
-    </div>
-  );
-}
-
-/* ─────────────────────────────────────────────────────────────────
-   Orbital diagram — slow rotating dotted rings around a quiet seal,
-   four value cards anchored at cardinal points (12/3/6/9).
-   Rings move; cards stay fixed and readable.
-   ──────────────────────────────────────────────────────────────── */
-function OrbitalDiagram({
-  items,
-  centerSub,
-}: {
-  items: { name: string; tagline: string; body: string }[];
-  centerSub: string;
-}) {
-  // Layout constants
-  const W = 980;
-  const H = 760;
-  const CARD_RADIUS = 340; // distance of card center from diagram center
-  const RING_OUTER = 300;
-  const RING_MID = 230;
-  const RING_INNER = 168;
-
-  // Cardinal positions (top, right, bottom, left)
-  const positions = [-90, 0, 90, 180];
-
-  return (
-    <div
-      className="hidden lg:block relative mx-auto"
-      style={{ width: W, height: H }}
-      aria-label="BECOME core values orbital diagram"
-    >
-      {/* Decorative SVG rings */}
-      <svg
-        className="absolute inset-0 w-full h-full pointer-events-none"
-        viewBox={`${-W / 2} ${-H / 2} ${W} ${H}`}
-        aria-hidden
-      >
-        <defs>
-          <radialGradient id="centerGlow" cx="0" cy="0" r="50%">
-            <stop offset="0%" stopColor="rgba(37,99,235,0.10)" />
-            <stop offset="100%" stopColor="rgba(37,99,235,0)" />
-          </radialGradient>
-        </defs>
-
-        {/* Soft center glow */}
-        <circle cx="0" cy="0" r="220" fill="url(#centerGlow)" />
-
-        {/* Outer dotted ring — slow CW (60s) */}
-        <g style={{ transformOrigin: "0 0", animation: "spin 60s linear infinite" }}>
-          <circle
-            cx="0"
-            cy="0"
-            r={RING_OUTER}
-            fill="none"
-            stroke="rgba(37,99,235,0.32)"
-            strokeWidth="1.5"
-            strokeDasharray="3 11"
-          />
-          {/* tiny ticks at 0/90/180/270 */}
-          {[0, 90, 180, 270].map((deg) => {
-            const rad = (deg * Math.PI) / 180;
-            const x1 = Math.cos(rad) * (RING_OUTER - 6);
-            const y1 = Math.sin(rad) * (RING_OUTER - 6);
-            const x2 = Math.cos(rad) * (RING_OUTER + 6);
-            const y2 = Math.sin(rad) * (RING_OUTER + 6);
-            return (
-              <line
-                key={deg}
-                x1={x1}
-                y1={y1}
-                x2={x2}
-                y2={y2}
-                stroke="rgba(37,99,235,0.45)"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-              />
-            );
-          })}
-        </g>
-
-        {/* Middle dotted ring — CCW (90s) */}
-        <g style={{ transformOrigin: "0 0", animation: "spin 90s linear infinite reverse" }}>
-          <circle
-            cx="0"
-            cy="0"
-            r={RING_MID}
-            fill="none"
-            stroke="rgba(37,99,235,0.22)"
-            strokeWidth="1"
-            strokeDasharray="2 9"
-          />
-        </g>
-
-        {/* Inner solid hairline */}
-        <circle
-          cx="0"
-          cy="0"
-          r={RING_INNER}
-          fill="none"
-          stroke="rgba(15,23,42,0.10)"
-          strokeWidth="1"
-        />
-
-        {/* Static dashed connectors from center to each cardinal point */}
-        {positions.map((angle) => {
-          const rad = (angle * Math.PI) / 180;
-          const x = Math.cos(rad) * CARD_RADIUS;
-          const y = Math.sin(rad) * CARD_RADIUS;
-          return (
-            <line
-              key={angle}
-              x1={Math.cos(rad) * RING_INNER}
-              y1={Math.sin(rad) * RING_INNER}
-              x2={x}
-              y2={y}
-              stroke="rgba(37,99,235,0.18)"
-              strokeWidth="1"
-              strokeDasharray="2 5"
-            />
-          );
-        })}
-      </svg>
-
-      {/* Center seal */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
-      >
-        <div className="bg-white rounded-2xl px-9 py-7 text-center shadow-[0_24px_60px_-20px_rgba(15,23,42,0.25)] border border-slate-100">
-          <p className="font-serif font-black italic text-[2.4rem] tracking-tight text-[#0f172a] leading-none">
-            BECOME
-          </p>
-          <p className="font-mono text-[10px] font-bold tracking-[0.32em] uppercase text-[#2563EB] mt-1.5">
-            Law Firm
-          </p>
-          <div className="w-9 h-[2px] bg-[#0f172a] my-3 mx-auto" />
-          <p className="text-[13px] font-bold text-[#0f172a] max-w-[180px] leading-snug">
-            {centerSub}
-          </p>
-        </div>
-      </motion.div>
-
-      {/* Cardinal value cards */}
-      {items.map((item, i) => {
-        const angle = positions[i];
-        const rad = (angle * Math.PI) / 180;
-        const x = Math.cos(rad) * CARD_RADIUS;
-        const y = Math.sin(rad) * CARD_RADIUS;
-        return (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, scale: 0.85 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.55, delay: 0.3 + i * 0.12, ease: [0.2, 0.65, 0.3, 0.9] }}
-            className="absolute w-[260px]"
-            style={{
-              top: `calc(50% + ${y}px)`,
-              left: `calc(50% + ${x}px)`,
-              transform: "translate(-50%, -50%)",
-            }}
-          >
-            <article className="group bg-white border border-slate-200 hover:border-[#2563EB] transition-all duration-300 p-5 rounded-lg shadow-[0_8px_24px_-12px_rgba(15,23,42,0.18)] hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-18px_rgba(37,99,235,0.40)]">
-              <div className="flex items-center gap-2.5 mb-2.5">
-                <span className="grid place-items-center w-8 h-8 rounded-full bg-[#0f172a] text-white">
-                  {VALUE_ICONS[i]}
-                </span>
-                <h4 className="text-[1.05rem] font-extrabold text-[#0f172a] tracking-tight">
-                  {item.name}
-                </h4>
-              </div>
-              <p className="text-[#2563EB] font-bold text-[12.5px] mb-2 leading-snug">
-                {item.tagline}
-              </p>
-              <p className="text-[12.5px] leading-[1.65] text-slate-600 font-medium">
-                {item.body}
-              </p>
-            </article>
-          </motion.div>
-        );
-      })}
     </div>
   );
 }
