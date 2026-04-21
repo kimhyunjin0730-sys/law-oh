@@ -11,12 +11,9 @@ const COPY: Record<Lang, {
   pageSubtitle: string;
   tabs: { intro: string; values: string };
   intro: {
-    eyebrow: string;
-    titleA: string;
-    titleB: string;
+    opener: string;
     aboutHeading: string;
     aboutBody: string[];
-    aboutHighlights: { label: string; value: string }[];
     greetingHeading: string;
     greetingBody: string[];
     sigRole: string;
@@ -34,19 +31,12 @@ const COPY: Record<Lang, {
     pageSubtitle: "한국과 중국, 두 언어로 당신의 권리를 지킵니다.",
     tabs: { intro: "소개", values: "핵심 가치" },
     intro: {
-      eyebrow: "About BECOME",
-      titleA: "당신의 언어로 듣고,",
-      titleB: "한국 법으로 지킵니다.",
+      opener: "통역이 아닌 변호사가 직접 — 당신의 이야기는 그대로 한국 법정에 닿습니다.",
       aboutHeading: "법률사무소 비컴에 대하여",
       aboutBody: [
         "법률사무소 비컴은 한국과 중국, 두 언어로 법률 서비스를 제공하는 부티크 법률사무소입니다. 통역을 거치지 않고 변호사가 직접 중국어로 의뢰인의 사실관계를 청취하며, 한국 법리에 따라 변론합니다.",
         "형사·민사·출입국·기업 자문·가사 등 중국어권 의뢰인이 한국에서 마주하는 거의 모든 법적 문제를 한 사무소 안에서 해결할 수 있도록 설계되었습니다. 단순한 통역 서비스가 아닌 \u2018직접 소통\u2019을 통해, 의뢰인의 진술이 한국 법정에서 그대로 효력을 갖도록 합니다.",
         "사건의 결과뿐 아니라 체류 자격·향후 비자 갱신까지 종합적으로 관리하는 것이 비컴의 일하는 방식입니다. 365일 24시간 위챗으로 상담을 접수합니다.",
-      ],
-      aboutHighlights: [
-        { label: "직접 상담", value: "한·중 양국어" },
-        { label: "통역", value: "0회" },
-        { label: "위챗 상담", value: "24/7" },
       ],
       greetingHeading: "대표변호사 인사말",
       greetingBody: [
@@ -107,19 +97,12 @@ const COPY: Record<Lang, {
     pageSubtitle: "韩国与中国，用两种语言守护您的权利。",
     tabs: { intro: "介绍", values: "核心价值" },
     intro: {
-      eyebrow: "About BECOME",
-      titleA: "用您的语言倾听，",
-      titleB: "以韩国法守护。",
+      opener: "无需翻译，由律师直接倾听 — 您的陈述原原本本地传达至韩国法庭。",
       aboutHeading: "关于 BECOME 律师事务所",
       aboutBody: [
         "BECOME律师事务所是一家以韩中双语提供法律服务的精品律师事务所。律师无需翻译即可直接以中文听取当事人的事实关系，并依据韩国法理进行辩护。",
         "涵盖刑事、民事、出入境、企业法务、家事等几乎所有中文当事人在韩可能遇到的法律问题，皆可在同一所内解决。这不是单纯的翻译服务，而是通过\u201C直接沟通\u201D确保当事人的陈述在韩国法庭获得完整效力。",
         "我们不仅关注案件结果，还综合管理居留资格与未来签证更新——这就是BECOME的工作方式。365天24小时通过微信受理咨询。",
-      ],
-      aboutHighlights: [
-        { label: "直接咨询", value: "韩·中双语" },
-        { label: "翻译", value: "0次" },
-        { label: "微信咨询", value: "24/7" },
       ],
       greetingHeading: "主任律师致辞",
       greetingBody: [
@@ -180,19 +163,12 @@ const COPY: Record<Lang, {
     pageSubtitle: "Protecting your rights in two languages, Korea and China.",
     tabs: { intro: "About", values: "Core Values" },
     intro: {
-      eyebrow: "About BECOME",
-      titleA: "Heard in your language,",
-      titleB: "defended under Korean law.",
+      opener: "Heard by counsel directly — not through an interpreter — so your story reaches the court intact.",
       aboutHeading: "About BECOME Law Firm",
       aboutBody: [
         "BECOME Law Firm is a boutique practice that delivers legal services in two languages — Korean and Chinese. Counsel listens to client facts directly in Chinese, without translation, and argues under Korean law.",
         "Criminal, civil, immigration, corporate, family — virtually every legal matter a Chinese-speaking client may face in Korea can be handled under one roof. This is more than translation: through direct dialogue, we make sure the client's testimony stands intact in a Korean courtroom.",
         "We manage the case outcome alongside visa status and future renewals — that is how BECOME works. Consultations are received through WeChat 24/7, year-round.",
-      ],
-      aboutHighlights: [
-        { label: "Direct consult", value: "KO · ZH" },
-        { label: "Interpreter", value: "Zero" },
-        { label: "WeChat", value: "24/7" },
       ],
       greetingHeading: "Greetings from the Managing Partner",
       greetingBody: [
@@ -313,48 +289,30 @@ export function Firm() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: [0.2, 0.65, 0.3, 0.9] }}
           >
-            {/* Hero panel — title + portrait only */}
-            <section
-              className="relative isolate overflow-hidden rounded-xl
-                         bg-gradient-to-br from-[#EAF3FC] via-[#D6E5F4] to-[#BBD2EA]
-                         shadow-[0_1px_3px_rgba(15,23,42,0.05),0_30px_70px_-30px_rgba(37,99,235,0.30)]"
-            >
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -right-[8%] -bottom-[12%] select-none
-                           font-serif font-black italic leading-none tracking-[-0.05em]
-                           text-[10rem] md:text-[14rem] lg:text-[18rem] text-white/65 mix-blend-overlay"
-              >
-                BECOME
-              </div>
-
-              <div className="relative grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-6 lg:gap-10 px-6 pt-12 pb-0 md:px-12 md:pt-16 lg:px-14 lg:pt-20 lg:pb-6">
-                <div className="flex flex-col justify-center order-2 lg:order-1 z-10 pb-10 lg:pb-20">
-                  <p className="font-mono text-[11px] md:text-xs font-bold tracking-[0.22em] text-[#2563EB] uppercase mb-5">
-                    {c.intro.eyebrow}
-                  </p>
-                  <h2 className="text-[2rem] md:text-[2.75rem] lg:text-[3.5rem] leading-[1.08] font-black tracking-tight text-[#0f172a] mb-2">
-                    {c.intro.titleA}
-                  </h2>
-                  <h2 className="text-[2rem] md:text-[2.75rem] lg:text-[3.5rem] leading-[1.08] font-black tracking-tight text-[#2563EB]">
-                    {c.intro.titleB}
-                  </h2>
+            {/* OPENING — editorial pull-quote replaces hero. One sentence, serif italic,
+                centered. Anchors the reading and states the firm's thesis. */}
+            <section className="relative py-10 md:py-16 mb-16 md:mb-24">
+              <div className="max-w-[820px] mx-auto text-center">
+                <div aria-hidden className="flex justify-center mb-8">
+                  <span className="font-serif text-[3.5rem] md:text-[4.5rem] leading-none text-[#2563EB]/25 select-none">
+                    &ldquo;
+                  </span>
                 </div>
-
-                <div className="relative order-1 lg:order-2 min-h-[320px] md:min-h-[420px] lg:min-h-[520px] z-[5]">
-                  <img
-                    src={ohDonghyunCutout}
-                    alt={c.intro.sigName}
-                    className="absolute inset-x-0 bottom-0 w-full h-full object-contain object-bottom drop-shadow-[0_24px_28px_rgba(15,23,42,0.22)]"
-                    loading="eager"
-                    decoding="async"
-                  />
+                <p className="font-serif italic text-[1.4rem] md:text-[1.85rem] lg:text-[2.25rem] leading-[1.45] tracking-tight text-[#0f172a]">
+                  {c.intro.opener}
+                </p>
+                <div className="mt-10 md:mt-12 flex items-center justify-center gap-4">
+                  <span className="h-px w-10 bg-slate-300" />
+                  <span className="font-mono text-[10px] font-bold tracking-[0.32em] uppercase text-slate-500">
+                    BECOME · Law Firm
+                  </span>
+                  <span className="h-px w-10 bg-slate-300" />
                 </div>
               </div>
             </section>
 
             {/* SECTION 1 — About BECOME (firm intro) */}
-            <section className="mt-16 md:mt-24 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-16">
+            <section className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-16">
               <div>
                 <p className="font-mono text-[11px] font-bold tracking-[0.28em] uppercase text-[#2563EB] mb-3">
                   01 / About
@@ -375,7 +333,10 @@ export function Firm() {
               </div>
             </section>
 
-            {/* SECTION 2 — Greeting from the attorney */}
+            {/* SECTION 2 — Greeting from the attorney.
+                Left column now carries a compact portrait card under the heading —
+                reintroduces the attorney tastefully without a hero.
+                First greeting paragraph gets lead-paragraph styling. */}
             <section className="mt-20 md:mt-28 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-16">
               <div>
                 <p className="font-mono text-[11px] font-bold tracking-[0.28em] uppercase text-[#2563EB] mb-3">
@@ -385,23 +346,55 @@ export function Firm() {
                   {c.intro.greetingHeading}
                 </h3>
                 <div className="w-12 h-[3px] bg-[#0f172a] mt-5" />
+
+                {/* Compact portrait card — not a hero. Aspect 4/5, max-w locked. */}
+                <div className="mt-8 max-w-[240px] relative">
+                  <div
+                    className="relative aspect-[4/5] rounded-lg overflow-hidden
+                               bg-gradient-to-b from-[#EAF3FC] to-[#C9DCEF]
+                               shadow-[0_20px_40px_-24px_rgba(37,99,235,0.4)]"
+                  >
+                    <span
+                      aria-hidden
+                      className="pointer-events-none absolute -right-4 -bottom-3 select-none
+                                 font-serif font-black italic leading-none tracking-[-0.05em]
+                                 text-[4.5rem] text-white/60 mix-blend-overlay"
+                    >
+                      B.
+                    </span>
+                    <img
+                      src={ohDonghyunCutout}
+                      alt={c.intro.sigName}
+                      className="absolute inset-x-0 bottom-0 w-full h-full object-contain object-bottom"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <div className="mt-4 pl-0.5">
+                    <p className="text-[10.5px] font-bold tracking-[0.22em] uppercase text-slate-500">
+                      {c.intro.sigRole}
+                    </p>
+                    <p className="text-xl font-black tracking-tight text-[#0f172a] mt-1">
+                      {c.intro.sigName}
+                    </p>
+                  </div>
+                </div>
               </div>
+
               <div>
                 <div className="space-y-5 max-w-[68ch]">
                   {c.intro.greetingBody.map((p, i) => (
-                    <p key={i} className="text-[16px] md:text-[16.5px] leading-[1.85] text-slate-700 font-medium">
+                    <p
+                      key={i}
+                      className={
+                        i === 0
+                          ? "text-[17px] md:text-[19px] leading-[1.7] text-[#0f172a] font-semibold tracking-tight"
+                          : "text-[16px] md:text-[16.5px] leading-[1.85] text-slate-700 font-medium"
+                      }
+                    >
                       {p}
                     </p>
                   ))}
-                </div>
-
-                <div className="mt-10 pt-6 border-t border-slate-200 inline-block pr-8">
-                  <p className="text-[12px] font-bold tracking-[0.18em] uppercase text-slate-500 mb-1">
-                    {c.intro.sigRole}
-                  </p>
-                  <p className="text-2xl md:text-3xl font-black tracking-tight text-[#0f172a]">
-                    {c.intro.sigName}
-                  </p>
                 </div>
               </div>
             </section>
